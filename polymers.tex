@@ -180,22 +180,22 @@ Strongly connected components
 
 \begin{figure}
   \subfigure[Contact map.]{%
-  \begin{minipage}{0.3\linewidth}
+  \begin{minipage}{0.25\linewidth}
       \label{fig:abc:cm}
-  \centering\scalebox{0.4}{\includegraphics{generated_pictures/abc_contact_map.pdf}}\vspace*{2.5mm}\smallskip\\%
+  \centering\scalebox{0.6}{\includegraphics{generated_pictures/abc_contact_map.pdf}}\vspace*{2.5mm}\smallskip\\%
 \end{minipage}
   }
   \subfigure[Triangle \agentfont{ABC}.]{%
-  \begin{minipage}{0.3\linewidth}
+  \begin{minipage}{0.25\linewidth}
     \label{fig:abc:triangle}
-  \centering\scalebox{0.4}{\includegraphics{generated_pictures/abc_triangle.pdf}}\vspace*{2.5mm}\smallskip\\%
+  \centering\scalebox{0.6}{\includegraphics{generated_pictures/abc_triangle.pdf}}\vspace*{2.5mm}\smallskip\\%
 \end{minipage}
   }
   \subfigure[A repeatable pattern.]{%
-  \begin{minipage}{0.3\linewidth}
+  \begin{minipage}{0.45\linewidth}
     \label{fig:abc:pattern}
     \vspace*{0.6cm}
-  \centering\scalebox{0.4}{\includegraphics{generated_pictures/abc_pattern.pdf}}\vspace*{0.5cm}\smallskip\\%
+  \centering\scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern.pdf}}\vspace*{0.5cm}\smallskip\\%
 \end{minipage}}
 \caption{The \agentfont{ABC} example.
 The contact map  (Fig.\ref{fig:abc:cm}) specifies a typing discipline.
@@ -208,18 +208,103 @@ In \ref{fig:abc:pattern} describes a repeatable pattern.
 This pattern is compatible with the contact map and can be repeated in order to form arbitrarily large biomolecular species.
 }
 \end{figure}
-\section{Case study}
+\section{Case studies}
 \label{sec:case-study}
 
-In this section, we introduce some examples to explain intuitively what are unbounded polymers. We will also explain why naive approaches fail in reaching our goal while identifying the pitfall we have to avoid.
+In this section, we introduce some examples to explain intuitively why there may be an unbounded number of biomolecular compounds in a rule-based model.  We also explain why naive approaches cannot be use to prove that the number of biomolecular compounds is finite in a given model,  while identifying the pitfalls that shall be avoided to achieve this goal.
 
-Let us start with a simple example. We consider a model involving three kind of proteins $A$, $B$, $C$. Each protein has two binding sites: the protein $A$ has the binding sites $b$ and $c$, the protein $B$ has the binding sites $a$ and $c$, and the protein $C$ has the binding sites $a$ and $b$. Each binding site may be free, or bound to another site. Only three kinds of bonds are possible: the site $b$ of an instance of the protein $A$ may be bound to the site $a$ of an instance of the protein $B$; the site $c$ of an instance of the  protein $B$ may be bound to the site $b$ of an instance of the protein $C$; and the site $a$ of an instance of the protein $C$ may be bound to the site $c$ of a protein $A$.
+\subsection{Elementary cycles}
 
-These assumptions are summarised graphically in a graph, so called the contact map of the model, that is given in Fig.~\ref{fig:abc:cm}.
-This graph depicts each kind of protein and the sites of their interfaces.
-The potential state of each site is also indicated. Here each site
-may be free ($\freesymbol$), or bound to another site (according the model assumptions). The contact map provides a type discipline.
-Every biomolecular compounds in our models shall satisfy the contraints it encode about the interface of agents, the potential states of sites, and their potential bindings. An example of biomolecular compound  is drawed in Fig.~\ref{fig:abc:triangle}. This biomolecular compound has a triangular shape. It contains one instance of each protein (but in general a compound may not contain each kind of proteins and it may contain several instances of a given one).
+Let us start with a simple example. We consider a model involving three kinds of protein $A$, $B$, $C$. Each protein has two binding sites: the protein $A$ has the binding sites $b$ and $c$, the protein $B$ has the binding sites $a$ and $c$, and the protein $C$ has the binding sites $a$ and $b$. Each binding site may be free, or bound to another site. Only three kinds of bonds are possible: the site $b$ of an instance of the protein $A$ may be bound to the site $a$ of an instance of the protein $B$; the site $c$ of an instance of the  protein $B$ may be bound to the site $b$ of an instance of the protein $C$; and the site $a$ of an instance of the protein $C$ may be bound to the site $c$ of a protein $A$.
+
+These assumptions are summarised in a graph in Fig.~\ref{fig:abc:cm}. This graph is called the contact map of the model. It describes every kind of protein and every sites in their interfaces. The potential state of each site is also indicated. In our model, every sites may be free: they are all tagged with the symbol $\freesymbol$. Potential bonds are indicated by the means of edges between pair of sites.  The contact map provides a type discipline.
+Every biomolecular compound in our models shall satisfy the contraints the contact map encodes about the interface of agents, the potential states of sites, and their potential bindings. An example of biomolecular compound that is compatible with the contact map is drawed in Fig.~\ref{fig:abc:triangle}. This biomolecular compound is made of three proteins \agent{A}{}, \agent{B}{}, and \agent{C}{}{} that are bound pair-wise so as to form a triangular shape.
+In a biomolecular compound, every site shall be either free, or bound to at most one other site (but not both). In general, a biomolecular compound may not contain each kind of proteins. Also it may contain several instances of a given one.
+
+The contact map that is given in Fig.~\ref{fig:abc:cm} is compatible with an infinite number of different (i.e.~\emph{non isomorphic}) molecular compounds.
+Indeed we show in Fig.~\ref{fig:abc:pattern}, a pattern
+that may be repeated an unbounded number of times in order to form arbitrary many different biomolecular compounds. This is tempting to relate the potential presence of an arbitrary number of different biomolecular compounds to the presence of a cycle in the contact map. However we shall see in the next examples that this intuition is misleading.
+
+
+\begin{figure}
+  \subfigure[Contact map.]{%
+  \begin{minipage}{0.3\linewidth}
+      \label{fig:self:cm}
+  \centering\scalebox{0.6}{\includegraphics{generated_pictures/self_contact_map.pdf}}\vspace*{2.5mm}\smallskip\\%
+\end{minipage}
+  }
+  \subfigure[Exhaustive list of molecular compounds.]{%
+  \begin{minipage}{0.6\linewidth}
+    \label{fig:self:species}
+  \centering\hfill\scalebox{0.6}{\includegraphics{generated_pictures/self_monomer.pdf}}\hfill\scalebox{0.6}{\includegraphics{generated_pictures/self_dimer.pdf}}\hfill\mbox{}\vspace*{2.5mm}\smallskip\\%
+\end{minipage}}
+\caption{The example of a protein that may form monomers and dimers.
+The contact map (Fig.\ref{fig:self:cm}) contains a cycle, since the unique site of an instance of a  protein may be linked to the unique site of another instance of another protein. However, only once instance of this cycle may occur in a given biomolecular compound and the number of biomolecular compound remains bounded despite this cycle (Fig.~\ref{fig:self:species}).}
+\end{figure}
+
+\begin{figure}
+  \subfigure[Contact map.]{%
+  \begin{minipage}{0.45\linewidth}
+      \label{fig:twoself:cm}
+  \centering\scalebox{0.6}{\includegraphics{generated_pictures/twoself_contact_map.pdf}}\vspace*{2.5mm}\smallskip\\%
+\end{minipage}
+  }
+  \subfigure[A repeatable pattern.]{%
+  \begin{minipage}{0.45\linewidth}
+    \label{fig:twoself:pattern}
+  \centering\scalebox{0.6}{\includegraphics{generated_pictures/twoself_pattern.pdf}}\vspace*{2.5mm}\smallskip\\%
+\end{minipage}}
+\caption{An example of a protein with two sites \sitefont{a} and \sitefont{b} such that the site \sitefont{a} of a protein may be bound to the site \sitefont{a} of another protein and the site \sitefont{b} may be bound to the site \sitefont{b} of another protein.
+The contact map (Fig.\ref{fig:twoself:cm}) contains two self-loops.
+The pattern that is made of three proteins, the first two bound via their respective site \sitefont{a} and the last two bound via their respective site
+\sitefont{b} is a repeatable patterns. Thus, an infinite number of biomolecular compounds is compatible with the contact map. Hence, in general, it is unsafe to discard self-loops from the contact map. }
+\end{figure}
+
+\subsection{Self loops}
+
+In a second example we consider a model with only one kind of protein. This protein has a single site which may be either free, or bound to the site of another protein of the same kind. Roughly speaking a protein may form a monomer (when its site is free), or belongs to a dimer (when its site is bound). These assumptions are encoded in the contact map that is given in Fig.~\ref{fig:self:cm}. We notice that this contact map contains a cycle (from the unique site of the protein to itself). Indeed only the two biomolecular compounds that are depicted in Fig.~\ref{fig:self:species} are compatible with this contact map. Thus there is a finite number of them despite the cycle of the contact map.
+
+One could think that self-loops should not be considered as cycles when trying to prove that the number of biomolecular compounds of a model is finite. Indeed whenever a molecular compound countains a bond that coresponds to a self-loop in the contact map, then both sites are necessarily  bound together and they are no longer available to form links with other sites. Yet the contact map that is given in Fig.~\ref{fig:twoself:cm} shows that it is unsafe in general  to discard the self-loops of the contact map. In this example, we consider only one kind of protein with two sites. Each site may be either free, or bound to the same site of another instance of the protein. It is then possible to form a chain a three proteins (see Fig.~\ref{fig:twoself:pattern}) that may be repeated an arbitrary number of times in a biomolecular compounds.
+
+\subsection{Conflicting bindings}
+
+It may happen that a site may be bound to several kinds of sites.
+In the contact map, this site may connected to several edges which may be a part of cycle. However, every instance of such a site may be bound to at most
+one site in a biomolecular compound. Thus some of such cycles may be not realisable in a biomolecular compound.
+
+
+
+\subsection{Early events in the epidermic growth factor pathway}
+
+\begin{figure}[t]
+\subfigure[Contact map.]{%
+\label{fig:cm}
+\begin{minipage}{0.5\linewidth}%
+\begin{center}
+  \scalebox{0.4}{\includegraphics{generated_pictures/contact_map.pdf}}\vspace*{2.5mm}\smallskip\\%
+\end{center}
+\end{minipage}%
+}
+\subfigure[A biomolecular compound.]{%
+\label{fig:sigma}
+\begin{minipage}{0.5\linewidth}%
+\begin{center}\scalebox{0.4}{\includegraphics{generated_pictures/species.pdf}}\smallskip\\\end{center}%
+\end{minipage}}
+\caption{The example }
+ \end{figure}
+
+So far, we have considered only minimal case studies to try to understand which conditions are necessary on a contact map to be compatible with an infinite number of biomolecular species. In Fig.~\ref{cm:egfr},
+
+
+\subsection{Clique}
+
+
+
+
+
+
+
+
 
 
 
@@ -292,25 +377,12 @@ Agent types $A\in\agentname$ are associated with sets of sites $\linksite(A)$ wh
 
 $\Sigma$-graphs are graphs the nodes of which are typed agents with some sites which may bear sets of binding states. In general, $\Sigma$-graphs encode some  specific type disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}. Patterns and bio-molecular compounds are specific kinds of $\Sigma$-graphs.
 
-\begin{figure}[t]
-\subfigure[The $\Sigma$-graph $\graphsymb_{\textit{CM}}$.]{%
-\label{fig:cm}
-\begin{minipage}{0.5\linewidth}%
-\begin{center}
-  \scalebox{0.4}{\includegraphics{generated_pictures/contact_map.pdf}}\vspace*{2.5mm}\smallskip\\%
-\end{center}
-\end{minipage}%
-}
-\subfigure[The $\Sigma$-graph $\graphsymb_{\textit{SP}}$.]{%
-\label{fig:sigma}
-\begin{minipage}{0.5\linewidth}%
-\begin{center}\scalebox{0.4}{\includegraphics{generated_pictures/species.pdf}}\smallskip\\\end{center}%
-\end{minipage}}
 
+\begin{figure}[t]
 \subfigure[A morphism from $\graphsymb_{\Sigma}$ into $\graphsymb_{\textit{CM}}$.]{%
 \label{fig:morphism}
 \begin{minipage}{\linewidth}%
-%\vspace*{0.6cm}
+\vspace*{0.6cm}
 \begin{center}\scalebox{0.4}{\includegraphics{generated_pictures/species_cm.pdf}}\smallskip\\%\vspace*{0.55cm}
 \end{center}%
 \end{minipage}}
@@ -558,6 +630,12 @@ Patterns may be related by embeddings. Besides preserving the structure of patte
 As opposed to classical notions of embeddings between graphs, embeddings between patterns preserve the freeness of sites.
 
 The composition of two embeddings is an embedding.
+
+\section{Graph of sites}
+
+\section{Graph of potential links}
+
+\section{Taking into account the result of a static analysis}
 
 \section{Conclusion}
 
