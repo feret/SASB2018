@@ -11,6 +11,7 @@ DOT=$(wildcard $(FIGPATH)*.dot)
 DOT2 = $(wildcard $(BUILD)/*.dot)
 DOT3 = $(patsubst $(BUILD)%,$(IMAGEPATH)%,$(DOT2))
 
+LADOT1 = $(wildcard $(FIGPATH)*.dot)
 LADOT2 = $(wildcard $(BUILD)/*.ladot)
 LADOT3 = $(patsubst $(BUILD)%,$(IMAGEPATH)%,$(LADOT2))
 
@@ -71,14 +72,28 @@ $(IMAGEPATH)%.pdf: $(BUILDPATH)%.ladot.tex $(BUILDPATH)%.ladot.eps
 	cp tmp/$(notdir $(basename $@)).pdf $@
 	rm -rf tmp
 
+$(IMAGEPATH)%.pdf: $(BUILDPATH)%.ladotdot.ladot.tex $(BUILDPATH)%.ladotdot.ladot.eps
+		rm -rf tmp
+		mkdir tmp
+		cat fm_header $(BUILDPATH)$(notdir $(basename $@)).ladotdot.ladot.tex > tmp/$(notdir $(basename $@))_fm
+		cp $(BUILDPATH)$(notdir $(basename $@)).ladotdot.ladot.eps tmp/$(notdir $(basename $@))_fm.eps
+		cd tmp ; fragmaster
+		cp tmp/$(notdir $(basename $@)).pdf $@
+		rm -rf tmp
+
 $(BUILDPATH)%.ladot.tex: $(BUILDPATH)%.ladot
 	cd $(BUILD) ; ladot $(notdir $<)
 
 $(BUILDPATH)%.ladot.eps: $(BUILDPATH)%.ladot
 	cd $(BUILD) ; ladot $(notdir $<)
 
+$(BUILDPATH)%.ladotdot.ladot.tex: $(BUILDPATH)%.ladotdot
+		cd $(BUILD) ; ladotdot $(notdir $<)
 
-%.ladot: %.dot
+$(BUILDPATH)%.ladotdot.ladot.eps: $(BUILDPATH)%.ladotdot
+		cd $(BUILD) ; ladotdot $(notdir $<)
+
+$(BUILDPATH)%.ladotdot: $(FIGPATH)%.dot
 	cp $< $@
 
 

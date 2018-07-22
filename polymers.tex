@@ -268,6 +268,34 @@ One could think that self-loops should not be considered as cycles when trying t
 
 \subsection{Conflicting bindings}
 
+\begin{figure}
+  \subfigure[Contact map.]{%
+  \begin{minipage}{0.25\linewidth}
+      \label{fig:conflict:cm}
+  \centering\scalebox{0.6}{\includegraphics{generated_pictures/conflict_contact_map.pdf}}\vspace*{2.5mm}\smallskip\\%
+\end{minipage}
+  }
+  \subfigure[A repeatable pattern.]{%
+  \begin{minipage}{0.74\linewidth}
+    \label{fig:conflict:pattern}
+  \scalebox{0.6}{\includegraphics{generated_pictures/conflict_r.pdf}}%
+  \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_rg.pdf}}%
+  \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_grs.pdf}}%
+  \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_ggrs.pdf}}%
+
+  \scalebox{0.6}{\includegraphics{generated_pictures/conflict_rs.pdf}}%
+  \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_gbisrs.pdf}}%
+  \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_s.pdf}}%
+  \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_gs.pdf}}%
+  \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_g.pdf}}%
+
+\end{minipage}}
+\caption{An example of a protein with two sites \sitefont{a} and \sitefont{b} such that the site \sitefont{a} of a protein may be bound to the site \sitefont{a} of another protein and the site \sitefont{b} may be bound to the site \sitefont{b} of another protein.
+The contact map (Fig.\ref{fig:conflict:cm}) contains two self-loops.
+The pattern that is made of three proteins, the first two bound via their respective site \sitefont{a} and the last two bound via their respective site
+\sitefont{b} is a repeatable patterns. Thus, an infinite number of biomolecular compounds is compatible with the contact map. Hence, in general, it is unsafe to discard self-loops from the contact map. }
+\end{figure}
+
 It may happen that a site may be bound to several kinds of sites.
 In the contact map, this site may connected to several edges which may be a part of cycle. However, every instance of such a site may be bound to at most
 one site in a biomolecular compound. Thus some of such cycles may be not realisable in a biomolecular compound.
@@ -633,6 +661,14 @@ The composition of two embeddings is an embedding.
 
 \section{Graph of sites}
 
+\begin{figure}
+  \subfigure[Contact map.]%
+  {\label{fig:egfr:gs:cm}\scalebox{0.4}{\includegraphics{generated_pictures/contact_map.pdf}}}
+  \subfigure[Graph of site.]%
+  {\label{fig:egfr:gs:gs}\scalebox{0.4}{\includegraphics{generated_pictures/egfr_graph_site.pdf}}}
+  \caption{EGFR model. In \ref{fig:egfr:gs:cm}, we recall the contact map.
+  In Fig.~\ref{fig:egfr:gs:gs}, we give the graph of sites that is associated with this contact map. The nodes of these graphs are the sites of the contact map. There is an oriented edge between a node $s$ and a node $t$ if and only if . }
+\end{figure}
 \section{Graph of potential links}
 
 \section{Taking into account the result of a static analysis}
