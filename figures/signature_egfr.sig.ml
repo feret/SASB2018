@@ -82,9 +82,13 @@ let config =
     rule_corners = empty_ru ;
  }
 
-
+let width i = Width (0.9*.i)
+let height i = Height (0.9*.i)
+let ws = [Width (0.8*.config.site_width);
+          Height (0.8*.config.site_height)
+         ]
 (* chemical species*)
-let _,init = init config
+let _,init = init {config with agent_width = 0.9*.config.agent_width}
 (*signature*)
 let
   [
@@ -104,7 +108,24 @@ let
     [grb2_a,[];
      grb2_b,[]];
     sos,
-    [sos_d,[]]],
+    [sos_d,[]];
+    segf,
+    [segf_r,[]];
+    segfr,
+    [segfr_l,[];
+     segfr_r,[];
+     segfr_c,[];
+     segfr_n,[];
+     segfr_Y48,[];
+     segfr_Y68,[]];
+    sshc,
+    [sshc_pi,[];
+     sshc_Y7,[]];
+    sgrb2,
+    [sgrb2_a,[];
+     sgrb2_b,[]];
+    ssos,
+    [ssos_d,[]]],
   signature_egfr
   =
   add_in_signature
@@ -134,5 +155,33 @@ let
       ];
       "Sos",[Width 1.2;Height 0.8;Shape "rectangle";FillColor "\"#c53736\""],
       [	"d",[],[]
+      ];
+
+
+      "EGF",[width 1.;height 1.;Shape "square";FillColor "\"#6767f2\""],
+      [
+        "r",(Direction s)::ws,[]
+      ];
+      "EGFR",[width 1.2;height 1.;Shape "hexagon";FillColor "\"#709d54\""],
+      [
+        "l",ws,[];
+        "r",ws,[];
+        "c",ws,[];
+        "n",ws,[];
+        "Y48",ws,[];
+        "Y68",ws,[]
+      ];
+      "ShC",[width 1.2;height 0.6;Shape "rectangle";FillColor "\"#b5dce6\""],
+      [
+        "pi",ws,[];
+        "Y7",ws,[]
+      ];
+      "Grb2",[width 1.2;height 0.8;Shape "hexagon";FillColor "\"#e587de\""],
+      [
+        "a",ws,[];
+        "b",ws,[]
+      ];
+      "Sos",[width 1.2;height 0.8;Shape "rectangle";FillColor "\"#c53736\""],
+      [	"d",ws,[]
       ]]
     init
