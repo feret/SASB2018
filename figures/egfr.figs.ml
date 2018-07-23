@@ -317,3 +317,26 @@ let () =
             sshc,sshc_pi,segfr,segfr_Y48,"shc_egfr";
             sshc,sshc_Y7,sgrb2,sgrb2_a,"shc_grb2";
             ssos,ssos_d,sgrb2,sgrb2_b,"sos_grb2"]
+
+let plot_two_links (a,b,c,d,e',f,g,name) =
+  let [_,[sa,_];_,[sb,_;sc,_];_,[sd,_]],er =
+    add_in_graph
+      [a,0.,0.,[],[b,[Direction e],[]];
+       c,1.8,0.,[],[d,[Direction w],[];
+                    e',[Direction e],[]];
+       f,3.6,0.,[],[g,[Direction w],[]]]
+      empty
+  in
+  let er =
+    add_link_list [sa,sb;sc,sd] er
+  in
+  dump (name^".ladot") er
+
+let () =
+  List.iter
+    plot_two_links
+    [
+      segfr,segfr_r,segfr,segfr_r,segfr_c,segfr,segfr_n,"egfr_r_c";
+      segfr,segfr_r,segfr,segfr_r,segfr_n,segfr,segfr_c,"egfr_r_n";
+      segfr,segfr_n,segfr,segfr_c,segfr_n,segfr,segfr_c,"egfr_n_c";
+      ]

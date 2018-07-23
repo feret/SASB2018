@@ -151,6 +151,23 @@ Strongly connected components
 
 \section{Introduction}
 
+Rule-based languages, such as Kappa \cite{DBLP:journals/tcs/DanosL04} and BNGL
+\cite{BNGL}, propose a transparent way to encode models of interactions between proteins.  Systems involving races on shared resources, different time- and concentration-scales, non linear feedback loops may be described by the means of rewrite rules. This allows for the description of very combinatorial models.   A huge (when not infinite) number of different kinds of bio-molecular compounds may arise due to the presence of scaffold and/or proteins with multiple binding and phosphorylation sites. The ultimate goal is then to understand how the collective behaviour of these proteins emerges from the mechanistic interactions between proteins.
+
+It is important to detect whether such a model involve an infinite number of different kinds of bio-molecular compounds. Often, the models come from a higher level of description \cite{DBLP:conf/cmsb/HarmerCLO17} or from automatic mining of the literature \cite{Gyori119834}. The presence of an infinite number of bio-molecular compounds is often a hint for a lack of specification. Namely, conflicts between potential bindings have not be specified enough and there is a need to refine the model. Sometimes the assembling of giant molecules is involved. In that later case, it is important to confirm that the model implements properly what the modeller has in mind.
+The presence of an infinite number of distinct kinds of bio-molecular compounds also matters when choosing the most appropriate semantics for the models  (among stochastic, differential, hybrid).
+
+In this paper, we introduce some graph data-structure to abstract the potential unbounded polymers that may be formed in a rule-based model. These graphs either cope for the potential succession of sites along chain of proteins that
+occur within reachable bio-molecular compounds, or for the succession of bonds in these chains. They provide a sound and complete with respect to the information that is described in the contact map of the model, a graphical description of the potential binding between the sites of proteins.
+The contact map encodes only non relational information: it cannot establish relationships about the different binding states of pairs of sites.
+
+Then, we show how to refine the graph of the potential successive links in bio-molecular species in order to cope for the result of relational static analyses \cite{DanosEtAl-VMCAI08,SASB2016,KaSa}. Such static analyses provide a list of patterns that are know to be unreachable. As a result, we get a sound, but not complete approach (the detection of unreachable patterns in a rule-base language in undecidable anyway \cite{kreyBig}) that may detect and prove that the set of non-isomorphic bio-molecular compounds of a model is finite, without executing the model.
+
+The rest of the paper is organised as follows.
+Sec.~\ref{sec:case-study} introduces some case study to provide intuitions about the property we want to infer, and to highligh pitfalls we will have to avoid. Sec.~\ref{sec:kappa} gives some reminders about Kappa.
+Our approach is than described in Sec.~\ref{sec:graphs}. 
+
+
 %Site-graph rewriting languages such as Kappa \cite{DBLP:journals/tcs/DanosL04} or BNGL \cite{BNGL} supply a convenient way to describe models of signalling pathways. Unlike classical reaction networks, they emphasise the biochemical structure of proteins. We use connected patterns to formalise properties about bio-molecular species.
 %From an intentional perspective, a connected pattern is a part of a biochemical species. A pattern expresses some conditions over the states of sites in proteins. Interestingly, connected patterns  permit to reason locally on a bio-molecular species. In reaction networks, we can only say that a species is consumed or produced, with site-graph rewriting, we can also say that a species is transformed by a local transformation. Beyond the capability to express large networks in a compact way, this also gives rise to more compact notions of causalities as expressed by stories \cite{DBLP:conf/fsttcs/DanosFFHH12} or influence maps \cite{DanosEtAl-CONCUR07}. Thanks to this, site-graph rewriting models may be simulated efficiently, by using data-structures that quickly maintain the number of potential embeddings \cite{DanosEtAl-APLAS07,NFSim,DBLP:conf/esop/BoutillierEK17}, and this without ever compiling models into reaction networks.
 %From an extensional perspective, a connected pattern is a (potentially infinite) linear combination of bio-molecular species (the ones that contain the pattern multiplied by the number of their occurrences). This opens the door to many algebraic relationships.
@@ -978,7 +995,7 @@ $i$ and $i'$ be two site names.
   \begin{enumerate}
     \item There exists a repeatable pattern
     with an agent of kind $\agentfont{A}$ connected via its site $i$
-    to one site of an agent of kind $\agentfont{B}$ itself connected to another agent via its site $i'$.
+    to one site of an agent of kind $\agentfont{B}$ itself connected to another agethnt via its site $i'$.
 \item There exist two agents $n$ and $n'$ respectively of kinds $\agentfont{A}$
 and  $\agentfont{B}$, and a  cycle in the graph of the sites of the contact map    $\graphsymb_{\textit{CM}}$  that passes by the edge $((n,i),(n',i'))$.
   \end{enumerate}
@@ -1314,18 +1331,72 @@ Further constraints are required on the bio-molecular compounds of the models to
 
 \subsection{Taking into account the result of a static analysis}
 
-In this section, we explain how to refine the graph of the potential links of a gioven contact map, in order to take into the constraints about the reachable bio-molecular compounds that cannot be written in the contact map.
-These constraints may come from a black box static analysis \cite{SASB2016,KaSa} and they take the form of a set of patterns that shall occur in no reachable bio-molecular species.
+In this section, we explain how to refine the graph of the potential links of a given contact map, in order to take into the constraints about the reachable bio-molecular compounds.
+These constraints may come from a static analysis \cite{SASB2016,KaSa} taken as a black box and they take the form of a set of patterns that shall occur in no reachable bio-molecular species.
+These constraints cannot be written in the contact map which can cope only with non relational information about the potential state of sites.
 
-For instance, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules that describes a model and its set of initial state, that, in the early events of the integration of the epidermic growth factor, a receptor cannot be bound to two different instances of receptors. Indeed the analysis detects that the following patterns are unreachable:
+For instance, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules that describes the model and its set of initial state, that, in the early events of the integration of the epidermic growth factor, that the following patterns:
+\begin{equation*}
+\scalebox{0.3}{\includegraphics{generated_pictures/egfr_r_c.pdf}}\hspace*{1cm} \scalebox{0.3}{\includegraphics{generated_pictures/egfr_r_n.pdf}}\hspace*{1cm} \scalebox{0.3}{\includegraphics{generated_pictures/egfr_n_c.pdf}}
+\end{equation*}
+are not reachable. That is to say that a receptor cannot be bound to two different other instances of receptors.
 
-The analysis that is described in \cite{afp} generalises this approach to arbitrary cycles of proteins. In the example of the triangle, it may infer, when it is a consequence of a rules, that no two \agentfont{A}s may occur in a given connected compounds, by proving that the following pattern: 
 
-is unreachable
+The analysis that is described in \cite{afp} generalises this approach to arbitrary cycles of proteins. In the example of the triangle, it may infer, when it is a consequence of the rules and the initial state of the model, that no two \agentfont{A}s may occur in a given connected compounds, by proving that the following pattern:
+\begin{equation*}
+\scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern.pdf}}
+\end{equation*}
+is unreachable.
+
+We refine the statement of Problem \ref{problem} so as take into account the constraints potentially coming from an external static analysis.
+
+\begin{theorem}
+  \label{th:linkbis}
+  Let $\graphsymb_{\textit{CM}}$ be a contact map.
+  Let $P$ be a set o patterns.
+  Let $G$ be a refinement of the graph of the potential links of the contact map, according to the set of patterns $P$.
+
+If $G$ is acyclic, then the set $\{[E]_{\iso}\in \llbracket \graphsymb_{\textit{CM}} \rrbracket\;|\;E \text{ contains no occurrence of patterns belonging to the }$ is a finite set of bio-molecular compounds
+(up to isomorphism) which are both compatib
+Let $\agentfont{A}$ and $\agentfont{B}$ be two kinds of agent and
+$i$ and $i'$ be two site names.
+
+  We assume that there exists biomolecular compound
+  $S$ that can be mapped into the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ by the means of a morphism. We assume that no pattern in $P$ embeds into $S$.
+  We assume that there exists a repeatable pattern $R$ that embeds into $S$.
+
+
+  a repeatable pattern
+  with an agent of kind $\agentfont{A}$ connected via its site $i$
+  to one site of an agent of kind $\agentfont{B}$ itself connected to another agent via its site $i'$.
+
+  there exist two agents $n$ and $n'$ respectively of kinds $\agentfont{A}$
+  and  $\agentfont{B}$, and a  cycle in the graph $G$ that passes by the vertice  $((n,i),(n',i'))$.
+  Both following properties are equivalent:
+  \begin{enumerate}
+    \item There exists a repeatable pattern
+    with an agent of kind $\agentfont{A}$ connected via its site $i$
+    to one site of an agent of kind $\agentfont{B}$ itself connected to another agent via its site $i'$.
+\item There exist two agents $n$ and $n'$ respectively of kinds $\agentfont{A}$
+and  $\agentfont{B}$, and a  cycle in the graph of the potential links of the contact map    $\graphsymb_{\textit{CM}}$  that passes by the vertice  $((n,i),(n',i'))$.
+  \end{enumerate}
+\end{theorem}
 
 
 \label{sec:refinement}
 \section{Conclusion}
+
+In this paper, we have provided some decision procedures
+to detect whether or not the set of bio-molecular compounds of rule-based models, such as the ones that are written in Kappa \cite{DBLP:journals/tcs/DanosL04} or in BNGL \cite{BNGL}, is finite or not.
+Our approach is mainly based on top of the contact map, a $\Sigma$-graph which summarizes
+the potential links between the binding sites of proteins. The contact map is translated into a classical graph which encodes either the potential succession of sites, or the potential succession of links in bio-molecular compounds.
+Non trivial connected components in this graph correspond to repeatable patterns that may be repeated an arbitrary number of times in reachable bio-molecular compounds and they can be detected using classical depth-first exploration without having to enumerate every elementary cycle \cite{tarjan}.
+The graph that stands for the potential succession of links in bio-molecular species can be refined in order to handle with some additional constraints  computed by reachability analysis \cite{DanosEtAl-VMCAI08,SASB2016,KaSa}.
+
+Our approach has been partially integrated in the static analyzer KaSa \cite{KaSa}. More precisely, the construction of the graph of the potentially
+successive links has been implemented as well as the reduction with the static analysis that is described in \cite{SASB2016}. This way, the analyzer can cope accurately with the constraints involving potential cycles of two proteins.  We plan to implement the generalisation that has been proposed in \cite{afp}, that can handle precisely with models that can generate cyclic structures without creating arbitrary long bio-molecular compounds.
+
+As future works, we plan to use weakly relational domains \cite{DBLP:conf/sas/Mine02} to abstract more precisely the chains of proteins that may embed in the reachable bio-molecular species. This analysis will allow to analyse accurately the rules that behave differently when applied in a uni-molecular or in a bi-molecular context.
 
 \bibliographystyle{entcs}
 \bibliography{polymers}
