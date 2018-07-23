@@ -190,3 +190,141 @@ let pattern =
          pattern
 
 let _ = dump "abc_pattern.ladot" pattern
+
+
+let
+  [p_a,[p_a_b,_];
+   p_b, [p_b_a,_;p_b_c,_];
+   p_c, [p_c_a,_;p_c_b,_]], pattern =
+   add_in_graph
+     [
+       a,0.,0.,[],
+       [a_b,[Direction e],[]];
+       b,1.,0.,[],
+       [b_a,[Direction w],[];
+        b_c,[Direction e],[]];
+       c,2.,0.,[],
+       [c_a,[Direction e],[];
+        c_b,[Direction w],[]]]
+     signature
+
+
+let pattern =
+       add_link_list
+         [
+           p_a_b,p_b_a;
+           p_b_c,p_c_b;
+         ]
+         pattern
+
+let _ = dump "abc_pattern_b.ladot" pattern
+
+let site, pattern =
+  add_site p_a a_c pattern
+let _, pattern = add_free site pattern
+
+let _ = dump "abc_pattern_a.ladot" pattern
+
+let
+  [
+    cm_a,[cm_a_b,_;cm_a_c,_];
+    cm_b,[cm_b_a,_;cm_b_c,_];
+    cm_c,[cm_c_a,_;cm_c_b,_];
+    sp_a,[sp_a_b,_;sp_a_c,_];
+    sp_b,[sp_b_a,_;sp_b_c,_];
+    sp_c,[sp_c_a,_;sp_c_b,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+      a,2.,0.,[],
+      [a_b,[Direction s],[Free_site [Direction sw;Tag ("CM",1)]];
+       a_c,[Direction n],[Free_site [Direction nw;Tag ("CM",1)]]];
+      b,2.6,-.0.6,[],
+      [b_a,[Direction w],[Free_site [Direction sw;Tag ("CM",1)]];
+       b_c,[Direction n],[Free_site [Direction e;Tag ("CM",1)]]];
+      c,2.6,+.0.6,[],
+      [c_a,[Direction w],[Free_site [Direction nw;Tag ("CM",1)]];
+       c_b,[Direction s],[Free_site [Direction e;Tag ("CM",1)]]];
+      a,0.,0.,[],
+      [a_b,[Direction s],[];
+       a_c,[Direction n],[];];
+      b,0.6,-.0.6,[],
+      [b_a,[Direction w],[];
+       b_c,[Direction n],[];];
+      c,0.6,+.0.6,[],
+      [c_a,[Direction w],[];
+       c_b,[Direction s],[]]]
+    signature
+
+
+let remanent =
+  add_link_list
+    [
+      cm_a_b,cm_b_a;
+      cm_b_c,cm_c_b;
+      cm_c_a,cm_a_c;
+      sp_a_b,sp_b_a;
+      sp_b_c,sp_c_b;
+      sp_c_a,sp_a_c
+    ]
+    remanent
+
+let remanent =
+  add_proj
+    [sp_a,cm_a;
+     sp_b,cm_b;
+     sp_c,cm_c
+    ]
+    remanent
+
+let _ = dump "abc_embed.ladot" remanent
+
+
+
+let plot_site (a,b,name) =
+  let _,er =
+    add_in_graph
+      [a,0.,0.,[],[b,[],[]]]
+      signature
+  in
+  dump (name^".ladot") er
+
+let () =
+  List.iter
+    plot_site
+    [
+      a,a_b,"a_b";
+      a,a_c,"a_c";
+      b,b_a,"b_a";
+      b,b_c,"b_c";
+      c,c_a,"c_a";
+      c,c_b,"c_b";
+]
+
+
+let plot_link (a,b,c,d,name) =
+  let [_,[sa,_];_,[sb,_]],er =
+    add_in_graph
+      [a,0.,0.,[],[b,[Direction e],[]];
+       c,0.4,0.,[],[d,[Direction w],[]]]
+      signature
+
+  in
+  let er =
+    add_link_list [sa,sb] er
+  in
+  dump (name^".ladot") er
+
+let () =
+  List.iter
+    plot_link
+    [
+      a,a_b,b,b_a,"link_a_b";
+      a,a_c,c,c_a,"link_a_c";
+      c,c_b,b,b_c,"link_b_c";
+      b,b_a,a,a_b,"link_b_a";
+      c,c_a,a,a_c,"link_c_a";
+      c,c_b,b,b_c,"link_c_b"
+    ]

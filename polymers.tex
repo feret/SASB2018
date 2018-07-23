@@ -103,6 +103,7 @@
 \newcommand{\diff}[1]{\myfrac{\mathrm{d}#1}{\mathrm{d}t}}
 %\newtheorem{mydefinition}{Definition}
 \newtheorem{myexample}[thm]{Example}
+%\newtheorem{problem}[thm]{Problem}
 %\newtheorem{mytheorem}{Theorem}
 %\newtheorem{myproposition}{Proposition}
 \newcommand{\cons}[3]{\textit{p\_cons}_{\mathcal{M}}(#1,#2,#3)}
@@ -372,7 +373,7 @@ Our approach is based on the use of some graphs that are derived from the contac
 \emph{Outline.} The rest of the paper is organised as follows.
 In Sec.~\ref{sec:kappa}, we give some reminders about Kappa.
 We focus only on static reasoning about graphs. We do not introduce the notion of rules. We assume that
-additional consrtraints about reachable patterns come from a black box that we do not describe in this paper. In Sec.~\ref{sec:graphs}, we introduce two notions of graphs: the graph of sites and the graph of links. Both notions can be used to reason about the finiteness of the set of bio-molecular compounds in a Kappa model. Yet we will see in Sec.~\ref{sec:refinement}, that the graph of links may be refined to take into account the patterns that may be proved unreachable by an external tool.
+additional consrtraints about reachable patterns come from a black box that we do not describe in this paper. In Sec.~\ref{sec:graphs}, we introduce two notions of graphs: the graph of the sites and the graph of the potential links. Both notions can be used to reason about the finiteness of the set of bio-molecular compounds in a Kappa model. Yet we will see in Sec.~\ref{sec:refinement}, that the graph of the potential links may be refined to take into account the patterns that may be proved unreachable by an external tool.
 
 
 
@@ -518,13 +519,62 @@ For a $\Sigma$-graph $\graphsymb$, we write as $\agents[\graphsymb]$ its set of 
 %More precisely, a contact map is a $\Sigma$-graph in which
 %there is exactely one instance of each kind of proteins and
 %every protein instance documents all the sites of its interface.
-Contact maps encode some  specific type disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}.
+%Contact maps encode some  specific type disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}.
 
-\begin{myexample}[$\Sigma$-graph (model of the triangle)]
+\begin{myexample}[$\Sigma$-graphs (model of the triangle)]
+  \renewcommand{\graphsymb}{\mathcal{T}}
+  We give two examples of $\Sigma$-graph for the model of the triangle
+  (eg.~see Fig.~\ref{sec:triangle}).
+
+  The graph that is depicted in Fig.~\ref{fig:abc:cm} is the $\Sigma$-graph  $\graphsymb_\textit{CM}%\bydef\graphtuple[\graphsymb_\textit{CM}]
+  $ that is defined as follows:
+  \begin{enumerate}
+    \item $\agents[\graphsymb_\textit{CM}]\bydef\{1,2,3\}$;
+    \item $\type[\graphsymb_\textit{CM}]\bydef \map{\begin{cases}\begin{array}{ccc}%
+    1 &\mapsto&\agent{A}{}\cr%
+    2 &\mapsto&\agent{B}{}\cr%
+    3 &\mapsto&\agent{C}{}\cr%
+  \end{array}\end{cases}}{[1 \mapsto \agent{A}{}, 2  \mapsto \agent{B}{}, 3 \mapsto \agent{C}{}\;];}$
+    \item $\sites[\graphsymb_\textit{CM}]\bydef
+  \bigcup \{(n,i)\;|\; n\in \agents[\graphsymb_\textit{CM}],
+  i\in\linksite(\type[\graphsymb_{\textit{CM}}])\}$;
+    \item $\links[\graphsymb_\textit{CM}]\bydef\map{}{\left[%
+    \begin{array}{l}
+      (1,\text{\site{b}{}{}})\mapsto \{\freesymbol,(2,\text{\site{a}{}{}})\},
+      (1,\text{\site{c}{}{}})\mapsto \{\freesymbol,(3,\text{\site{a}{}{}})\},
+      (2,\text{\site{a}{}{}})\mapsto \{\freesymbol,(1,\text{\site{b}{}{}})\},\cr
+      (2,\text{\site{C}{}{}})\mapsto \{\freesymbol,(3,\text{\site{b}{}{}})\},
+      (3,\text{\site{a}{}{}})\mapsto \{\freesymbol,(1,\text{\site{c}{}{}})\},
+      (3,\text{\site{b}{}{}})\mapsto \{\freesymbol,(2,\text{\site{c}{}{}})\}
+    \end{array}\right]}$.
+  \end{enumerate}
+  and the biomolecular compound that is drawn in Fig.~\ref{fig:abc:triangle}, is the  $\Sigma$-graph $\graphsymb_{\Sigma}$ that is defined as follows:
+  \begin{enumerate}
+    \item $\agents[\graphsymb_\Sigma]\bydef\{1,2,3\}$;
+    \item $\type[\graphsymb_\Sigma]\bydef \map{\begin{cases}\begin{array}{ccc}%
+    1 &\mapsto&\agent{A}{}\cr%
+    2 &\mapsto&\agent{B}{}\cr%
+    3 &\mapsto&\agent{C}{}\cr%
+  \end{array}\end{cases}}{[1 \mapsto \agent{A}{}, 2  \mapsto \agent{B}{}, 3 \mapsto \agent{C}{}\;];}$
+    \item $\sites[\graphsymb_\Sigma]\bydef
+  \bigcup \{(n,i)\;|\; n\in \agents[\graphsymb_\Sigma],
+  i\in\linksite(\type[\graphsymb_{\Sigma}])\}$;
+    \item $\links[\graphsymb_\Sigma]\bydef\map{}{\left[%
+    \begin{array}{l}
+      (1,\text{\site{b}{}{}})\mapsto \{(2,\text{\site{a}{}{}})\},
+      (1,\text{\site{c}{}{}})\mapsto \{(3,\text{\site{a}{}{}})\},
+      (2,\text{\site{a}{}{}})\mapsto \{(1,\text{\site{b}{}{}})\},\cr
+      (2,\text{\site{c}{}{}})\mapsto \{(3,\text{\site{b}{}{}})\},
+      (3,\text{\site{a}{}{}})\mapsto \{(1,\text{\site{c}{}{}})\},
+      (3,\text{\site{b}{}{}})\mapsto \{(2,\text{\site{c}{}{}})\}
+    \end{array}\right]}$.
+  \end{enumerate}
 \end{myexample}
-\begin{myexample}[Contact map and $\Sigma$-graph]
-We give two examples of $\Sigma$-graph. We consider the $\Sigma$-graph $\graphsymb_\textit{CM}%\bydef\graphtuple[\graphsymb_\textit{CM}]
-$ that is defined as follows:
+\begin{myexample}[$\Sigma$-graph (EGF model)]
+We give two examples of $\Sigma$-graph for the model of the early events of the integration of the epidermic growth factor
+(eg.~see Fig.~\ref{sec:egfr}).
+
+The graph that is depicted in Fig.~\ref{fig:egfr:cm} is the $\Sigma$-graph $\graphsymb_\textit{CM}$ that is defined as follows:
 \begin{enumerate}
   \item $\agents[\graphsymb_\textit{CM}]\bydef\{1,2,3,4,5\}$;
   \item $\type[\graphsymb_\textit{CM}]\bydef \map{\begin{cases}\begin{array}{ccc}%
@@ -533,24 +583,30 @@ $ that is defined as follows:
   3 &\mapsto&\agent{Grb2}{}\cr%
   4 &\mapsto&\agent{ShC}{}\cr%
   5 &\mapsto&\agent{Sos}{}\cr%
-\end{array}\end{cases}}{[1 \mapsto \agent{EGF}{}, 2  \mapsto \agent{EGFR}{}, 3 \mapsto \agent{Grb2}{}, 4 \mapsto \agent{ShC}, 5 \mapsto \agent{Sos}];}$
+\end{array}\end{cases}}{[1 \mapsto \agent{EGF}{}, 2  \mapsto \agent{EGFR}{}, 3 \mapsto \agent{Grb2}{}, 4 \mapsto \agent{ShC}{}, 5 \mapsto \agent{Sos}{}];}$
   \item $\sites[\graphsymb_\textit{CM}]\bydef
 \bigcup \{(n,i)\;|\; n\in \agents[\graphsymb_\textit{CM}],
 i\in\linksite(\type[\graphsymb_{\textit{CM}}])\}$;
   \item $\links[\graphsymb_\textit{CM}]\bydef\map{}{\left[%
   \begin{array}{l}
-    (\text{\agent{EGF}{}},\text{\site{r}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{EGFR}{}},\text{\site{l}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{EGFR}{}},\text{\site{r}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{EGFR}{}},\text{\site{c}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{EGFR}{}},\text{\site{n}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{EGFR}{}},\text{\site{Y48}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{EGFR}{}},\text{\site{Y68}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{Grb2}{}},\text{\site{a}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{Grb2}{}},\text{\site{b}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{ShC}{}},\text{\site{pi}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{ShC}{}},\text{\site{Y7}{}{}})\mapsto \{\freesymbol,\},\cr
-    (\text{\agent{Sos}{}},\text{\site{d}{}{}})\mapsto \{\freesymbol,\},\cr
+    (1,\text{\site{r}{}{}})\mapsto \{\freesymbol,
+    (2,\text{\site{l}{}{}})\},\cr
+    (2,\text{\site{l}{}{}})\mapsto \{\freesymbol,
+    (1,\text{\site{r}{}{}})\},
+    (2,\text{\site{r}{}{}})\mapsto \{\freesymbol,(2,\text{\site{r}{}{}})\},
+    (2,\text{\site{c}{}{}})\mapsto \{\freesymbol,
+    (2,\text{\site{n}{}{}})\},\cr
+    (2,\text{\site{n}{}{}})\mapsto \{\freesymbol,
+    (2,\text{\site{c}{}{}})\},
+    (2,\text{\site{Y48}{}{}})\mapsto \{\freesymbol,(4,\text{\site{pi}{}{}})\},
+    (2,\text{\site{Y68}{}{}})\mapsto \{\freesymbol,
+    (3,\text{\site{a}{}{}})\},\cr
+    (3,\text{\site{a}{}{}})\mapsto \{\freesymbol,
+    (2,\text{\site{Y68}{}{}}),(4,\text{\site{Y7}{}{}})\},
+    (3,\text{\site{b}{}{}})\mapsto \{\freesymbol,(5,\text{\site{d}{}{}})\},\cr
+    (4,\text{\site{pi}{}{}})\mapsto \{\freesymbol,(2,\text{\site{Y48}{}{}})\},
+    (4,\text{\site{Y7}{}{}})\mapsto \{\freesymbol,(3,\text{\site{a}{}{}})\},\cr
+    (5,\text{\site{d}{}{}})\mapsto \{\freesymbol,(3,\text{\site{b}{}{}})\},\cr
   \end{array}\right]}$.
 \end{enumerate}
 and the $\Sigma$-graph $\graphsymb_{\Sigma}%$\bydef\graphtuple[\graphsymb_{\Sigma}]
@@ -558,37 +614,50 @@ $ that is defined as follows:
 \begin{enumerate}
   \item $\agents[\graphsymb_{\Sigma}]\bydef\{1,2,3,4\}$;
   \item $\type[\graphsymb_{\Sigma}]\bydef \map{\begin{cases}\begin{array}{ccc}%
-  1 &\mapsto&\agent{A}{}\cr%
-  2 &\mapsto&\agent{A}{}\cr%
-  3 &\mapsto&\agent{B}{}\cr%
-  4 &\mapsto&\agent{C}{}\cr%
-\end{array}\end{cases}}{[1 \mapsto \agent{A}{}, 2 \mapsto \agent{A}{}, 3 \mapsto \agent{B}{}, 4 \mapsto \agent{C}{}\;];}$
-  \item $\sites[\graphsymb_{\Sigma}]\bydef\left\{\begin{array}{l}(1,1),(1,2),(1,3),(2,1),(2,2),(2,3),\cr(3,1),(3,2),(3,3),(3,4),(4,1),(4,2)\end{array}\right\}$;
+  1 &\mapsto&\agent{EGF}{}\cr%
+  2 &\mapsto&\agent{EGF}{}\cr%
+  3 &\mapsto&\agent{EGFR}{}\cr%
+  4 &\mapsto&\agent{EGFR}{}\cr%
+  5 &\mapsto&\agent{Grb2}{}\cr%
+  6 &\mapsto&\agent{Grb2}{}\cr%
+  7 &\mapsto&\agent{ShC}{}\cr%
+  8 &\mapsto&\agent{ShC}{}\cr%
+  9 &\mapsto&\agent{Sos}{}.
+\end{array}\end{cases}}{\left[\begin{array}{l}1 \mapsto \agent{EGF}{}, 2 \mapsto \agent{EGF}{}, 3 \mapsto \agent{EGFR}{}, 4 \mapsto \agent{EGFR}{}, \cr 5 \mapsto \agent{Grb2}{}, 6 \mapsto \agent{Grb2}{}, 7 \mapsto \agent{ShC}{}, 8 \mapsto \agent{ShC}{},
+9 \mapsto \agent{Sos}{}\end{array}\right];}$
+  \item $\sites[\graphsymb_\Sigma]\bydef
+\bigcup \{(n,i)\;|\; n\in \agents[\graphsymb_\Sigma],
+i\in\linksite(\type[\graphsymb_{\Sigma}])\}$;
   \item $\links[\graphsymb_{\Sigma}]\bydef\map{}{\left[%
   \begin{array}{l}
-    (1,1)\mapsto\{%\freesymbol,
-    (3,1)\},
-    (1,2)\mapsto\{\freesymbol,(3,2),(3,3)\},
-    (1,3)\mapsto\{%\freesymbol,
-    (3,3),(4,2)\},\cr%
-    (2,1)\mapsto\{\freesymbol\},
-    (2,2)\mapsto\{\freesymbol,(3,2),(3,3)\},
-    (2,3)\mapsto\{\freesymbol,(3,3),(4,2)\},\cr%
-    (3,1)\mapsto\{\freesymbol,(1,1)\},
-    (3,2)\mapsto\{\freesymbol,(1,2),(2,2)\},\cr (3,3)\mapsto\{\freesymbol,(1,2),(1,3),(2,2),(2,3)\},
-    (3,4)\mapsto\{\freesymbol,(4,1)\},\cr%
-    (4,1)\mapsto\{\freesymbol,(3,4)\},
-    (4,2)\mapsto\{\freesymbol,(1,3),(2,3)\}
+    (1,\sitefont{r})\mapsto\{(3,\sitefont{l})\},
+    (2,\sitefont{r})\mapsto\{(4,\sitefont{l})\},\cr
+    (3,\sitefont{l})\mapsto \{(1,\sitefont{r})\},
+    (3,\sitefont{r})\mapsto \{(4,\sitefont{r})\},
+    (3,\sitefont{c})\mapsto \{(4,\sitefont{n})\},\cr
+    (3,\sitefont{n})\mapsto \{\freesymbol\},
+    (3,\sitefont{Y48})\mapsto \{(7,\sitefont{pi})\},
+    (3,\sitefont{Y68})\mapsto \{\freesymbol\},\cr
+    (4,\sitefont{l})\mapsto \{(2,\sitefont{r})\},
+    (4,\sitefont{r})\mapsto \{(3,\sitefont{r})\},
+    (4,\sitefont{c})\mapsto \{\freesymbol)\},\cr
+    (4,\sitefont{n})\mapsto \{(3,\sitefont{c})\},
+    (4,\sitefont{Y48})\mapsto \{(8,\sitefont{pi})\},
+    (4,\sitefont{Y68})\mapsto \{(6,\sitefont{a})\},\cr
+    (5,\sitefont{a})\mapsto \{(7,\sitefont{Y7})\},
+    (5,\sitefont{b})\mapsto \{(9,\sitefont{d})\},\cr
+    (6,\sitefont{a})\mapsto \{(4,\sitefont{Y68})\},
+    (6,\sitefont{b})\mapsto \{\freesymbol\},\cr
+    (7,\sitefont{pi})\mapsto \{(3,\sitefont{Y48})\},
+    (7,\sitefont{Y7})\mapsto \{(5,\sitefont{a})\},\cr
+    (8,\sitefont{pi})\mapsto \{(4,\sitefont{Y48})\},
+    (8,\sitefont{Y7})\mapsto \{\freesymbol\},\cr
+(9,\sitefont{d}) \mapsto \{(5,\sitefont{b})\}
   \end{array}\right]}.$
 \end{enumerate}
-The $\Sigma$-graphs $\graphsymb_{\textit{CM}}$ and $\graphsymb_{\Sigma}$
-are graphically described respectively in Figs.~\ref{fig:egfr:cm} and \ref{fig:egfr:species}. We notice that agent identifiers are omitted (an agent is identified by its position). Site identifiers are omitted. Sites are depicted in increasing order of their identifiers from bottom up.
 \end{myexample}
 
-The $\Sigma$-graph $\graphsymb_{\textit{CM}}$ plays a specific role: we call it the contact map of the model. In a contact map each agent type occurs exactly once and each agent documents its full set of sites. It can be
-interpreted as a context-insensitive description of the potential bindings
-between sites of agents.
-Contact maps encode some  specific type disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}.
+The $\Sigma$-graphs $\mathcal{T}_{\textit{CM}}$ and $\graphsymb_{\textit{CM}}$ play a specific role: we call them the contact maps of their respective models. In a contact map each agent type occurs exactly once and each agent documents its full set of sites.  Moreover every sites may be free, but may also be bound to some other sites as specified in the corresponding $\Sigma$-graph. Contact maps encode some  specific type disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}.
 
 
 $\Sigma$-graphs may be related by structure-preserving maps of agents, called morphisms. The definition of a morphism between two $\Sigma$-graphs  is given as follows:
@@ -607,11 +676,38 @@ for all agent identifiers $n$, $n'\in\agents[G]$, for all site identifiers $i\in
 Morphisms preserve the type of agents.
 They also preserve each agent set of sites, but more sites may be documented in the image of the morphism. A site that may be free shall be mapped to a site that may be free. Two sites that may be bound together shall be mapped to two sites that may be bound together. Lastly, whenever a site may be bound to an unspecified site, it shall be mapped to a site that is bound to either an unspecified or a specified (or both) one.
 
-\begin{myexample}[morphisms]
-The following function: $[1 \mapsto 1, 2 \mapsto 1, 3\mapsto 2, 4\mapsto 3]$ induces a morphism from the $\Sigma$-graph $\graphsymb_{\Sigma}$ into the $\Sigma$-graph $\graphsymb_{\textit{CM}}$. This morphism is graphically described in Fig.~\ref{fig:morphism}. We notice that both agents of type \agentfont{A} have been merged into a single agent in the contact map, while merging the potential states of their sites. This way, the contact map
-provides a coarser
-(context-insensitive) summary of potential bonds in a model.
+\begin{figure}[t]
+\hfill\scalebox{0.6}{\includegraphics{generated_pictures/abc_embed.pdf}}\hfill\mbox{}
+\caption{The unique morphism from the $\Sigma$-graph $\mathcal{T}_{\Sigma}$
+and the $\Sigma$-graph $\mathcal{T}_{\textit{CM}}$.}
+\label{fig:abc:embed}
+\end{figure}
+\begin{myexample}[morphisms (model of the triangle)]
+  \renewcommand{\graphsymb}{\mathcal{T}}
+A morphism between the $\Sigma$-graph $\graphsymb_{\Sigma}$ and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is depicted in Fig.~\ref{fig:abc:embed}. The morphism maps any agent of the $\Sigma$-graph
+$\graphsymb_{\Sigma}$ to the unique agent of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ having the same type.
+This is indeed the unique morphism from the  $\Sigma$-graph
+$\graphsymb_{\Sigma}$ to the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.
 \end{myexample}
+
+\begin{figure}[t]
+\hfill\scalebox{0.4}{\includegraphics{generated_pictures/egfr_embed.pdf}}\hfill\mbox{}
+\caption{The unique morphism from the $\Sigma$-graph $\graphsymb_{\Sigma}$
+and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.}
+  \label{fig:egfr:embed}
+\end{figure}
+\begin{myexample}[morphisms (EGF model)]
+
+A morphism between the $\Sigma$-graph $\graphsymb_{\Sigma}$ and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is depicted in Fig.~\ref{fig:abc:embed}. The morphism maps any agent of the $\Sigma$-graph
+$\graphsymb_{\Sigma}$ to the unique agent of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ having the same type.
+This is indeed the unique morphism from the  $\Sigma$-graph
+$\graphsymb_{\Sigma}$ to the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.
+\end{myexample}
+
+%The following function: $[1 \mapsto 1, 2 \mapsto 1, 3\mapsto 2, 4\mapsto 3]$ induces a morphism from the $\Sigma$-graph $\graphsymb_{\Sigma}$ into the $\Sigma$-graph $\graphsymb_{\textit{CM}}$. This morphism is graphically described in Fig.~\ref{fig:morphism}. We notice that both agents of type \agentfont{A} have been merged into a single agent in the contact map, while merging the potential states of their sites. This way, the contact map
+%provides a coarser
+%(context-insensitive) summary of potential bonds in a model.
+%\end{myexample}
 
 Two morphisms from a $\Sigma$-graph  $E$ to a $\Sigma$-graph $F$, and from the $\Sigma$-graph $F$ to a $\Sigma$-graph $G$ respectively, compose in the usual way (and form a morphism from the $\Sigma$-graph $E$ into the
 $\Sigma$-graph  $G$).
@@ -622,38 +718,38 @@ Now we restrict the definition of $\Sigma$-graphs so as to
 focus on the ones that may express parts of the state of the system.
 These $\Sigma$-graphs, that we call patterns, are defined as follows:
 
-\begin{figure}[t]
-
-\subfigure[The pattern $P$.]{%
-\label{fig:pattern}
-\begin{minipage}{\keep{\explainweakembedding}{0.3}{0.2}\linewidth}%
-\vspace*{16mm}\begin{center}
+%\begin{figure}[t]
+%
+%\subfigure[The pattern $P$.]{%
+%\label{fig:pattern}
+%\begin{minipage}{\keep{\explainweakembedding}{0.3}{0.2}\linewidth}%
+%\vspace*{16mm}\begin{center}
 %  \scalebox{0.4}{\includegraphics{generated_pictures/pattern.pdf}}\vspace*{3mm}\vspace*{0.45cm}\smallskip\\%
-\end{center}
-\end{minipage}}
-\keep{\explainweakembedding}{\subfigure[The pattern $P'$.]{%
-\label{fig:patternbis}
-\begin{minipage}{0.3\linewidth}%
-\vspace*{8mm}\begin{center}
+%\end{center}
+%\end{minipage}}
+%\keep{\explainweakembedding}{\subfigure[The pattern $P'$.]{%
+%\label{fig:patternbis}
+%\begin{minipage}{0.3\linewidth}%
+%\vspace*{8mm}\begin{center}
 %  \scalebox{0.4}{\includegraphics{generated_pictures/patternprime.pdf}}
-  \vspace*{29.3mm}\smallskip\\%
-\end{center}
-\end{minipage}}}{}
-\subfigure[The bio-molecular compound $S$.]{%
-\label{fig:species}
-\begin{minipage}{0.3\linewidth}%
-  \vspace*{8mm}
-\begin{center}\scalebox{0.4}{\includegraphics{generated_pictures/species.pdf}}\vspace*{3.8mm}\smallskip\\\end{center}%
-\end{minipage}}%
-\keep{\explainweakembedding}{
-
-}{}%
-\subfigure[An embedding from $P$ into $S$.]{%
-\label{fig:embedding}
-\begin{minipage}{0.45\linewidth}%
-\begin{center}%\scalebox{\keep{\explainweakembedding}{0.6}{0.6}}{\includegraphics{generated_pictures/embedding.pdf}}\smallskip\\
-  \end{center}%
-\end{minipage}}
+%  \vspace*{29.3mm}\smallskip\\%
+%\end{center}
+%\end{minipage}}}{}
+%\subfigure[The bio-molecular compound $S$.]{%
+%\label{fig:species}
+%\begin{minipage}{0.3\linewidth}%
+%  \vspace*{8mm}
+%\begin{center}\scalebox{0.4}{\includegraphics{generated_pictures/species.pdf}}\vspace*{3.8mm}\smallskip\\\end{center}%
+%\end{minipage}}%
+%\keep{\explainweakembedding}{
+%
+%}{}%
+%\subfigure[An embedding from $P$ into $S$.]{%
+%\label{fig:embedding}
+%\begin{minipage}{0.45\linewidth}%
+%\begin{center}%\scalebox{\keep{\explainweakembedding}{0.6}{0.6}}{\includegraphics{generated_pictures/embedding.pdf}}\smallskip\\
+%  \end{center}%
+%\end{minipage}}
 %\keep{\explainweakembedding}{\subfigure[A weak emnbedding from $P'$ into $S'$.]{%
 %\label{fig:weakembedding}
 %\begin{minipage}{0.45\linewidth}
@@ -661,9 +757,9 @@ These $\Sigma$-graphs, that we call patterns, are defined as follows:
 %      \scalebox{\keep{\explainweakembedding}{0.6}{0.6}}{\includegraphics{generated_pictures/weak_embedding.pdf}}\smallskip\\
 %  \end{center}
 %\end{minipage}}}{}
-\caption{\keep{\explainweakembedding}{Three}{Two} patterns $P$\keep{\explainweakembedding}{, $P'$,}{} and $S$,  \keep{\explainweakembedding}{}{and} an embedding from the pattern $P$ to the bio-molecular compound $S$\keep{\explainweakembedding}{, and a weak embedding from the pattern $P'$ to the bio-molecular compound $S$}{}. \keep{\explainweakembedding}{There is no embedding from $P'$ to $S$.}{} The pattern $S$ is a species: it forms a connected component and the state of each site in  each agent is fully documented.}
-\label{fig:patterns}
-\end{figure}
+%\caption{\keep{\explainweakembedding}{Three}{Two} patterns $P$\keep{\explainweakembedding}{, $P'$,}{} and $S$,  \keep{\explainweakembedding}{}{and} an embedding from the pattern $P$ to the bio-molecular compound $S$\keep{\explainweakembedding}{, and a weak embedding from the pattern $P'$ to the bio-molecular compound $S$}{}. \keep{\explainweakembedding}{There is no embedding from $P'$ to $S$.}{} The pattern $S$ is a species: it forms a connected component and the state of each site in  each agent is fully documented.}
+%\label{fig:patterns}
+%\end{figure}
 
 
 \begin{defn}[patterns]
@@ -677,49 +773,47 @@ The first condition ensures that the state of every site is either unspecified,
 or free, or bound to an unspecified site, or bound to a single specific site. The second condition ensures that a site is never bound to itself.
 
 
-\begin{myexample}[patterns]
-We give \keep{\explainweakembedding}{three}{two} examples of patterns. We consider the pattern $P%\bydef\graphtuple[P]
-$ that is defined as follows:
-\begin{enumerate}
-  \item $\agents[P]\bydef\{1\}$;
-  \item $\type[P]\bydef [1 \mapsto \agent{A}{}]$;
-  \item $\sites[P]\bydef\{(1,1),(1,3)\}$;
-  \item $\links[P]\bydef [(1,1)\mapsto \{\bound{}\}, (1,3)\mapsto \{\freesymbol{}\}]$\keep{\explainweakembedding}{,}{;}
-\end{enumerate}
-\keep{\explainweakembedding}{the pattern $P'%\bydef\graphtuple[P']
-$ that is defined as follows:
-\begin{enumerate}
-  \item $\agents[P']\bydef\{1\}$;
-  \item $\type[P']\bydef [1 \mapsto \agent{A}{}]$;
-  \item $\sites[P']\bydef\{(1,3)\}$;
-  \item $\links[P']\bydef [(1,3)\mapsto \{\freesymbol\}]$;
-\end{enumerate}}{}
-and the pattern $S%\bydef\graphtuple[S]
-$ that is defined as follows:
-\begin{enumerate}
-  \item $\agents[S]\bydef\{1,2,3,4\}$;
-  \item $\type[S]\bydef [1 \mapsto \agent{A}{}, 2 \mapsto \agent{A}{}, 3 \mapsto \agent{B}{}, 4 \mapsto \agent{C}{}]$;
-  \item $\sites[S]\bydef\left\{\begin{array}{l}(1,1),(1,2),(1,3),(2,1),(2,2),(2,3),\cr
-  (3,1),
-                               (3,2),(3,3),(3,4),(4,1),(4,2)\end{array}\right\}$;
-  \item $\links[S]\bydef
-\left[\begin{array}{l}
-      (1,1)\mapsto\{(3,1)\},
-      (1,2)\mapsto\{(3,2)\},
-      (1,3)\mapsto\{\freesymbol\},\cr
-      (2,1)\mapsto\{\freesymbol\},
-      (2,2)\mapsto\{(3,3)\},
-      (2,3)\mapsto\{\freesymbol\},\cr
-      (3,1)\mapsto\{(1,1)\},
-      (3,2)\mapsto\{(1,2)\},
-      (3,3)\mapsto\{(2,2)\},
-      (3,4)\mapsto\{(4,1)\},\cr
-      (4,1)\mapsto\{(3,4)\},
-      (4,2)\mapsto\{\freesymbol{}\}\end{array}\right]$.
-\end{enumerate}
-The patterns $P$\keep{\explainweakembedding}{, $P'$,}{} and $S$
-are graphically described respectively in Figs.~\ref{fig:pattern}\keep{\explainweakembedding}{,~\ref{fig:patternbis}}{}  and \ref{fig:species}.
-\end{myexample}
+%\begin{myexample}[patterns]
+%We give \keep{\explainweakembedding}{three}{two} examples of patterns. We consider the pattern $P%\bydef\graphtuple[P]$ that is defined as follows:
+%\begin{enumerate}
+%  \item $\agents[P]\bydef\{1\}$;
+%  \item $\type[P]\bydef [1 \mapsto \agent{A}{}]$;
+%  \item $\sites[P]\bydef\{(1,1),(1,3)\}$;
+%  \item $\links[P]\bydef [(1,1)\mapsto \{\bound{}\}, (1,3)\mapsto \{\freesymbol{}\}]$\keep{\explainweakembedding}{,}{;}
+%\end{enumerate}
+%\keep{\explainweakembedding}{the pattern $P'%\bydef\graphtuple[P']$ that is defined as follows:
+%\begin{enumerate}
+%  \item $\agents[P']\bydef\{1\}$;
+%  \item $\type[P']\bydef [1 \mapsto \agent{A}{}]$;
+%  \item $\sites[P']\bydef\{(1,3)\}$;
+%  \item $\links[P']\bydef [(1,3)\mapsto \{\freesymbol\}]$;
+%\end{enumerate}}{}
+%and the pattern $S%\bydef\graphtuple[S]
+%$ that is defined as follows:
+%\begin{enumerate}
+%  \item $\agents[S]\bydef\{1,2,3,4\}$;
+%  \item $\type[S]\bydef [1 \mapsto \agent{A}{}, 2 \mapsto \agent{A}{}, 3 \mapsto \agent{B}{}, 4 \mapsto \agent{C}{}]$;
+%  \item $\sites[S]\bydef\left\{\begin{array}{l}(1,1),(1,2),(1,3),(2,1),(2,2),(2,3),\cr
+%  (3,1),
+%                               (3,2),(3,3),(3,4),(4,1),(4,2)\end{array}\right\}$;
+%  \item $\links[S]\bydef
+%\left[\begin{array}{l}
+%      (1,1)\mapsto\{(3,1)\},
+%      (1,2)\mapsto\{(3,2)\},
+%      (1,3)\mapsto\{\freesymbol\},\cr
+%      (2,1)\mapsto\{\freesymbol\},
+%      (2,2)\mapsto\{(3,3)\},
+%      (2,3)\mapsto\{\freesymbol\},\cr
+%      (3,1)\mapsto\{(1,1)\},
+%      (3,2)\mapsto\{(1,2)\},
+%      (3,3)\mapsto\{(2,2)\},
+%      (3,4)\mapsto\{(4,1)\},\cr
+%      (4,1)\mapsto\{(3,4)\},
+%      (4,2)\mapsto\{\freesymbol{}\}\end{array}\right]$.
+%\end{enumerate}
+%The patterns $P$\keep{\explainweakembedding}{, $P'$,}{} and $S$
+%are graphically described respectively in Figs.~\ref{fig:pattern}\keep{\explainweakembedding}{,~\ref{fig:patternbis}}{}  and \ref{fig:species}.
+%\end{myexample}
 
 
 A bio-molecular compound is a connected pattern in which the state of each site is documented (no further information may be added). Depending on the choice of the semantics, the state of the system may be described either as a function from bio-molecular compound to concentrations (differential setting), or as a multi-set of bio-molecular compound  (stochastic setting).
@@ -732,23 +826,215 @@ Patterns may be related by embeddings. Besides preserving the structure of patte
   We denote as $[P,P']$ the set of the embeddings from a pattern $P$ to a pattern $P'$.
 \end{defn}
 
-\begin{myexample}[embeddings]
-  The function $[1\mapsto 1]$ induces an embedding from the pattern $P$ to the bio-molecular compound $S$, as depicted in Fig.~\ref{fig:embedding}. %There is no embedding from the pattern $P'$ to the pattern $S$.
-\end{myexample}
+%\begin{myexample}[embeddings]
+%  The function $[1\mapsto 1]$ induces an embedding from the pattern $P$ to the bio-molecular compound $S$, as depicted in Fig.~\ref{fig:embedding}. %There is no embedding from the pattern $P'$ to the pattern $S$.
+%\end{myexample}
 
 As opposed to classical notions of embeddings between graphs, embeddings between patterns preserve the freeness of sites.
 
 The composition of two embeddings is an embedding.
 
+Two patterns $E$ and $F$ are said isomorphic whenever there exist an embedding from the pattern $E$ to the pattern $F$ and an embedding from the pattern $F$ to the pattern $E$. We denote as $E \iso F$ whenever two patterns $E$ and $F$ are isomorphic. We also denote as $[E]_{\iso}$ the $\iso$-equivalence class of the pattern $E$. The $\iso$-equivalence class $[E]_{\iso}$ of the pattern $E$ is made of all the patterns that are isomorphic to the pattern $E$.
 
 \section{Reasoning on repeatable patterns}
 \label{sec:graphs}
-\subsection{Graph of sites}
+
+In this section, we formalise the problem of deciding whether or not a contact map is compatible with an infinite set of patterns. Then we introduce two kinds of graph to reason about this problem.
+
+\subsection{Interpretation of a contact map}
+
+Intuitively, we want to interpret a contact map as the set of the bio-molecular compounds which may be projected into that contact map by the means of a morphism. However this notion is not relevant to reason about the finiteness of the set of the bio-molecular compounds in  a given model. Indeed with such a  definition,  each model admitting at least one bio-molecular compound would always admit an infinite number of bio-molecular compounds due to isomorphisms. Thus we consider $\iso$-equivalence class of bio-molecular species instead.
+
+
+\begin{defn}[Interpretation of a contact map]
+The interpretation of a contact map $\graphsymb_{\textit{CM}}$ is defined as the set of the $\iso$-equivalence class of bio-molecular compound $[G]_{\iso}$ such that there exists a morphism from the site graph $G$ into the contact map $\graphsymb_{\textit{CM}}$.
+\end{defn}
+
+We can now state properly the problem we want to solve:
+\begin{problem}\label{problem}
+Let $\graphsymb_{\textit{CM}}$ be a contact map.
+We are looking for an automatic prodecure to decide whether
+the set $\llbracket \graphsymb_{\textit{CM}} \rrbracket$ is finite, or not.
+\end{problem}
+
+\subsection{Chains}
+
+In this section, we introduce a kind of pumping lemma in order to reduce
+Problem \ref{problem} to the one of detecting of  a repeatable pattern compatible with the contact.
+
+Firstly, we define properly a repeatable pattern as a chain of agents which may be itterated to form arbitraryly long patterns.
+
+\begin{defn}[Chain]
+A pattern is called a chain if and only if it satisfies the following properties:
+\begin{enumerate}
+  \item every agent documents at most two sites;
+  \item there is an agent with a site free or
+  that documents at most one site (or both);
+  \item at most two agents does not have two sites bound.
+\end{enumerate}
+\end{defn}
+
+In particular, every chain is connected.
+A chain is formed either of a single agents with at most two sites each of them free, or of a linear chain of agents with exactely two extremities. In the latter case, every agent not in the extremities has two sites and these sites are bound. The agents on the extremity either have exactely one site that is bound. Additionaly, it may have at most one site free.
+
+A chain is a repeatable patterns whenever it contains at least two agents and its extremities may be replug to each other. This is formalised in the following definition.
+
+\begin{defn}[repeatable pattern]
+A chain is called a repeatable pattern if and only if the following conditions are satisfied:
+\begin{enumerate}
+\item it has two distinct extremities;
+\item it has no free sites;
+\item both agents at the extremities are of the same kind;
+\item both sites documented by the extremities are different.
+\end{enumerate}
+A repeatable pattern is said elementary if and only if it contains no occurreence of repeatable pattern (besides itself).
+\end{defn}
+
+\begin{figure}[t]
+\subfigure[A chain with one site free.]{%
+\begin{minipage}{0.45\linewidth}
+\label{fig:repeatable:a}
+\centering\scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern_a.pdf}}
+\end{minipage}}%
+\subfigure[A chain with two extremities of different kinds.]{%
+\begin{minipage}{0.45\linewidth}
+\label{fig:repeatable:b}
+\centering\scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern_b.pdf}}
+\end{minipage}}%
+
+\subfigure[A chain with two extremities documenting the same site.]{%
+\begin{minipage}{0.45\linewidth}
+\centering\scalebox{0.4}{\includegraphics{generated_pictures/egfr_egfr_r.pdf}}
+\label{fig:repeatable:c}
+\end{minipage}}%
+\subfigure[An elementary repeatable pattern.]{%
+\begin{minipage}{0.45\linewidth}
+\label{fig:repeatable:d}
+\centering\scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern.pdf}}
+\end{minipage}}
+\caption{Four patterns. Each of them is a chain. But only the last one is repeatable.}
+\label{fig:repeatable}
+\end{figure}
+
+\begin{exmp}
+  We consider four patterns in Fig.~\ref{fig:repeatable}.
+  All these patterns are chains.
+  The pattern in Fig.~\ref{fig:repeatable:a} is not repeatable because one of its extremity has a free site.
+  The pattern in Fig.~\ref{fig:repeatable:b} is not repeatable
+  because its extremities are not of the same kind.
+  The pattern in Fig.~\ref{fig:repeatable:c} is not repeatable
+  because its extremities document the same site
+  The pattern in Fig.~\ref{fig:repeatable:d} is repeatble (and elementary).
+\end{exmp}
+
+We can now establish our pumping lemma.
+\begin{lemma}[pumping lemma]
+Let $\graphsymb_{\textit{CM}}$ be a contact map.
+Both following assertions are equivalent:
+\begin{enumerate}
+  \item The set $\llbracket \graphsymb_{\textit{CM}} \rrbracket$ is infinite;
+  \item There exist an elementary repeatable pattern $P$ and a morphism
+  between the pattern $P$ and the contact map $\graphsymb_{\textit{CM}}$.
+\end{enumerate}
+\end{lemma}
+
+\subsection{Graph of the sites}
+
+It is  tempting to interpret the following repeatable pattern:
+\begin{equation*}
+\scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern.pdf}}
+\end{equation*}
+as the sequence of sites $\sitefont{b}$ of $\agentfont{A}$, $\sitefont{a}$ of $\agentfont{B}$, $\sitefont{c}$ of $\agentfont{B}$, $\sitefont{b}$ of $\agentfont{C}$, $\sitefont{a}$ of $\agentfont{C}$, and $\sitefont{c}$ of $\agentfont{A}$. Yet in this sequence, sites are polarised.
+Each site on a odd position and the next one always belong to the same kind of protein.
+While there always exists a link between each site on an even position and the next one. Due to this polarisation, it is tempting to consider the sub-sequence of each other site in that sequence of sites.
+
+In the following, we define a graph that stands for all the potential sequences of sites that may occur on even occurrences in the repeatable patterns that are compatible with a given contact map. We call this graph the graph of the sites of this contact map.
+
+\begin{defn}[Graph of the sites]
+  Let $\graphsymb_{\textit{CM}}$ be a contact map.
+
+  The contact map $\graphsymb_{\textit{CM}}$ is associated with a classical graph $(\mathcal{V},\mathcal{E})$, called the graph of the sites that is defined as follows:
+  \begin{itemize}
+    \item $\mathcal{V}$ is the set $\sites[\graphsymb_{\textit{CM}}]$ of the sites of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.
+    \item $\mathcal{E}$ is the subset of $V\times V$ such that
+    $((n,i),(n',i'))\in E$ if and only if there exists a site
+    $i''\in\linksite(\type[\graphsymb_{\textit{CM}}](n'))$ such that:
+    $i'' \neq i'$ and $(n',i'')\in\links[\graphsymb_{\textit{CM}}](n,i)$.
+  \end{itemize}
+  \end{defn}
+
+In the edges of the graph of the sites, the sites via with we enter the target agent is kept implicit.
+
+The following theorem relates the cycles in the graph of the sites to the existence of repeatable patterns.
+
+\begin{theorem}
+  \label{th:site}
+  Let $\graphsymb_{\textit{CM}}$ be a contact map.
+
+Let $\agentfont{A}$ and $\agentfont{B}$ be two kinds of agent and
+$i$ and $i'$ be two site names.
+
+  Both following properties are equivalent:
+  \begin{enumerate}
+    \item There exists a repeatable pattern
+    with an agent of kind $\agentfont{A}$ connected via its site $i$
+    to one site of an agent of kind $\agentfont{B}$ itself connected to another agent via its site $i'$.
+\item There exist two agents $n$ and $n'$ respectively of kinds $\agentfont{A}$
+and  $\agentfont{B}$, and a  cycle in the graph of the sites of the contact map    $\graphsymb_{\textit{CM}}$  that passes by the edge $((n,i),(n',i'))$.
+  \end{enumerate}
+\end{theorem}
+
+Thus, Thm.~\ref{th:site} reduces the problem of deciding whether
+a contact map is compatible with an infinite number of non-isomorphic bio-molecular compounds to the one of computing the strongly connected components of the graph of the sites of this contact map.
+
+\begin{figure}
+  \subfigure[Contact map.]%
+  {\begin{minipage}{0.4\linewidth}\label{fig:abc:gs:cm}\centering\scalebox{0.4}{\includegraphics{generated_pictures/abc_contact_map.pdf}}\end{minipage}}%
+  \subfigure[Graph of the sites.]%
+  {\begin{minipage}{0.59\linewidth}\label{fig:abc:gs:gs}
+  \xymatrix@C=0.cm@R=0.35cm{
+  \begin{minipage}{1cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/a_b.pdf}}
+  \end{minipage}
+  \ar@{->}[rr]
+  &&
+  \begin{minipage}{1cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/b_c.pdf}}
+  \end{minipage}
+  \ar@{->}[ld]
+  &&&
+  \begin{minipage}{1cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/c_b.pdf}}
+  \end{minipage}
+  \ar@{->}[rd]
+  \cr
+&
+\begin{minipage}{1cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/c_a.pdf}}
+\end{minipage}
+\ar@{->}[lu]
+&&&
+\begin{minipage}{1cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/a_c.pdf}}
+\end{minipage}
+\ar@{->}[ru]
+&&
+\begin{minipage}{1cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/b_a.pdf}}
+\end{minipage}
+\ar@{->}[ll]
+ }\end{minipage}}
+
+  \caption{ABC model. In \ref{fig:abc:gs:cm}, we recall the contact map.
+  In Fig.~\ref{fig:abc:gs:gs}, we give the graph of the sites that is associated with this contact map. The nodes of these graphs are the sites of the contact map. There is an oriented edge between a node $s$ and a node $t$ if and only if there is a site connected in the contact map to the site $s$, in the same kind of protein as the site $t$ but distinct from $t$. }
+  \label{fig:abc:gs}
+\end{figure}
+
 
 \begin{figure}
   \subfigure[Contact map.]%
   {\begin{minipage}{0.4\linewidth}\label{fig:egfr:gs:cm}\scalebox{0.4}{\includegraphics{generated_pictures/contact_map.pdf}}\end{minipage}}%
-  \subfigure[Graph of sites.]%
+  \subfigure[Graph of the sites.]%
   {\begin{minipage}{0.59\linewidth}\label{fig:egfr:gs:gs}
   \xymatrix@C=0.cm@R=0.35cm{
   &&&\begin{minipage}{1cm}
@@ -806,17 +1092,133 @@ The composition of two embeddings is an embedding.
   &&\begin{minipage}{1cm}\scalebox{0.35}{\includegraphics{generated_pictures/grb2_b.pdf}}\end{minipage}&&\cr }\end{minipage}}
 
   \caption{EGFR model. In \ref{fig:egfr:gs:cm}, we recall the contact map.
-  In Fig.~\ref{fig:egfr:gs:gs}, we give the graph of sites that is associated with this contact map. The nodes of these graphs are the sites of the contact map. There is an oriented edge between a node $s$ and a node $t$ if and only if there is a site connected in the contact map to the site $s$, in the same kind of protein as the site $t$ but distinct from $t$. }
+  In Fig.~\ref{fig:egfr:gs:gs}, we give the graph of the sites that is associated with this contact map.  }
+  \label{fig:egfr:gs}
 \end{figure}
 
-\subsection{Graph of potential links}
+\begin{exmp}[graph of the sites (ABC model)]
+In Fig.~\ref{fig:abc:gs}, we compute the graph of the sites for the contact map of the model with three proteins that may form a triangle. It is worth noticing that this graph is made of exactly two non trivial strongly connected components.
+Each one corresponds to the triangle \agentfont{ABC} depending whether it is scanned clockwise or counter-clockwise. Further constraints would be required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
+\end{exmp}
+
+\begin{exmp}[graph of the sites (egfr model)]
+In Fig.~\ref{fig:egfr:gs}, we compute the graph of the sites for the contact map of the model of the early events in the integration of the epidermic growth factor. It is worth noticing that this graph has only one non trivial strongly connected component:
+\begin{equation*}\hspace*{1cm}\scalebox{1.5}{\xymatrix@C=0.5cm@R=0.35cm{\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_c.pdf}}\end{minipage}
+  \ar@{->}[rr]
+  \ar@{->}@(ul,dl)
+  &&
+\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_r.pdf}}\end{minipage}
+  \ar@{->}[ll]
+  \ar@{->}[rr]&&
+\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_n.pdf}}\end{minipage}
+  \ar@{->}[ll]
+  \ar@{->}@(ur,dr)&&}}\end{equation*}
+Further constraints are required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
+\end{exmp}
+
+
+\subsection{Graph of the potential links}
+
+We do not know how to refine the graph of the sites of a given contact map so as to take into account further constraints about the reachable bio-molecular compounds. We consider in this section another of kind of graphs which focuses on the different links in the contact map.
+
+Now we interpret the following repeatable pattern:
+\begin{equation*}
+\scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern.pdf}}
+\end{equation*}
+as the sequence of (oriented) links from the
+site $\sitefont{b}$ of $\agentfont{A}$ to the site
+ $\sitefont{a}$ of $\agentfont{B}$,
+ from the site $\sitefont{a}$ of $\agentfont{B}$ to the site $\sitefont{c}$ of $\agentfont{B}$,
+ from the site $\sitefont{c}$ of $\agentfont{B}$ to the site $\sitefont{b}$ of $\agentfont{C}$,
+ from the site $\sitefont{b}$ of $\agentfont{C}$ to the site $\sitefont{a}$ of $\agentfont{C}$, and from the site $\sitefont{a}$ of $\agentfont{C}$ to the site $\sitefont{c}$ of $\agentfont{A}$.
+
+In the following, we define a graph that stands for all the potential sequences of links that may occur on repeatable patterns that are compatible with a given contact map. We call this graph the graph of the potential links of this contact map.
+
+\begin{defn}[Graph of the potential links]
+  Let $\graphsymb_{\textit{CM}}$ be a contact map.
+
+  The contact map $\graphsymb_{\textit{CM}}$ is associated with a classical graph $(\mathcal{V},\mathcal{E})$, called the graph of the sites that is defined as follows:
+  \begin{itemize}
+    \item $\mathcal{V}$ is the subset of the pairs of elements $(s,s')$ of the set  $\sites[\graphsymb_{\textit{CM}}]$ of the sites of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ such that $s'=\links[\graphsymb_{\textit{CM}}](s)$.
+    \item $\mathcal{E}$ is the subset of the pairs $((s,s'),(s'',s'''))$ of pairs of sites in $\mathcal{V}\times\mathcal{V}$ for which  there exists an agent in the contact map $\graphsymb_{\textit{CM}}$ and two different site names $i$ and $i'$ such that $s'=(n,i)$ and $s''=(n,i')$.
+  \end{itemize}
+  \end{defn}
+
+The condition on the edges of the graph of the potential links ensures that
+both links may be consecutive in a repeatable pattern.
+
+The following theorem relates the cycles in the graph of the potential links to the existence of repeatable patterns.
+
+\begin{theorem}
+  \label{th:link}
+  Let $\graphsymb_{\textit{CM}}$ be a contact map.
+
+Let $\agentfont{A}$ and $\agentfont{B}$ be two kinds of agent and
+$i$ and $i'$ be two site names.
+
+  Both following properties are equivalent:
+  \begin{enumerate}
+    \item There exists a repeatable pattern
+    with an agent of kind $\agentfont{A}$ connected via its site $i$
+    to one site of an agent of kind $\agentfont{B}$ itself connected to another agent via its site $i'$.
+\item There exist two agents $n$ and $n'$ respectively of kinds $\agentfont{A}$
+and  $\agentfont{B}$, and a  cycle in the graph of the potential links of the contact map    $\graphsymb_{\textit{CM}}$  that passes by the vertice  $((n,i),(n',i'))$.
+  \end{enumerate}
+\end{theorem}
+
+Thus, Thm.~\ref{th:links} reduces the problem of deciding whether
+a contact map is compatible with an infinite number of non-isomorphic bio-molecular compounds to the one of computing the strongly connected components of the graph of the potential links of this contact map.
+
+
+\begin{figure}
+  \subfigure[Contact map.]%
+  {\begin{minipage}{0.4\linewidth}\label{fig:abc:gl:cm}\centering\scalebox{0.4}{\includegraphics{generated_pictures/abc_contact_map.pdf}}\end{minipage}}%
+  \subfigure[Graph of the sites.]%
+  {\begin{minipage}{0.59\linewidth}\label{fig:abc:gl:gl}
+  \xymatrix@C=0.cm@R=0.35cm{
+  \begin{minipage}{1cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b.pdf}}
+  \end{minipage}
+  \ar@{->}[rr]
+  &&
+  \begin{minipage}{1cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_b_c.pdf}}
+  \end{minipage}
+  \ar@{->}[ld]
+  &&&
+  \begin{minipage}{1cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_c_b.pdf}}
+  \end{minipage}
+  \ar@{->}[rd]
+  \cr
+&
+\begin{minipage}{1cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/link_c_a.pdf}}
+\end{minipage}
+\ar@{->}[lu]
+&&&
+\begin{minipage}{1cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/link_a_c.pdf}}
+\end{minipage}
+\ar@{->}[ru]
+&&
+\begin{minipage}{1cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/link_b_a.pdf}}
+\end{minipage}
+\ar@{->}[ll]
+ }\end{minipage}}
+ \caption{ABC model. In \ref{fig:abc:gl:cm}, we recall the contact map.
+ In Fig.~\ref{fig:abc:gl:gl}, we give the graph of the links that is associated with this contact map. The nodes of these graphs are obtained by orienting the links of the contact map (hence there are two nodes per links). }
+  \label{fig:abc:gl}
+\end{figure}
+
 
 \newcommand{\minipagesize}{1.3cm}
 \newcommand{\factor}{0.15}
 \begin{figure}
   \subfigure[Contact map.]%
   {\begin{minipage}{0.4\linewidth}\label{fig:egfr:gl:cm}\scalebox{0.4}{\includegraphics{generated_pictures/contact_map.pdf}}\end{minipage}}%
-  \subfigure[Graph of links.]%
+  \subfigure[Graph of the potential links.]%
   {%
   \begin{minipage}{0.59\linewidth}\label{fig:egfr:gl:gl}
   \xymatrix@C=0.cm@R=0.35cm{
@@ -885,11 +1287,42 @@ The composition of two embeddings is an embedding.
 \end{minipage}}
   %\scalebox{0.4}{\includegraphics{generated_pictures/egfr_graph_site.pdf}}}
   \caption{EGFR model. In \ref{fig:egfr:gl:cm}, we recall the contact map.
-  In Fig.~\ref{fig:egfr:gl:gl}, we give the graph of links that is associated with this contact map. The nodes of these graphs are obtained by orienting the links of the contact map (hence there are two nodes per links, except for the link between the site $r$ of $EGFR$ and it self, for which there is a unique node. There is an oriented edge between a node $s$ and a node $t$ if and only if the target site of the node $s$
+  In Fig.~\ref{fig:egfr:gl:gl}, we give the graph of the links that is associated with this contact map. There are two nodes per links, except for the link between the site $r$ of $EGFR$ and it self, for which there is a unique node. There is an oriented edge between a node $s$ and a node $t$ if and only if the target site of the node $s$
   and the source site of the node $t$ are different while belonging to the same kind of protein. }
 \end{figure}
 
-\section{Taking into account the result of a static analysis}
+
+\begin{exmp}[graph of the potential links (ABC model)]
+In Fig.~\ref{fig:abc:gl}, we compute the graph of the potential links for the contact map of the model with three proteins that may form a triangle. It is worth noticing that this graph is made of exactly two non trivial strongly connected components.
+Each one corresponds to the triangle \agentfont{ABC} depending whether it is scanned clockwise or counter-clockwise. Further constraints would be required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
+\end{exmp}
+
+\begin{exmp}[graph of the potential links (egfr model)]
+In Fig.~\ref{fig:egfr:gl}, we compute the graph of the potential links for the contact map of the model of the early events in the integration of the epidermic growth factor. It is worth noticing that this graph has only one non trivial strongly connected component:
+\begin{equation*}\hspace*{1cm}\scalebox{1.5}{\xymatrix@C=0.2cm@R=0.35cm{\begin{minipage}{1.2cm}\scalebox{0.15}{\includegraphics{generated_pictures/egfr_egfr_c.pdf}}\end{minipage}
+  \ar@{->}[rr]
+  \ar@{->}@(ul,dl)
+  &&
+\begin{minipage}{1.2cm}\scalebox{0.15}{\includegraphics{generated_pictures/egfr_egfr_r.pdf}}\end{minipage}
+  \ar@{->}[ll]
+  \ar@{->}[rr]&&
+\begin{minipage}{1.5cm}\scalebox{0.15}{\includegraphics{generated_pictures/egfr_egfr_n.pdf}}\end{minipage}
+  \ar@{->}[ll]
+  \ar@{->}@(ur,dr)&&}}\end{equation*}
+Further constraints are required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
+\end{exmp}
+
+\subsection{Taking into account the result of a static analysis}
+
+In this section, we explain how to refine the graph of the potential links of a gioven contact map, in order to take into the constraints about the reachable bio-molecular compounds that cannot be written in the contact map.
+These constraints may come from a black box static analysis \cite{SASB2016,KaSa} and they take the form of a set of patterns that shall occur in no reachable bio-molecular species.
+
+For instance, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules that describes a model and its set of initial state, that, in the early events of the integration of the epidermic growth factor, a receptor cannot be bound to two different instances of receptors. Indeed the analysis detects that the following patterns are unreachable:
+
+The analysis that is described in \cite{afp} generalises this approach to arbitrary cycles of proteins. In the example of the triangle, it may infer, when it is a consequence of a rules, that no two \agentfont{A}s may occur in a given connected compounds, by proving that the following pattern: 
+
+is unreachable
+
 
 \label{sec:refinement}
 \section{Conclusion}
