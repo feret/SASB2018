@@ -815,15 +815,15 @@ When there exists an embedding from a pattern $E$ into a pattern $F$, we often w
 \section{Reasoning on repeatable patterns}
 \label{sec:graphs}
 
-In this section, we formalise the problem of deciding whether or not a contact map is compatible with an infinite set of patterns. Then we introduce two kinds of graph to reason about this problem.
+In this section, we formalise the problem of deciding whether or not a contact map is compatible with an infinite set of bio-molecular compounds. Then we introduce two kinds of graph to reason about this problem.
 
 \subsection{Interpretation of a contact map}
 
-Intuitively, we want to interpret a contact map as the set of the bio-molecular compounds which may be projected into that contact map by the means of a morphism. However this notion is not relevant to reason about the finiteness of the set of the bio-molecular compounds in  a given model. Indeed with such a  definition,  each model admitting at least one bio-molecular compound would always admit an infinite number of bio-molecular compounds due to isomorphisms. Thus we consider $\iso$-equivalence class of bio-molecular compounds instead.
+Intuitively, a contact map may be interpreted as the set of the bio-molecular compounds which may be projected into that contact map by the means of a morphism. However this notion is not relevant to reason about the finiteness of the set of the bio-molecular compounds in  a given model. Indeed with such a  definition,  each model admitting at least one bio-molecular compound would admit an infinite number of bio-molecular compounds due to isomorphisms. Thus we consider $\iso$-equivalence classes of bio-molecular compounds instead.
 
 
 \begin{defn}[interpretation of a contact map]
-The interpretation, $\llbracket \graphsymb_{\textit{CM}} \rrbracket$ of a contact map $\graphsymb_{\textit{CM}}$ is defined as the set of the $\iso$-equivalence class of bio-molecular compound $[G]_{\iso}$ such that there exists a morphism from the site graph $G$ into the contact map $\graphsymb_{\textit{CM}}$.
+The interpretation $\llbracket \graphsymb_{\textit{CM}} \rrbracket$ of a contact map $\graphsymb_{\textit{CM}}$ is defined as the set of all the $\iso$-equivalence classes of bio-molecular compound $[G]_{\iso}$ such that there exists a morphism from the site graph $G$ into the contact map $\graphsymb_{\textit{CM}}$.
 \end{defn}
 
 We can now state properly the problem we want to solve:
@@ -836,9 +836,9 @@ the set $\llbracket \graphsymb_{\textit{CM}} \rrbracket$ is finite, or not.
 \subsection{Chains}
 
 In this section, we introduce a kind of pumping lemma in order to reduce
-Problem \ref{problem} to the one of detecting of  a repeatable pattern compatible with the contact.
+Problem \ref{problem} to the one of detecting of a repeatable pattern.
 
-Firstly, we define properly a repeatable pattern as a chain of agents which may be itterated to form arbitraryly long patterns.
+Firstly, we define properly a repeatable pattern as a chain of agents which may be iterated to form arbitrarily long patterns.
 
 \begin{defn}[Chain]
 A pattern is called a chain if and only if it satisfies the following properties:
@@ -851,9 +851,9 @@ A pattern is called a chain if and only if it satisfies the following properties
 \end{defn}
 
 In particular, every chain is connected.
-A chain is formed either of a single agents with at most two sites each of them free, or of a linear chain of agents with exactely two extremities. In the latter case, every agent not in the extremities has two sites and these sites are bound. The agents on the extremity either have exactely one site that is bound. Additionaly, it may have at most one site free.
+A chain is formed either of a single agents with at most two sites all free, or of a linear chain of agents with exactly two extremities. In the latter case, every agent not in the extremities has two sites and these sites are bound. The agents on the extremity either have exactly one site that is bound. Additionally, it may have at most one other site (which is free).
 
-A chain is a repeatable patterns whenever it contains at least two agents and its extremities may be replug to each other. This is formalised in the following definition.
+A chain is a repeatable patterns whenever it contains at least two agents and its extremities may be replug to each other. This is formalised as follows.
 
 \begin{defn}[repeatable pattern]
 A chain is called a repeatable pattern if and only if the following conditions are satisfied:
@@ -861,9 +861,9 @@ A chain is called a repeatable pattern if and only if the following conditions a
 \item it has two distinct extremities;
 \item it has no free sites;
 \item both agents at the extremities are of the same kind;
-\item both sites documented by the extremities are different.
+\item both sites documented at the extremities are different.
 \end{enumerate}
-A repeatable pattern is said elementary if and only if it contains no occurreence of repeatable pattern (besides itself).
+A repeatable pattern is said elementary if and only if it contains no occurrence of repeatable patterns (besides itself).
 \end{defn}
 
 \begin{figure}[t]
@@ -924,12 +924,12 @@ as the sequence of sites $\sitefont{b}$ of $\agentfont{A}$, $\sitefont{a}$ of $\
 Each site on a odd position and the next one always belong to the same kind of protein.
 While there always exists a link between each site on an even position and the next one. Due to this polarisation, it is tempting to consider the sub-sequence of each other site in that sequence of sites.
 
-In the following, we define a graph that stands for all the potential sequences of sites that may occur on even occurrences in the repeatable patterns that are compatible with a given contact map. We call this graph the graph of the sites of this contact map.
+Next we define a graph that stands for all the potential sequences of sites that may occur on even occurrences in the repeatable patterns that are compatible with a given contact map. This is the graph of the sites of this contact map.
 
 \begin{defn}[graph of the sites]
   Let $\graphsymb_{\textit{CM}}$ be a contact map.
 
-  The contact map $\graphsymb_{\textit{CM}}$ is associated with a classical graph $(\mathcal{V},\mathcal{E})$, called the graph of the sites that is defined as follows:
+  The contact map $\graphsymb_{\textit{CM}}$ is associated with a classical graph $(\mathcal{V},\mathcal{E})$, called the graph of the sites of the contact map $\graphsymb_{\textit{CM}}$, which is defined as follows:
   \begin{itemize}
     \item $\mathcal{V}$ is the set $\sites[\graphsymb_{\textit{CM}}]$ of the sites of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.
     \item $\mathcal{E}$ is the subset of $V\times V$ such that
@@ -954,7 +954,7 @@ $i$ and $i'$ be two site names.
   \begin{enumerate}
     \item There exists a repeatable pattern
     with an agent of kind $\agentfont{A}$ connected via its site $i$
-    to one site of an agent of kind $\agentfont{B}$ itself connected to another agethnt via its site $i'$.
+    to one site of an agent of kind $\agentfont{B}$ itself connected to another agent on site $i'$.
 \item There exist two agents $n$ and $n'$ respectively of kinds $\agentfont{A}$
 and  $\agentfont{B}$, and a  cycle in the graph of the sites of the contact map    $\graphsymb_{\textit{CM}}$  that passes by the edge $((n,i),(n',i'))$.
   \end{enumerate}
@@ -969,33 +969,33 @@ a contact map is compatible with an infinite number of non-isomorphic bio-molecu
   \subfigure[Graph of the sites.]%
   {\begin{minipage}{0.59\linewidth}\label{fig:abc:gs:gs}
   \xymatrix@C=0.cm@R=0.35cm{
-  \begin{minipage}{1cm}
+  \begin{minipage}{0.6cm}
   \scalebox{0.35}{\includegraphics{generated_pictures/a_b.pdf}}
   \end{minipage}
   \ar@{->}[rr]
   &&
-  \begin{minipage}{1cm}
+  \begin{minipage}{0.6cm}
   \scalebox{0.35}{\includegraphics{generated_pictures/b_c.pdf}}
   \end{minipage}
   \ar@{->}[ld]
   &&&
-  \begin{minipage}{1cm}
+  \begin{minipage}{0.6cm}
   \scalebox{0.35}{\includegraphics{generated_pictures/c_b.pdf}}
   \end{minipage}
   \ar@{->}[rd]
   \cr
 &
-\begin{minipage}{1cm}
+\begin{minipage}{0.6cm}
 \scalebox{0.35}{\includegraphics{generated_pictures/c_a.pdf}}
 \end{minipage}
 \ar@{->}[lu]
 &&&
-\begin{minipage}{1cm}
+\begin{minipage}{0.6cm}
 \scalebox{0.35}{\includegraphics{generated_pictures/a_c.pdf}}
 \end{minipage}
 \ar@{->}[ru]
 &&
-\begin{minipage}{1cm}
+\begin{minipage}{0.6cm}
 \scalebox{0.35}{\includegraphics{generated_pictures/b_a.pdf}}
 \end{minipage}
 \ar@{->}[ll]
@@ -1078,7 +1078,7 @@ Each one corresponds to the triangle \agentfont{ABC} depending whether it is sca
 \end{exmp}
 
 \begin{exmp}[graph of the sites (EGF model)]
-In Fig.~\ref{fig:egfr:gs}, we compute the graph of the sites for the contact map of the model of the early events in the integration of the epidermic growth factor. It is worth noticing that this graph has only one non trivial strongly connected component:
+In Fig.~\ref{fig:egfr:gs}, we compute the graph of the sites for the contact map of the model of the early events in the integration of the epidermic growth factor. It is worth noticing that this graph has only the following non trivial strongly connected component:
 \begin{equation*}\hspace*{1cm}\scalebox{1.5}{\xymatrix@C=0.5cm@R=0.35cm{\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_c.pdf}}\end{minipage}
   \ar@{->}[rr]
   \ar@{->}@(ul,dl)
@@ -1089,13 +1089,13 @@ In Fig.~\ref{fig:egfr:gs}, we compute the graph of the sites for the contact map
 \begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_n.pdf}}\end{minipage}
   \ar@{->}[ll]
   \ar@{->}@(ur,dr)&&}}\end{equation*}
-Further constraints are required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
+Further constraints are required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of different bio-molecular compounds).
 \end{exmp}
 
 
 \subsection{Graph of the potential links}
 
-We do not know how to refine the graph of the sites of a given contact map so as to take into account further constraints about the reachable bio-molecular compounds. We consider in this section another of kind of graphs which focuses on the different links in the contact map.
+We do not know how to refine the graph of the sites of a given contact map so as to take into account further constraints about the reachable bio-molecular compounds. We consider in this section another of kind of graphs which focuses on the different links in the contact map and that will be easier to refine.
 
 Now we interpret the following repeatable pattern:
 \begin{equation*}
@@ -1104,11 +1104,12 @@ Now we interpret the following repeatable pattern:
 as the sequence of (oriented) links from the
 site $\sitefont{b}$ of $\agentfont{A}$ to the site
  $\sitefont{a}$ of $\agentfont{B}$,
- from the site $\sitefont{a}$ of $\agentfont{B}$ to the site $\sitefont{c}$ of $\agentfont{B}$,
+ %from the site $\sitefont{a}$ of $\agentfont{B}$ to the site $\sitefont{c}$ of $\agentfont{B}$,
  from the site $\sitefont{c}$ of $\agentfont{B}$ to the site $\sitefont{b}$ of $\agentfont{C}$,
- from the site $\sitefont{b}$ of $\agentfont{C}$ to the site $\sitefont{a}$ of $\agentfont{C}$, and from the site $\sitefont{a}$ of $\agentfont{C}$ to the site $\sitefont{c}$ of $\agentfont{A}$.
+ %from the site $\sitefont{b}$ of $\agentfont{C}$ to the site $\sitefont{a}$ of $\agentfont{C}$,
+ and from the site $\sitefont{a}$ of $\agentfont{C}$ to the site $\sitefont{c}$ of $\agentfont{A}$.
 
-In the following, we define a graph that stands for all the potential sequences of links that may occur on repeatable patterns that are compatible with a given contact map. We call this graph the graph of the potential links of this contact map.
+In the following, we define a graph that stands for all the potential sequences of links that may occur on repeatable patterns that are compatible with a given contact map. We call this graph the graph of the potential links.
 
 \begin{defn}[graph of the potential links]
   Let $\graphsymb_{\textit{CM}}$ be a contact map.
@@ -1116,7 +1117,7 @@ In the following, we define a graph that stands for all the potential sequences 
   The contact map $\graphsymb_{\textit{CM}}$ is associated with a classical graph $(\mathcal{V},\mathcal{E})$, called the graph of the sites that is defined as follows:
   \begin{itemize}
     \item $\mathcal{V}$ is the subset of the pairs of elements $(s,s')$ of the set  $\sites[\graphsymb_{\textit{CM}}]$ of the sites of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ such that $s'=\links[\graphsymb_{\textit{CM}}](s)$.
-    \item $\mathcal{E}$ is the subset of the pairs $((s,s'),(s'',s'''))$ of pairs of sites in $\mathcal{V}\times\mathcal{V}$ for which  there exists an agent in the contact map $\graphsymb_{\textit{CM}}$ and two different site names $i$ and $i'$ such that $s'=(n,i)$ and $s''=(n,i')$.
+    \item $\mathcal{E}$ is the subset of the pairs $((s,s'),(s'',s'''))$ of pairs of sites in $\mathcal{V}\times\mathcal{V}$ for which  there exists an agent $n\in\agents[\graphsymb_{\textit{CM}}]$ and two different site names $i$ and $i' \in\linksite(\type[\graphsymb_{\textit{CM}}])$ such that $s'=(n,i)$ and $s''=(n,i')$.
   \end{itemize}
   \end{defn}
 
@@ -1136,14 +1137,14 @@ $i$ and $i'$ be two site names.
   \begin{enumerate}
     \item There exists a repeatable pattern
     with an agent of kind $\agentfont{A}$ connected via its site $i$
-    to one site of an agent of kind $\agentfont{B}$ itself connected to another agent via its site $i'$.
+    to the site $i'$ of an agent of kind $\agentfont{B}$;
 \item There exist two agents $n$ and $n'$ respectively of kinds $\agentfont{A}$
-and  $\agentfont{B}$, and a  cycle in the graph of the potential links of the contact map    $\graphsymb_{\textit{CM}}$  that passes by the vertice  $((n,i),(n',i'))$.
+and  $\agentfont{B}$, and a  cycle in the graph of the potential links of the contact map    $\graphsymb_{\textit{CM}}$  that passes by the vertex $((n,i),(n',i'))$.
   \end{enumerate}
 \end{theorem}
 
 Thus, Thm.~\ref{th:links} reduces the problem of deciding whether
-a contact map is compatible with an infinite number of non-isomorphic bio-molecular compounds to the one of computing the strongly connected components of the graph of the potential links of this contact map.
+a contact map is compatible with an infinite number of non-isomorphic bio-molecular compounds to the one of computing the strongly connected components of the graph of its potential links.
 
 
 \begin{figure}
@@ -1152,33 +1153,33 @@ a contact map is compatible with an infinite number of non-isomorphic bio-molecu
   \subfigure[Graph of the potential successive links.]%
   {\begin{minipage}{0.59\linewidth}\label{fig:abc:gl:gl}
   \xymatrix@C=0.cm@R=0.35cm{
-  \begin{minipage}{1cm}
+  \begin{minipage}{1.2cm}
   \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b.pdf}}
   \end{minipage}
   \ar@{->}[rr]
   &&
-  \begin{minipage}{1cm}
+  \begin{minipage}{1.2cm}
   \scalebox{0.35}{\includegraphics{generated_pictures/link_b_c.pdf}}
   \end{minipage}
   \ar@{->}[ld]
   &&&
-  \begin{minipage}{1cm}
+  \begin{minipage}{1.2cm}
   \scalebox{0.35}{\includegraphics{generated_pictures/link_c_b.pdf}}
   \end{minipage}
   \ar@{->}[rd]
   \cr
 &
-\begin{minipage}{1cm}
+\begin{minipage}{1.2cm}
 \scalebox{0.35}{\includegraphics{generated_pictures/link_c_a.pdf}}
 \end{minipage}
 \ar@{->}[lu]
 &&&
-\begin{minipage}{1cm}
+\begin{minipage}{1.2cm}
 \scalebox{0.35}{\includegraphics{generated_pictures/link_a_c.pdf}}
 \end{minipage}
 \ar@{->}[ru]
 &&
-\begin{minipage}{1cm}
+\begin{minipage}{1.2cm}
 \scalebox{0.35}{\includegraphics{generated_pictures/link_b_a.pdf}}
 \end{minipage}
 \ar@{->}[ll]
@@ -1263,8 +1264,8 @@ a contact map is compatible with an infinite number of non-isomorphic bio-molecu
 \end{minipage}}
   %\scalebox{0.4}{\includegraphics{generated_pictures/egfr_graph_site.pdf}}}
   \caption{EGF model. In \ref{fig:egfr:gl:cm}, we recall the contact map.
-  In Fig.~\ref{fig:egfr:gl:gl}, we give the graph of the links that is associated with this contact map. There are two nodes per links, except for the link between the site $r$ of $EGFR$ and it self, for which there is a unique node. There is an oriented edge between a node $s$ and a node $t$ if and only if the target site of the node $s$
-  and the source site of the node $t$ are different while belonging to the same kind of protein. }
+  In Fig.~\ref{fig:egfr:gl:gl}, we give the graph of the links that is associated with this contact map. There are two nodes per links, except for the link between the site $r$ of $EGFR$ and itself, for which there is a unique node.
+  }
   \label{fig:egfr:gl}
 \end{figure}
 
@@ -1312,7 +1313,7 @@ We refine the statement of Problem \ref{problem} so as take into account the con
 
 
 \begin{defn}[interpretation  with a set of forbidden patterns]
-The interpretation $\llbracket \graphsymb_{\textit{CM}}, \mathcal{P}\rrbracket$ of a contact map $\graphsymb_{\textit{CM}}$ with a set of forbidden patterns $\mathcal{P}$ is defined as the set of the $\iso$-equivalence class of bio-molecular compound $[G]_{\iso}$ such that there exists a morphism from the site graph $G$ into the contact map $\graphsymb_{\textit{CM}}$ and that $G$ contains no occurrence of patterns from the set $\mathcal{P}$.
+The interpretation $\llbracket \graphsymb_{\textit{CM}}, \mathcal{P}\rrbracket$ of a contact map $\graphsymb_{\textit{CM}}$ with a set of forbidden patterns $\mathcal{P}$ is defined as the set of the $\iso$-equivalence classes of bio-molecular compound $[G]_{\iso}$ such that there exists a morphism from the site graph $G$ into the contact map $\graphsymb_{\textit{CM}}$ and that $G$ contains no occurrence of patterns from the set $\mathcal{P}$.
 \end{defn}
 \begin{problem}\label{problembis}
 Let $\graphsymb_{\textit{CM}}$ be a contact map and $\mathcal{P}$ be a set of patterns.

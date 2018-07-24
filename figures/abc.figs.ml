@@ -308,7 +308,7 @@ let plot_link (a,b,c,d,name) =
   let [_,[sa,_];_,[sb,_]],er =
     add_in_graph
       [a,0.,0.,[],[b,[Direction e],[]];
-       c,0.4,0.,[],[d,[Direction w],[]]]
+       c,0.8,0.,[],[d,[Direction w],[]]]
       signature
 
   in
