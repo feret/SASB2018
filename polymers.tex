@@ -89,7 +89,7 @@
 \newcommand{\sites}[1][\graphsymb]{\mathcal{S}_{#1}}
 \newcommand{\links}[1][\graphsymb]{\mathcal{L}_{#1}}
 %\newcommand{\subtype}[1][G]{\leq_{#1}}
-\newcommand{\ext}{\{\freesymbol{},\bound{}\}}
+\newcommand{\ext}{\{\freesymbol{}\}}
 %\newcommand{\pushoutcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 %\newcommand{\pushoutcornerbis}[1][dr]{\save*!/#1-2.2pc/#1:(-1,1)@^{|-}\restore}
 %\newcommand{\pullbackcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
@@ -194,7 +194,7 @@ In Fig.~\ref{fig:abc:triangle} is described a bio-molecular compound that is com
 Also any bond between two sites complies with one link explicitly written in the contact map.
 Fig.~\ref{fig:abc:pattern} describes a repeatable pattern.
 This pattern is compatible with the contact map and can be repeated in order to form arbitrarily large bio-molecular compounds.
-}
+}\label{fig:abc}
 \end{figure}
 \section{Case studies}
 \label{sec:case-study}
@@ -387,7 +387,7 @@ additional constraints about reachable patterns come from a black box that we do
 \label{sec:kappa}
 
 In this section, we give some reminders about Kappa.
-Since we focus on counting some specific occurrences of patterns, we do not introduce the full semantics of Kappa. Instead, we introduce only the notions of site-graphs and of embeddings among them, and we omit the notions of rules and of rule applications. We also omit internal states, since we focus on the topology of the potential bindings between proteins.   We refer to \cite{DBLP:journals/tcs/DanosL04,Feret_IJSI2013} for a more complete description of Kappa.
+We do not introduce the full semantics of Kappa. Instead, we introduce only the notions of site-graphs and of embeddings among them. We omit the notions of rules and of rule applications. We also omit internal states, since we focus on the topology of the potential bindings between proteins.   We refer to \cite{DBLP:journals/tcs/DanosL04,Feret_IJSI2013} for a more complete description of Kappa.
 
 \subsection{Signature}
 
@@ -500,8 +500,8 @@ A $\Sigma$-graph is a tuple $\graphsymb\bydef\graphtuple[G]$ where:
 
 The set $\sites$ denotes the set of binding sites.
 Whenever $\freesymbol\;\in\links(n,i)$, the site $(n,i)$ may be free.
-Various levels of information may be given about the sites that are bound.
-Whenever $\bound{}\in\links(n,i)$, the site $(n,i)$ may be bound to an unspecified site.
+%Various levels of information may be given about the sites that are bound.
+%Whenever $\bound{}\in\links(n,i)$, the site $(n,i)$ may be bound to an unspecified site.
 Whenever $(n',i')\in\links(n,i)$ (and hence $(n,i)\in\links(n',i')$), the sites $(n,i)$ and $(n',i')$ may be bound together.
 
 For a $\Sigma$-graph $\graphsymb$, we write as $\agents[\graphsymb]$ its set of agents, $\type[\graphsymb]$ its typing function, $\sites[\graphsymb]$ its set of sites, and $\links[\graphsymb]$ its set of links.
@@ -510,10 +510,10 @@ For a $\Sigma$-graph $\graphsymb$, we write as $\agents[\graphsymb]$ its set of 
 \begin{myexample}[$\Sigma$-graphs (model of the triangle)]
   \renewcommand{\graphsymb}{\mathcal{T}}
   We give two examples of $\Sigma$-graph for the model of the triangle
-  (eg.~see Fig.~\ref{sec:triangle}).
+  (eg.~see Fig.~\ref{fig:abc}).
 
   The graph that is depicted in Fig.~\ref{fig:abc:cm} is the $\Sigma$-graph  $\graphsymb_\textit{CM}%\bydef\graphtuple[\graphsymb_\textit{CM}]
-  $ that is defined as follows:
+  $ defined as follows:
   \begin{enumerate}
     \item $\agents[\graphsymb_\textit{CM}]\bydef\{1,2,3\}$;
     \item $\type[\graphsymb_\textit{CM}]\bydef \map{\begin{cases}\begin{array}{ccc}%
@@ -560,7 +560,7 @@ For a $\Sigma$-graph $\graphsymb$, we write as $\agents[\graphsymb]$ its set of 
 We give two examples of $\Sigma$-graph for the model of the early events of the integration of the epidermic growth factor
 (eg.~see Fig.~\ref{sec:egfr}).
 
-The graph that is depicted in Fig.~\ref{fig:egfr:cm} is the $\Sigma$-graph $\graphsymb_\textit{CM}$ that is defined as follows:
+The graph that is depicted in Fig.~\ref{fig:egfr:cm} is the $\Sigma$-graph $\graphsymb_\textit{CM}$ defined as follows:
 \begin{enumerate}
   \item $\agents[\graphsymb_\textit{CM}]\bydef\{1,2,3,4,5\}$;
   \item $\type[\graphsymb_\textit{CM}]\bydef \map{\begin{cases}\begin{array}{ccc}%
@@ -654,13 +654,12 @@ for all agent identifiers $n$, $n'\in\agents[G]$, for all site identifiers $i\in
 \item $\type[G](n) = \type[H](h(n))$;
 \item if $(n,i)\in\sites[G]$, then $(h(n), i)\in\sites[H]$;
 \item if $(n',i')\in\links[G](n,i)$, then $(h(n'),i')\in\links[H](h(n),i)$;
-\item if \;$\freesymbol{ }\in\links[G](n,i)$, then \;$\freesymbol{ }\in\links[H](h(n),i)$;
-\item if $\bound{}\in\links[G](n,i)$, then  $\links[H](h(n),i)\cap\{\bound{}\}\cup\sites[H]\neq\emptyset$.
+\item if \;$\freesymbol{ }\in\links[G](n,i)$, then \;$\freesymbol{ }\in\links[H](h(n),i)$.
 \end{enumerate}
 \end{defn}
 
 Morphisms preserve the type of agents.
-They also preserve each agent set of sites, but more sites may be documented in the image of the morphism. A site that may be free shall be mapped to a site that may be free. Two sites that may be bound together shall be mapped to two sites that may be bound together. Lastly, whenever a site may be bound to an unspecified site, it shall be mapped to a site that is bound to either an unspecified or a specified (or both) one.
+They also preserve each agent set of sites, but more sites may be documented in the image of the morphism. A site that may be free shall be mapped to a site that may be free. Two sites that may be bound together shall be mapped to two sites that may be bound together. %Lastly, whenever a site may be bound to an unspecified site, it shall be mapped to a site that is bound to either an unspecified or a specified (or both) one.
 
 \begin{figure}[t]
 \hfill\scalebox{0.6}{\includegraphics{generated_pictures/abc_embed.pdf}}\hfill\mbox{}
@@ -670,7 +669,7 @@ and the $\Sigma$-graph $\mathcal{T}_{\textit{CM}}$.}
 \end{figure}
 \begin{myexample}[morphisms (model of the triangle)]
   \renewcommand{\graphsymb}{\mathcal{T}}
-A morphism between the $\Sigma$-graph $\graphsymb_{\Sigma}$ and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is depicted in Fig.~\ref{fig:abc:embed}. The morphism maps any agent of the $\Sigma$-graph
+A morphism between the $\Sigma$-graph $\graphsymb_{\Sigma}$ and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is depicted in Fig.~\ref{fig:abc:embed}. This morphism maps any agent of the $\Sigma$-graph
 $\graphsymb_{\Sigma}$ to the unique agent of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ having the same type.
 This is indeed the unique morphism from the  $\Sigma$-graph
 $\graphsymb_{\Sigma}$ to the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.
@@ -684,7 +683,7 @@ and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.}
 \end{figure}
 \begin{myexample}[morphisms (EGF model)]
 
-A morphism between the $\Sigma$-graph $\graphsymb_{\Sigma}$ and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is depicted in Fig.~\ref{fig:abc:embed}. The morphism maps any agent of the $\Sigma$-graph
+A morphism between the $\Sigma$-graph $\graphsymb_{\Sigma}$ and the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is depicted in Fig.~\ref{fig:abc:embed}. This morphism maps any agent of the $\Sigma$-graph
 $\graphsymb_{\Sigma}$ to the unique agent of the $\Sigma$-graph $\graphsymb_{\textit{CM}}$ having the same type.
 This is indeed the unique morphism from the  $\Sigma$-graph
 $\graphsymb_{\Sigma}$ to the $\Sigma$-graph $\graphsymb_{\textit{CM}}$.
@@ -756,7 +755,7 @@ A pattern is a $\Sigma$-graph $P$ such that, for every site $s\in\sites[P]$ both
 \end{enumerate}
 \end{defn}
 The first condition ensures that the state of every site is either unspecified,
-or free, or bound to an unspecified site, or bound to a single specific site. The second condition ensures that a site is never bound to itself.
+or free, or bound to a single specific site. The second condition ensures that a site is never bound to itself.
 
 
 %\begin{myexample}[patterns]
@@ -802,26 +801,16 @@ or free, or bound to an unspecified site, or bound to a single specific site. Th
 %\end{myexample}
 
 
-A bio-molecular compound is a connected pattern in which the state of each site is documented (no further information may be added). Depending on the choice of the semantics, the state of the system may be described either as a function from bio-molecular compound to concentrations (differential setting), or as a multi-set of bio-molecular compound  (stochastic setting).
+A bio-molecular compound is a connected pattern in which the state of each site is documented (no further information may be added).
 
 Patterns may be related by embeddings. Besides preserving the structure of patterns, embeddings map agents to agents injectively.
 
 \begin{defn}[embeddings]
   An embedding is a morphism from a pattern into another one, that is induced by an injective agent function.
-
-  We denote as $[P,P']$ the set of the embeddings from a pattern $P$ to a pattern $P'$.
 \end{defn}
 
-%\begin{myexample}[embeddings]
-%  The function $[1\mapsto 1]$ induces an embedding from the pattern $P$ to the bio-molecular compound $S$, as depicted in Fig.~\ref{fig:embedding}. %There is no embedding from the pattern $P'$ to the pattern $S$.
-%\end{myexample}
-
-As opposed to classical notions of embeddings between graphs, embeddings between patterns preserve the free sites.
-When there exists an embedding from a pattern $E$ into a pattern $F$, we often writte that the pattern $E$ embeds in the pattern $F$, or also that $E$ occurs in the pattern $F$.
-
-The composition of two embeddings is an embedding.
-
-Two patterns $E$ and $F$ are said isomorphic whenever there exist an embedding from the pattern $E$ to the pattern $F$ and an embedding from the pattern $F$ to the pattern $E$. We denote as $E \iso F$ whenever two patterns $E$ and $F$ are isomorphic. We also denote as $[E]_{\iso}$ the $\iso$-equivalence class of the pattern $E$. The $\iso$-equivalence class $[E]_{\iso}$ of the pattern $E$ is made of all the patterns that are isomorphic to the pattern $E$.
+As opposed to classical notions of embeddings between graphs, embeddings between patterns preserve free sites.
+When there exists an embedding from a pattern $E$ into a pattern $F$, we often write that the pattern $E$ embeds in the pattern $F$, or that $E$ occurs in the pattern $F$. The composition of two embeddings is an embedding. Two patterns $E$ and $F$ are isomorphic whenever there exist an embedding from the pattern $E$ to the pattern $F$ and an embedding from the pattern $F$ to the pattern $E$, which is denoted as $E \iso F$.  We also denote as $[E]_{\iso}$ the $\iso$-equivalence class of the pattern $E$. The $\iso$-equivalence class $[E]_{\iso}$ of the pattern $E$ is made of all the patterns that are isomorphic to the pattern $E$.
 
 \section{Reasoning on repeatable patterns}
 \label{sec:graphs}
