@@ -152,43 +152,19 @@ Strongly connected components
 \section{Introduction}
 
 Rule-based languages, such as Kappa \cite{DBLP:journals/tcs/DanosL04} and BNGL
-\cite{BNGL}, propose a transparent way to encode models of interactions between proteins.  Systems involving races on shared resources, different time- and concentration-scales, non linear feedback loops may be described by the means of rewrite rules. This allows for the description of very combinatorial models.   A huge (when not infinite) number of different kinds of bio-molecular compounds may arise due to the presence of scaffold and/or proteins with multiple binding and phosphorylation sites. The ultimate goal is then to understand how the collective behaviour of these proteins emerges from the mechanistic interactions between proteins.
+\cite{BNGL}, propose a transparent way to encode models of interactions between proteins.  Systems involving races for shared resources, different time- and concentration-scales, non linear feedback loops may be described by the means of rewrite rules. This allows for the description of very combinatorial models.   A huge (when not infinite) number of different kinds of bio-molecular compounds may arise due to the presence of scaffold and/or proteins with multiple binding and phosphorylation sites. The long term goal is then to understand how the collective behaviour of these proteins emerges from the mechanistic interactions between proteins.
 
-It is important to detect whether such a model involve an infinite number of different kinds of bio-molecular compounds. Often, the models come from a higher level of description \cite{DBLP:conf/cmsb/HarmerCLO17} or from automatic mining of the literature \cite{Gyori119834}. The presence of an infinite number of bio-molecular compounds is often a hint for a lack of specification. Namely, conflicts between potential bindings have not be specified enough and there is a need to refine the model. Sometimes the assembling of giant molecules is involved. In that later case, it is important to confirm that the model implements properly what the modeller has in mind.
+Detecting whether such a model involve an infinite number of different kinds of bio-molecular compounds, is important. Often, the models come from a higher level of description \cite{DBLP:conf/cmsb/HarmerCLO17} or from automatic mining of the literature \cite{Gyori119834}. The presence of an infinite number of bio-molecular compounds is often a hint for a lack of specification. Namely, conflicts between potential bindings have not be specified enough and there is a need to refine the model. Sometimes the assembling of giant molecules is involved. In that later case, it is important to confirm that the model implements properly what the modeller has in mind.
 The presence of an infinite number of distinct kinds of bio-molecular compounds also matters when choosing the most appropriate semantics for the models  (among stochastic, differential, hybrid).
 
-In this paper, we introduce some graph data-structure to abstract the potential unbounded polymers that may be formed in a rule-based model. These graphs either cope for the potential succession of sites along chain of proteins that
-occur within reachable bio-molecular compounds, or for the succession of bonds in these chains. They provide a sound and complete with respect to the information that is described in the contact map of the model, a graphical description of the potential binding between the sites of proteins.
-The contact map encodes only non relational information: it cannot establish relationships about the different binding states of pairs of sites.
-
-Then, we show how to refine the graph of the potential successive links in bio-molecular species in order to cope for the result of relational static analyses \cite{DanosEtAl-VMCAI08,SASB2016,KaSa}. Such static analyses provide a list of patterns that are know to be unreachable. As a result, we get a sound, but not complete approach (the detection of unreachable patterns in a rule-base language in undecidable anyway \cite{kreyBig}) that may detect and prove that the set of non-isomorphic bio-molecular compounds of a model is finite, without executing the model.
+In this paper, we introduce some graph structures to abstract the potential presence of unbounded polymers in a rule-based model. These graphs either cope for the potential succession of sites along chains of proteins in reachable bio-molecular compounds, or for the succession of bonds in these chains. They provide a sound and complete (with respect to the information provided by the contact map of the model) description of the potential binding between the sites of proteins.
+The contact map encodes only non relational information: it cannot establish relationships about the different binding states of pairs of sites. Then, we show how to refine the graph of the potential successive links in bio-molecular compounds in order to refine it with the result of external relational static analyses \cite{DanosEtAl-VMCAI08,SASB2016,KaSa}. Such static analyses provide a list of patterns that are known unreachable. As a result, we get a sound, but not complete approach (the detection of unreachable patterns in a rule-base language in undecidable anyway \cite{kreyBig}) that may detect and prove that the set of non-isomorphic bio-molecular compounds of a model is finite, without executing the model.
 
 The rest of the paper is organised as follows.
-Sec.~\ref{sec:case-study} introduces some case study to provide intuitions about the property we want to infer, and to highligh pitfalls we will have to avoid. Sec.~\ref{sec:kappa} gives some reminders about Kappa.
-Our approach is than described in Sec.~\ref{sec:graphs}.
+Sec.~\ref{sec:case-study} introduces some case study to provide intuitions about the property we want to infer, and to highlight pitfalls we will have to avoid. Sec.~\ref{sec:kappa} gives some reminders about Kappa.
+In Sec.~\ref{sec:graphs}, we introduce two families of graph to decide whether or not the set of bio-molecular compounds that are compatible with a contact map is finite. We refine our approach to deal with black-listed patterns in Sec.~\ref{sec:refinement}.
 
 
-%Site-graph rewriting languages such as Kappa \cite{DBLP:journals/tcs/DanosL04} or BNGL \cite{BNGL} supply a convenient way to describe models of signalling pathways. Unlike classical reaction networks, they emphasise the biochemical structure of proteins. We use connected patterns to formalise properties about bio-molecular species.
-%From an intentional perspective, a connected pattern is a part of a biochemical species. A pattern expresses some conditions over the states of sites in proteins. Interestingly, connected patterns  permit to reason locally on a bio-molecular species. In reaction networks, we can only say that a species is consumed or produced, with site-graph rewriting, we can also say that a species is transformed by a local transformation. Beyond the capability to express large networks in a compact way, this also gives rise to more compact notions of causalities as expressed by stories \cite{DBLP:conf/fsttcs/DanosFFHH12} or influence maps \cite{DanosEtAl-CONCUR07}. Thanks to this, site-graph rewriting models may be simulated efficiently, by using data-structures that quickly maintain the number of potential embeddings \cite{DanosEtAl-APLAS07,NFSim,DBLP:conf/esop/BoutillierEK17}, and this without ever compiling models into reaction networks.
-%From an extensional perspective, a connected pattern is a (potentially infinite) linear combination of bio-molecular species (the ones that contain the pattern multiplied by the number of their occurrences). This opens the door to many algebraic relationships.
-%One class of them comes from orthogonal refinement \cite{PNAS,SASB2016}. This consists in refining a given pattern, while considering all the potential states for the sites and the agents that are inserted. Gluing allows for the specialisation of a given rule to the consumption or to the production of a given connected pattern,  so as to express the derivative of the concentration (in the differential semantics) of this pattern as an expression of the other patterns \cite{DanosEtAl-LICS2010,Chaos,HDR}. This is very useful in  model reduction \cite{PNAS,DanosEtAl-LICS2010,Chaos,Camporesi:CMSB2013},
-%where constraints, collected by static inspection of the rules (without ever considering the underlying reaction networks) are used to define sets of self-consistent connected patterns, that we call fragments. The concentration of every  fragment may be defined by an ODE that depends only on the concentration of the other fragments.
-%These constraints describe which site may have an influence on the behaviour of other sites (flow of information), which sites may have had an influence on the behaviour of other sites (backward compatibility \cite{Camporesi:CMSB2013}). Quite inelegantly, these constraints have also to track the bonds that may be released by side-effects \cite{DanosEtAl-LICS2010,Camporesi:CMSB2013} in cyclic bio-chemical species. Fragment have to be closed with respect to the inverse of the paths formed by these oriented relationships: whenever a fragment contains the target of a dependence path, then it necessarily documents every agent and every site along that path. As a consequence, the number and the length of the paths of dependences impact the efficiency of fragment-based model reductions.
-
-
-%In this paper, we discover a new class of algebraic equalities among the number occurrences of patterns. We introduce a class of patterns, called extended patterns. An extended pattern is made of a classical pattern and of a set of potential bonds between pairs of sites. An extended pattern may be seen as a symbolic representation of the set of the patterns that may be obtained by inserting in the initial pattern a subset of the potential bonds. Conversely, each instance of the initial pattern in another pattern is associated with the subset of the potential bonds that are realised in the latter pattern. Extended patterns play an important role in expressing the consumption and the production of connected patterns when bonds are released in cyclic bio-molecular species. An instance of a connected pattern may be consumed  when at least one of its bonds is released, no matter how many of these bonds are released this way. Conversely, when a connected pattern is created, we have to consider the potential original configurations  of this pattern and focus on the instances of the initial pattern in which no other bonds that might have been released by side-effects are realised. This can be counted efficiently: we introduce the notions of positive  (when at least one of the potential bond is realised) and negative (when none of the potential bond is realised) instances of an extended pattern.  We show that the number of positive (resp.~negative) connected instances of each extended pattern may be expressed as an alternated sum of the number of occurrences of the patterns that are obtained by inserting a subset of the potential bonds in the initial pattern. Interestingly, the coefficient of each term in these combinations is either $1$ or $-1$ depending on the evenness of the number of the potential bonds that have been inserted. This allows for expressing new relationships between the number of occurrences of patterns. In particular, we can get rid of the constraints related to cycles in bio-molecular species  in model reduction (eg.~see item $2.$iii in Def~VI$.2$ of \cite{DanosEtAl-LICS2010} or condition $3$ in Def.~$14$ of \cite{Camporesi:CMSB2013}). These constraints were considering spurious dependences whenever rules that may break a bond in a cycle by degrading an agent without testing the state of any site, or by releasing a bond without testing anything else than the fact that the sites where connected together. But, before the result that we present here, it was impossible to exploit this. As a result, we can get a more elegant formulation of the analysis of flow of information and  we obtain a more compact model reduction.
-
-%Our framework is also potentially useful in the field of network free simulation. On the first hand, each new numerical relationships among the number of occurrences of patterns may help in optimising the sharing of information when estimating the activity of rules \cite{DBLP:conf/esop/BoutillierEK17}. On the second hand, alternated patterns may be extended to deal with potential paths of bonds, which would allow to estimate the activity of unary applications of binary interactions efficiently, instead of relying on clashes to estimate it statistically \cite{NFSim}.
-
-%These model reduction frameworks rely on the a previous analysis of the flow of information between the sites of bio-molecular species.
-%Intuitively, there is a flow of information from a site into another one whenever the state of the former site may influence the behaviour of the second site.
-%The flow of information induces a set of self-consistent connected patterns, called fragments, the concentration of which can be described by a means of ODEs without referring to the concentration of the other patterns, or of the bio-molecular species. A fragment is a connected pattern that is closed with respect to the inverse of the flow of information: whenever a fragment contains the target of a path of flow of information, then it necessarily documents every agent and every site along that path.
- %In order to ensure the self-consistency of the set of fragments, the flow of information is defined the following way.
-%Firstly, a flow from a site into another site has to be considered whenever the state of the first site has an impact on the behaviour of the second site. Secondly  every flow of information on a product  of a reaction has reported on the reactant of the reaction (this is the so-called backward compatibility principle
- %\cite{Camporesi:CMSB2013}).
-
-
-%\paragraph*{Outline.} In Sect.~\ref{sec:case-study}, we introduce a toy example so as to motivate our framework. In Sect.~\ref{sec:kappa}, we recall the notion of embedding between patterns in site-graph rewriting. In Sec.~\ref{sec:extended-patterns}, we introduce extended patterns, as patterns that may be refined by inserting some  potential bonds, and  relate the number of instances of the positive instances of an extended pattern (with at least one of the potential bonds inserted) and of the negative instances of an extended pattern (with none of the potential bonds inserted) to the number of instances of other patterns.
 
 \begin{figure}
   \subfigure[Contact map.]{%
@@ -217,13 +193,13 @@ either free $\freesymbol$, or bound to another site (which is encoded as a link 
 In Fig.~\ref{fig:abc:triangle} is described a bio-molecular compound that is compatible with the contact map. Every instance of proteins belongs to the contact map. Their interfaces are the same as in the contact map.
 Also any bond between two sites complies with one link explicitly written in the contact map.
 Fig.~\ref{fig:abc:pattern} describes a repeatable pattern.
-This pattern is compatible with the contact map and can be repeated in order to form arbitrarily large bio-molecular species.
+This pattern is compatible with the contact map and can be repeated in order to form arbitrarily large bio-molecular compounds.
 }
 \end{figure}
 \section{Case studies}
 \label{sec:case-study}
 
-In this section, we introduce some examples to explain intuitively why there may be an unbounded number of bio-molecular compounds in a rule-based model.  We also explain why naive approaches cannot be used to ensure that the number of bio-molecular compounds is finite in a given model,  while identifying the pitfalls that shall be avoided to achieve this goal.
+In this section, we introduce some examples to explain intuitively why there may be an unbounded number of bio-molecular compounds in a rule-based model.  We also explain why naive approaches may fail in proving that the number of bio-molecular compounds is finite in a given model when it is the case,  while identifying the pitfalls that shall be avoided to achieve this goal.
 
 \subsection{Elementary cycles}
 
@@ -231,9 +207,9 @@ In this section, we introduce some examples to explain intuitively why there may
 
 Let us start with a simple example. We consider a model involving three kinds of protein $A$, $B$, $C$. Each protein has two binding sites: the protein $A$ has the binding sites $b$ and $c$, the protein $B$ has the binding sites $a$ and $c$, and the protein $C$ has the binding sites $a$ and $b$. Each binding site may be free, or bound to another site. Only three kinds of bond are possible: the site $b$ of an instance of the protein $A$ may be bound to the site $a$ of an instance of the protein $B$; the site $c$ of an instance of the  protein $B$ may be bound to the site $b$ of an instance of the protein $C$; and the site $a$ of an instance of the protein $C$ may be bound to the site $c$ of a protein $A$.
 
-These assumptions are summarised in a graph in Fig.~\ref{fig:abc:cm}. This graph is called the contact map of the model. It describes every kind of protein and every site in their interfaces. The potential state of each site is also indicated. In our model, every site may be free: they are all tagged with the symbol $\freesymbol$. Potential bonds are indicated by the means of non oriented edges between pairs of sites.  The contact map provides a type discipline.
+These assumptions are summarised in a graph in Fig.~\ref{fig:abc:cm}. This graph is called the contact map of the model. It describes every kind of protein and every site in their interfaces. The potential state of each site is also indicated. In our model, every site may be free: they are all tagged with the symbol $\freesymbol$. Potential bonds are indicated by the means of non oriented edges between pairs of sites.  The contact map provides a typing discipline.
 Every bio-molecular compound in our models shall satisfy the constraints the contact map is encoding about the interface of agents, the potential states of sites, and their potential bindings. An example of bio-molecular compound that is compatible with the contact map is drawn in Fig.~\ref{fig:abc:triangle}. This bio-molecular compound is made of three proteins \agent{A}{}, \agent{B}{}, and \agent{C}{}{} that are bound pair-wise so as to form a triangular shape.
-In a bio-molecular compound, every site shall be exclusively either free, or bound to at most one other site. In general, a bio-molecular compound may not contain each kind of protein. Also it may contain several instances of a given one.
+In a bio-molecular compound, every site shall be exclusively either free, or bound to at most one other site. In general, a bio-molecular compound does not have to contain an instance of each kind of protein. Also it may contain several instances of some of them.
 
 The contact map that is given in Fig.~\ref{fig:abc:cm} is compatible with an infinite number of different (i.e.~\emph{non isomorphic}) molecular compounds.
 Indeed we show in Fig.~\ref{fig:abc:pattern}, a pattern
@@ -275,9 +251,9 @@ The pattern that is made of three proteins, the first two bound via their respec
 
 \subsection{Self loops}
 \label{sec:self-loop}
-In this example we consider a model with only one kind of protein. This protein has a single site which may be either free, or bound to the site of another protein of the same kind. Roughly speaking a protein may form a monomer (when its site is free), or belongs to a dimer (when its site is bound). These assumptions are encoded in the contact map that is given in Fig.~\ref{fig:self:cm}. We notice a cycle in this contact map (from the unique site of the protein to itself). Yet only the two bio-molecular compounds that are depicted in Fig.~\ref{fig:self:species} are compatible with this contact map:  there is a finite number of kinds of bio-molecular compound them despite the cycle in the contact map.
+In this example we consider a model with only one kind of protein. This protein has a single site which may be either free, or bound to the unique site of another protein of the same kind. Roughly speaking proteins may form monomers  and dimers. These assumptions are encoded in the contact map that is given in Fig.~\ref{fig:self:cm}. We notice a cycle in this contact map (from the unique site of the protein to itself). Yet only the two bio-molecular compounds that are depicted in Fig.~\ref{fig:self:species} are compatible with this contact map:  there is a finite number of kinds of bio-molecular compound them despite the presence of a cycle in the contact map.
 
-One could think that self-loops should not be considered as cycles when trying to prove that the number of bio-molecular compounds of a model is finite. Indeed whenever a molecular compound contains a bond that corresponds to a self-loop in the contact map, then both sites are necessarily  bound together and they are no longer available to form links with other sites. Yet the contact map that is given in Fig.~\ref{fig:twoself:cm} shows that it is unsafe in general  to discard the self-loops from the contact map. In this example, we consider only one kind of protein with two sites. Each site may be either free, or bound to the same site of another instance of the protein. It is then possible to form a chain a three proteins (see Fig.~\ref{fig:twoself:pattern}) that may be repeated an arbitrary number of times in a bio-molecular compound.
+One could think that self-loops should not be considered as cycles when trying to prove the finiteness of the set of bio-molecular compounds of a model. Indeed whenever a molecular compound contains a bond that corresponds to a self-loop in the contact map, then both sites are necessarily  bound together and they are no longer available to form links with other sites. Yet the contact map that is given in Fig.~\ref{fig:twoself:cm} shows that it is unsafe in general  to discard self-loops from the contact map. In this example, we consider only one kind of protein with two sites. Each site may be either free, or bound to the same site of another instance of the protein. It is then possible to form a chain a three proteins (see Fig.~\ref{fig:twoself:pattern}) that may be repeated an arbitrary number of times in a bio-molecular compound.
 
 \subsection{Conflicting bindings}
 \label{sec:conflict}
@@ -303,16 +279,16 @@ One could think that self-loops should not be considered as cycles when trying t
   \hspace*{3mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_g.pdf}}%
 
 \end{minipage}}
-\caption{An example of a protein with a site that may be bound to two different kinds of site. As drawn in the contact map (e.g.~see Fig.~\ref{fig:conflict:cm}), the site of the protein \agentfont{G} may be either free, bound to the site \sitefont{g} of the protein \agentfont{R}, or bound to the site \sitefont{g} of the protein \agentfont{S}. The cycle in the contact map does not induce an infinite number of different bio-molecular species (e.g.~see Fig.~\ref{fig:conflict:pattern}). }
+\caption{An example of a protein with a site that may be bound to two different kinds of site. As drawn in the contact map (e.g.~see Fig.~\ref{fig:conflict:cm}), the site of the protein \agentfont{G} may be either free, bound to the site \sitefont{g} of the protein \agentfont{R}, or bound to the site \sitefont{g} of the protein \agentfont{S}. The cycle in the contact map does not induce an infinite number of different bio-molecular compounds (e.g.~see Fig.~\ref{fig:conflict:pattern}). }
 \end{figure}
 
 In this example, we consider three kinds of protein \agentfont{G}, \agentfont{R}, and \agentfont{S}. The proteins of kind \agentfont{G} has a single site; the proteins of kind \agentfont{R} have two sites \sitefont{g} and \sitefont{s}; and the proteins of kind \agentfont{S} have two sites \sitefont {g} and \sitefont{r}. Proteins \agentfont{R} and \agentfont{S} may bind to each-other via their respective sires \sitefont{s} and \sitefont{r}.
-The unique site of proteins \agentfont{G} may be bound either to the site \sitefont{g} of an instance of the protein \agentfont{R}, or to the site \sitefont{g} of an instance of the protein \agentfont{S}. We say that there is a competition, or a conflict, on the site of the protein \agentfont{G}.
+The unique site of proteins \agentfont{G} may bind either to the site \sitefont{g} of an instance of the protein \agentfont{R}, or to the site \sitefont{g} of an instance of the protein \agentfont{S}. Thus, there is a competition, or a conflict, on the site of the protein \agentfont{G}.
 
 The contact map for this example is provided in Fig.~\ref{fig:conflict:cm}.
-We notice that the competition on the site of the protein \agentfont{G} belongs to a cycle in this contact map. Yet, in a given bio-molecular species,
-the site of each instance of \agentfont{G} is either free, or bound to at most one site. Thus the cycle of the contact map is not ''realisable"
-in a concrete bio-molecular compound. In Fig.~\ref{fig:conflict:pattern}, we enumerate all the bio-molecular compounds that are compatible witht the constraints encoded in the contact map. We notice that there is a finite amount of them, despite the presence of a cycle in the contact map.
+We notice that the competition on the site of the protein \agentfont{G} belongs to a cycle in this contact map. Yet, in a given bio-molecular compounds,
+the site of each instance of \agentfont{G} is either free, or bound to at most one site. Thus the cycle of the contact map is not realisable
+in a concrete bio-molecular compound. In Fig.~\ref{fig:conflict:pattern}, we enumerate all the bio-molecular compounds that are compatible witht the constraints encoded in the contact map. There is a finite amount of them, despite the presence of a cycle in the contact map.
 
 
 \subsection{Early events in the epidermic growth factor pathway}
@@ -345,35 +321,35 @@ in a concrete bio-molecular compound. In Fig.~\ref{fig:conflict:pattern}, we enu
 \caption{The example of the early events in the epidermic growth factor \cite{Blinov-2006-ANM}. In Fig.~\ref{fig:egfr:cm} is drawn the contact map. Compared to the original model in BNGL, we have omitted phosphorylation states, since they have no impact on the binding topology. We have also
 added two sites in the receptor to model the asymetric bond between receptors \agentfont{EGFR} in dimers.
 The model is constrained by the following property: whenever the site \sitefont{c} of a receptor \agentfont{EGFR} is bound, then its site \sitefont{r} is bound as well, and both sites are bound to the same instance
-of protein. The contact map is compatible with the repeatable pattern that is given in Fig.~\ref{fig:egfr:pattern}. Yet this pattern does not satisfy the additional constraint. Indeed the model has only a finite set of different bio-molecular compounds. In Fig.~\ref{fig:egfr:species} is given an example of a typical bio-molecular species.}
+of protein. The contact map is compatible with the repeatable pattern that is given in Fig.~\ref{fig:egfr:pattern}. Yet this pattern does not satisfy the additional constraint. Indeed the model has only a finite set of different bio-molecular compounds. In Fig.~\ref{fig:egfr:species} is given an example of a typical bio-molecular compounds.}
 \label{fig:egfr}
  \end{figure}
 
 So far, we have considered only toy examples, since we tried to understand which conditions on a contact map are necessary to induce only a finite number of bio-molecular compounds. In Fig.~\ref{fig:egfr}, we consider
 a model for the early events in the integration of the epidermic growth factor (EGF) \cite{Blinov-2006-ANM}. In this model, the acquisition of the protein \agentfont{Sos} by the membrane of the cell is made in several steps.
-Firstly a pair of receptors \agentfont{EGFR} on the membrane of the cell shall be activated by the ligands \agentfont{EGF}. Once bound to their respective ligands, they can form a dimer by establishing a symmetric bond via their respective sites
-\sitefont{r}. Compared to the BNGL model that is decribed in \cite{Blinov-2006-ANM}, we have also considered the asymmetric binding between receptors. To stabilize dimers, pairs of receptors that are bound via their sites \sitefont{r} establish an asymetric binding by connecting the site \sitefont{c} of one receptor to the site \sitefont{n} of the other receptor. The symmetric bond in a dimer cannot be released until the asymmetric one is. As a consequence, whenever the site \sitefont{c} of a receptor is bound to the site \sitefont{n} of another receptor, then both bond are also connected by a symmetric bond. This property can be computed
+Firstly a pair of receptors \agentfont{EGFR} on the membrane of the cell shall be activated by the ligands \agentfont{EGF}. Once bound to their respective ligands, they can form a dimer thanks to a symmetric bond via their respective sites
+\sitefont{r}. Compared to the BNGL model of \cite{Blinov-2006-ANM}, asymmetric bonds between receptors are also considered. To stabilise dimers, pairs of receptors that are bound via their sites \sitefont{r} form an asymmetric binding by connecting the site \sitefont{c} of one receptor to the site \sitefont{n} of the other receptor. The symmetric bond in a dimer cannot be released in the presence of an asymmetric one. As a consequence, whenever the site \sitefont{c} of a receptor is bound to the site \sitefont{n} of another receptor, these receptors are also connected by a symmetric bond. This property can be inferred
 by the static analysis that is described in \cite{SASB2016,KaSa}.
-Each receptor in a dimer may active the sites \sitefont{Y48} and \sitefont{Y68} of the other receptor (since we focus only on the binding topology, we have omitted the details about these activations which are performed by the means of phosphorylation). The site \sitefont{Y68} may bind to the protein \agentfont{Grb2}, which may be, or not, bond to the protein
+Each receptor in a dimer may activate the sites \sitefont{Y48} and \sitefont{Y68} of the other receptor (since we focus only on the binding topology, we omit the details about these activations which are performed by the means of phosphorylation). The site \sitefont{Y68} may bind to the protein \agentfont{Grb2}, which may be, or not, bound to the protein
 \agentfont{Sos}. The site \sitefont{Y48} connects to the protein \agentfont{Grb2} indirectly, thanks to the adapter protein \agentfont{Shc}.
 
-It is worth nothing that the contact map, that is depiceted in Fig.~\ref{fig:egfr:cm} does not provide all the information of the model.
-The constraint on the sites \sitefont{c}, \sitefont{n}, and \sitefont{r} emerges from some mecanisms that are described by the means of rules.
-We do not describe the rule here since we focus on the topology of the potential bindings between the sites of proteins. Yet we assume that we may be provided with additional constraints of the form of some forbidden patterns. This way, we assume that the bio-molecular compounds of our model are the ones that are compatible with the contact map and that does not contain any instance of the forbidden patterns.
+It is worth noticing that the contact map, that is depicted in Fig.~\ref{fig:egfr:cm} does not provide all the information about the model.
+The constraints on the sites \sitefont{c}, \sitefont{n}, and \sitefont{r} emerge from some mechanisms that are described by the means of rules.
+Rules are omitted here so as to focus on the topology of the potential bindings between the sites of proteins. Yet some additional constraints may be provided as a list of forbidden patterns. This way, we assume that the bio-molecular compounds of our model are the ones that are compatible with the contact map and that does not contain black-listed patterns.
 
 Interestingly, the contact map of the EGF model (e.g.~see \ref{fig:egfr:cm})
-contains both issues that we have pointed out in Sec.~\ref{sec:self-loop} and in Sect.~\ref{sec:conflict}. Indeed, the site \site{r}{}{} of a receptor may be bound to the site \site{r}{}{} of another receptor and there is a conflict on the site \site{a}{}{} of the protein \agent{Grb2}{} which may be bound to the receptor directly
-or via an adapater protein. Another issue is raised by this model.
+contains both issues that we have pointed out in Sec.~\ref{sec:self-loop} and in Sect.~\ref{sec:conflict}. Indeed, the site \site{r}{}{} of a receptor may be bound to the site \site{r}{}{} of another receptor. Moreover there is a conflict on the site \site{a}{}{} of the protein \agent{Grb2}{} which may be bound to the receptor directly
+or via an adapter protein. Another issue is raised by this model.
 The constraints provided by the contact map are not enough to ensure the finiteness of the set of the different bio-molecular compounds. Indeed,
-the pattern that is provided in Fig.~\ref{fig:egfr:pattern} is compatible with the contact map, and could be repeated an unbounded number of times to form an infinite number of different bio-molecular species. Nevertheless, this pattern is not compatible with the additional constraints about symmetric and assymetric bindings in dimers: there is only a finite number of different bio-mollecular compounds that satisfies both
+the pattern that is provided in Fig.~\ref{fig:egfr:pattern} is compatible with the contact map, and could be repeated an unbounded number of times to form an infinite number of different bio-molecular compounds. Nevertheless, this pattern is not compatible with the additional constraints about symmetric and assymetric bindings in dimers: there is only a finite number of different bio-mollecular compounds that satisfies both
 the constraints from the contact map and the additional constraint.
-In Fig.~\ref{fig:egfr:species}, we provide a typical example of bio-molecular compound in the EGFR model. This example is made of a dimer, with one site \sitefont{Y68} free, one site \sitefont{Y68} connected to a \agentfont{Grb2} not connected to \agentfont{Sos}, one site \sitefont{Y48} connected to an adapter not connected to \agentfont{Grb2}, and a site \sitefont{Y48} connected to \agentfont{Sos}. In general, a dimer may be connected to up to four instances of \agentfont{Sos}.
+In Fig.~\ref{fig:egfr:species}, we provide a typical example of bio-molecular compound in the EGF model. This example is made of a dimer, with one site \sitefont{Y68} free, one site \sitefont{Y68} connected to a \agentfont{Grb2} not connected to a \agentfont{Sos}, one site \sitefont{Y48} connected to an adapter not connected to a \agentfont{Grb2}, and a site \sitefont{Y48} connected to a \agentfont{Sos}. In total, a dimer may be connected to up to four instances of \agentfont{Sos}.
 
-On such a rather small model, it is possible to enumerate the different bio-molecular compounds thanks to reaction enumeration engines  \cite{BNGL,KaDe}. This model is made of $253$ kinds of bio-molecular species.
-If we insert information about phosphorylation, we get a model
-with $932$ kinds of bio-molecular species. Nevertheless, enumeration engines do not scale to large combinatorial networks such as the longer version of the EGFR model (including Ras, Erk, and Mapk) that is described in \cite{DanosEtAl-CONCUR07} and that involves around $10^19$ different kinds of different bio-molecular compounds \cite{DanosEtAl-VMCAI08} or the model of the interactions found in the cytoplasmic portion of the Structural Interaction Network (cSIN) \cite{Deeds-et-al-plosone2012,Kim} that involves an infinite number of bio-molecular compounds.
+On such a rather small model, it is possible to enumerate the different bio-molecular compounds thanks to reaction enumeration engines  \cite{BNGL,KaDe}. This model is made of $253$ kinds of bio-molecular compounds.
+Taking into acount phosphorylation states would lead to a model
+with $932$ kinds of bio-molecular compounds. Nevertheless, enumeration engines do not scale to large combinatorial networks such as the longer version of the EGF model (including the interactions with the proteins Ras, Erk, and Mapk) that is described in \cite{DanosEtAl-CONCUR07} and that involves about $10^{19}$ different kinds of bio-molecular compounds \cite{DanosEtAl-VMCAI08} or as the model of the interactions found in the cytoplasmic portion of the Structural Interaction Network (cSIN) \cite{Deeds-et-al-plosone2012,Kim} that involves an infinite number of bio-molecular compounds.
 
-Our goal is to design an well-suited data-structures to abstract the elementary repeatable patterns that are compatible with a contact map and with additional constraints.
+We will design a well-suited data-structure to abstract the elementary repeatable patterns that are compatible with a contact map and with additional constraints.
 
 \subsection{Clique}
 
@@ -381,16 +357,14 @@ In large combinatorial models, the set of elementary repeatable patterns
 may not be represented explicitely. It is important to abstract it.
 
 Let us consider the example of a clique of $n$ proteins.
-We call a clique of $n$ proteins any $n$ kinds of proteins such that each protein has exactely $n-1$ sites and that every pair of proteins of distinct kinds may be connected by exactely one pair of sites. The number of elementary repeatable patterns in a clique of $n$ proteins  is exponential with respect to $n$ (there is indeed $\frac{n!}{k!}$  elementary repeatable patterns with exactely $k+1$ proteins, for any $k$ such that $2\leq k \leq n$).
-
-As a consequence, it is not possible to enumerate all the elementary repeatable
-patterns that are compatible with large combinatorial contact maps. In this paper, we will instead compute exactely the set of bonds that may occur in these reapeatable patterns.
+We call a clique of $n$ proteins any $n$ kinds of protein such that each protein has exactly $n-1$ sites and that every pair of proteins of distinct kinds may be connected by exactly one pair of sites. The number of elementary repeatable patterns in a clique of $n$ proteins  is exponential with respect to $n$ (there is indeed $\frac{n!}{k!}$  elementary repeatable patterns with exactly $k+1$ proteins, for any $k$ such that $2\leq k \leq n$).
+Thus they cannot be all enumerated. In this paper, we will instead compute exactly the set of bonds that may occur in repeatable patterns.
 Our approach is based on the use of some graphs that are derived from the contact map, and for which edges correspond to the potential bonds in elementary repeatable patterns. We use Tarjan's algorithm \cite{tarjan} to compute the strongly connected components of these graphs. Our analysis is sound and complete with respect to the constraints that are encoded in the contact map: a bond may occur in a repeatable pattern that is compatible with a given  contact map if and only if it corresponds to an edge in a non trivial strongly connected component of the graph that is associated to this contact map. Moreover, it is possible to take into account additional constraints about the patterns that are proved to be unreachable by traditional static analysis \cite{SASB2016,KaSa}.
 
 \emph{Outline.} The rest of the paper is organised as follows.
 In Sec.~\ref{sec:kappa}, we give some reminders about Kappa.
 We focus only on static reasoning about graphs. We do not introduce the notion of rules. We assume that
-additional consrtraints about reachable patterns come from a black box that we do not describe in this paper. In Sec.~\ref{sec:graphs}, we introduce two notions of graphs: the graph of the sites and the graph of the potential links. Both notions can be used to reason about the finiteness of the set of bio-molecular compounds in a Kappa model. Yet we will see in Sec.~\ref{sec:refinement}, that the graph of the potential links may be refined to take into account the patterns that may be proved unreachable by an external tool.
+additional constraints about reachable patterns come from a black box that we do not describe in this paper. In Sec.~\ref{sec:graphs}, we introduce two notions of graphs: the graph of the sites and the graph of the potential links. Both notions can be used to reason about the finiteness of the set of bio-molecular compounds in a Kappa model. Yet we will see in Sec.~\ref{sec:refinement}, that the graph of the potential links may be refined to take into account the patterns that may be proved unreachable by an external tool.
 
 
 
@@ -506,7 +480,7 @@ $\Sigma$-graphs are graphs the nodes of which are typed agents with some sites w
 \end{minipage}}
 
 \caption{Two $\Sigma$-graphs $\graphsymb_{\textit{CM}}$ and
-$\graphsymb_{\textit{SP}}$, and a morphism from $\graphsymb_{\textit{CM}}$ to $\graphsymb_{\Sigma}$. The $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is a contact map. It provides context-insensitive information about the potential state of each binding site. The $\Sigma$-graph $\graphsymb_{\textit{SP}}$ is a bio-molecular species. It containts several instances of some proteins.
+$\graphsymb_{\textit{SP}}$, and a morphism from $\graphsymb_{\textit{CM}}$ to $\graphsymb_{\Sigma}$. The $\Sigma$-graph $\graphsymb_{\textit{CM}}$ is a contact map. It provides context-insensitive information about the potential state of each binding site. The $\Sigma$-graph $\graphsymb_{\textit{SP}}$ is a bio-molecular compounds. It containts several instances of some proteins.
 Every site is documented in each protein instance and each site is either free, or bound to another site. The morphism between $\graphsymb_{\textit{CM}}$ and $\graphsymb_{\textit{SP}}$ smashes all
 the proteins of the $\Sigma$-graph $\graphsymb_{\textit{SP}}$ according to their type. This is the unique morphism from the site graph $\graphsymb_{\textit{CM}}$ into the site-graph $\graphsymb_{\textit{SP}}$.
 }
@@ -532,11 +506,6 @@ Whenever $(n',i')\in\links(n,i)$ (and hence $(n,i)\in\links(n',i')$), the sites 
 
 For a $\Sigma$-graph $\graphsymb$, we write as $\agents[\graphsymb]$ its set of agents, $\type[\graphsymb]$ its typing function, $\sites[\graphsymb]$ its set of sites, and $\links[\graphsymb]$ its set of links.
 
-%Contact maps are specific kinds of $\Sigma$-graphs.
-%More precisely, a contact map is a $\Sigma$-graph in which
-%there is exactely one instance of each kind of proteins and
-%every protein instance documents all the sites of its interface.
-%Contact maps encode some  specific type disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}.
 
 \begin{myexample}[$\Sigma$-graphs (model of the triangle)]
   \renewcommand{\graphsymb}{\mathcal{T}}
@@ -674,7 +643,7 @@ i\in\linksite(\type[\graphsymb_{\Sigma}])\}$;
 \end{enumerate}
 \end{myexample}
 
-The $\Sigma$-graphs $\mathcal{T}_{\textit{CM}}$ and $\graphsymb_{\textit{CM}}$ play a specific role: we call them the contact maps of their respective models. In a contact map each agent type occurs exactly once and each agent documents its full set of sites.  Moreover every sites may be free, but may also be bound to some other sites as specified in the corresponding $\Sigma$-graph. Contact maps encode some  specific type disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}.
+The $\Sigma$-graphs $\mathcal{T}_{\textit{CM}}$ and $\graphsymb_{\textit{CM}}$ play a specific role: we call them the contact maps of their respective models. In a contact map each agent type occurs exactly once and each agent documents its full set of sites.  Moreover every sites may be free, but may also be bound to some other sites as specified in the corresponding $\Sigma$-graph. Contact maps encode some  specific typing disciplines \cite{DBLP:journals/mscs/DanosHW13}: they summarise the potential bonds and provide contextual conditions over them \cite{Camporesi:CMSB2013}.
 
 
 $\Sigma$-graphs may be related by structure-preserving maps of agents, called morphisms. The definition of a morphism between two $\Sigma$-graphs  is given as follows:
@@ -861,7 +830,7 @@ In this section, we formalise the problem of deciding whether or not a contact m
 
 \subsection{Interpretation of a contact map}
 
-Intuitively, we want to interpret a contact map as the set of the bio-molecular compounds which may be projected into that contact map by the means of a morphism. However this notion is not relevant to reason about the finiteness of the set of the bio-molecular compounds in  a given model. Indeed with such a  definition,  each model admitting at least one bio-molecular compound would always admit an infinite number of bio-molecular compounds due to isomorphisms. Thus we consider $\iso$-equivalence class of bio-molecular species instead.
+Intuitively, we want to interpret a contact map as the set of the bio-molecular compounds which may be projected into that contact map by the means of a morphism. However this notion is not relevant to reason about the finiteness of the set of the bio-molecular compounds in  a given model. Indeed with such a  definition,  each model admitting at least one bio-molecular compound would always admit an infinite number of bio-molecular compounds due to isomorphisms. Thus we consider $\iso$-equivalence class of bio-molecular compounds instead.
 
 
 \begin{defn}[interpretation of a contact map]
@@ -1109,7 +1078,7 @@ a contact map is compatible with an infinite number of non-isomorphic bio-molecu
   \begin{minipage}{1cm}\scalebox{0.35}{\includegraphics{generated_pictures/shc_Y7.pdf}}\ar@{->}[rr]\end{minipage}
   &&\begin{minipage}{1cm}\scalebox{0.35}{\includegraphics{generated_pictures/grb2_b.pdf}}\end{minipage}&&\cr }\end{minipage}}
 
-  \caption{EGFR model. In \ref{fig:egfr:gs:cm}, we recall the contact map.
+  \caption{EGF model. In \ref{fig:egfr:gs:cm}, we recall the contact map.
   In Fig.~\ref{fig:egfr:gs:gs}, we give the graph of the sites that is associated with this contact map.  }
   \label{fig:egfr:gs}
 \end{figure}
@@ -1119,7 +1088,7 @@ In Fig.~\ref{fig:abc:gs}, we compute the graph of the sites for the contact map 
 Each one corresponds to the triangle \agentfont{ABC} depending whether it is scanned clockwise or counter-clockwise. Further constraints would be required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
 \end{exmp}
 
-\begin{exmp}[graph of the sites (egfr model)]
+\begin{exmp}[graph of the sites (EGF model)]
 In Fig.~\ref{fig:egfr:gs}, we compute the graph of the sites for the contact map of the model of the early events in the integration of the epidermic growth factor. It is worth noticing that this graph has only one non trivial strongly connected component:
 \begin{equation*}\hspace*{1cm}\scalebox{1.5}{\xymatrix@C=0.5cm@R=0.35cm{\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_c.pdf}}\end{minipage}
   \ar@{->}[rr]
@@ -1304,7 +1273,7 @@ a contact map is compatible with an infinite number of non-isomorphic bio-molecu
     }
 \end{minipage}}
   %\scalebox{0.4}{\includegraphics{generated_pictures/egfr_graph_site.pdf}}}
-  \caption{EGFR model. In \ref{fig:egfr:gl:cm}, we recall the contact map.
+  \caption{EGF model. In \ref{fig:egfr:gl:cm}, we recall the contact map.
   In Fig.~\ref{fig:egfr:gl:gl}, we give the graph of the links that is associated with this contact map. There are two nodes per links, except for the link between the site $r$ of $EGFR$ and it self, for which there is a unique node. There is an oriented edge between a node $s$ and a node $t$ if and only if the target site of the node $s$
   and the source site of the node $t$ are different while belonging to the same kind of protein. }
   \label{fig:egfr:gl}
@@ -1316,7 +1285,7 @@ In Fig.~\ref{fig:abc:gl}, we compute the graph of the potential links for the co
 Each one corresponds to the triangle \agentfont{ABC} depending whether it is scanned clockwise or counter-clockwise. Further constraints would be required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
 \end{exmp}
 
-\begin{exmp}[graph of the potential links (egfr model)]
+\begin{exmp}[graph of the potential links (EGF model)]
 In Fig.~\ref{fig:egfr:gl}, we compute the graph of the potential links for the contact map of the model of the early events in the integration of the epidermic growth factor. It is worth noticing that this graph has only one non trivial strongly connected component:
 \begin{equation*}\hspace*{1cm}\scalebox{1.5}{\xymatrix@C=0.2cm@R=0.35cm{\begin{minipage}{1.2cm}\scalebox{0.15}{\includegraphics{generated_pictures/egfr_egfr_c.pdf}}\end{minipage}
   \ar@{->}[rr]
@@ -1331,10 +1300,10 @@ In Fig.~\ref{fig:egfr:gl}, we compute the graph of the potential links for the c
 Further constraints are required on the bio-molecular compounds of the models to prove that there is a finite amount of them (the contact map of the model is compatible with an infinite number of them).
 \end{exmp}
 
-\subsection{Taking into account the result of a static analysis}
+\section{Taking into account the result of a static analysis}
 
 In this section, we explain how to refine the graph of the potential links of a given contact map, in order to take into some additional constraints about the potentially reachable bio-molecular compounds.
-These constraints may come from a static analysis \cite{SASB2016,KaSa} taken as a black box and they may take the form of a set of patterns that shall occur in no reachable bio-molecular species.
+These constraints may come from a static analysis \cite{SASB2016,KaSa} taken as a black box and they may take the form of a set of patterns that shall occur in no reachable bio-molecular compounds.
 These constraints cannot be written in the contact map which can cope only with non relational information about the potential state of sites.
 
 For instance, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules that describes the model and its set of initial state, that, in the early events of the integration of the epidermic growth factor, the following patterns:
@@ -1363,7 +1332,7 @@ We are looking for an automatic prodecure to decide whether
 the set $\llbracket \graphsymb_{\textit{CM}},\mathcal{P} \rrbracket$ is finite, or not.
 \end{problem}
 
-In the following, we propose a graph data-structures to answer to this problem.
+In the following, we propose a graph structure to answer to this problem.
 Our approach is sound but not complete. It can detect and prove that the set of bio-molecular compounds is finite. But when it warns about potential repeatable patterns, it may be a false positive. We do not look for a complete procedure because on the first hand detecting whether or not a pattern is reachable is not decidable in Kappa \cite{kreyBig}, and it is not so easy to detect whether a pattern may occur in a set of bio-molecular compounds that do not contain patterns from a given a set is not so easy due to potential overlaps between patterns. Thus we rely on a sound but not complete procedure.
 
 The main idea is to refine the graph of the potential successive links by labelling each edge with the pattern that is formed by fusing the source and the target of this edge. The label of an edge must be understood as contextual information about the occurrence of two successive links. In order to take into account unreachable patterns, we introduce two operations to update refinements of the graph of the potential successive links. The first operation replace
@@ -1390,7 +1359,7 @@ Formally, we say that a repeatable pattern is a circular permutation of another 
 Intuitively, if one circular permutation of a repeatable pattern $P$ contains a forbidden pattern, then, the pattern $P$ cannot be repeated an unbounded number of times in a reachable bio-molecular compound. The theorem states that
 nodes that belong non trivial connected component in a refined
 is a super-set of the bonds that may occur in repeatable patterns all the circular permutation of which are compatible with the contact map and with the patterns that are forbidden. If the refined graph is acyclic, then
-the set of reachable bio-molecular compound is necessarily finite. 
+the set of reachable bio-molecular compound is necessarily finite.
 
 \begin{figure}
   \subfigure[Contact map.]%
@@ -1510,7 +1479,7 @@ the set of reachable bio-molecular compound is necessarily finite.
     }
 \end{minipage}}
   %\scalebox{0.4}{\includegraphics{generated_pictures/egfr_graph_site.pdf}}}
-  \caption{EGFR model. In \ref{fig:egfr:gl:cm}, we recall the contact map.
+  \caption{EGF model. In \ref{fig:egfr:gl:cm}, we recall the contact map.
   In Fig.~\ref{fig:egfr:gl:gl}, we refine the graph of the links that is associated with this contact map, by taking into accound that a given receptor cannot be bound simultaneously to two different other receptors.  }
   \label{fig:egfr:gll}
 \end{figure}
@@ -1520,10 +1489,10 @@ In Fig.~\ref{fig:abc:gll}, we refine the graph of the potential links for the co
 In this model, there is no competition between binding sites, as a result,
 the labels may be safely refined until getting a pattern with two instances of \agentfont{A}. Then this edge may be discarded.
 
-This proves that the set of bio-molecular species is finite in this model.
+This proves that the set of bio-molecular compounds is finite in this model.
 \end{exmp}
 
-\begin{exmp}[refined graph of the potential links (egfr model)]
+\begin{exmp}[refined graph of the potential links (EGF model)]
 In Fig.~\ref{fig:egfr:gll}, we refine the graph of the potential links for the contact map of the model of the early events in the integration of the epidermic growth factor, by taking into account the fact that a given receptor cannot be bound simultaneously to several other receptors. The label of each edge in the non trivial strongly connected components is refined easily, since none of them involves competition among binding sites. The graph that is obtained is acyclic, which proves that the model involves only a finite set of bio-molecular compounds.
 \end{exmp}
 
@@ -1536,12 +1505,12 @@ to detect whether or not the set of bio-molecular compounds of rule-based models
 Our approach is mainly based on top of the contact map, a $\Sigma$-graph which summarizes
 the potential links between the binding sites of proteins. The contact map is translated into a classical graph which encodes either the potential succession of sites, or the potential succession of links in bio-molecular compounds.
 Non trivial connected components in this graph correspond to repeatable patterns that may be repeated an arbitrary number of times in reachable bio-molecular compounds and they can be detected using classical depth-first exploration without having to enumerate every elementary cycle \cite{tarjan}.
-The graph that stands for the potential succession of links in bio-molecular species can be refined in order to handle with some additional constraints  computed by reachability analysis \cite{DanosEtAl-VMCAI08,SASB2016,KaSa}.
+The graph that stands for the potential succession of links in bio-molecular compounds can be refined in order to handle with some additional constraints  computed by reachability analysis \cite{DanosEtAl-VMCAI08,SASB2016,KaSa}.
 
 Our approach has been partially integrated in the static analyzer KaSa \cite{KaSa}. More precisely, the construction of the graph of the potentially
 successive links has been implemented as well as the reduction with the static analysis that is described in \cite{SASB2016}. This way, the analyzer can cope accurately with the constraints involving potential cycles of two proteins.  We plan to implement the generalisation that has been proposed in \cite{afp}, that can handle precisely with models that can generate cyclic structures without creating arbitrary long bio-molecular compounds.
 
-As future works, we plan to use weakly relational domains \cite{DBLP:conf/sas/Mine02} to abstract more precisely the chains of proteins that may embed in the reachable bio-molecular species. This analysis will allow to analyse accurately the rules that behave differently when applied in a uni-molecular or in a bi-molecular context.
+As future works, we plan to use weakly relational domains \cite{DBLP:conf/sas/Mine02} to abstract more precisely the chains of proteins that may embed in the reachable bio-molecular compounds. This analysis will allow to analyse accurately the rules that behave differently when applied in a uni-molecular or in a bi-molecular context.
 
 \bibliographystyle{entcs}
 \bibliography{polymers}
