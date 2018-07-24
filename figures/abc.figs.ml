@@ -323,8 +323,29 @@ let () =
     [
       a,a_b,b,b_a,"link_a_b";
       a,a_c,c,c_a,"link_a_c";
-      c,c_b,b,b_c,"link_b_c";
+      b,b_c,c,c_b,"link_b_c";
       b,b_a,a,a_b,"link_b_a";
       c,c_a,a,a_c,"link_c_a";
       c,c_b,b,b_c,"link_c_b"
+    ]
+
+let plot_double_link (a,b,c,d,e',f,g,name) =
+  let [_,[sa,_];_,[sb,_;sc,_];_,[sd,_]],er =
+    add_in_graph
+      [a,0.,0.,[],[b,[Direction e],[]];
+       c,1.2,0.,[],[d,[Direction w],[];e',[Direction e],[]];
+       f,2.4,0.,[],[g,[Direction w],[]]]
+      signature
+
+  in
+  let er =
+    add_link_list [sa,sb;sc,sd] er
+  in
+  dump (name^".ladot") er
+
+let () =
+  List.iter
+    plot_double_link
+    [
+      a,a_b,b,b_a,b_c,c,c_b,"link_a_b_c";
     ]

@@ -1296,14 +1296,14 @@ In this section, we explain how to refine the graph of the potential links of a 
 These constraints may come from a static analysis \cite{SASB2016,KaSa} taken as a black box and they may take the form of a set of patterns that shall occur in no reachable bio-molecular compounds.
 These constraints cannot be written in the contact map which can cope only with non relational information about the potential state of sites.
 
-For instance, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules that describes the model and its set of initial state, that, in the early events of the integration of the epidermic growth factor, the following patterns:
+In the case of the model of the early events of the integration of the epidermic growth factor, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules and the initial state, that the following patterns:
 \begin{equation*}
 \scalebox{0.3}{\includegraphics{generated_pictures/egfr_r_c.pdf}}\hspace*{1cm} \scalebox{0.3}{\includegraphics{generated_pictures/egfr_r_n.pdf}}\hspace*{1cm} \scalebox{0.3}{\includegraphics{generated_pictures/egfr_n_c.pdf}}
 \end{equation*}
 are not reachable. That is to say that a receptor cannot be bound to two different other instances of receptors.
 
 
-The analysis that is described in \cite{afp} generalises this approach to arbitrary cycles of proteins. In the example of the triangle, it may infer, when it is a consequence of the rules and the initial state of the model, that no two \agentfont{A}s may occur in a given connected compound, by proving that the following pattern:
+The analysis that is described in \cite{afp} generalises this approach to arbitrary cycles of proteins. In the example of the triangle, it infers (providing that it is a consequence of the rules and of the initial state), that no two \agentfont{A}s may occur in a given connected compound, by proving that the following pattern:
 \begin{equation*}
 \scalebox{0.6}{\includegraphics{generated_pictures/abc_pattern.pdf}}
 \end{equation*}
@@ -1318,37 +1318,64 @@ The interpretation $\llbracket \graphsymb_{\textit{CM}}, \mathcal{P}\rrbracket$ 
 \begin{problem}\label{problembis}
 Let $\graphsymb_{\textit{CM}}$ be a contact map and $\mathcal{P}$ be a set of patterns.
 
-We are looking for an automatic prodecure to decide whether
+We are looking for an automatic procedure to decide whether
 the set $\llbracket \graphsymb_{\textit{CM}},\mathcal{P} \rrbracket$ is finite, or not.
 \end{problem}
 
-In the following, we propose a graph structure to answer to this problem.
-Our approach is sound but not complete. It can detect and prove that the set of bio-molecular compounds is finite. But when it warns about potential repeatable patterns, it may be a false positive. We do not look for a complete procedure because on the first hand detecting whether or not a pattern is reachable is not decidable in Kappa \cite{kreyBig}, and it is not so easy to detect whether a pattern may occur in a set of bio-molecular compounds that do not contain patterns from a given a set is not so easy due to potential overlaps between patterns. Thus we rely on a sound but not complete procedure.
+In the following, we propose a graph structure to answer to Problem \ref{problembis}. Our approach is sound but not complete. It can detect and prove that the set of bio-molecular compounds is finite. But when it warns about potential repeatable patterns, it may be a false positive. We do not look for a complete procedure because on the first hand detecting whether or not a pattern is reachable is not decidable in Kappa \cite{kreyBig}, and on the second hand detecting whether a pattern may occur in a set of bio-molecular compounds that do not contain patterns from a given a set is not so easy due to potential overlaps between patterns. Thus we rely on a sound but not complete procedure.
 
-The main idea is to refine the graph of the potential successive links by labelling each edge with the pattern that is formed by fusing the source and the target of this edge. The label of an edge must be understood as contextual information about the occurrence of two successive links. In order to take into account unreachable patterns, we introduce two operations to update refinements of the graph of the potential successive links. The first operation replace
+The main idea is to refine the graph of the potential successive links by labelling each edge with the pattern that is formed by fusing the source and the target of this edge.
+
+The label of an edge must be understood as contextual information about the occurrence of two successive links. In order to take into account unreachable patterns, we introduce two operations to update refinements of the graph of the potential successive links. The first operation replace
 an edge by several edges by refining its patterns into longer chains.
 More precisely, given an edge, one shall decide which extremity of its label to refine and which site to insert, the former edge is potentially replaced by several ones, one for each potential partner of this site in the contact map. There may be several possibilities in case of competition on a binding site. The second operation consists in removing edges the label of which contain an occurrence of a forbidden pattern.
 
+
+\begin{exmp}[graph refinement (the model of the triangle)]
+  For instance the following edge
+  \begin{equation*}\xymatrix@C=0.5cm@R=0.35cm{
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b.pdf}}
+  \end{minipage}
+  \ar@{->}[rr]
+  &&
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_b_c.pdf}}
+  \end{minipage}}
+  \end{equation*}
+  will be labelled with the following pattern:
+  \begin{equation*}
+    \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b_c.pdf}}.
+  \end{equation*}
+
+  This pattern may then be refined.
+  We choose to refine the state of the site \sitefont{a} of the protein \agentfont{C}{}. This site has only one bond in the contact map, thus there is only the following possibility:
+  \begin{equation}
+      \scalebox{0.35}{\includegraphics{generated_pictures/abc_pattern.pdf}}.
+  \end{equation}
+  Yet this chain contains a black-listed pattern, thus the edge may be safely discarded from the graph.
+
+  We obtain the graph that is depicted in Fig.~\ref{fig:abc:gll:gl}.
+\end{exmp}
+
 The following theorem states the soundness of our approach.
-It uses the notion of circular permution of a repeatable pattern.
-Formally, we say that a repeatable pattern is a circular permutation of another one, if the two cyclic patterns that are obtained by fusing both extremities of the two repeatable patterns are isomorphic. Intuitively, a repeatable pattern is a circular permutation of another one, if the second one may be obtained by circular permutation of the agents of the first one.
+%It uses the notion of circular permution of a repeatable pattern.
+%Formally, we say that a repeatable pattern is a circular permutation of another one, if the two cyclic patterns that are obtained by fusing both extremities of the two repeatable patterns are isomorphic. Intuitively, a repeatable pattern is a circular permutation of another one, if the second one may be obtained by circular permutation of the agents of the first one.
 
 \begin{theorem}
   \label{th:linkbis}
   Let $\graphsymb_{\textit{CM}}$ be a contact map.
   Let $\mathcal{P}$ be a set o patterns.
-  Let $G$ be a refinement of the graph of the potential links of the contact map, according to the set of patterns $\mathcal{P}$.
+  Let $G$ be a refinement of the graph of the potential links of the contact map, according to the set of patterns $\mathcal{P}$. We assume that there exists a bio-molecular compound $S$ such that $[S]_{\iso} \in \llbracket \graphsymb_{\textit{CM}}, \mathcal{P}\rrbracket$ that contains a repeatable pattern $P$ such that no iteration of the pattern $P$  contains an occurrence of the pattern in $\mathcal{P}$.
 
-  We assume that there exists a bio-molecular compound $S$ such that $[S]_{\iso} \in \llbracket \graphsymb_{\textit{CM}}, \mathcal{P}\rrbracket$ that contains a repeatable pattern $P$ such that no circular permutation of $P$ contain a pattern in $\mathcal{P}$.
-
-  Then, for every circular permutation $Q$ of $P$, for every two agent identifiers $n,n'$ and every two site names $i,i'$ such that $\links[Q](n,i)=(n',i')$, there exists two agent identifiers $n'',n'''$ such that $\type[P](n)=\type[\graphsymb_{\textit{CM}}](n'')$,
+  Then, for every repetition $Q$ of the pattern $P$, for every two agent identifiers $n,n'$ and every two site names $i,i'$ such that $\links[Q](n,i)=(n',i')$, there exists two agent identifiers $n'',n'''$ such that $\type[P](n)=\type[\graphsymb_{\textit{CM}}](n'')$,
   $\type[P](n')=\type[\graphsymb_{\textit{CM}}](n''')$ and
-  there exists a cycle in the graph $G$ passing by  the node $((n'',i),(n''',i'))$.
+  there exists a cycle in the graph $G$ passing by  the vertex $((n'',i),(n''',i'))$.
 \end{theorem}
 
-Intuitively, if one circular permutation of a repeatable pattern $P$ contains a forbidden pattern, then, the pattern $P$ cannot be repeated an unbounded number of times in a reachable bio-molecular compound. The theorem states that
-nodes that belong non trivial connected component in a refined
-is a super-set of the bonds that may occur in repeatable patterns all the circular permutation of which are compatible with the contact map and with the patterns that are forbidden. If the refined graph is acyclic, then
+Intuitively, if an iteration of a pattern $P$ contains a forbidden pattern, then, the pattern $P$ cannot be repeated an unbounded number of times in a reachable bio-molecular compound. The theorem states that
+vertices that belong non trivial connected components in a refined
+is a super-set of the bonds that may occur in an iteration  of the patterns  which are compatible with the contact map and with the black-listed patterns. If the refined graph is acyclic, then
 the set of reachable bio-molecular compound is necessarily finite.
 
 \begin{figure}
@@ -1401,7 +1428,7 @@ the set of reachable bio-molecular compound is necessarily finite.
   {\begin{minipage}{0.4\linewidth}\label{fig:egfr:gl:cm}\scalebox{0.4}{\includegraphics{generated_pictures/contact_map.pdf}}\end{minipage}}%
   \subfigure[Refinement of the graph of the potential links.]%
   {%
-  \begin{minipage}{0.59\linewidth}\label{fig:egfr:gl:gl}
+  \begin{minipage}{0.59\linewidth}\label{fig:egfr:gll:gl}
   \xymatrix@C=0.cm@R=0.35cm{
   &&&
   \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/sos_grb2.pdf}}\end{minipage}
@@ -1470,20 +1497,20 @@ the set of reachable bio-molecular compound is necessarily finite.
 \end{minipage}}
   %\scalebox{0.4}{\includegraphics{generated_pictures/egfr_graph_site.pdf}}}
   \caption{EGF model. In \ref{fig:egfr:gl:cm}, we recall the contact map.
-  In Fig.~\ref{fig:egfr:gl:gl}, we refine the graph of the links that is associated with this contact map, by taking into accound that a given receptor cannot be bound simultaneously to two different other receptors.  }
+  In Fig.~\ref{fig:egfr:gl:gl}, we refine the graph of the links that is associated with this contact map, by taking into account that a given receptor cannot be bound simultaneously to two different other receptors.  }
   \label{fig:egfr:gll}
 \end{figure}
 
-\begin{exmp}[refined graph of the potential links (ABC model)]
-In Fig.~\ref{fig:abc:gll}, we refine the graph of the potential links for the contact map of the model by taking into account that any pattern with several instances of the protein \agentfont{A} is unreachable. To do this, we refine the label of the edge between the site \sitefont{b} of \agentfont{A} and the site \sitefont{a} of \agentfont{B}, and the one of the edge between the site \sitefont{b} of \agentfont{A} and the site \sitefont{a} of \agentfont{B}.
-In this model, there is no competition between binding sites, as a result,
-the labels may be safely refined until getting a pattern with two instances of \agentfont{A}. Then this edge may be discarded.
+\begin{exmp}[refined graph of the links (model with the triangle)]
+In Fig.~\ref{fig:abc:gll}, we refine the graph of the potential links for the contact map of the model \agentfont{ABC} by taking into account that any pattern with several instances of the protein \agentfont{A} is unreachable.
+This is achieved by refining the label of the edge  between the site \sitefont{b} of \agentfont{A} and the site \sitefont{a} of \agentfont{B} until reaching a black-listed pattern.
 
-This proves that the set of bio-molecular compounds is finite in this model.
+The graph (see Fig.~\ref{fig:abc:gll:gl} is acyclic which proves that the set of bio-molecular compounds is finite in this model.
 \end{exmp}
 
 \begin{exmp}[refined graph of the potential links (EGF model)]
-In Fig.~\ref{fig:egfr:gll}, we refine the graph of the potential links for the contact map of the model of the early events in the integration of the epidermic growth factor, by taking into account the fact that a given receptor cannot be bound simultaneously to several other receptors. The label of each edge in the non trivial strongly connected components is refined easily, since none of them involves competition among binding sites. The graph that is obtained is acyclic, which proves that the model involves only a finite set of bio-molecular compounds.
+In Fig.~\ref{fig:egfr:gll}, we refine the graph of the potential links for the contact map of the model of the early events in the integration of the epidermic growth factor, by taking into account the fact that a given receptor cannot be bound simultaneously to several other receptors.
+Indeed every edge of the strongly connected component is initially labelled with a black-listed pattern, thus they can be discarded without iteratively refining the graph. The graph that is obtained (see Fig.~\ref{fig:egfr:gll:gl} is acyclic, which proves that the model involves only a finite set of bio-molecular compounds.
 \end{exmp}
 
 
@@ -1494,7 +1521,7 @@ In this paper, we have provided some decision procedures
 to detect whether or not the set of bio-molecular compounds of rule-based models, such as the ones that are written in Kappa \cite{DBLP:journals/tcs/DanosL04} or in BNGL \cite{BNGL}, is finite or not.
 Our approach is mainly based on top of the contact map, a $\Sigma$-graph which summarizes
 the potential links between the binding sites of proteins. The contact map is translated into a classical graph which encodes either the potential succession of sites, or the potential succession of links in bio-molecular compounds.
-Non trivial connected components in this graph correspond to repeatable patterns that may be repeated an arbitrary number of times in reachable bio-molecular compounds and they can be detected using classical depth-first exploration without having to enumerate every elementary cycle \cite{tarjan}.
+Non trivial connected components in this graph correspond to  patterns that may be repeated an arbitrary number of times in reachable bio-molecular compounds. They can be detected using classical depth-first exploration without having to enumerate every elementary cycle \cite{tarjan}.
 The graph that stands for the potential succession of links in bio-molecular compounds can be refined in order to handle with some additional constraints  computed by reachability analysis \cite{DanosEtAl-VMCAI08,SASB2016,KaSa}.
 
 Our approach has been partially integrated in the static analyzer KaSa \cite{KaSa}. More precisely, the construction of the graph of the potentially
