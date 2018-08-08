@@ -340,7 +340,7 @@ We will design a well-suited data-structure to abstract the elementary repeatabl
 \subsection{Clique}
 
 In large combinatorial models, the set of elementary repeatable patterns
-may not be represented explicitely. It is important to abstract it.
+may not be represented explicitly. It is important to abstract it.
 
 Let us consider the example of a clique of $n$ proteins.
 We call a clique of $n$ proteins any $n$ kinds of protein such that each protein has exactly $n-1$ sites and that every pair of proteins of distinct kinds may be connected by exactly one pair of sites. The number of elementary repeatable patterns in a clique of $n$ proteins  is exponential with respect to $n$ (there is indeed $\frac{n!}{k!}$  elementary repeatable patterns with exactly $k+1$ proteins, for any $k$ such that $2\leq k \leq n$).
@@ -1351,7 +1351,7 @@ The following theorem states the soundness of our approach.
 \begin{theorem}
   \label{th:linkbis}
   Let $\graphsymb_{\textit{CM}}$ be a contact map.
-  Let $\mathcal{P}$ be a set o patterns.
+  Let $\mathcal{P}$ be a set of patterns.
   Let $G$ be a refinement of the graph of the potential links of the contact map, according to the set of patterns $\mathcal{P}$. We assume that there exists a bio-molecular compound $S$ such that $[S]_{\iso} \in \llbracket \graphsymb_{\textit{CM}}, \mathcal{P}\rrbracket$ that contains a repeatable pattern $P$ such that no iteration of the pattern $P$  contains an occurrence of the pattern in $\mathcal{P}$.
 
   Then, for every repetition $Q$ of the pattern $P$, for every two agent identifiers $n,n'$ and every two site names $i,i'$ such that $\links[Q](n,i)=(n',i')$, there exists two agent identifiers $n'',n'''$ such that $\type[P](n)=\type[\graphsymb_{\textit{CM}}](n'')$,
@@ -1360,7 +1360,7 @@ The following theorem states the soundness of our approach.
 \end{theorem}
 
 Intuitively, if an iteration of a pattern $P$ contains a forbidden pattern, then, the pattern $P$ cannot be repeated an unbounded number of times in a reachable bio-molecular compound. The theorem states that
-vertices that belong non trivial connected components in a refined graph
+vertices that belong to non trivial connected components in a refined graph
 is a super-set of the bonds that may occur in an iteration  of the patterns  which are compatible with the contact map and with the black-listed patterns. If the refined graph is acyclic, then
 the set of reachable bio-molecular compound is necessarily finite.
 
