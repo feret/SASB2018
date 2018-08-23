@@ -1,0 +1,29 @@
+digraph G {
+
+Agent_1 [
+fixedsize=true,
+label = "A",
+fontsize=18,
+pos="0.000000,0.000000!",
+width=0.500000,
+height=0.400000,
+shape="ellipse",
+style="filled",
+fillcolor="#6767f2",
+color=black,
+fontcolor=black]
+
+Site_1_2 [
+fixedsize=true,
+label = "c",
+fontsize=14,
+pos="-0.227332,-0.105000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor="#b5dce6",
+color=black,
+fontcolor=black]
+
+}

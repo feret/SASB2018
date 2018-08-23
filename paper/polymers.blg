@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/MacPorts 2017_2)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: polymers.aux
+The style file: entcs.bst
+Database file #1: polymers.bib
+Warning--entry type for "kreyBig" isn't style-file defined
+--line 277 of file polymers.bib
+Warning--empty pages in KaSa
+Warning--empty pages in Camporesi:CMSB2013
+Warning--empty pages in KaDe
+Warning--empty pages in SASB2016
+You've used 19 entries,
+            2561 wiz_defined-function locations,
+            732 strings with 8692 characters,
+and the built_in function-call counts, 6508 in all, are:
+= -- 510
+> -- 420
+< -- 10
++ -- 147
+- -- 126
+* -- 618
+:= -- 1025
+add.period$ -- 19
+call.type$ -- 19
+change.case$ -- 119
+chr.to.int$ -- 0
+cite$ -- 23
+duplicate$ -- 302
+empty$ -- 486
+format.name$ -- 145
+if$ -- 1314
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 17
+newline$ -- 64
+num.names$ -- 46
+pop$ -- 117
+preamble$ -- 1
+purify$ -- 96
+quote$ -- 0
+skip$ -- 172
+stack$ -- 0
+substring$ -- 236
+swap$ -- 121
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 4
+while$ -- 57
+width$ -- 21
+write$ -- 168
+(There were 5 warnings)

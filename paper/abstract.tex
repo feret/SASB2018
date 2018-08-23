@@ -1,0 +1,7 @@
+%!TeX spellcheck = en-GB
+Rule-based languages, such as Kappa and BNGL, allow for the description of very combinatorial models of interactions between proteins. A huge (when not infinite) number of different kinds of bio-molecular compounds may arise
+ due to proteins with multiple binding and phosphorylation sites. Knowing beforehand whether a model may involve an infinite number of different kinds of bio-molecular compounds is crucial for the modeller. On the first hand, it is sometimes a hint for modelling flaws: forgetting to specify
+the conflicts among binding rules is a common mistake. On the second hand,
+it impacts the choice of  the semantics for the models (among stochastic, differential, hybrid).
+
+In this paper, we introduce a data-structure to abstract the potential unbounded polymers that may be formed in a rule-based model. This data-structure is a graph, the nodes of which are labelled with patterns while edges are labelled with overlaps between these patterns. By construction,  every potentially unbounded polymer is associated to at least one cycle in that graph. This data-structure has two main advantages. Firstly, as opposed to site-graphs, one can reason about cycles without enumerating them, by the means of Tarjan's algorithm for detecting strongly connected components. Secondly, this data-structures may be combined easily with information coming from additional reachability analysis: the edges that are labelled with an overlap that is proved unreachable in the model may be safely discarded.

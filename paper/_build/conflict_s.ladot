@@ -1,0 +1,124 @@
+digraph G {
+
+Agent_1 [
+fixedsize=true,
+label = "S",
+fontsize=18,
+pos="0.600000,-0.300000!",
+width=0.350000,
+height=0.450000,
+shape="rectangle",
+style="filled",
+fillcolor=purple,
+color=black,
+fontcolor=black]
+
+Site_1_2 [
+fixedsize=true,
+label = "r",
+fontsize=14,
+pos="0.416250,-0.116250!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor=blue,
+color=black,
+fontcolor=black]
+
+Free1_1_2_3 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.621250,-0.116250!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free2_1_2_3_4 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.621250,-0.191250!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free3_1_2_3_5 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.621250,-0.041250!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Site_1_6 [
+fixedsize=true,
+label = "g",
+fontsize=14,
+pos="0.783750,-0.116250!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor=green,
+color=black,
+fontcolor=black]
+
+Free1_1_6_7 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.988750,-0.116250!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free2_1_6_7_8 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.988750,-0.191250!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free3_1_6_7_9 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.988750,-0.041250!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free1_1_2_3 -> Site_1_2 [dir = "none",color="black",penwidth=1,fontcolor="black",label="",style=""];
+Free3_1_2_3_5 -> Free2_1_2_3_4 [dir = "none",color="black",penwidth=1,fontcolor="black",label="",style=""];
+Free1_1_6_7 -> Site_1_6 [dir = "none",color="black",penwidth=1,fontcolor="black",label="",style=""];
+Free3_1_6_7_9 -> Free2_1_6_7_8 [dir = "none",color="black",penwidth=1,fontcolor="black",label="",style=""];
+}

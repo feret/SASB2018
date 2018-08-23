@@ -1,0 +1,217 @@
+%%%%%%%%%%%%%%%%%% SHARED MACROS
+
+\newcommand{\boundornot}{?} 
+\newcommand{\bound}[1]{% 
+\ifnum\value{kappamode}=1% figure mode
+\_%}
+\else%%\newcommand{\bound}[1]{#1}          %notation for dangling bonds 
+-\fi%                                  %replace with $\_$
+}
+\newcommand{\unirule}{ $\longrightarrow$ } % one way rules
+\newcommand{\revrule}{ $\longleftrightarrow$ } % two ways rules 
+
+\newcommand{\sitesep}{\adjust,}           %separation between sites 
+\newcommand{\agentsep}{{\,},{ }}    %separation between agents
+
+%%%%%%%%%%%%%%%%%% TEXT MODE MACROS
+
+% fonts %% commands have to be excuted in normal mode 
+\newcommand{\agenttextfont}[1]{\textit{#1}}
+\newcommand{\sitetextfont}[1]{\textit{#1}}
+
+%%%%%%%%%%%%%%%%%% FIGURE MODE MACROS 
+\newcommand{\statesymbol}{$\sim$}   %symbol for internal state (if not empty)
+\newcommand{\bindingsymbol}{!}
+
+% fonts %% commands have to be excuted in normal mode 
+\newcommand{\agentfigurefont}[1]{\texttt{#1}}
+\newcommand{\sitefigurefont}[1]{\texttt{#1}}
+
+
+%%%%%%%%%%%%%%%%%% ODEs MACROS
+\newcommand{\oderv}[2]{{\text{\productionprefix}}^{#1}_{#2}}
+\newcommand{\odevar}[2]{{\text{\fragmentprefix}}_{#2}}
+\newcommand{\odetime}{ \cdot }
+\newcommand{\odeminus}{-}
+\newcommand{\odeuniminus}{-}
+\newcommand{\odeplus}{ + } 
+\newcommand{\odeequal}{=}
+\newcommand{\odeequalplus}{\stackrel{+}{=}}
+
+\newcommand{\oderulename}[2]{\ruleprefix #2} 
+
+\newcommand{\odebeforeequs}{}
+\newcommand{\odeafterequs}{}
+\newcommand{\odegrouptitle}[1]{\noindent Kinetic terms generated from rule #1:}
+\newcommand{\odegroup}[2]{
+
+\vspace*{5 mm}
+
+\odegrouptitle{#1} 
+
+\vspace*{5 mm}
+
+#2}
+\newcommand{\odesystem}{
+
+\vspace*{5mm}
+
+\noindent Differential equations: 
+
+\vspace*{5mm}
+
+}
+\newcommand{\odeequ}[1]{\noindent $#1$ \smallskip\\}
+\newcommand{\fragmentprefix}{$\mathcal{F}$}
+\newcommand{\productionprefix}{$\mathcal{R}$}
+\newcommand{\odediff}[2]{\overset{.}{\text{\fragmentprefix}_{#2}}}
+
+
+%%%%%%%%%%%%%%%%%% RULE COUNTERS
+\newcounter{dolabelrules}
+\newcounter{rulenumber}
+\newcommand{\putrulelabels}{\setcounter{dolabelrules}{1}}
+\newcommand{\removerulelabels}{\setcounter{dolabelrules}{0}}
+\newcommand{\ruleprefix}{} 
+ 
+\newcommand{\changeruleprefix}[1]{\renewcommand{\ruleprefix}{#1}} 
+
+\newcommand{\nextrule}{%
+\ifnum \value{dolabelrules}=1 %
+  \ruleprefix{%
+\ifnum \value{rulenumber}<10 %
+  0\therulenumber
+  \else%
+  \therulenumber
+  \fi%
+  {:\ \ }%
+  \fi}%
+\addtocounter{rulenumber}{1}%
+}
+\newcommand{\resetrulecounter}{\setcounter{rulenumber}{1}}
+\newcommand{\nextrulebis}{\ruleprefix$_{\therulenumber}${:\ \ }\addtocounter{rulenumber}{1}}
+
+%%%%%%%%%%%%%%%%%% LINE SEPARATORS 
+
+\newcommand{\firstsep}{%   %put before the first rule
+\resetrulecounter%
+\noindent% 
+\nextrule%
+}
+\newcommand{\sep}{  %separation between kappa objects
+
+\noindent%
+\nextrule%
+}             
+\newcommand{\finalsep}{
+
+}  %separation after the last kappa objects
+
+
+
+%%%%%%%%%%%%%%%%%% TOGLE BETWEEN TEXT/FIGURE MODE 
+\newcounter{kappamode}
+\newcommand{\figuremode}{\setcounter{kappamode}{1}}
+\newcommand{\textmode}{\setcounter{kappamode}{0}}
+
+
+
+\newcommand{\agentfont}[1]
+{\ifnum \value{kappamode}=1% figure mode 
+ \agentfigurefont{#1}%
+ \else% %text mode 
+ \agenttextfont{#1}%
+  \fi} % font for agent names
+\newcommand{\sitefont}[1]
+{\ifnum \value{kappamode}=1% figure mode 
+  \sitefigurefont{#1}%
+  \else% %text mode 
+  \sitetextfont{#1}%
+  \fi} % font for site  names
+
+
+\newcommand{\state}[1]{\textnormal{#1}}
+\newcommand{\internalstate}[1]
+{\def\arga{}%       % empty string
+ \def\argb{#1}%     % first argument
+ \textnormal{%
+   \ifx\arga\argb%  % if argument = empty string 
+   {}%              % nothing
+   \else%
+   \textnormal{\statesymbol #1}% %state symbol then argument
+   \fi%
+ }%
+}%
+
+\newcommand{\bondstate}[1]
+{\def\arga{}%       % empty string
+ \def\argb{#1}%     % first argument
+ \textnormal{%
+   \ifx\arga\argb%  % if argument = empty string 
+   {}%              % nothing
+   \else%
+   \textnormal{\bindingsymbol #1}% %state symbol then argument
+   \fi%
+ }%
+}%
+
+
+\newcommand{\adjust}{}
+
+\newcommand{\site}[3]  %site name, internal state, binding state
+{\def\arga{}%
+ \def\argb{#2}%
+ \def\argc{#3}%
+ \ifnum\value{kappamode}=1% figure mode
+\sitefont{#1}\internalstate{#2}\bondstate{#3}%
+\else%text mode 
+\sitefont{#1}$_{#2}^{#3}$%
+\ifx\argb\arga%        %is internal state empty
+\ifx\argc\arga%        %is binding state empty
+\renewcommand{\adjust}{}% %both are empty
+\else%
+\renewcommand{\adjust}{\!}% %internal state is empty but not the binding state
+\fi%
+\else%
+\renewcommand{\adjust}{}% % %internal state is not empty
+\fi%
+\fi%
+}
+
+\newcommand{\agent}[2] %agent name, interface (without ()) 
+{\def\arga{}%
+\def\argb{#2}%
+\ifx\arga\argb%% if interface = empty string 
+\agentfont{#1}%% just the agent name 
+\else%
+{\agentfont{#1}%% agent name ( interface )
+   \textnormal{$\left( \text{#2} \right)$}}%
+ \fi}%
+\newcommand{\agentb}[2] %agent name, interface (without ()) 
+{\def\arga{}%
+\def\argb{#2}%
+\ifx\arga\argb%% if interface = empty string 
+\agentfont{#1}%% just the agent name 
+\else%
+{\agentfont{#1}%% agent name ( interface )
+   \textnormal{$\big( \text{#2} \big)$}}%
+ \fi}%
+\newcommand{\btype}[2] % agent name, site name 
+{\ifnum \value{kappamode}=1% figure mode 
+{#2{}{}.#1{}}%
+\else% %text mode 
+{\text{#1{}$@$#2{}{}}}%
+\fi}% f
+{}
+
+
+
+\newcommand{\boundto}[3] % agent name, site name 
+{\ifnum \value{kappamode}=1% figure mode 
+  {#2{}{}.#1{}}%
+  \else% %text mode 
+  {\text{\agent{#1$_{#2}@$#3}{}}}%
+  \fi} % f
+{}
+
+\newcommand{\ladotmfont}[1]{$#1$}

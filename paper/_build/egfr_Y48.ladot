@@ -1,0 +1,29 @@
+digraph G {
+
+Agent_1 [
+fixedsize=true,
+label = "EGFR",
+fontsize=18,
+pos="0.000000,0.000000!",
+width=1.080000,
+height=0.900000,
+shape="hexagon",
+style="filled",
+fillcolor="#709d54",
+color=black,
+fontcolor=black]
+
+Site_1_2 [
+fixedsize=true,
+label = "Y48",
+fontsize=14,
+pos="0.567000,-0.000000!",
+width=0.336000,
+height=0.336000,
+shape="ellipse",
+style="filled",
+fillcolor=purple,
+color=black,
+fontcolor=black]
+
+}

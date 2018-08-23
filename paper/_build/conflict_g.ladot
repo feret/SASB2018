@@ -1,0 +1,70 @@
+digraph G {
+
+Agent_1 [
+fixedsize=true,
+label = "G",
+fontsize=18,
+pos="1.200000,0.300000!",
+width=0.400000,
+height=0.400000,
+shape="circle",
+style="filled",
+fillcolor=green,
+color=black,
+fontcolor=black]
+
+Site_1_2 [
+fixedsize=true,
+label = "a",
+fontsize=14,
+pos="0.990000,0.300000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor=white,
+color=black,
+fontcolor=black]
+
+Free1_1_2_3 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.845043,0.444957!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free2_1_2_3_4 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.898076,0.497990!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free3_1_2_3_5 [
+fixedsize=true,
+label = "",
+fontsize=0,
+pos="0.792010,0.391924!",
+width=0.000000,
+height=0.000000,
+shape="plaintext",
+style="",
+fillcolor=white,
+color=white,
+fontcolor=black]
+
+Free1_1_2_3 -> Site_1_2 [dir = "none",color="black",penwidth=1,fontcolor="black",label="",style=""];
+Free3_1_2_3_5 -> Free2_1_2_3_4 [dir = "none",color="black",penwidth=1,fontcolor="black",label="",style=""];
+}

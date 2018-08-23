@@ -1,0 +1,136 @@
+digraph G {
+
+Agent_1 [
+fixedsize=true,
+label = "A",
+fontsize=18,
+pos="0.000000,0.000000!",
+width=0.500000,
+height=0.400000,
+shape="ellipse",
+style="filled",
+fillcolor="#6767f2",
+color=black,
+fontcolor=black]
+
+Site_1_2 [
+fixedsize=true,
+label = "b",
+fontsize=14,
+pos="0.262500,-0.000000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor="#709d54",
+color=black,
+fontcolor=black]
+
+Agent_3 [
+fixedsize=true,
+label = "B",
+fontsize=18,
+pos="1.000000,0.000000!",
+width=0.500000,
+height=0.400000,
+shape="ellipse",
+style="filled",
+fillcolor="#709d54",
+color=black,
+fontcolor=black]
+
+Site_3_4 [
+fixedsize=true,
+label = "a",
+fontsize=14,
+pos="0.737500,0.000000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor="#6767f2",
+color=black,
+fontcolor=black]
+
+Site_3_5 [
+fixedsize=true,
+label = "c",
+fontsize=14,
+pos="1.262500,-0.000000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor="#b5dce6",
+color=black,
+fontcolor=black]
+
+Agent_6 [
+fixedsize=true,
+label = "C",
+fontsize=18,
+pos="2.000000,0.000000!",
+width=0.500000,
+height=0.400000,
+shape="ellipse",
+style="filled",
+fillcolor="#b5dce6",
+color=black,
+fontcolor=black]
+
+Site_6_7 [
+fixedsize=true,
+label = "a",
+fontsize=14,
+pos="2.262500,-0.000000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor="#6767f2",
+color=black,
+fontcolor=black]
+
+Site_6_8 [
+fixedsize=true,
+label = "b",
+fontsize=14,
+pos="1.737500,0.000000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor="#709d54",
+color=black,
+fontcolor=black]
+
+Agent_9 [
+fixedsize=true,
+label = "A",
+fontsize=18,
+pos="3.000000,0.000000!",
+width=0.500000,
+height=0.400000,
+shape="ellipse",
+style="filled",
+fillcolor="#6767f2",
+color=black,
+fontcolor=black]
+
+Site_9_10 [
+fixedsize=true,
+label = "c",
+fontsize=14,
+pos="2.737500,0.000000!",
+width=0.210000,
+height=0.210000,
+shape="ellipse",
+style="filled",
+fillcolor="#b5dce6",
+color=black,
+fontcolor=black]
+
+Site_3_4 -> Site_1_2 [dir = "none",color="black",penwidth=2,fontcolor="black",label="",style=""];
+Site_6_8 -> Site_3_5 [dir = "none",color="black",penwidth=2,fontcolor="black",label="",style=""];
+Site_9_10 -> Site_6_7 [dir = "none",color="black",penwidth=2,fontcolor="black",label="",style=""];
+}

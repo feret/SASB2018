@@ -1,0 +1,56 @@
+digraph G {
+
+Agent_1 [
+fixedsize=true,
+label = "EGFR",
+fontsize=18,
+pos="0.000000,0.000000!",
+width=1.080000,
+height=0.900000,
+shape="hexagon",
+style="filled",
+fillcolor="#709d54",
+color=black,
+fontcolor=black]
+
+Site_1_2 [
+fixedsize=true,
+label = "r",
+fontsize=14,
+pos="0.567000,-0.000000!",
+width=0.336000,
+height=0.336000,
+shape="ellipse",
+style="filled",
+fillcolor=cyan,
+color=black,
+fontcolor=black]
+
+Agent_3 [
+fixedsize=true,
+label = "EGFR",
+fontsize=18,
+pos="1.800000,0.000000!",
+width=1.080000,
+height=0.900000,
+shape="hexagon",
+style="filled",
+fillcolor="#709d54",
+color=black,
+fontcolor=black]
+
+Site_3_4 [
+fixedsize=true,
+label = "r",
+fontsize=14,
+pos="1.233000,0.000000!",
+width=0.336000,
+height=0.336000,
+shape="ellipse",
+style="filled",
+fillcolor=cyan,
+color=black,
+fontcolor=black]
+
+Site_3_4 -> Site_1_2 [dir = "none",color="black",penwidth=2,fontcolor="black",label="",style=""];
+}
