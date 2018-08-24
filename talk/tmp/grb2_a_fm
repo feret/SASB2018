@@ -1,0 +1,37 @@
+% Just an ordinary comment
+%
+% Some special comments:
+% fmclass: report
+% fmclassopt: a4paper,20pt
+%
+% Another special comment:
+% head:
+%\usepackage{concrete}
+%\usepackage{kappa}
+%\usepackage{eepic}
+%\usepackage{ulem}
+%\usepackage{titlesec}
+%\usepackage{rotating}
+%\usepackage{epsfig}
+%\usepackage[psamsfonts]{amsfonts}
+%\usepackage{amsfonts,amssymb,amsmath,stmaryrd}
+%\usepackage{ecltree}
+%\usepackage{array}
+%\usepackage[color,matrix,curve,graph,frame,all]{xy}
+%\usepackage{fancybox}
+%\usepackage{picinpar}
+%\usepackage{pdfpages}
+%\usepackage{stmaryrd}
+%\usepackage{lscape,graphicx}
+% \usepackage{anyfontsize}
+% \newcommand{\ladottext}[1]{\text{$#1$}}
+% \newcommand{\asso}[1]{{k}_{{#1}}}
+% \newcommand{\kx}{\asso{g}}
+% \newcommand{\kdx}{\disso{g}}
+% \newcommand{\ky}{\asso{c}}
+% \newcommand{\kdy}{\disso{c}}
+% \newcommand{\kz}{\asso{d}}
+% \newcommand{\kdz}{\disso{d}}
+% \newcommand{\assobis}{k}
+% end head
+
