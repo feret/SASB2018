@@ -20,10 +20,11 @@ open Geometry
 open Gkappa
 open Config
 
+
 let config =
   {config with
     agent_colors = ["magenta";"blue";"green";"purple";"darkgreen";];
-    site_colors = ["white";"cyan";"yellow";"pink"];
+    site_colors = ["white";"cyan";"yellow";"pink";"purple";"green";"darkgreen"];
     state_colors = ["white";"black"];
     show_agent_names = true ;
     show_site_names = true ;
@@ -81,9 +82,13 @@ let config =
     rule_corners = empty_ru ;
  }
 
-
+let width i = Width (0.9*.i)
+let height i = Height (0.9*.i)
+let ws = [Width (0.8*.config.site_width);
+          Height (0.8*.config.site_height)
+         ]
 (* chemical species*)
-let _,init = init config
+let _,init = init {config with agent_width = 0.9*.config.agent_width}
 (*signature*)
 let
   [
@@ -92,8 +97,10 @@ let
     egfr,
     [egfr_l,[];
      egfr_r,[];
-    egfr_Y48,[egfr_Y48_u;egfr_Y48_p];
-    egfr_Y68,[egfr_Y68_u;egfr_Y68_p]];
+     egfr_c,[];
+     egfr_n,[];
+     egfr_Y48,[egfr_Y48_u;egfr_Y48_p];
+     egfr_Y68,[egfr_Y68_u;egfr_Y68_p]];
     shc,
     [shc_pi,[];
      shc_Y7,[shc_Y7_u;shc_Y7_p]];
@@ -101,7 +108,24 @@ let
     [grb2_a,[];
      grb2_b,[]];
     sos,
-    [sos_d,[]]],
+    [sos_d,[]];
+    segf,
+    [segf_r,[]];
+    segfr,
+    [segfr_l,[];
+     segfr_r,[];
+     segfr_c,[];
+     segfr_n,[];
+     segfr_Y48,[segfr_Y48_u;segfr_Y48_p];
+     segfr_Y68,[segfr_Y68_u;segfr_Y68_p]];
+    sshc,
+    [sshc_pi,[];
+     sshc_Y7,[sshc_Y7_u;sshc_Y7_p]];
+    sgrb2,
+    [sgrb2_a,[];
+     sgrb2_b,[]];
+    ssos,
+    [ssos_d,[]]],
   signature_egfr
   =
   add_in_signature
@@ -113,14 +137,16 @@ let
       "EGFR",[Width 1.2;Height 1.;Shape "hexagon";FillColor "\"#709d54\""],
       [
 	"l",[],[];
-	"r",[],[];
-	"Y48",[],["u",[];"p",[]];
-	"Y68",[],["u",[];"p",[]]
+ "r",[],[];
+ "c",[],[];
+ "n",[],[];
+ "Y48",[],["u",[];"p",[]];
+ "Y68",[],["u",[];"p",[]]
       ];
       "ShC",[Width 1.2;Height 0.6;Shape "rectangle";FillColor "\"#b5dce6\""],
       [
 	"pi",[],[];
-	"Y7",[],["u",[];"p",[]]
+ "Y7",[],["u",[];"p",[]]
       ];
       "Grb2",[Width 1.3;Height 0.8;Shape "hexagon";FillColor "\"#e587de\""],
       [
@@ -129,5 +155,33 @@ let
       ];
       "Sos",[Width 1.2;Height 0.8;Shape "rectangle";FillColor "\"#c53736\""],
       [	"d",[],[]
+      ];
+
+
+      "EGF",[width 1.;height 1.;Shape "square";FillColor "\"#6767f2\""],
+      [
+        "r",(Direction s)::ws,[]
+      ];
+      "EGFR",[width 1.2;height 1.;Shape "hexagon";FillColor "\"#709d54\""],
+      [
+        "l",ws,[];
+        "r",ws,[];
+        "c",ws,[];
+        "n",ws,[];
+        "Y48",ws,["u",[];"p",[]];
+        "Y68",ws,["u",[];"p",[]]
+      ];
+      "ShC",[width 1.2;height 0.6;Shape "rectangle";FillColor "\"#b5dce6\""],
+      [
+        "pi",ws,[];
+        "Y7",ws,["u",[];"p",[]]
+      ];
+      "Grb2",[width 1.2;height 0.8;Shape "hexagon";FillColor "\"#e587de\""],
+      [
+        "a",ws,[];
+        "b",ws,[]
+      ];
+      "Sos",[width 1.2;height 0.8;Shape "rectangle";FillColor "\"#c53736\""],
+      [	"d",ws,[]
       ]]
     init

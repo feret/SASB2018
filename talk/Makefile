@@ -86,6 +86,7 @@ $(IMAGEPATH)%: $(HOMELOGOREP)% $(FIGPATH)%
 $(IMAGEPATH)%.pdf: $(BUILDPATH)%.ladot.tex $(BUILDPATH)%.ladot.eps
 	rm -rf tmp
 	mkdir tmp
+	cp kappa.sty tmp/
 	cat fm_header $(BUILDPATH)$(notdir $(basename $@)).ladot.tex > tmp/$(notdir $(basename $@))_fm
 	cp $(BUILDPATH)$(notdir $(basename $@)).ladot.eps tmp/$(notdir $(basename $@))_fm.eps
 	cd tmp ; fragmaster

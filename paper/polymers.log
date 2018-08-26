@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_2) (preloaded format=pdflatex 2018.1.16)  8 AUG 2018 09:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_2) (preloaded format=pdflatex 2018.1.16)  24 AUG 2018 05:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,7 +483,8 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 )
 (/Users/feret/ownCloud/packages/boolean.sty
 Package: boolean 2006/10/05 version 0.1 Boolean expressions
-) (./polymers.aux)
+)
+No file polymers.aux.
 \openout1 = `polymers.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
@@ -501,7 +502,6 @@ LaTeX Font Info:    ... okay on input line 100.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
 LaTeX Font Info:    ... okay on input line 100.
 \AtBeginShipoutBox=\box37
-
 
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
@@ -527,8 +527,6 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 100.
 LaTeX Info: Redefining \pageref on input line 100.
 LaTeX Info: Redefining \nameref on input line 100.
-
-(./polymers.out) (./polymers.out)
 \@outlinefile=\write4
 \openout4 = `polymers.out'.
 
@@ -574,15 +572,32 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 102.
 
 
 
+LaTeX Warning: Reference `pbemail' on page 1 undefined on input line 102.
+
+
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 104.
 
+
+
+LaTeX Warning: Reference `afemail' on page 1 undefined on input line 104.
 
 
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 110.
 
 
+
+LaTeX Warning: Reference `jfemail' on page 1 undefined on input line 110.
+
 (./abstract.tex)
 \c@sv@footnote=\count156
+
+
+LaTeX Warning: Citation `DBLP:journals/tcs/DanosL04' on page 1 undefined on inp
+ut line 140.
+
+
+LaTeX Warning: Citation `BNGL' on page 1 undefined on input line 141.
+
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 
@@ -610,7 +625,41 @@ e.0}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.142 
       ]
-<generated_pictures/abc_contact_map.pdf, id=127, 124.465pt x 97.36375pt>
+
+LaTeX Warning: Citation `DBLP:conf/cmsb/HarmerCLO17' on page 2 undefined on inp
+ut line 143.
+
+
+LaTeX Warning: Citation `Gyori119834' on page 2 undefined on input line 143.
+
+
+LaTeX Warning: Citation `DanosEtAl-VMCAI08' on page 2 undefined on input line 1
+47.
+
+
+LaTeX Warning: Citation `SASB2016' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Citation `KaSa' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Citation `kreyBig' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Reference `sec:case-study' on page 2 undefined on input line 150
+.
+
+
+LaTeX Warning: Reference `sec:kappa' on page 2 undefined on input line 150.
+
+
+LaTeX Warning: Reference `sec:graphs' on page 2 undefined on input line 151.
+
+
+LaTeX Warning: Reference `sec:refinement' on page 2 undefined on input line 151
+.
+
+<generated_pictures/abc_contact_map.pdf, id=28, 124.465pt x 97.36375pt>
 File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_contact_map.pdf>
@@ -618,7 +667,7 @@ Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
 ine 161.
 (pdftex.def)             Requested size: 124.46469pt x 97.3635pt.
 
-<generated_pictures/abc_triangle.pdf, id=128, 124.465pt x 96.36pt>
+<generated_pictures/abc_triangle.pdf, id=29, 124.465pt x 96.36pt>
 File: generated_pictures/abc_triangle.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_triangle.pdf>
@@ -626,15 +675,41 @@ Package pdftex.def Info: generated_pictures/abc_triangle.pdf used on input line
  167.
 (pdftex.def)             Requested size: 124.46469pt x 96.35974pt.
 
-<generated_pictures/abc_pattern.pdf, id=129, 254.9525pt x 31.11626pt>
+<generated_pictures/abc_pattern.pdf, id=30, 254.9525pt x 31.11626pt>
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
 173.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
- [2]
-<generated_pictures/self_contact_map.pdf, id=151, 65.24374pt x 31.11626pt>
+
+
+LaTeX Warning: Reference `fig:abc:cm' on page 2 undefined on input line 183.
+
+
+LaTeX Warning: Reference `fig:abc:triangle' on page 2 undefined on input line 1
+83.
+
+
+LaTeX Warning: Reference `fig:abc:pattern' on page 2 undefined on input line 18
+3.
+
+[2]
+
+LaTeX Warning: Reference `fig:abc:cm' on page 3 undefined on input line 196.
+
+
+LaTeX Warning: Reference `fig:abc:triangle' on page 3 undefined on input line 1
+97.
+
+
+LaTeX Warning: Reference `fig:abc:cm' on page 3 undefined on input line 200.
+
+
+LaTeX Warning: Reference `fig:abc:pattern' on page 3 undefined on input line 20
+1.
+
+<generated_pictures/self_contact_map.pdf, id=39, 65.24374pt x 31.11626pt>
 File: generated_pictures/self_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/self_contact_map.pdf>
@@ -642,7 +717,7 @@ Package pdftex.def Info: generated_pictures/self_contact_map.pdf used on input
 line 211.
 (pdftex.def)             Requested size: 65.24358pt x 31.11617pt.
 
-<generated_pictures/self_monomer.pdf, id=152, 53.19875pt x 31.11626pt>
+<generated_pictures/self_monomer.pdf, id=40, 53.19875pt x 31.11626pt>
 File: generated_pictures/self_monomer.pdf Graphic file (type pdf)
 
 <use generated_pictures/self_monomer.pdf>
@@ -650,16 +725,24 @@ Package pdftex.def Info: generated_pictures/self_monomer.pdf used on input line
  216.
 (pdftex.def)             Requested size: 53.19861pt x 31.11617pt.
 
-<generated_pictures/self_dimer.pdf, id=153, 110.4125pt x 31.11626pt>
+<generated_pictures/self_dimer.pdf, id=41, 110.4125pt x 31.11626pt>
 File: generated_pictures/self_dimer.pdf Graphic file (type pdf)
 
 <use generated_pictures/self_dimer.pdf>
 Package pdftex.def Info: generated_pictures/self_dimer.pdf used on input line 2
 16.
 (pdftex.def)             Requested size: 110.41222pt x 31.11617pt.
- [3 <./generated_pictures/abc_contact_map.pdf> <./generated_pictures/abc_triang
-le.pdf> <./generated_pictures/abc_pattern.pdf>]
-<generated_pictures/twoself_contact_map.pdf, id=183, 92.345pt x 31.11626pt>
+
+
+LaTeX Warning: Reference `fig:self:cm' on page 3 undefined on input line 218.
+
+
+LaTeX Warning: Reference `fig:self:species' on page 3 undefined on input line 2
+18.
+
+[3 <./generated_pictures/abc_contact_map.pdf> <./generated_pictures/abc_triangl
+e.pdf> <./generated_pictures/abc_pattern.pdf>]
+<generated_pictures/twoself_contact_map.pdf, id=70, 92.345pt x 31.11626pt>
 File: generated_pictures/twoself_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/twoself_contact_map.pdf>
@@ -667,7 +750,7 @@ Package pdftex.def Info: generated_pictures/twoself_contact_map.pdf used on inp
 ut line 227.
 (pdftex.def)             Requested size: 92.34476pt x 31.11617pt.
 
-<generated_pictures/twoself_pattern.pdf, id=184, 182.6825pt x 31.11626pt>
+<generated_pictures/twoself_pattern.pdf, id=71, 182.6825pt x 31.11626pt>
 File: generated_pictures/twoself_pattern.pdf Graphic file (type pdf)
 
 <use generated_pictures/twoself_pattern.pdf>
@@ -679,7 +762,26 @@ Missing character: There is no   in font cmr8!
 Missing character: There is no Â in font cmr8!
 Missing character: There is no   in font cmr8!
 
-<generated_pictures/conflict_contact_map.pdf, id=190, 117.43875pt x 76.285pt>
+
+LaTeX Warning: Reference `fig:twoself:cm' on page 4 undefined on input line 235
+.
+
+
+LaTeX Warning: Reference `fig:self:cm' on page 4 undefined on input line 240.
+
+
+LaTeX Warning: Reference `fig:self:species' on page 4 undefined on input line 2
+40.
+
+
+LaTeX Warning: Reference `fig:twoself:cm' on page 4 undefined on input line 242
+.
+
+
+LaTeX Warning: Reference `fig:twoself:pattern' on page 4 undefined on input lin
+e 242.
+
+<generated_pictures/conflict_contact_map.pdf, id=72, 117.43875pt x 76.285pt>
 File: generated_pictures/conflict_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_contact_map.pdf>
@@ -687,7 +789,7 @@ Package pdftex.def Info: generated_pictures/conflict_contact_map.pdf used on in
 put line 252.
 (pdftex.def)             Requested size: 117.43845pt x 76.2848pt.
 
-<generated_pictures/conflict_r.pdf, id=191, 42.1575pt x 44.165pt>
+<generated_pictures/conflict_r.pdf, id=73, 42.1575pt x 44.165pt>
 File: generated_pictures/conflict_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_r.pdf>
@@ -695,7 +797,7 @@ Package pdftex.def Info: generated_pictures/conflict_r.pdf used on input line 2
 67.
 (pdftex.def)             Requested size: 42.15738pt x 44.16487pt.
 
-<generated_pictures/conflict_rg.pdf, id=192, 89.33376pt x 44.165pt>
+<generated_pictures/conflict_rg.pdf, id=74, 89.33376pt x 44.165pt>
 File: generated_pictures/conflict_rg.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_rg.pdf>
@@ -703,7 +805,7 @@ Package pdftex.def Info: generated_pictures/conflict_rg.pdf used on input line
 267.
 (pdftex.def)             Requested size: 89.33353pt x 44.16487pt.
 
-<generated_pictures/conflict_grs.pdf, id=193, 117.43875pt x 60.225pt>
+<generated_pictures/conflict_grs.pdf, id=75, 117.43875pt x 60.225pt>
 File: generated_pictures/conflict_grs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_grs.pdf>
@@ -711,7 +813,7 @@ Package pdftex.def Info: generated_pictures/conflict_grs.pdf used on input line
  267.
 (pdftex.def)             Requested size: 117.43845pt x 60.22484pt.
 
-<generated_pictures/conflict_ggrs.pdf, id=194, 132.495pt x 60.225pt>
+<generated_pictures/conflict_ggrs.pdf, id=76, 132.495pt x 60.225pt>
 File: generated_pictures/conflict_ggrs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_ggrs.pdf>
@@ -719,7 +821,7 @@ Package pdftex.def Info: generated_pictures/conflict_ggrs.pdf used on input lin
 e 267.
 (pdftex.def)             Requested size: 132.49466pt x 60.22484pt.
 
-<generated_pictures/conflict_rs.pdf, id=195, 102.3825pt x 50.1875pt>
+<generated_pictures/conflict_rs.pdf, id=77, 102.3825pt x 50.1875pt>
 File: generated_pictures/conflict_rs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_rs.pdf>
@@ -727,7 +829,7 @@ Package pdftex.def Info: generated_pictures/conflict_rs.pdf used on input line
 267.
 (pdftex.def)             Requested size: 102.38225pt x 50.18736pt.
 
-<generated_pictures/conflict_gbisrs.pdf, id=196, 117.43875pt x 73.27374pt>
+<generated_pictures/conflict_gbisrs.pdf, id=78, 117.43875pt x 73.27374pt>
 File: generated_pictures/conflict_gbisrs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_gbisrs.pdf>
@@ -735,7 +837,7 @@ Package pdftex.def Info: generated_pictures/conflict_gbisrs.pdf used on input l
 ine 267.
 (pdftex.def)             Requested size: 117.43845pt x 73.27354pt.
 
-<generated_pictures/conflict_s.pdf, id=197, 51.19125pt x 39.14626pt>
+<generated_pictures/conflict_s.pdf, id=79, 51.19125pt x 39.14626pt>
 File: generated_pictures/conflict_s.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_s.pdf>
@@ -743,7 +845,7 @@ Package pdftex.def Info: generated_pictures/conflict_s.pdf used on input line 2
 67.
 (pdftex.def)             Requested size: 51.19112pt x 39.14615pt.
 
-<generated_pictures/conflict_gs.pdf, id=198, 108.405pt x 34.1275pt>
+<generated_pictures/conflict_gs.pdf, id=80, 108.405pt x 34.1275pt>
 File: generated_pictures/conflict_gs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_gs.pdf>
@@ -751,7 +853,7 @@ Package pdftex.def Info: generated_pictures/conflict_gs.pdf used on input line
 267.
 (pdftex.def)             Requested size: 108.40472pt x 34.1274pt.
 
-<generated_pictures/conflict_g.pdf, id=199, 45.16875pt x 31.11626pt>
+<generated_pictures/conflict_g.pdf, id=81, 45.16875pt x 31.11626pt>
 File: generated_pictures/conflict_g.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_g.pdf>
@@ -763,10 +865,26 @@ Overfull \hbox (2.1255pt too wide) in paragraph at lines 252--268
 [][] [][] 
  []
 
+
+LaTeX Warning: Reference `fig:conflict:cm' on page 4 undefined on input line 26
+8.
+
+
+LaTeX Warning: Reference `fig:conflict:pattern' on page 4 undefined on input li
+ne 268.
+
+
+LaTeX Warning: Reference `fig:conflict:cm' on page 4 undefined on input line 27
+4.
+
+
+LaTeX Warning: Reference `fig:conflict:pattern' on page 4 undefined on input li
+ne 277.
+
 [4 <./generated_pictures/self_contact_map.pdf> <./generated_pictures/self_monom
 er.pdf> <./generated_pictures/self_dimer.pdf> <./generated_pictures/twoself_con
 tact_map.pdf> <./generated_pictures/twoself_pattern.pdf>]
-<generated_pictures/contact_map.pdf, id=241, 330.23375pt x 273.02pt>
+<generated_pictures/contact_map.pdf, id=119, 330.23375pt x 273.02pt>
 File: generated_pictures/contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/contact_map.pdf>
@@ -774,7 +892,7 @@ Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line
 293.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
 
-<generated_pictures/egfr_egfr_egfr.pdf, id=242, 406.51875pt x 74.2775pt>
+<generated_pictures/egfr_egfr_egfr.pdf, id=120, 406.51875pt x 74.2775pt>
 File: generated_pictures/egfr_egfr_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_egfr.pdf>
@@ -796,7 +914,7 @@ Overfull \hbox (3.65pt too wide) in paragraph at lines 293--301
 [][] 
  []
 
-<generated_pictures/species.pdf, id=243, 478.78876pt x 414.54875pt>
+<generated_pictures/species.pdf, id=121, 478.78876pt x 414.54875pt>
 File: generated_pictures/species.pdf Graphic file (type pdf)
 
 <use generated_pictures/species.pdf>
@@ -808,6 +926,38 @@ Overfull \hbox (2.11946pt too wide) in paragraph at lines 285--310
 []$[]$ [][] 
  []
 
+
+LaTeX Warning: Citation `Blinov-2006-ANM' on page 5 undefined on input line 310
+.
+
+
+LaTeX Warning: Reference `fig:egfr:cm' on page 5 undefined on input line 310.
+
+
+LaTeX Warning: Reference `fig:egfr:pattern' on page 5 undefined on input line 3
+10.
+
+
+LaTeX Warning: Reference `fig:egfr:species' on page 5 undefined on input line 3
+10.
+
+
+LaTeX Warning: Reference `fig:egfr' on page 5 undefined on input line 314.
+
+
+LaTeX Warning: Citation `Blinov-2006-ANM' on page 5 undefined on input line 315
+.
+
+
+LaTeX Warning: Citation `Blinov-2006-ANM' on page 5 undefined on input line 317
+.
+
+
+LaTeX Warning: Citation `SASB2016' on page 5 undefined on input line 318.
+
+
+LaTeX Warning: Citation `KaSa' on page 5 undefined on input line 318.
+
 [5 <./generated_pictures/conflict_contact_map.pdf> <./generated_pictures/confli
 ct_r.pdf> <./generated_pictures/conflict_rg.pdf> <./generated_pictures/conflict
 _grs.pdf> <./generated_pictures/conflict_ggrs.pdf> <./generated_pictures/confli
@@ -815,21 +965,85 @@ ct_rs.pdf> <./generated_pictures/conflict_gbisrs.pdf> <./generated_pictures/con
 flict_s.pdf> <./generated_pictures/conflict_gs.pdf> <./generated_pictures/confl
 ict_g.pdf> <./generated_pictures/contact_map.pdf> <./generated_pictures/egfr_eg
 fr_egfr.pdf> <./generated_pictures/species.pdf>]
+
+LaTeX Warning: Reference `fig:egfr:cm' on page 6 undefined on input line 322.
+
+
+LaTeX Warning: Reference `fig:egfr:cm' on page 6 undefined on input line 326.
+
+
+LaTeX Warning: Reference `sec:self-loop' on page 6 undefined on input line 327.
+
+
+
+LaTeX Warning: Reference `sec:conflict' on page 6 undefined on input line 327.
+
+
+LaTeX Warning: Reference `fig:egfr:pattern' on page 6 undefined on input line 3
+30.
+
+
+LaTeX Warning: Reference `fig:egfr:species' on page 6 undefined on input line 3
+32.
+
+
+LaTeX Warning: Citation `BNGL' on page 6 undefined on input line 334.
+
+
+LaTeX Warning: Citation `KaDe' on page 6 undefined on input line 334.
+
+
+LaTeX Warning: Citation `DanosEtAl-CONCUR07' on page 6 undefined on input line 
+336.
+
+
+LaTeX Warning: Citation `DanosEtAl-VMCAI08' on page 6 undefined on input line 3
+36.
+
+
+LaTeX Warning: Citation `Deeds-et-al-plosone2012' on page 6 undefined on input 
+line 336.
+
+
+LaTeX Warning: Citation `Kim' on page 6 undefined on input line 336.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
+
+LaTeX Warning: Citation `tarjan' on page 7 undefined on input line 348.
+
+
+LaTeX Warning: Citation `SASB2016' on page 7 undefined on input line 348.
+
+
+LaTeX Warning: Citation `KaSa' on page 7 undefined on input line 348.
+
+
+LaTeX Warning: Reference `sec:kappa' on page 7 undefined on input line 351.
+
+
+LaTeX Warning: Reference `sec:graphs' on page 7 undefined on input line 353.
+
+
+LaTeX Warning: Reference `sec:refinement' on page 7 undefined on input line 353
+.
+
+
+LaTeX Warning: Citation `DBLP:journals/tcs/DanosL04' on page 7 undefined on inp
+ut line 376.
+
+
+LaTeX Warning: Citation `Feret_IJSI2013' on page 7 undefined on input line 376.
+
+
 [7]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 453.
+LaTeX Warning: Reference `sec:triangle' on page 8 undefined on input line 394.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Sigma' on input line 453.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 453.
+LaTeX Warning: Reference `sec:egfr' on page 8 undefined on input line 413.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -843,22 +1057,56 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 453.
 
-<generated_pictures/species_cm.pdf, id=385, 926.46124pt x 414.54875pt>
-File: generated_pictures/species_cm.pdf Graphic file (type pdf)
 
-<use generated_pictures/species_cm.pdf>
-Package pdftex.def Info: generated_pictures/species_cm.pdf used on input line 4
-66.
-(pdftex.def)             Requested size: 926.45897pt x 414.54773pt.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 453.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\Sigma' on input line 453.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 453.
+
+
+LaTeX Warning: File `generated_pictures/species_cm.pdf' not found on input line
+ 466.
+
+
+! Package pdftex.def Error: File `generated_pictures/species_cm.pdf' not found.
+
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.466 \end{minipage}}
+                     
+? 
 
 Overfull \hbox (3.65pt too wide) in paragraph at lines 466--467
 [][] 
  []
 
 [8]
-Underfull \vbox (badness 1205) has occurred while \output is active []
 
- [9 <./generated_pictures/species_cm.pdf>]
+LaTeX Warning: Reference `fig:abc' on page 9 undefined on input line 499.
+
+
+LaTeX Warning: Reference `fig:abc:cm' on page 9 undefined on input line 501.
+
+
+LaTeX Warning: Reference `fig:abc:triangle' on page 9 undefined on input line 5
+23.
+
+
+LaTeX Warning: Reference `sec:egfr' on page 9 undefined on input line 547.
+
+
+LaTeX Warning: Reference `fig:egfr:cm' on page 9 undefined on input line 549.
+
+
 Overfull \hbox (2.09126pt too wide) in paragraph at lines 562--583
 []$\OMS/cmsy/m/n/10.95 L[] [] []$\OT1/cmr/m/it/10.95 . 
  []
@@ -866,8 +1114,20 @@ Overfull \hbox (2.09126pt too wide) in paragraph at lines 562--583
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [9]
+
+LaTeX Warning: Citation `DBLP:journals/mscs/DanosHW13' on page 10 undefined on 
+input line 632.
+
+
+LaTeX Warning: Citation `Camporesi:CMSB2013' on page 10 undefined on input line
+ 632.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [10]
-<generated_pictures/abc_embed.pdf, id=457, 225.84375pt x 118.4425pt>
+<generated_pictures/abc_embed.pdf, id=271, 225.84375pt x 118.4425pt>
 File: generated_pictures/abc_embed.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_embed.pdf>
@@ -875,16 +1135,28 @@ Package pdftex.def Info: generated_pictures/abc_embed.pdf used on input line 65
 1.
 (pdftex.def)             Requested size: 225.84319pt x 118.4422pt.
 
-<generated_pictures/egfr_embed.pdf, id=459, 926.46124pt x 414.54875pt>
+
+LaTeX Warning: Reference `fig:abc:embed' on page 11 undefined on input line 658
+.
+
+<generated_pictures/egfr_embed.pdf, id=272, 926.46124pt x 414.54875pt>
 File: generated_pictures/egfr_embed.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_embed.pdf>
 Package pdftex.def Info: generated_pictures/egfr_embed.pdf used on input line 6
 65.
 (pdftex.def)             Requested size: 926.45897pt x 414.54773pt.
- [11 <./generated_pictures/abc_embed.pdf> <./generated_pictures/egfr_embed.pdf>
-] [12]
-<generated_pictures/abc_pattern_a.pdf, id=494, 204.765pt x 35.13126pt>
+
+
+LaTeX Warning: Reference `fig:egfr:embed' on page 11 undefined on input line 67
+2.
+
+[11 <./generated_pictures/abc_embed.pdf> <./generated_pictures/egfr_embed.pdf>]
+[12]
+
+LaTeX Warning: Reference `problem' on page 13 undefined on input line 825.
+
+<generated_pictures/abc_pattern_a.pdf, id=308, 204.765pt x 35.13126pt>
 File: generated_pictures/abc_pattern_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_pattern_a.pdf>
@@ -892,7 +1164,7 @@ Package pdftex.def Info: generated_pictures/abc_pattern_a.pdf used on input lin
 e 860.
 (pdftex.def)             Requested size: 204.76448pt x 35.13115pt.
 
-<generated_pictures/abc_pattern_b.pdf, id=495, 190.7125pt x 31.11626pt>
+<generated_pictures/abc_pattern_b.pdf, id=309, 190.7125pt x 31.11626pt>
 File: generated_pictures/abc_pattern_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_pattern_b.pdf>
@@ -900,7 +1172,7 @@ Package pdftex.def Info: generated_pictures/abc_pattern_b.pdf used on input lin
 e 865.
 (pdftex.def)             Requested size: 190.71202pt x 31.11617pt.
 
-<generated_pictures/egfr_egfr_r.pdf, id=496, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_egfr_r.pdf, id=310, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
@@ -913,57 +1185,81 @@ File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
 876.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
- [13 <./generated_pictures/abc_pattern_a.pdf> <./generated_pictures/abc_pattern
-_b.pdf> <./generated_pictures/egfr_egfr_r.pdf>]
+
+
+LaTeX Warning: Reference `fig:repeatable' on page 13 undefined on input line 88
+2.
+
+
+LaTeX Warning: Reference `fig:repeatable:a' on page 13 undefined on input line 
+884.
+
+
+LaTeX Warning: Reference `fig:repeatable:b' on page 13 undefined on input line 
+885.
+
+
+LaTeX Warning: Reference `fig:repeatable:c' on page 13 undefined on input line 
+887.
+
+
+LaTeX Warning: Reference `fig:repeatable:d' on page 13 undefined on input line 
+889.
+
+[13 <./generated_pictures/abc_pattern_a.pdf> <./generated_pictures/abc_pattern_
+b.pdf> <./generated_pictures/egfr_egfr_r.pdf>]
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
- <use generated_pictures/abc_pattern.pdf>
+
+<use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
 907.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
- [14]
-File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 
+
+LaTeX Warning: Reference `th:site' on page 14 undefined on input line 949.
+
+File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 <use generated_pictures/abc_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
 ine 954.
 (pdftex.def)             Requested size: 124.46469pt x 97.3635pt.
  <xymatrix
-<generated_pictures/a_b.pdf, id=550, 44.165pt x 32.12pt>
+<generated_pictures/a_b.pdf, id=347, 44.165pt x 32.12pt>
 File: generated_pictures/a_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/a_b.pdf>
 Package pdftex.def Info: generated_pictures/a_b.pdf used on input line 988.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 
-<generated_pictures/b_c.pdf, id=551, 46.1725pt x 31.11626pt>
+<generated_pictures/b_c.pdf, id=348, 46.1725pt x 31.11626pt>
 File: generated_pictures/b_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_c.pdf>
 Package pdftex.def Info: generated_pictures/b_c.pdf used on input line 988.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 
-<generated_pictures/c_b.pdf, id=552, 46.1725pt x 31.11626pt>
+<generated_pictures/c_b.pdf, id=349, 46.1725pt x 31.11626pt>
 File: generated_pictures/c_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/c_b.pdf>
 Package pdftex.def Info: generated_pictures/c_b.pdf used on input line 988.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 
-<generated_pictures/c_a.pdf, id=553, 38.1425pt x 37.13875pt>
+<generated_pictures/c_a.pdf, id=350, 38.1425pt x 37.13875pt>
 File: generated_pictures/c_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/c_a.pdf>
 Package pdftex.def Info: generated_pictures/c_a.pdf used on input line 988.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
 
-<generated_pictures/a_c.pdf, id=554, 44.165pt x 32.12pt>
+<generated_pictures/a_c.pdf, id=351, 44.165pt x 32.12pt>
 File: generated_pictures/a_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/a_c.pdf>
 Package pdftex.def Info: generated_pictures/a_c.pdf used on input line 988.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 
-<generated_pictures/b_a.pdf, id=555, 38.1425pt x 37.13875pt>
+<generated_pictures/b_a.pdf, id=352, 38.1425pt x 37.13875pt>
 File: generated_pictures/b_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_a.pdf>
@@ -1025,27 +1321,36 @@ File: generated_pictures/b_a.pdf Graphic file (type pdf)
 Package pdftex.def Info: generated_pictures/b_a.pdf used on input line 988.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
  258>
+
+LaTeX Warning: Reference `fig:abc:gs:cm' on page 14 undefined on input line 991
+.
+
+
+LaTeX Warning: Reference `fig:abc:gs:gs' on page 14 undefined on input line 991
+.
+
+[14]
 File: generated_pictures/contact_map.pdf Graphic file (type pdf)
  <use generated_pictures/contact_map.pdf>
 Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line 
 998.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
-
-<xymatrix <generated_pictures/sos_d.pdf, id=558, 80.3pt x 67.25125pt>
+ <xymatrix
+<generated_pictures/sos_d.pdf, id=365, 80.3pt x 67.25125pt>
 File: generated_pictures/sos_d.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_d.pdf>
 Package pdftex.def Info: generated_pictures/sos_d.pdf used on input line 1054.
 (pdftex.def)             Requested size: 80.29979pt x 67.25107pt.
 
-<generated_pictures/egf_r.pdf, id=559, 67.25125pt x 81.30376pt>
+<generated_pictures/egf_r.pdf, id=366, 67.25125pt x 81.30376pt>
 File: generated_pictures/egf_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_r.pdf>
 Package pdftex.def Info: generated_pictures/egf_r.pdf used on input line 1054.
 (pdftex.def)             Requested size: 67.25107pt x 81.30354pt.
 
-<generated_pictures/grb2_a.pdf, id=560, 82.3075pt x 59.22125pt>
+<generated_pictures/grb2_a.pdf, id=367, 82.3075pt x 59.22125pt>
 File: generated_pictures/grb2_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_a.pdf>
@@ -1053,7 +1358,7 @@ Package pdftex.def Info: generated_pictures/grb2_a.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
 
-<generated_pictures/shc_pi.pdf, id=561, 80.3pt x 54.2025pt>
+<generated_pictures/shc_pi.pdf, id=368, 80.3pt x 54.2025pt>
 File: generated_pictures/shc_pi.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_pi.pdf>
@@ -1061,7 +1366,7 @@ Package pdftex.def Info: generated_pictures/shc_pi.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 
-<generated_pictures/egfr_c.pdf, id=562, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_c.pdf, id=369, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_c.pdf>
@@ -1069,7 +1374,7 @@ Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_r.pdf, id=563, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_r.pdf, id=370, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r.pdf>
@@ -1077,7 +1382,7 @@ Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_n.pdf, id=564, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_n.pdf, id=371, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_n.pdf>
@@ -1085,7 +1390,7 @@ Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_l.pdf, id=565, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_l.pdf, id=372, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_l.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_l.pdf>
@@ -1093,7 +1398,7 @@ Package pdftex.def Info: generated_pictures/egfr_l.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_Y48.pdf, id=566, 94.3525pt x 67.25125pt>
+<generated_pictures/egfr_Y48.pdf, id=373, 94.3525pt x 67.25125pt>
 File: generated_pictures/egfr_Y48.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_Y48.pdf>
@@ -1105,7 +1410,7 @@ Overfull \hbox (4.5711pt too wide) in paragraph at lines 1054--1054
 [][] 
  []
 
-<generated_pictures/egfr_Y68.pdf, id=567, 80.3pt x 81.30376pt>
+<generated_pictures/egfr_Y68.pdf, id=374, 80.3pt x 81.30376pt>
 File: generated_pictures/egfr_Y68.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_Y68.pdf>
@@ -1113,7 +1418,7 @@ Package pdftex.def Info: generated_pictures/egfr_Y68.pdf used on input line 105
 4.
 (pdftex.def)             Requested size: 80.29979pt x 81.30354pt.
 
-<generated_pictures/shc_Y7.pdf, id=568, 80.3pt x 54.2025pt>
+<generated_pictures/shc_Y7.pdf, id=375, 80.3pt x 54.2025pt>
 File: generated_pictures/shc_Y7.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_Y7.pdf>
@@ -1121,7 +1426,7 @@ Package pdftex.def Info: generated_pictures/shc_Y7.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 
-<generated_pictures/grb2_b.pdf, id=569, 82.3075pt x 59.22125pt>
+<generated_pictures/grb2_b.pdf, id=376, 82.3075pt x 59.22125pt>
 File: generated_pictures/grb2_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_b.pdf>
@@ -1265,25 +1570,23 @@ File: generated_pictures/grb2_b.pdf Graphic file (type pdf)
 Package pdftex.def Info: generated_pictures/grb2_b.pdf used on input line 1054.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
- 1390> <xymatrix
-File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
+ 1390>
 
-<use generated_pictures/egfr_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1077.
+LaTeX Warning: Reference `fig:egfr:gs:cm' on page 15 undefined on input line 10
+57.
 
-(pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
-File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
- <use generated_pictures/egfr_r.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1077.
 
-(pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
-File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
+LaTeX Warning: Reference `fig:egfr:gs:gs' on page 15 undefined on input line 10
+57.
 
-<use generated_pictures/egfr_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1077.
 
-(pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
- 7x1
+LaTeX Warning: Reference `fig:abc:gs' on page 15 undefined on input line 1062.
+
+
+LaTeX Warning: Reference `fig:egfr:gs' on page 15 undefined on input line 1067.
+
+
+<xymatrix
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1077.
@@ -1300,6 +1603,7 @@ File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
 Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1077.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
+ 7x1
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_c.pdf>
@@ -1317,27 +1621,48 @@ File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
 Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1077.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
- 278> [15 <./generated_pictures/a_b.pdf> <./generated_pictures/b_c.pdf> <./gene
-rated_pictures/c_b.pdf> <./generated_pictures/c_a.pdf> <./generated_pictures/a_
-c.pdf> <./generated_pictures/b_a.pdf> <./generated_pictures/sos_d.pdf> <./gener
-ated_pictures/egf_r.pdf> <./generated_pictures/grb2_a.pdf> <./generated_picture
-s/shc_pi.pdf> <./generated_pictures/egfr_c.pdf> <./generated_pictures/egfr_r.pd
-f> <./generated_pictures/egfr_n.pdf> <./generated_pictures/egfr_l.pdf> <./gener
-ated_pictures/egfr_Y48.pdf> <./generated_pictures/egfr_Y68.pdf> <./generated_pi
-ctures/shc_Y7.pdf> <./generated_pictures/grb2_b.pdf>]
+File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
+ <use generated_pictures/egfr_c.pdf>
+Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1077.
+
+(pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
+File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
+
+<use generated_pictures/egfr_r.pdf>
+Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1077.
+
+(pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
+File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
+ <use generated_pictures/egfr_n.pdf>
+Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1077.
+
+(pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
+ 278>
+[15 <./generated_pictures/a_b.pdf> <./generated_pictures/b_c.pdf> <./generated_
+pictures/c_b.pdf> <./generated_pictures/c_a.pdf> <./generated_pictures/a_c.pdf>
+ <./generated_pictures/b_a.pdf> <./generated_pictures/sos_d.pdf> <./generated_p
+ictures/egf_r.pdf> <./generated_pictures/grb2_a.pdf> <./generated_pictures/shc_
+pi.pdf> <./generated_pictures/egfr_c.pdf> <./generated_pictures/egfr_r.pdf> <./
+generated_pictures/egfr_n.pdf> <./generated_pictures/egfr_l.pdf> <./generated_p
+ictures/egfr_Y48.pdf> <./generated_pictures/egfr_Y68.pdf> <./generated_pictures
+/shc_Y7.pdf> <./generated_pictures/grb2_b.pdf>]
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
- <use generated_pictures/abc_pattern.pdf>
+
+<use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
 1088.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
-File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 
+
+LaTeX Warning: Reference `th:links' on page 16 undefined on input line 1132.
+
+File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 <use generated_pictures/abc_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
 ine 1138.
 (pdftex.def)             Requested size: 124.46469pt x 97.3635pt.
  <xymatrix
-<generated_pictures/link_a_b.pdf, id=680, 96.36pt x 31.11626pt>
+<generated_pictures/link_a_b.pdf, id=482, 96.36pt x 31.11626pt>
 File: generated_pictures/link_a_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_b.pdf>
@@ -1345,7 +1670,7 @@ Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 117
 2.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_b_c.pdf, id=681, 96.36pt x 31.11626pt>
+<generated_pictures/link_b_c.pdf, id=483, 96.36pt x 31.11626pt>
 File: generated_pictures/link_b_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_b_c.pdf>
@@ -1353,7 +1678,7 @@ Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 117
 2.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_c_b.pdf, id=682, 96.36pt x 31.11626pt>
+<generated_pictures/link_c_b.pdf, id=484, 96.36pt x 31.11626pt>
 File: generated_pictures/link_c_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_c_b.pdf>
@@ -1361,7 +1686,7 @@ Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 117
 2.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_c_a.pdf, id=683, 96.36pt x 31.11626pt>
+<generated_pictures/link_c_a.pdf, id=485, 96.36pt x 31.11626pt>
 File: generated_pictures/link_c_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_c_a.pdf>
@@ -1369,7 +1694,7 @@ Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 117
 2.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_a_c.pdf, id=684, 96.36pt x 31.11626pt>
+<generated_pictures/link_a_c.pdf, id=486, 96.36pt x 31.11626pt>
 File: generated_pictures/link_a_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_c.pdf>
@@ -1377,7 +1702,7 @@ Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 117
 2.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_b_a.pdf, id=685, 96.36pt x 31.11626pt>
+<generated_pictures/link_b_a.pdf, id=487, 96.36pt x 31.11626pt>
 File: generated_pictures/link_b_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_b_a.pdf>
@@ -1453,13 +1778,21 @@ Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 117
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
 258>
+
+LaTeX Warning: Reference `fig:abc:gl:cm' on page 16 undefined on input line 117
+4.
+
+
+LaTeX Warning: Reference `fig:abc:gl:gl' on page 16 undefined on input line 117
+4.
+
 File: generated_pictures/contact_map.pdf Graphic file (type pdf)
- <use generated_pictures/contact_map.pdf>
+<use generated_pictures/contact_map.pdf>
 Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line 
 1183.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
  <xymatrix
-<generated_pictures/sos_grb2.pdf, id=688, 210.7875pt x 54.2025pt>
+<generated_pictures/sos_grb2.pdf, id=488, 210.7875pt x 54.2025pt>
 File: generated_pictures/sos_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_grb2.pdf>
@@ -1467,7 +1800,7 @@ Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 125
 0.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
-<generated_pictures/grb2_shc.pdf, id=689, 210.7875pt x 54.2025pt>
+<generated_pictures/grb2_shc.pdf, id=489, 210.7875pt x 54.2025pt>
 File: generated_pictures/grb2_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_shc.pdf>
@@ -1475,7 +1808,7 @@ Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 125
 0.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
-<generated_pictures/egf_egfr.pdf, id=690, 203.76125pt x 67.25125pt>
+<generated_pictures/egf_egfr.pdf, id=490, 203.76125pt x 67.25125pt>
 File: generated_pictures/egf_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_egfr.pdf>
@@ -1483,7 +1816,7 @@ Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 125
 0.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 
-<generated_pictures/grb2_egfr.pdf, id=691, 210.7875pt x 67.25125pt>
+<generated_pictures/grb2_egfr.pdf, id=491, 210.7875pt x 67.25125pt>
 File: generated_pictures/grb2_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_egfr.pdf>
@@ -1491,7 +1824,7 @@ Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 12
 50.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/shc_egfr.pdf, id=692, 210.7875pt x 67.25125pt>
+<generated_pictures/shc_egfr.pdf, id=492, 210.7875pt x 67.25125pt>
 File: generated_pictures/shc_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_egfr.pdf>
@@ -1499,7 +1832,7 @@ Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 125
 0.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_egfr_c.pdf, id=693, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_egfr_c.pdf, id=493, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_c.pdf>
@@ -1513,7 +1846,7 @@ Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line
 1250.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_egfr_n.pdf, id=694, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_egfr_n.pdf, id=494, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
@@ -1521,7 +1854,7 @@ Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line
 1250.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_egf.pdf, id=695, 203.76125pt x 67.25125pt>
+<generated_pictures/egfr_egf.pdf, id=495, 203.76125pt x 67.25125pt>
 File: generated_pictures/egfr_egf.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egf.pdf>
@@ -1529,7 +1862,7 @@ Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 125
 0.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 
-<generated_pictures/egfr_shc.pdf, id=696, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_shc.pdf, id=496, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_shc.pdf>
@@ -1537,7 +1870,7 @@ Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 125
 0.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_grb2.pdf, id=697, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_grb2.pdf, id=497, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_grb2.pdf>
@@ -1545,7 +1878,7 @@ Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 12
 50.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/shc_grb2.pdf, id=698, 210.7875pt x 54.2025pt>
+<generated_pictures/shc_grb2.pdf, id=498, 210.7875pt x 54.2025pt>
 File: generated_pictures/shc_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_grb2.pdf>
@@ -1553,7 +1886,7 @@ Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 125
 0.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
-<generated_pictures/grb2_sos.pdf, id=699, 210.7875pt x 54.2025pt>
+<generated_pictures/grb2_sos.pdf, id=499, 210.7875pt x 54.2025pt>
 File: generated_pictures/grb2_sos.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_sos.pdf>
@@ -1711,7 +2044,23 @@ Overfull \hbox (16.32947pt too wide) in paragraph at lines 1183--1254
 [][][][] 
  []
 
-[16] <xymatrix
+
+LaTeX Warning: Reference `fig:egfr:gl:cm' on page 16 undefined on input line 12
+54.
+
+
+LaTeX Warning: Reference `fig:egfr:gl:gl' on page 16 undefined on input line 12
+54.
+
+
+LaTeX Warning: Reference `fig:abc:gl' on page 16 undefined on input line 1260.
+
+[16]
+
+LaTeX Warning: Reference `fig:egfr:gl' on page 17 undefined on input line 1265.
+
+
+<xymatrix
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
@@ -1766,16 +2115,26 @@ File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
 1275.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
- 278> [17 <./generated_pictures/link_a_b.pdf> <./generated_pictures/link_b_c.pd
-f> <./generated_pictures/link_c_b.pdf> <./generated_pictures/link_c_a.pdf> <./g
-enerated_pictures/link_a_c.pdf> <./generated_pictures/link_b_a.pdf> <./generate
-d_pictures/sos_grb2.pdf> <./generated_pictures/grb2_shc.pdf> <./generated_pictu
-res/egf_egfr.pdf> <./generated_pictures/grb2_egfr.pdf> <./generated_pictures/sh
-c_egfr.pdf> <./generated_pictures/egfr_egfr_c.pdf> <./generated_pictures/egfr_e
-gfr_n.pdf> <./generated_pictures/egfr_egf.pdf> <./generated_pictures/egfr_shc.p
-df> <./generated_pictures/egfr_grb2.pdf> <./generated_pictures/shc_grb2.pdf> <.
-/generated_pictures/grb2_sos.pdf>]
-<generated_pictures/egfr_r_c.pdf, id=821, 340.27126pt x 67.25125pt>
+ 278>
+
+LaTeX Warning: Citation `SASB2016' on page 17 undefined on input line 1282.
+
+
+LaTeX Warning: Citation `KaSa' on page 17 undefined on input line 1282.
+
+
+LaTeX Warning: Citation `SASB2016' on page 17 undefined on input line 1285.
+
+[17 <./generated_pictures/link_a_b.pdf> <./generated_pictures/link_b_c.pdf> <./
+generated_pictures/link_c_b.pdf> <./generated_pictures/link_c_a.pdf> <./generat
+ed_pictures/link_a_c.pdf> <./generated_pictures/link_b_a.pdf> <./generated_pict
+ures/sos_grb2.pdf> <./generated_pictures/grb2_shc.pdf> <./generated_pictures/eg
+f_egfr.pdf> <./generated_pictures/grb2_egfr.pdf> <./generated_pictures/shc_egfr
+.pdf> <./generated_pictures/egfr_egfr_c.pdf> <./generated_pictures/egfr_egfr_n.
+pdf> <./generated_pictures/egfr_egf.pdf> <./generated_pictures/egfr_shc.pdf> <.
+/generated_pictures/egfr_grb2.pdf> <./generated_pictures/shc_grb2.pdf> <./gener
+ated_pictures/grb2_sos.pdf>]
+<generated_pictures/egfr_r_c.pdf, id=613, 340.27126pt x 67.25125pt>
 File: generated_pictures/egfr_r_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r_c.pdf>
@@ -1783,7 +2142,7 @@ Package pdftex.def Info: generated_pictures/egfr_r_c.pdf used on input line 128
 7.
 (pdftex.def)             Requested size: 340.27042pt x 67.25107pt.
 
-<generated_pictures/egfr_r_n.pdf, id=822, 340.27126pt x 67.25125pt>
+<generated_pictures/egfr_r_n.pdf, id=614, 340.27126pt x 67.25125pt>
 File: generated_pictures/egfr_r_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r_n.pdf>
@@ -1791,22 +2150,36 @@ Package pdftex.def Info: generated_pictures/egfr_r_n.pdf used on input line 128
 7.
 (pdftex.def)             Requested size: 340.27042pt x 67.25107pt.
 
-<generated_pictures/egfr_n_c.pdf, id=823, 340.27126pt x 67.25125pt>
+<generated_pictures/egfr_n_c.pdf, id=615, 340.27126pt x 67.25125pt>
 File: generated_pictures/egfr_n_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_n_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_n_c.pdf used on input line 128
 7.
 (pdftex.def)             Requested size: 340.27042pt x 67.25107pt.
+
+
+LaTeX Warning: Citation `afp' on page 18 undefined on input line 1292.
+
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
- <use generated_pictures/abc_pattern.pdf>
+<use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
 1294.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
 
+
+LaTeX Warning: Reference `problem' on page 18 undefined on input line 1298.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1302--1303
 []\OT1/cmr/m/it/10.95 The in-
  []
+
+
+LaTeX Warning: Reference `problembis' on page 18 undefined on input line 1311.
+
+
+LaTeX Warning: Citation `kreyBig' on page 18 undefined on input line 1311.
 
 [18 <./generated_pictures/egfr_r_c.pdf> <./generated_pictures/egfr_r_n.pdf> <./
 generated_pictures/egfr_n_c.pdf>] <xymatrix
@@ -1846,7 +2219,7 @@ Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 133
 0.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
  48>
-<generated_pictures/link_a_b_c.pdf, id=852, 211.79124pt x 31.11626pt>
+<generated_pictures/link_a_b_c.pdf, id=637, 211.79124pt x 31.11626pt>
 File: generated_pictures/link_a_b_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_b_c.pdf>
@@ -1859,8 +2232,12 @@ File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
 1340.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
-File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 
+
+LaTeX Warning: Reference `fig:abc:gll:gl' on page 19 undefined on input line 13
+44.
+
+File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 <use generated_pictures/abc_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
 ine 1369.
@@ -2049,8 +2426,16 @@ Overfull \hbox (5.27374pt too wide) in paragraph at lines 1403--1403
  []
 
 190>
+
+LaTeX Warning: Reference `fig:abc:gll:cm' on page 19 undefined on input line 14
+05.
+
+
+LaTeX Warning: Reference `fig:abc:gll:gl' on page 19 undefined on input line 14
+05.
+
 File: generated_pictures/contact_map.pdf Graphic file (type pdf)
- <use generated_pictures/contact_map.pdf>
+<use generated_pictures/contact_map.pdf>
 Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line 
 1414.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
@@ -2280,33 +2665,105 @@ Overfull \hbox (16.32947pt too wide) in paragraph at lines 1414--1486
  []
 
 
+LaTeX Warning: Reference `fig:egfr:gll:cm' on page 19 undefined on input line 1
+486.
+
+
+LaTeX Warning: Reference `fig:egfr:gll:gl' on page 19 undefined on input line 1
+486.
+
+
+LaTeX Warning: Reference `fig:abc:gll' on page 19 undefined on input line 1491.
+
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1491--1493
 []\OT1/cmr/m/it/10.95 In
  []
+
+[19 <./generated_pictures/link_a_b_c.pdf>]
+
+LaTeX Warning: Reference `fig:abc:gll:gl' on page 20 undefined on input line 14
+94.
+
+
+LaTeX Warning: Reference `fig:egfr:gll' on page 20 undefined on input line 1498
+.
+
+
+LaTeX Warning: Reference `fig:egfr:gll:gl' on page 20 undefined on input line 1
+499.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1498--1500
 []\OT1/cmr/m/it/10.95 In
  []
 
-[19 <./generated_pictures/link_a_b_c.pdf>] [20] (./polymers.bbl) [21]
+
+LaTeX Warning: Citation `DBLP:journals/tcs/DanosL04' on page 20 undefined on in
+put line 1507.
+
+
+LaTeX Warning: Citation `BNGL' on page 20 undefined on input line 1507.
+
+
+LaTeX Warning: Citation `tarjan' on page 20 undefined on input line 1510.
+
+
+LaTeX Warning: Citation `DanosEtAl-VMCAI08' on page 20 undefined on input line 
+1511.
+
+
+LaTeX Warning: Citation `SASB2016' on page 20 undefined on input line 1511.
+
+
+LaTeX Warning: Citation `KaSa' on page 20 undefined on input line 1511.
+
+
+LaTeX Warning: Citation `KaSa' on page 20 undefined on input line 1513.
+
+
+LaTeX Warning: Citation `SASB2016' on page 20 undefined on input line 1514.
+
+
+LaTeX Warning: Citation `afp' on page 20 undefined on input line 1514.
+
+[20]
+
+LaTeX Warning: Citation `DBLP:conf/sas/Mine02' on page 21 undefined on input li
+ne 1516.
+
+No file polymers.bbl.
+[21]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1521.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1521.
-
-(./polymers.aux)
+ (./polymers.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1521.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1521.
 
-Package rerunfilecheck Info: File `polymers.out' has not changed.
-(rerunfilecheck)             Checksum: DF73EA98294B1917117672813149BBFB;1271.
+
+
+Package rerunfilecheck Warning: File `polymers.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `polymers.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  CA3A73E64F321F73FE66A00F51B9EC91;1225.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1521.
  ) 
 Here is how much of TeX's memory you used:
- 10781 strings out of 494108
- 150341 string characters out of 6155655
- 329079 words of memory out of 5000000
- 13745 multiletter control sequences out of 15000+600000
- 20361 words of font info for 84 fonts, out of 8000000 for 9000
+ 10731 strings out of 494108
+ 149448 string characters out of 6155655
+ 318858 words of memory out of 5000000
+ 13721 multiletter control sequences out of 15000+600000
+ 21147 words of font info for 87 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  35i,23n,35p,1447b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
@@ -2326,15 +2783,16 @@ fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
 cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></opt/local/sh
 are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti8.pfb></opt/local/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmtt8.pfb></opt/local/share/texmf-te
-xlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/local/share/texmf-te
-xlive/fonts/type1/public/stmaryrd/stmary10.pfb></opt/local/share/texmf-texlive/
-fonts/type1/public/xypic/xyatip10.pfb></opt/local/share/texmf-texlive/fonts/typ
-e1/public/xypic/xybtip10.pfb>
-Output written on polymers.pdf (21 pages, 490458 bytes).
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmtt8.pfb></opt/local/share/texmf-texlive
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/local/share/texmf-texlive
+/fonts/type1/public/stmaryrd/stmary10.pfb></opt/local/share/texmf-texlive/fonts
+/type1/public/xypic/xyatip10.pfb></opt/local/share/texmf-texlive/fonts/type1/pu
+blic/xypic/xybtip10.pfb>
+Output written on polymers.pdf (21 pages, 474021 bytes).
 PDF statistics:
- 1028 PDF objects out of 1200 (max. 8388607)
- 799 compressed objects within 8 object streams
- 191 named destinations out of 1000 (max. 500000)
- 488 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 780 PDF objects out of 1000 (max. 8388607)
+ 595 compressed objects within 6 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
 
