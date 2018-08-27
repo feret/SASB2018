@@ -348,7 +348,7 @@ in rule-based models}}}} \bigskip\\
 {\superplan}
 
 
-\begin{slide}{\frametitle{A chemical species}}
+\begin{slide}{\frametitle{Bio-molecular compound}}
 \begin{minipage}{\linewidth}
 \begin{center}\scalebox{0.9}{\includegraphics{generated_pictures/species.pdf}}
 \end{center}
@@ -382,15 +382,21 @@ in rule-based models}}}} \bigskip\\
 \begin{center}
 \scalebox{1.2}{\includegraphics{generated_pictures/ruled11.pdf}}
 \end{center}
-\vspace*{1cm}
 \begin{center}
 \scalebox{1.2}{\includegraphics{generated_pictures/ruled12.pdf}}
+\end{center}
+\begin{center}
+\scalebox{1.2}{\includegraphics{generated_pictures/ruled13.pdf}}
 \end{center}
 \end{minipage}
 \end{slide}
 
 
-\begin{slide}{\frametitle{Internal state}}
+\begin{slide}{\frametitle{Phosphorylation}}
+
+\vspace*{1cm}
+
+
 \begin{minipage}{\linewidth}
 \begin{center}
 \scalebox{1.2}{\includegraphics{generated_pictures/rule2.pdf}}
@@ -398,7 +404,8 @@ in rule-based models}}}} \bigskip\\
 \end{minipage}
 \end{slide}
 
-\short{
+%\short
+{
 \begin{slide}{\frametitle{Don't care, Don't write}}
 \begin{minipage}{\linewidth}
 \begin{center}
@@ -423,85 +430,499 @@ in rule-based models}}}} \bigskip\\
 
 
 
-\begin{slide}{\frametitle{Side effects}}
+\begin{slide}{\frametitle{Sequential unbinding \textcolor{blue}{(by side effects)}}}
 
-\vfill
-
-\begin{minipage}{\linewidth}
-\begin{center}
-\scalebox{1.2}{\includegraphics{generated_pictures/rule5.pdf}}
-\end{center}
-\end{minipage}
-
-\vfill
-
-
-\end{slide}
+  \begin{minipage}{\linewidth}
+  \begin{center}
+  \scalebox{1.2}{\includegraphics{generated_pictures/ruledse11.pdf}}
+  \end{center}
+  \begin{center}
+  \scalebox{1.2}{\includegraphics{generated_pictures/ruledse12.pdf}}
+  \end{center}
+  \begin{center}
+  \scalebox{1.2}{\includegraphics{generated_pictures/ruledse13.pdf}}
+  \end{center}
+  \end{minipage}
+  \end{slide}
 
 \begin{slide}{\frametitle{Creation/Suppression}}
 \begin{minipage}{\linewidth}
-\begin{center}
-\scalebox{1.2}{\includegraphics{generated_pictures/rule6.pdf}}
-\end{center}
+\hspace*{10cm}\scalebox{1.2}{\includegraphics{generated_pictures/rule6.pdf}}\hspace*{2cm}\mbox{}
 \end{minipage}
 
 \vfill
 
 \begin{minipage}{\linewidth}
-\begin{center}
-\scalebox{1.2}{\includegraphics{generated_pictures/rule7.pdf}}
-\end{center}
+\hspace*{6cm}\scalebox{1.2}{\includegraphics{generated_pictures/rule7.pdf}}
 \end{minipage}
 \end{slide}}
 
 
 {\superplan}
 
-\begin{slide}{\frametitle{Contact map}}
+\begin{slide}{\frametitle{Our goal}}
+
+We want to prove the absence of unbounded polymers:\bigskip\\
+
+\begin{minipage}{\linewidth}
+\scalebox{0.8}{\includegraphics{generated_pictures/trimera.pdf}}
+\begin{minipage}{1cm}\vspace*{-2.4cm}$\ldots$\end{minipage}
+\scalebox{0.8}{\includegraphics{generated_pictures/trimerb.pdf}}
+\end{minipage}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Why?}}
+
+\vfill
+
+\begin{enumerate}
+  \item Debugging:
+
+  When models come from a more abstract specification language, some conflicts are often forgotten.
+
+\vfill
+
+  \item Understanding the model:
+
+  Self-assembling of geant macro-molecules.
+\end{enumerate}
+
+\vfill
+
+\end{slide}
+
+\begin{slide}{\frametitle{Strengthened goal}}
+
+  We want to prove the absence of unbounded polymers:\bigskip\\
+
+  \begin{minipage}{\linewidth}
+  \scalebox{0.8}{\includegraphics{generated_pictures/trimera.pdf}}
+  \begin{minipage}{1cm}\vspace*{-2.4cm}$\ldots$\end{minipage}
+  \scalebox{0.8}{\includegraphics{generated_pictures/trimerb.pdf}}
+  \end{minipage}
+
+\vspace*{1cm}
+
+Instead, we will prove the absence of repeatable patterns:\bigskip\\
+
+\begin{minipage}{\linewidth}
+\begin{center}\scalebox{0.8}{\includegraphics{generated_pictures/repeatable_dimers.pdf}}
+\end{center}
+\end{minipage}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Interaction map}}
+
+  {\begin{minipage}{\linewidth}
+  \begin{center}
+    \scalebox{1.2}{\includegraphics{generated_pictures/contact_map.pdf}}
+  \end{center}
+  \end{minipage}}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Interpretation}}
+
+  {\begin{minipage}{\linewidth}
+  \begin{center}
+    \scalebox{0.7}{\includegraphics{generated_pictures/egfr_embed.pdf}}
+  \end{center}
+  \end{minipage}}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Interaction map}}
+
+  {\begin{minipage}{\linewidth}
+  \begin{center}
+    \scalebox{1.2}{\includegraphics{generated_pictures/contact_map.pdf}}
+  \end{center}
+  \end{minipage}}
 
 \end{slide}
 
 \begin{slide}{\frametitle{Conflicts}}
 
+  {\begin{minipage}{\linewidth}
+  \begin{center}
+    \scalebox{1.2}{\includegraphics{generated_pictures/conflict_contact_map.pdf}}
+
+    Interaction map.
+  \end{center}
+  \end{minipage}}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Conflicts:}}
+
+  \begin{minipage}{0.4\linewidth}
+  \begin{center}
+    \scalebox{0.8}{\includegraphics{generated_pictures/conflict_contact_map.pdf}}
+
+    Interaction map.
+  \end{center}
+  \end{minipage}
+  \begin{minipage}{0.55\linewidth}
+    \label{fig:conflict:pattern}
+  \scalebox{0.6}{\includegraphics{generated_pictures/conflict_r.pdf}}%
+\hspace*{7mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_s.pdf}}%
+\hspace*{7mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_g.pdf}}%
+\hspace*{7mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_rg.pdf}}%
+
+\vspace*{0.6cm}
+
+\scalebox{0.6}{\includegraphics{generated_pictures/conflict_grs.pdf}}%
+\hspace*{7mm}\scalebox{0.6}{\hspace*{2mm}\includegraphics{generated_pictures/conflict_ggrs.pdf}}%
+\hspace*{7mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_rs.pdf}}%
+
+\vspace*{0.6cm}
+
+\hspace*{23mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_gbisrs.pdf}}%
+\hspace*{7mm}\scalebox{0.6}{\includegraphics{generated_pictures/conflict_gs.pdf}}%
+
+\vspace*{0.6cm}
+
+{\hfill}Bio-molecular compounds.{\hfill}\mbox{}
+\end{minipage}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Alternative encoding}}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Alternative encoding}}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Alternative encoding}}
+
 \end{slide}
 
 \begin{slide}{\frametitle{Self-loops}}
+
+\vspace*{2cm}
+
+\begin{minipage}{\linewidth}
+  {\begin{minipage}{\linewidth}
+  \begin{center}
+    \scalebox{1.2}{\includegraphics{generated_pictures/self_contact_map.pdf}}
+
+Interaction map.
+  \end{center}
+  \end{minipage}}
+\end{minipage}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Self-loops}}
+
+\vspace*{2cm}
+
+\begin{minipage}{\linewidth}
+  \begin{minipage}{0.35\linewidth}
+    {\begin{minipage}{\linewidth}
+    \begin{center}
+      \scalebox{1.2}{\includegraphics{generated_pictures/self_contact_map.pdf}}
+
+Interaction map.
+    \end{center}
+    \end{minipage}}
+  \end{minipage}
+  \begin{minipage}{0.64\linewidth}
+    \begin{center}
+      \hspace*{5mm}\scalebox{1.2}{\includegraphics{generated_pictures/self_monomer.pdf}}
+      \hspace*{5mm}\scalebox{1.2}{\includegraphics{generated_pictures/self_dimer.pdf}}
+
+    Bio-molecular compounds.
+  \end{center}
+
+  \end{minipage}
+\end{minipage}
+
+\end{slide}
+
+
+
+\begin{slide}{\frametitle{Several self-loops}}
+
+\vspace*{2cm}
+
+\begin{minipage}{\linewidth}
+  {\begin{minipage}{\linewidth}
+  \begin{center}
+    \scalebox{1.2}{\includegraphics{generated_pictures/twoself_contact_map.pdf}}
+
+Interaction map.
+  \end{center}
+  \end{minipage}}
+\end{minipage}
 
 \end{slide}
 
 \begin{slide}{\frametitle{Several self-loops}}
 
+\vspace*{2cm}
+
+\begin{minipage}{\linewidth}
+  \begin{minipage}{0.35\linewidth}
+    {\begin{minipage}{\linewidth}
+    \begin{center}
+      \scalebox{1.2}{\includegraphics{generated_pictures/self_contact_map.pdf}}
+
+Interaction map.
+    \end{center}
+    \end{minipage}}
+  \end{minipage}
+  \begin{minipage}{0.64\linewidth}
+    \begin{center}
+      \scalebox{1.2}{\includegraphics{generated_pictures/twoself_pattern.pdf}}
+
+    A repeatable pattern.
+  \end{center}
+
+  \end{minipage}
+\end{minipage}
+
 \end{slide}
 
 \begin{slide}{\frametitle{Invariants}}
 
+\begin{minipage}{0.35\linewidth}
+  \begin{center}
+  \scalebox{0.8}{\includegraphics{generated_pictures/invariant_cm.pdf}}
+Interaction map.
+  \end{center}
+\end{minipage}
+  \begin{minipage}{0.6\linewidth}
+    \begin{center}
+    \scalebox{0.4}{\includegraphics{generated_pictures/rule1.pdf}}
+    \end{center}
+    \vspace*{0.2cm}
+  \begin{center}
+  \scalebox{0.4}{\includegraphics{generated_pictures/rule11.pdf}}
+  \end{center}
+  \vspace*{0.2cm}
+  \begin{center}
+  \scalebox{0.4}{\includegraphics{generated_pictures/rule12.pdf}}
+
+  Rules.
+  \end{center}
+  \end{minipage}
+
+
 \end{slide}
 
+
+\begin{slide}{\frametitle{Invariants}}
+
+\begin{minipage}{0.35\linewidth}
+  \begin{center}
+  \scalebox{0.8}{\includegraphics{generated_pictures/invariant_cm.pdf}}
+Interaction map.
+  \end{center}
+\end{minipage}
+  \begin{minipage}{0.6\linewidth}
+    \begin{center}
+    \scalebox{0.4}{\includegraphics{generated_pictures/rule1.pdf}}
+    \end{center}
+    \vspace*{0.2cm}
+  \begin{center}
+  \scalebox{0.4}{\includegraphics{generated_pictures/rule11.pdf}}
+  \end{center}
+  \vspace*{0.2cm}
+  \begin{center}
+  \scalebox{0.4}{\includegraphics{generated_pictures/rule12.pdf}}
+
+  Rules.
+  \end{center}
+  \end{minipage}
+
+\begin{center}
+  The repeatable pattern:
+
+\scalebox{0.4}{\includegraphics{generated_pictures/invariant_pattern.pdf}}
+
+  is not reachable.
+\end{center}
+\end{slide}
+
+\begin{slide}{\frametitle{Breaking invariants}}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Triangle}}
+
+\end{slide}
+
+\begin{slide}{\frametitle{Triangle}}
+
+\end{slide}
+
+
 \begin{slide}{\frametitle{Combinatorial complexity}}
+
+\vfill
+
+\begin{center}
+  \includegraphics{generated_pictures/clique.pdf}
+\end{center}
+
+\vfill
+
+\hfill On many model, elementary cycles are too numerous to enumerate them. \hfill\mbox{}
 
 \end{slide}
 
 {\superplan}
 
 \begin{slide}{\frametitle{Repeatable pattern}}
+
+\vfill
+
+We want to prove the abscence of repeatable of the form:
+
+\vfill
+
+\begin{minipage}{\linewidth}
+\begin{center}\scalebox{0.8}{\includegraphics{generated_pictures/repeatable_dimers.pdf}}
+\end{center}
+\end{minipage}
+
+\vfill
 
 \end{slide}
 
 \begin{slide}{\frametitle{Transitions between sites}}
 
+\vfill
+
+We convert patterns into sequence of transitions, by taking each other site:\bigskip\\ 
+
+
+\begin{minipage}{\linewidth}
+\begin{center}\scalebox{0.8}{\includegraphics{generated_pictures/repeatable_dimers.pdf}}
+\end{center}
+\end{minipage}
+
+\vfill
+
+\begin{enumerate}
+  \item From left to right:
+
+\hspace*{5cm}\includegraphics{generated_pictures/egfr_r.pdf}
+\begin{minipage}{1cm}\vspace*{-2cm}$\stackrel{\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_r.pdf}}\end{minipage}}{\longrightarrow}$\end{minipage} \includegraphics{generated_pictures/egfr_c.pdf}
+
+\vfill
+
+  \item From right to left
+
+  \hspace*{5cm}\includegraphics{generated_pictures/egfr_n.pdf}
+  \begin{minipage}{1cm}\vspace*{-2cm}$\stackrel{\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_c.pdf}}\end{minipage}}{\longrightarrow}$\end{minipage} \includegraphics{generated_pictures/egfr_r.pdf}
+
+\end{enumerate}
 \end{slide}
 
 \begin{slide}{\frametitle{The graph of the sites}}
 
+  \scalebox{1.5}{\begin{minipage}{0.59\linewidth}\label{fig:abc:gs:gs}
+  \xymatrix@C=2.cm@R=0.5cm{
+  &&&\begin{minipage}{1.cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/sos_d.pdf}}
+  \end{minipage}
+  \ar@{->}[d]&&&&\cr
+  &
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/egf_r.pdf}}\end{minipage}
+    \ar@{->}[dl]
+    \ar@{->}[drrr]
+    \ar@{->}[ddrrrr]
+    \ar@{->}@/_{0.6cm}/[ddrr]
+    \ar@{->}[dr]
+    &&
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/grb2_a.pdf}}\end{minipage}
+    \ar@{->}[rr]
+    \ar@{->}[dlll]
+    \ar@{->}[dl]
+    \ar@{->}[dr]
+    \ar@{->}[dd]
+    \ar@{->}@/_{0.6cm}/[ddll]&&
+  \begin{minipage}{1.cm}
+    \scalebox{0.35}{\includegraphics{generated_pictures/shc_pi.pdf}}
+    \end{minipage}
+    \ar@{->}[dlllll]
+    \ar@{->}[dlll]
+    \ar@{->}[dl]
+    \ar@{->}[dd]
+    \ar@{->}[ddllll]\cr
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/egfr_c.pdf}}\end{minipage}
+    \ar@{->}[rr]
+    \ar@{->}[dr]
+    \ar@{->}[drrr]
+    \ar@{->}[drrrrr]
+    \ar@{->}@(ul,dl)
+    &&
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/egfr_r.pdf}}\end{minipage}
+    \ar@{->}[ll]
+    \ar@{->}[dl]
+    \ar@{->}[dr]
+    \ar@{->}[drrr]
+    \ar@{->}[rr]&&
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/egfr_n.pdf}}\end{minipage}
+    \ar@{->}[ll]
+    \ar@{->}[dl]
+    \ar@{->}[dlll]
+    \ar@{->}[dr]
+    \ar@{->}@(ur,dr)&&\cr
+  &
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/egfr_l.pdf}}\end{minipage}&&
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/egfr_Y48.pdf}}\end{minipage}\ar@{->}[d]&&
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/egfr_Y68.pdf}}\end{minipage}\ar@{->}[d]\cr
+  &&&
+  \begin{minipage}{1.cm}\scalebox{0.35}{\includegraphics{generated_pictures/shc_Y7.pdf}}\ar@{->}[rr]\end{minipage}
+  &&\begin{minipage}{1.cm}
+  \scalebox{0.4}{\includegraphics{generated_pictures/grb2_b.pdf}}
+\end{minipage}
+&&\cr }
+\end{minipage}}
 \end{slide}
 
 \begin{slide}{\frametitle{Detection of unbounded polymers}}
+
+\vfill
+
+We use Tarjan's algorithm to extract non trivial strongly connected components.
+
+\vfill
+
+Here there is only one:
+
+\begin{equation*}\hspace*{1cm}\scalebox{2.5}{\xymatrix@C=0.5cm@R=0.35cm{\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_c.pdf}}\end{minipage}
+  \ar@{->}[rr]
+  \ar@{->}@(ul,dl)
+  &&
+\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_r.pdf}}\end{minipage}
+  \ar@{->}[ll]
+  \ar@{->}[rr]&&
+\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_n.pdf}}\end{minipage}
+  \ar@{->}[ll]
+  \ar@{->}@(ur,dr)&&}}\end{equation*}
+
+\vfill
+
+This is a false alarm and we do not know how to do better with this data-structure.
+
+\vfill
 
 \end{slide}
 
 {\superplan}
 
 \begin{slide}{\frametitle{Repeatable pattern}}
+
+
+
 
 \end{slide}
 
