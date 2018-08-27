@@ -99,11 +99,11 @@ let
      egfr_r,[];
      egfr_c,[];
      egfr_n,[];
-     egfr_Y48,[];
-     egfr_Y68,[]];
+     egfr_Y48,[egfr_Y48_u;egfr_Y48_p];
+     egfr_Y68,[egfr_Y68_u;egfr_Y68_p]];
     shc,
     [shc_pi,[];
-     shc_Y7,[]];
+     shc_Y7,[shc_Y7_u;shc_Y7_p]];
     grb2,
     [grb2_a,[];
      grb2_b,[]];
@@ -116,11 +116,11 @@ let
      segfr_r,[];
      segfr_c,[];
      segfr_n,[];
-     segfr_Y48,[];
-     segfr_Y68,[]];
+     segfr_Y48,[segfr_Y48_u;segfr_Y48_p];
+     segfr_Y68,[segfr_Y68_u;segfr_Y68_p]];
     sshc,
     [sshc_pi,[];
-     sshc_Y7,[]];
+     sshc_Y7,[sshc_Y7_u;sshc_Y7_p]];
     sgrb2,
     [sgrb2_a,[];
      sgrb2_b,[]];
@@ -136,22 +136,22 @@ let
       ];
       "EGFR",[Width 1.2;Height 1.;Shape "hexagon";FillColor "\"#709d54\""],
       [
-	"l",[],[];
- "r",[],[];
- "c",[],[];
- "n",[],[];
-	"Y48",[],[];
-	"Y68",[],[]
+        "l",[],[];
+        "r",[],[];
+        "c",[],[];
+        "n",[],[];
+        "Y48",[],["u",[Direction w];"p",[Direction sw]];
+        "Y68",[],["u",[Direction w];"p",[Direction nw]]
       ];
       "ShC",[Width 1.2;Height 0.6;Shape "rectangle";FillColor "\"#b5dce6\""],
       [
-	"pi",[],[];
-	"Y7",[],[]
+        "pi",[],[];
+        "Y7",[],["u",[Direction w];"p",[Direction nw]]
       ];
       "Grb2",[Width 1.3;Height 0.8;Shape "hexagon";FillColor "\"#e587de\""],
       [
-	"a",[],[];
-	"b",[],[]
+        "a",[],[];
+        "b",[],[]
       ];
       "Sos",[Width 1.2;Height 0.8;Shape "rectangle";FillColor "\"#c53736\""],
       [	"d",[],[]
@@ -168,13 +168,13 @@ let
         "r",ws,[];
         "c",ws,[];
         "n",ws,[];
-        "Y48",ws,[];
-        "Y68",ws,[]
+        "Y48",ws,["u",[];"p",[]];
+        "Y68",ws,["u",[];"p",[]]
       ];
       "ShC",[width 1.2;height 0.6;Shape "rectangle";FillColor "\"#b5dce6\""],
       [
         "pi",ws,[];
-        "Y7",ws,[]
+        "Y7",ws,["u",[];"p",[]]
       ];
       "Grb2",[width 1.2;height 0.8;Shape "hexagon";FillColor "\"#e587de\""],
       [

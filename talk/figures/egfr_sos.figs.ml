@@ -22,7 +22,7 @@ open Config
 open Geometry
 open Signature_egfr_sos
 
-let empty = Signature_egfr.signature_egfr
+let empty = Signature_egfr_sos.signature_egfr
 
 
 
@@ -52,14 +52,20 @@ let
        egfr_n,[Direction (of_degree 150.)],
        [Free_site [Direction s]];
        egfr_Y68,[Direction (of_degree 225.)],
-       [Free_site [Direction (of_degree (to_degree sw-.10.))]];
+       [Internal_state (egfr_Y68_u,[Direction s]);
+        Internal_state (egfr_Y68_p,[Direction (of_degree 160.)]);
+        Free_site [Direction (of_degree (to_degree sw-.10.))]];
        egfr_Y48,[Direction (of_degree 330.)],
-       [Free_site [Direction ne]]];
+       [Internal_state (egfr_Y48_u,[Direction w]);
+        Internal_state (egfr_Y48_p,[Direction (of_degree (-.110.))]);
+        Free_site [Direction ne]]];
       shc,-.0.85,12.5,[],
        [shc_pi,[Direction (of_degree 110.)],
         [Free_site []];
         shc_Y7,[Direction (of_degree 250.)],
-        [Free_site [Direction sw]]];
+        [Free_site [Direction sw];
+        Internal_state (shc_Y7_u,[Direction w]);
+         Internal_state (shc_Y7_p,[Direction (of_degree (-.70.))])]];
       grb2,-.0.85,9.65,[],
        [grb2_a,[Direction n],
         [Free_site [Direction nw]];
@@ -88,13 +94,43 @@ let remanent =
     ]
     remanent
 
-let remanent = add_fictitious_link [1.6,10.8;0.75,10.1] remanent
+let remanent = add_fictitious_link [1.5,10.75;0.8,10.2(*10.1*)] remanent
 
 
-let contact_map = remanent
+let cp = remanent
+let contact_map = cp
+
+let _ = dump "sos_contact_map.ladot" cp
 
 
-let _ = dump "contact_map.ladot" contact_map
+let add_flow_cm p remanent =
+  add_flow_list
+    [
+      p cm_egf_r,p cm_egfr_l;
+      p cm_egfr_l,p cm_egf_r;
+      p cm_egfr_r,p cm_egfr_r;
+      p cm_egfr_r,p cm_egfr_c;
+      p cm_egfr_r,p cm_egfr_n;
+      p cm_egfr_Y48,p cm_shc_pi;
+      p cm_shc_Y7,p cm_grb2_a;
+      p cm_grb2_b,p cm_sos_d;
+      p cm_egfr_Y68,p cm_grb2_a;
+      p cm_egfr_r,p cm_egfr_l;
+      p cm_egfr_l,p cm_egfr_r;
+      p cm_egfr_c,p cm_egfr_Y48;
+      p cm_egfr_c,p cm_egfr_Y68;
+      p cm_egfr_n,p cm_egfr_Y48;
+      p cm_egfr_n,p cm_egfr_Y68;
+      p cm_shc_pi,p cm_shc_Y7;
+      p cm_shc_Y7,p cm_shc_pi;
+      p cm_grb2_a,p cm_grb2_b;
+      p cm_grb2_b,p cm_grb2_a
+    ]
+    remanent
+
+let annotated_contact_map= add_flow_cm (fun x->x) contact_map
+let _ = dump "contact_map.dot" contact_map
+let _ = dump "contact_map_annotated.dot" annotated_contact_map
 
 
 (*SPECIES*)
@@ -175,7 +211,7 @@ let _ = dump "species.ladot" ~flags:["flow",0]  species
 (* SPECIES + CM *)
 
 let trans_sp = translate_graph {abscisse = -9.;ordinate =  0.} species
-let sigma_cm,sigma_sp,trans_sp_with_cm = disjoint_union contact_map trans_sp
+let sigma_cm,sigma_sp,trans_sp_with_cm = disjoint_union cp trans_sp
 
 
 
@@ -200,6 +236,8 @@ let species_cm =
     trans_sp_with_cm
 
 let _ = dump "egfr_embed.ladot"   species_cm
+
+
 
     (* graph of sites *)
 
@@ -339,4 +377,396 @@ let () =
       segfr,segfr_r,segfr,segfr_r,segfr_c,segfr,segfr_n,"egfr_r_c";
       segfr,segfr_r,segfr,segfr_r,segfr_n,segfr,segfr_c,"egfr_r_n";
       segfr,segfr_n,segfr,segfr_c,segfr_n,segfr,segfr_c,"egfr_n_c";
-      ]
+    ]
+
+
+let
+  [
+    egf1,[egf1_r,_];
+    egfr1,[egfr1_l,_;egfr1_r,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egf,0.,0.,[],
+      [egf_r,[Direction e;Scale 0.9],[]];
+      egfr,2.5,0.,[],
+      [egfr_l,[Direction w;Scale 0.9],[];
+       egfr_r,[Direction s;Scale 0.9],[]]]
+    signature_egfr
+
+let half_domain = add_link_list [egfr1_l,egf1_r] half_domain
+let other_half_domain = move_remanent_bellow 0.5 (horizontal_swap half_domain) half_domain
+
+let sigma1,sigma2,lhs_domain = disjoint_union half_domain other_half_domain
+
+let _,_,_,remanent =
+  build_rule ~file:"dimerisation.ladot" ~vgap:(Some 2.) lhs_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_free_list [lift_site sigma1 egfr1_r,[];
+                                      lift_site sigma2 egfr1_r,[]] remanent))
+    (fun remanent ->
+       ([],[],[]),add_link_list [lift_site sigma1 egfr1_r,lift_site sigma2 egfr1_r] remanent)
+
+
+let dimer = add_link_list [lift_site sigma1 egfr1_r,lift_site sigma2 egfr1_r] lhs_domain
+
+let _ = dump "dimer.ladot" dimer
+
+
+
+
+let
+  [
+    egf1,[egf1_r,_];
+    egfr1,[egfr1_l,_;egfr1_r,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egf,0.,0.,[],
+      [egf_r,[Direction (of_degree 20.)],[]];
+      egfr,0.5,2.0,[],
+      [egfr_l,[Direction s;Scale 0.9],[];
+       egfr_r,[Direction e],[Free_site []]]]
+    signature_egfr
+
+let _ =
+  build_rule ~file:"rule1.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_free_list [egf1_r,[];
+                                      egfr1_l,[]] remanent))
+    (fun remanent ->
+       ([],[],[]),add_link_list [egf1_r,egfr1_l] remanent)
+
+
+let
+  [
+    egfr1,[egfr1_l,_;egfr1_r,_];
+    egfr2,[egfr2_l,_;egfr2_r,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.,0.,[],
+      [egfr_l,[Direction (of_degree 20.)],[Bound_site []];
+       egfr_r,[Direction e],[]];
+      egfr,2.,0.,[],
+      [egfr_l,[Direction (of_degree (-.20.))],[Bound_site []];
+       egfr_r,[Direction w],[]]]
+    signature_egfr
+
+let _ =
+  build_rule ~file:"rule11.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_free_list [egfr1_r,[];
+                                      egfr2_r,[]] remanent))
+    (fun remanent ->
+       ([],[],[]),add_link_list [egfr1_r,egfr2_r] remanent)
+
+
+let
+  [
+    egfr1,[egfr1_r,_;egfr1_c,_;egfr1_n,_];
+    egfr2,[egfr2_r,_;egfr2_c,_;egfr2_n,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.,0.,[],
+      [egfr_r,[Direction (of_degree 20.)],[];
+       egfr_c,[Direction e],[];
+       egfr_n,[Direction (of_degree 160.)],[Free_site []]];
+      egfr,2.,0.,[],
+      [egfr_r,[Direction (of_degree (-.20.))],[];
+        egfr_c,[Direction w],[Free_site []];
+       egfr_n,[Direction (of_degree 200.)],[]]]
+    signature_egfr
+
+let half_domain =
+  add_link_list [egfr1_r,egfr2_r] half_domain
+
+let _ =
+  build_rule ~file:"rule12.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),
+       snd (add_free_list
+              [egfr1_c,[];
+               egfr2_n,[]]
+              remanent))
+    (fun remanent ->
+       ([],[],[]),add_link_list [egfr1_c,egfr2_n] remanent)
+
+let
+  [
+    egfr1,[egfr1_r,_;_;_];
+    egfr2,[egfr2_r,_;_;_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [  egfr,0.,0.,[],
+      [egfr_r,[Direction (of_degree 20.)],[];
+       egfr_c,[Direction e],[Free_site []];
+       egfr_n,[Direction (of_degree 160.)],[Free_site []]];
+      egfr,2.,0.,[],
+      [egfr_r,[Direction (of_degree (-.20.))],[];
+       egfr_c,[Direction w],[Free_site []];
+       egfr_n,[Direction (of_degree 200.)],[Free_site []]]]
+    signature_egfr
+
+let _ =
+  build_rule ~file:"ruled12.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),add_link_list [egfr1_r,egfr2_r] remanent)
+    (fun remanent ->
+          ([],[],[]),snd (add_free_list [egfr1_r,[];
+                                         egfr2_r,[]] remanent))
+
+
+let
+  [
+    egfr1,[egfr1_c,_];
+    egfr2,[egfr2_n,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.,0.,[],
+      [
+       egfr_c,[Direction e],[];
+     ];
+      egfr,2.,0.,[],
+      [
+       egfr_n,[Direction (of_degree 200.)],[]]]
+    signature_egfr
+
+let _ =
+  build_rule ~file:"ruled11.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),add_link_list [egfr1_c,egfr2_n] remanent)
+    (fun remanent ->
+       ([],[],[]),
+       snd (add_free_list
+              [egfr1_c,[];
+               egfr2_n,[]]
+              remanent))
+
+
+
+let
+  [
+    egfr0,[egfr0_n,_];
+    egfr1,[egfr1_c,_;egfr1_48,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.,0.,[],
+      [egfr_n,[Direction (of_degree 20.)],[]];
+      egfr,0.5,2.0,[],
+      [egfr_c,[Direction s;Scale 0.9],[];
+       egfr_Y48,[Direction e],[]]]
+    signature_egfr
+let half_domain = add_link_list [egfr0_n,egfr1_c] half_domain
+
+let _ =
+  build_rule  ~file:"rule2.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_internal_state egfr1_48 egfr_Y48_u  remanent)
+    )
+    (fun remanent ->
+       ([],[],[]),snd (add_internal_state egfr1_48 egfr_Y48_p  remanent))
+
+let
+  [
+    egf1,[egf1_r,_];
+    egfr1,[egfr1_l,_;egfr1_48,_];
+    egf2,[egf2_r,_];
+    egfr2,[egfr2_l,_;egfr2_48,_]],
+  half_domain
+  =
+  add_in_graph
+    [
+      egf,0.,0.,[],
+      [egf_r,[Direction (of_degree 20.)],[]];
+      egfr,0.5,2.0,[],
+      [egfr_l,[Direction s;Scale 0.9],[];
+       egfr_Y48,[Direction se],[Free_site [Direction e];Internal_state (egfr_Y48_u,[])]];
+      egf,5.,-0.5,[],
+      [egf_r,[Direction (of_degree 20.)],[]];
+      egfr,5.5,2.5,[],
+      [egfr_l,[Direction s;Scale 0.9],[];
+       egfr_Y48,[Direction se],[Free_site [Direction e];Internal_state (egfr_Y48_u,[])]]
+    ]
+    signature_egfr
+
+let _,half_domain = add_binding_type egf2_r egfr_l half_domain
+let _,half_domain = add_binding_type egfr2_l egf_r half_domain
+let half_domain = add_link_list [egf1_r,egfr1_l] half_domain
+
+let half_domain = add_proj [egf1,egf2;egfr1,egfr2] half_domain
+let _ = dump "local_view.ladot" half_domain
+
+
+let
+  [
+    egfr1,[egfr1_l,_;egfr1_48,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.5,2.0,[],
+      [egfr_r,[Direction s;Scale 0.9],[Free_site []];
+       egfr_Y48,[Direction e],[]]]
+    signature_egfr
+
+
+let _ =
+  build_rule ~file:"rule3.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_internal_state egfr1_48 egfr_Y48_u  remanent)
+    )
+    (fun remanent ->
+       ([],[],[]),snd (add_internal_state egfr1_48 egfr_Y48_p  remanent))
+
+let
+  [
+    egfr1,[egfr1_48,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.5,2.0,[],
+      [   egfr_Y48,[Direction e],[]]]
+    signature_egfr
+
+
+let _ =
+  build_rule ~file:"rule4.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_internal_state egfr1_48 egfr_Y48_u  remanent)
+    )
+    (fun remanent ->
+       ([],[],[]),snd (add_internal_state egfr1_48 egfr_Y48_p  remanent))
+
+
+let
+  [
+    egfr1,[egfr1_l,_;egfr1_48,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.5,2.0,[],
+      [egfr_r,[Direction s;Scale 0.9],[];
+       egfr_Y48,[Direction e],[Free_site [Direction ne]]]]
+    signature_egfr
+
+
+let _ =
+  build_rule  ~file:"rule5.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_bound egfr1_l (snd (add_internal_state egfr1_48 egfr_Y48_u  remanent)))
+    )
+    (fun remanent ->
+       ([],[],[]),snd (add_free egfr1_l (snd (add_internal_state egfr1_48 egfr_Y48_p  remanent))))
+
+let
+  [
+    egfr1,[egfr1_l,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [
+      egfr,0.5,2.0,[],
+      [egfr_r,[Direction e;Scale 0.9],[];
+      ]]
+    signature_egfr
+
+
+let _ =
+  build_rule ~file:"rule6.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),snd (add_free egfr1_l   remanent))
+    (fun remanent ->
+       ([],[],[]),
+       let [egfr2,[egfr2_r,_;_;_]],rem =
+         add_in_graph
+           [egfr,2.5,2.0,[],
+            [egfr_r,[Direction w;Scale 0.9],[];
+             egfr_l,[Direction s;Scale 0.9],[Free_site []];
+             egfr_Y48,[Direction ne;Scale 0.9],[Free_site [];Internal_state (egfr_Y48_u,[Direction se])]]] remanent
+       in
+       add_link_list [egfr1_l,egfr2_r] rem)
+
+
+let _ =
+  build_rule ~file:"rule7.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),
+       let [egfr2,[egfr2_r,_]],rem =
+         add_in_graph
+           [egfr,2.5,2.0,[],
+            [egfr_r,[Direction w;Scale 0.9],[]]] remanent
+       in
+       add_link_list [egfr1_l,egfr2_r] rem)
+    (fun remanent ->
+       ([],[],[]),snd (add_free egfr1_l   remanent))
+
+let [agr1,[siter1,_];agr2,[siter2,_]],agrdomain =
+  add_in_graph
+    [egfr,-1.,0.,[],[egfr_r,[Direction e;Scale 0.9],[]];
+     egfr,1.,0.,[],[egfr_r,[Direction w;Scale 0.9],[]]]
+    signature_egfr
+
+let _,_,_,ruletop =
+  build_rule ~vgap:(Some 2.) agrdomain
+    (fun remanent ->
+       ([],[],[]),
+       add_link_list [siter1,siter2] remanent)
+    (fun remanent ->
+       ([],[],[]),
+       snd (add_free_list [siter1,[Direction se];siter2,[Direction sw]] remanent))
+
+let [agr1,[siter1,_;sitel1,_;_];agr2,[siter2,_;sitel2,_;_]],agrdomain =
+  add_in_graph
+    [egfr,-1.,0.,[],[egfr_r,[Direction (of_degree 160.);Scale 0.9],[];
+                     egfr_l,[Direction sw;Scale 0.9],[Free_site []];
+                     egfr_Y48,[Direction e;Scale 0.9],[Free_site [];Internal_state (egfr_Y48_u,[Direction se])]];
+     egfr,1.,0.,[],[egfr_r,[Direction (of_degree 160.);Scale 0.9],[];
+                    egfr_l,[Direction sw;Scale 0.9],[];
+                    egfr_Y48,[Direction e;Scale 0.9],[Free_site [];Internal_state (egfr_Y48_p,[Direction se])]
+                   ]]
+    signature_egfr
+
+let agrdomain = snd (add_binding_type sitel2 egf_r agrdomain)
+
+let _,_,_,rulebottom =
+  build_rule ~vgap:(Some 2.) agrdomain
+    (fun remanent ->
+       ([],[],[]),
+       let _,rem = add_binding_type siter1 egfr_r remanent in
+       let rem = snd (add_binding_type siter2 egfr_r remanent) in
+       let rem = snd (add_binding_type siter1 egfr_r rem) in
+       rem)
+    (fun remanent ->
+       ([],[],[]),
+       snd(add_free_list [siter1,[];siter2,[]] remanent))
+
+let rulebottom = insert_text_here "$\\sharp$" 3.04 0.12 ~directives:[Fontsize  12] rulebottom
+
+let rulebottom = move_remanent_bellow 1. (translate_graph {abscisse=(-0.2599999);ordinate=0.} rulebottom) ruletop
+
+let _,_,rules = disjoint_union ruletop rulebottom
+let _ = dump "abstractrule.ladot" rules
