@@ -155,6 +155,7 @@ let
 let x,remanent = add_empty_graph 1.8 10. remanent
 let y,remanent = add_empty_graph 0. 9. remanent
 
+let () =
 let remanent =
   add_link_list
     [
@@ -168,15 +169,14 @@ let remanent =
       cm_grb2_b,cm_sos_d;
       cm_egfr_Y68,cm_grb2_a;*)
     ]
-    remanent
+    remanent in
 
 let remanent = add_fictitious_link [1.5,10.75;0.8,10.2(*10.1*)] remanent
+in
+let cp = remanent in
+let contact_map = cp in
 
-
-let cp = remanent
-let contact_map = cp
-
-let _ = dump "invariant_cm.ladot" cp
+let _ = dump "invariant_cm.ladot" cp in ()
 
 let add_flow_cm p remanent =
   add_flow_list
@@ -410,7 +410,7 @@ let plot_link (a,b,c,d,name) =
       empty
   in
   let er =
-    add_link_list [sa,sb] er
+    add_oriented_link_list [sa,sb] er
   in
   dump (name^".ladot") er
 

@@ -778,7 +778,7 @@ Interaction map.
 
 {\superplan}
 
-\begin{slide}{\frametitle{Repeatable pattern}}
+\begin{slide}{\frametitle{Repeatable patterns}}
 
 \vfill
 
@@ -799,7 +799,7 @@ We want to prove the abscence of repeatable of the form:
 
 \vfill
 
-We convert patterns into sequence of transitions, by taking each other site:\bigskip\\ 
+We convert repeatable patterns into sequences of sites, by taking each other one: \bigskip\\
 
 
 \begin{minipage}{\linewidth}
@@ -817,7 +817,7 @@ We convert patterns into sequence of transitions, by taking each other site:\big
 
 \vfill
 
-  \item From right to left
+  \item From right to left:
 
   \hspace*{5cm}\includegraphics{generated_pictures/egfr_n.pdf}
   \begin{minipage}{1cm}\vspace*{-2cm}$\stackrel{\begin{minipage}{1cm}\scalebox{0.3}{\includegraphics{generated_pictures/egfr_c.pdf}}\end{minipage}}{\longrightarrow}$\end{minipage} \includegraphics{generated_pictures/egfr_r.pdf}
@@ -917,10 +917,43 @@ This is a false alarm and we do not know how to do better with this data-structu
 
 \end{slide}
 
+\begin{slide}{\frametitle{Pros / Cons}}
+
+\vfill
+
+\begin{enumerate}
+\item Pros:
+  \begin{itemize}
+    \item Can deal with self-bonds;
+    \item Can deal with conflicting sites;
+    \item Avoid combinatorial blow up.
+  \end{itemize}
+\vfill
+\item Cons:
+  \begin{itemize}
+    \item Cannot deal with structural invariants.
+  \end{itemize}
+
+  \vfill\mbox{}
+\end{enumerate}
+\end{slide}
+
 {\superplan}
 
-\begin{slide}{\frametitle{Repeatable pattern}}
+\begin{slide}{\frametitle{Repeatable patterns}}
 
+  \vfill
+
+  Coming back to repeatable patterns:
+
+  \vfill
+
+  \begin{minipage}{\linewidth}
+  \begin{center}\scalebox{0.8}{\includegraphics{generated_pictures/repeatable_dimers.pdf}}
+  \end{center}
+  \end{minipage}
+
+  \vfill
 
 
 
@@ -928,14 +961,159 @@ This is a false alarm and we do not know how to do better with this data-structu
 
 \begin{slide}{\frametitle{Transitions between the edges}}
 
-\end{slide}
+
+  \vfill
+
+  We interpret repeatable patterns as sequences of oriented links: \bigskip
+
+
+
+  \begin{minipage}{\linewidth}
+  \begin{center}\scalebox{0.8}{\includegraphics{generated_pictures/repeatable_dimers.pdf}}
+  \end{center}
+  \end{minipage}
+
+  \vfill
+
+  \begin{enumerate}
+    \item From left to right:
+
+  \hspace*{3cm}\includegraphics{generated_pictures/egfr_egfr_r.pdf}
+  \begin{minipage}{1cm}\vspace*{-2cm}${\longrightarrow}$\end{minipage} \includegraphics{generated_pictures/egfr_egfr_c.pdf}
+
+  \vfill
+
+    \item From right to left:
+
+    \hspace*{3cm}\includegraphics{generated_pictures/egfr_egfr_n.pdf}
+    \begin{minipage}{1cm}\vspace*{-2cm}${\longrightarrow}$\end{minipage} \includegraphics{generated_pictures/egfr_egfr_r.pdf}
+
+  \end{enumerate}
+  \end{slide}
+
+\newcommand{\minipagesize}{1.1cm}
+\newcommand{\factor}{0.15}
 
 \begin{slide}{\frametitle{The graph of the links}}
+
+\scalebox{3.}{%
+  {\begin{minipage}{0.59\linewidth}\label{fig:egfr:gl:gl}
+  \xymatrix@C=0.cm@R=0.35cm{
+  &&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/sos_grb2.pdf}}\end{minipage}
+  \ar@{->}[rr]
+  \ar@{->}[d]&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/grb2_shc.pdf}}\end{minipage}
+    \ar@{->}[d]
+  &&\cr
+  &
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egf_egfr.pdf}}\end{minipage}
+    \ar@{->}[dl]
+    \ar@{->}[drrr]
+    \ar@{->}[ddrrrr]
+    \ar@{->}@/_{0.6cm}/[ddrr]
+    \ar@{->}[dr]
+    &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/grb2_egfr.pdf}}\end{minipage}
+    \ar@{->}[dlll]
+    \ar@{->}[dl]
+    \ar@{->}[dr]
+    \ar@{->}[dd]
+    \ar@{->}@/_{0.6cm}/[ddll]&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/shc_egfr.pdf}}\end{minipage}
+    \ar@{->}[dlllll]
+    \ar@{->}[dlll]
+    \ar@{->}[dl]
+    \ar@{->}[dd]
+    \ar@{->}[ddllll]\cr%
+  \begin{minipage}{\minipagesize}\hspace*{0.2cm}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_egfr_c.pdf}}
+  \end{minipage}
+    \ar@{->}[rr]
+    \ar@{->}[dr]
+    \ar@{->}[drrr]
+    \ar@{->}[drrrrr]
+    \ar@{->}@(ul,dl)
+    &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_egfr_r.pdf}}\end{minipage}
+    \ar@{->}[ll]
+    \ar@{->}[dl]
+    \ar@{->}[dr]
+    \ar@{->}[drrr]
+    \ar@{->}[rr]&&
+  \begin{minipage}{\minipagesize}
+    \scalebox{\factor}{\includegraphics{generated_pictures/egfr_egfr_n.pdf}}
+  \end{minipage}
+    \ar@{->}[ll]
+    \ar@{->}[dl]
+    \ar@{->}[dlll]
+    \ar@{->}[dr]
+    \ar@{->}@(ur,dr)&&\cr
+  &
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_egf.pdf}}\end{minipage}
+  &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_shc.pdf}}\end{minipage}
+  \ar@{->}[d]&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_grb2.pdf}}\end{minipage}
+  \ar@{->}[d]\cr
+  &&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/shc_grb2.pdf}}\ar@{->}[rr]\end{minipage}
+  &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/grb2_sos.pdf}}\end{minipage}
+  &&\cr
+    }
+  \end{minipage}}}
 
 \end{slide}
 
 \begin{slide}{\frametitle{Detection of unbounded polymers}}
 
+
+  \vfill
+
+  We use Tarjan's algorithm to extract non trivial strongly connected components.
+
+  \vfill
+
+  Here there is only one:
+
+  \begin{equation*}\scalebox{3}{\scalebox{1.5}{\xymatrix@C=0.2cm@R=0.35cm{\begin{minipage}{\minipagesize}\scalebox{0.15}{\includegraphics{generated_pictures/egfr_egfr_c.pdf}}\end{minipage}
+    \ar@{->}[rr]
+    \ar@{->}@(ul,dl)
+    &&
+  \begin{minipage}{\minipagesize}\scalebox{0.15}{\includegraphics{generated_pictures/egfr_egfr_r.pdf}}\end{minipage}
+    \ar@{->}[ll]
+    \ar@{->}[rr]&&
+  \begin{minipage}{\minipagesize}\scalebox{0.15}{\includegraphics{generated_pictures/egfr_egfr_n.pdf}}\end{minipage}
+    \ar@{->}[ll]
+    \ar@{->}@(ur,dr)&&}}}\end{equation*}
+
+  \vfill
+
+  This is a false alarm and we do not know how to do better with this data-structure.
+
+  \vfill
+
+\end{slide}
+
+\begin{slide}{\frametitle{Pros / Cons}}
+
+\vfill
+
+\begin{enumerate}
+\item Pros:
+  \begin{itemize}
+    \item Can deal with self-bonds;
+    \item Can deal with conflicting sites;
+    \item Avoid combinatorial blow up.
+  \end{itemize}
+\vfill
+\item Cons:
+  \begin{itemize}
+    \item Cannot deal with structural invariants.
+  \end{itemize}
+\end{enumerate}
+
+\vfill \mbox{}
 \end{slide}
 
 {\superplan}
