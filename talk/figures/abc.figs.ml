@@ -145,6 +145,16 @@ let
     signature
 
 
+let open_triangle =
+  add_link_list
+  [
+    cm_a_b,cm_b_a;
+    cm_b_c,cm_c_b;
+  ]
+  remanent
+
+let open_triangle =
+  snd (add_free_list [cm_a_c,[];cm_c_a,[]] open_triangle)
 let remanent =
   add_link_list
     [
@@ -156,7 +166,7 @@ let remanent =
 
 let contact_map = remanent
 
-
+let _ = dump "abc_open_triangle.ladot" ~flags:["CM",0] open_triangle
 let _ = dump "abc_contact_map.ladot" contact_map
 let _ = dump "abc_triangle.ladot" ~flags:["CM",0] contact_map
 
@@ -348,4 +358,176 @@ let () =
     plot_double_link
     [
       a,a_b,b,b_a,b_c,c,c_b,"link_a_b_c";
+      b,b_c,c,c_b,c_a,a,a_c,"link_b_c_a";
+      c,c_a,a,a_c,a_b,b,b_a,"link_c_a_b";
+      a,a_c,c,c_a,c_b,b,b_c,"link_a_c_b";
+      c,c_b,b,b_c,b_a,a,a_b,"link_c_b_a";
+      b,b_a,a,a_b,a_c,c,c_a,"link_b_a_c"
     ]
+
+
+let build_rule_triangle name a a_b b b_a =
+let
+  [
+    sp_a,[sp_a_b,_];
+    sp_b,[sp_b_a,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+      a,2.,0.,[],
+      [a_b,[Direction e],[]];
+      b,3.,0.,[],
+      [b_a,[Direction w],[]];]
+      signature
+in
+let _ =
+  build_rule ~file:(name^".ladot") remanent
+    (fun remanent -> ([],[],[]),
+                     snd (add_free_list [sp_a_b,[];sp_b_a,[]] remanent))
+    (fun remanent -> ([],[],[]), add_link_list [sp_a_b,sp_b_a] remanent)
+in ()
+
+let _ = build_rule_triangle "bind_a_b" a a_b b b_a
+let _ = build_rule_triangle "bind_b_c" b b_c c c_b
+
+
+let
+  [
+    sp_a,[sp_a_b,_;sp_a_c,_];
+    sp_b,[sp_b_a,_;sp_b_c,_];
+    sp_c,[sp_c_a,_;sp_c_b,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+        a,0.,0.,[],
+      [a_b,[Direction s],[];
+       a_c,[Direction n],[];];
+      b,0.6,-.0.6,[],
+      [b_a,[Direction w],[];
+       b_c,[Direction n],[];];
+      c,0.6,+.0.6,[],
+      [c_a,[Direction w],[];
+       c_b,[Direction s],[]]]
+    signature
+
+let remanent = add_link_list [sp_a_b,sp_b_a;sp_b_c,sp_c_b] remanent
+let _ =
+  build_rule ~file:("bind_c_a.ladot") remanent
+    (fun remanent -> ([],[],[]),
+                     snd (add_free_list [sp_c_a,[];sp_a_c,[]] remanent))
+    (fun remanent -> ([],[],[]), add_link_list [sp_c_a,sp_a_c] remanent)
+
+
+let
+  [
+    sp_a,[sp_a_b,_;sp_a_c,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+      a,0.,0.,[],
+      [a_b,[Direction w],[Free_site []];
+       a_c,[Direction e],[Free_site []];];
+    ]
+    signature
+
+let _ = dump "abc_a.ladot" remanent
+
+let
+  [
+    sp_a,[sp_a_b,_;sp_a_c,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+      b,0.,0.,[],
+      [b_a,[Direction w],[Free_site []];
+       b_c,[Direction e],[Free_site []];];
+    ]
+    signature
+
+let _ = dump "abc_b.ladot" remanent
+    let
+      [
+        sp_a,[sp_a_b,_;sp_a_c,_];
+      ],
+      remanent
+      =
+      add_in_graph
+        [
+          c,0.,0.,[],
+          [c_a,[Direction w],[Free_site []];
+           c_b,[Direction e],[Free_site []];];
+        ]
+        signature
+
+let _ = dump "abc_c.ladot" remanent
+
+let
+  [
+    sp_a,[sp_a_b,_;sp_a_c,_];
+    sp_b,[sp_b_a,_;sp_b_c,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+        a,0.,0.,[],
+      [a_b,[Direction e],[];
+       a_c,[Direction w],[Free_site []];];
+      b,1.,0.,[],
+      [b_a,[Direction w],[];
+       b_c,[Direction e],[Free_site []];];]
+      signature
+
+let remanent = add_link_list [sp_a_b,sp_b_a] remanent
+
+let _ = dump "abc_ab.ladot" remanent
+
+let
+  [
+    sp_a,[sp_a_b,_;sp_a_c,_];
+    sp_b,[sp_b_a,_;sp_b_c,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+        b,0.,0.,[],
+      [b_c,[Direction e],[];
+       b_a,[Direction w],[Free_site []];];
+      c,1.,0.,[],
+      [c_b,[Direction w],[];
+       c_a,[Direction e],[Free_site []];];]
+      signature
+
+let remanent = add_link_list [sp_a_b,sp_b_a] remanent
+
+let _ = dump "abc_bc.ladot" remanent
+
+let
+  [
+    sp_a,[sp_a_b,_;sp_a_c,_];
+    sp_b,[sp_b_a,_;sp_b_c,_];
+  ],
+  remanent
+  =
+  add_in_graph
+    [
+        c,0.,0.,[],
+      [c_a,[Direction e],[];
+       c_b,[Direction w],[Free_site []];];
+      a,1.,0.,[],
+      [a_c,[Direction w],[];
+       a_b,[Direction e],[Free_site []];];]
+      signature
+
+let remanent = add_link_list [sp_a_b,sp_b_a] remanent
+
+let _ = dump "abc_ca.ladot" remanent

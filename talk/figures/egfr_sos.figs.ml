@@ -393,8 +393,8 @@ let [_,[sa,_];
   add_in_graph
     [egfr,0.,0.,[],[egfr_c,[Direction e],[]];
      egfr,2.2,0.,[],[egfr_n,[Direction w],[];
-                     egfr_c,[Direction e],[]];
-     egfr,4.4,0.,[],[egfr_n,[Direction w],[]]
+                     egfr_r,[Direction e],[]];
+     egfr,4.4,0.,[],[egfr_r,[Direction w],[]]
     ]
     empty
 let g =
@@ -663,8 +663,33 @@ let _ =
 
 let
   [
+    egfr1,[egfr1_r,_];
+      egfr2,[egfr2_r,_];
+  ],
+  half_domain
+  =
+  add_in_graph
+    [  egfr,0.,0.,[],
+       [egfr_r,[Direction (of_degree 20.)],[];
+
+      ];
+        egfr,2.,0.,[],
+           [egfr_r,[Direction (of_degree (-.20.))],[];
+      ]]
+    signature_egfr
+
+let _ =
+  build_rule ~file:"rulewd.ladot" ~vgap:(Some 2.) half_domain
+    (fun remanent ->
+       ([],[],[]),( (add_link_list [egfr1_r,egfr2_r] remanent)))
+    (fun remanent ->
+       ([],[],[]),snd (add_free_list [egfr1_r,[];
+                                      egfr2_r,[]] remanent))
+
+let
+  [
     egfr1,[egfr1_r,_;_;_];
-      egfr2,[egfr2_r,_;_;_];
+    egfr2,[egfr2_r,_;_;_];
   ],
   half_domain
   =
@@ -673,10 +698,10 @@ let
        [egfr_r,[Direction (of_degree 20.)],[];
         egfr_c,[Direction e],[Free_site []];
         egfr_n,[Direction (of_degree 160.)],[Free_site []]];
-        egfr,2.,0.,[],
-           [egfr_r,[Direction (of_degree (-.20.))],[];
-           egfr_c,[Direction w],[Free_site []];
-           egfr_n,[Direction (of_degree 200.)],[Free_site []]]]
+       egfr,2.,0.,[],
+       [egfr_r,[Direction (of_degree (-.20.))],[];
+        egfr_c,[Direction w],[Free_site []];
+        egfr_n,[Direction (of_degree 200.)],[Free_site []]]]
     signature_egfr
 
 let _ =

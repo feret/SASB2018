@@ -460,7 +460,42 @@ in rule-based models}}}} \bigskip\\
 
 {\superplan}
 
+\begin{slide}{\frametitle{Motivation}}
+
+\vfill
+
+\textcolor{red}{Potentially unbounded polymers}:
+
+\vfill
+
+\begin{enumerate}
+   \item may naturally emerge in model with \textcolor{red}{self-assembling} of giant macro-molecules
+
+   \begin{itemize}
+     \item \textcolor{blue}{DNA} \textcolor{OliveGreen}{(Jean Krivine)},
+     \item \textcolor{blue}{filaments} \textcolor{OliveGreen}{(Nathalie Theret)}, \item \textcolor{blue}{signalosome} \textcolor{OliveGreen}{(Hector Medica Abarca)};\end{itemize}
+
+\vfill
+
+   \item may result of \textcolor{red}{forgotten conflicts} between bonds;
+
+   often the case when the model is extracted from a more abstract description
+   \begin{itemize}
+     \item \textcolor{blue}{Cell-Designer} \textcolor{OliveGreen}{(Luca Grieco)},
+     \item \textcolor{blue}{natural language processing}
+     \textcolor{OliveGreen}{(Sorger Lab)}
+\end{itemize}
+
+
+\end{enumerate}
+
+\vfill
+
+\end{slide}
+
+
 \begin{slide}{\frametitle{Our goal}}
+
 
 We want to prove the absence of unbounded polymers:\bigskip\\
 
@@ -472,25 +507,6 @@ We want to prove the absence of unbounded polymers:\bigskip\\
 
 \end{slide}
 
-\begin{slide}{\frametitle{Why?}}
-
-\vfill
-
-\begin{enumerate}
-  \item Debugging:
-
-  When models come from a more abstract specification language, some conflicts are often forgotten.
-
-\vfill
-
-  \item Understanding the model:
-
-  Self-assembling of geant macro-molecules.
-\end{enumerate}
-
-\vfill
-
-\end{slide}
 
 \begin{slide}{\frametitle{Strengthened goal}}
 
@@ -589,17 +605,17 @@ Instead, we will prove the absence of repeatable patterns:\bigskip\\
 
 \end{slide}
 
-\begin{slide}{\frametitle{Alternative encoding}}
+%\begin{slide}{\frametitle{Alternative encoding}}
 
-\end{slide}
+%\end{slide}
 
-\begin{slide}{\frametitle{Alternative encoding}}
+%\begin{slide}{\frametitle{Alternative encoding}}
 
-\end{slide}
+%\end{slide}
 
-\begin{slide}{\frametitle{Alternative encoding}}
+%\begin{slide}{\frametitle{Alternative encoding}}
 
-\end{slide}
+%\end{slide}
 
 \begin{slide}{\frametitle{Self-loops}}
 
@@ -688,16 +704,16 @@ Interaction map.
 
 \end{slide}
 
-\begin{slide}{\frametitle{Invariants}}
-
-\begin{minipage}{0.35\linewidth}
+\newcommand{\core}[1]{%
+\begin{minipage}{0.3\linewidth}
   \begin{center}
   \scalebox{0.8}{\includegraphics{generated_pictures/invariant_cm.pdf}}
 Interaction map.
   \end{center}
 \end{minipage}
-  \begin{minipage}{0.6\linewidth}
-    \begin{center}
+  \begin{minipage}{0.69\linewidth}
+  \begin{minipage}{0.55\linewidth}
+     \begin{center}
     \scalebox{0.4}{\includegraphics{generated_pictures/rule1.pdf}}
     \end{center}
     \vspace*{0.2cm}
@@ -707,10 +723,30 @@ Interaction map.
   \vspace*{0.2cm}
   \begin{center}
   \scalebox{0.4}{\includegraphics{generated_pictures/rule12.pdf}}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.44\linewidth}
+\begin{center}
+\scalebox{0.4}{\includegraphics{generated_pictures/ruled11.pdf}}
+\end{center}
+  \vspace*{0.2cm}
+\begin{center}
+\scalebox{0.4}{\includegraphics{generated_pictures/#1.pdf}}
+\end{center}
+  \vspace*{0.2cm}
+\begin{center}
+\scalebox{0.4}{\includegraphics{generated_pictures/ruled13.pdf}}
+\end{center}
+\end{minipage}
 
+  \begin{center}
   Rules.
   \end{center}
-  \end{minipage}
+  \end{minipage}}
+
+\begin{slide}{\frametitle{Invariants}}
+
+\core{ruled12}
 
 
 \end{slide}
@@ -718,27 +754,9 @@ Interaction map.
 
 \begin{slide}{\frametitle{Invariants}}
 
-\begin{minipage}{0.35\linewidth}
-  \begin{center}
-  \scalebox{0.8}{\includegraphics{generated_pictures/invariant_cm.pdf}}
-Interaction map.
-  \end{center}
-\end{minipage}
-  \begin{minipage}{0.6\linewidth}
-    \begin{center}
-    \scalebox{0.4}{\includegraphics{generated_pictures/rule1.pdf}}
-    \end{center}
-    \vspace*{0.2cm}
-  \begin{center}
-  \scalebox{0.4}{\includegraphics{generated_pictures/rule11.pdf}}
-  \end{center}
-  \vspace*{0.2cm}
-  \begin{center}
-  \scalebox{0.4}{\includegraphics{generated_pictures/rule12.pdf}}
+\core{ruled12}
 
-  Rules.
-  \end{center}
-  \end{minipage}
+\vspace*{1cm}
 
 \begin{center}
   The repeatable pattern:
@@ -751,13 +769,108 @@ Interaction map.
 
 \begin{slide}{\frametitle{Breaking invariants}}
 
+\core{rulewd}
+
+\vspace*{1cm}
+
+\begin{center}
+The invariant does not hold any longer.\bigskip\\
+
+The repeatable pattern:
+
+\scalebox{0.4}{\includegraphics{generated_pictures/invariant_pattern.pdf}}
+
+is now reachable.
+\end{center}
+
+\end{slide}
+
+\newcommand{\coretriangle}{%
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+  \scalebox{0.8}{\includegraphics{generated_pictures/abc_contact_map.pdf}}
+Interaction map.
+  \end{center}
+\end{minipage}
+  \begin{minipage}{0.59\linewidth}
+  \begin{minipage}{\linewidth}
+     \begin{center}
+    \scalebox{1.}{\includegraphics{generated_pictures/bind_a_b.pdf}}
+    \end{center}
+    \vspace*{0.2cm}
+  \begin{center}
+  \scalebox{1.}{\includegraphics{generated_pictures/bind_b_c.pdf}}
+  \end{center}
+  \vspace*{0.2cm}
+  \begin{center}
+  \scalebox{1.}{\includegraphics{generated_pictures/bind_c_a.pdf}}
+\end{center}
+\end{minipage}
+
+  \begin{center}
+  Rules.
+  \end{center}
+  \end{minipage}}
+
+
+\begin{slide}{\frametitle{Triangle}}
+
+\coretriangle
+
 \end{slide}
 
 \begin{slide}{\frametitle{Triangle}}
 
-\end{slide}
+  \begin{minipage}{0.55\linewidth}
+  \begin{minipage}{\linewidth}
+     \begin{center}
+    \scalebox{1.}{\includegraphics{generated_pictures/bind_a_b.pdf}}
+    \end{center}
+    \vspace*{1cm}
+  \begin{center}
+  \scalebox{1.}{\includegraphics{generated_pictures/bind_b_c.pdf}}
+  \end{center}
+  \vspace*{1cm}
+  \begin{center}
+  \scalebox{1.}{\includegraphics{generated_pictures/bind_c_a.pdf}}
+  \end{center}
+  \end{minipage}
 
-\begin{slide}{\frametitle{Triangle}}
+  \begin{center}
+  Rules.
+  \end{center}
+  \end{minipage}
+  \begin{minipage}{0.44\linewidth}
+\includegraphics{generated_pictures/abc_a.pdf}
+\hspace*{1cm}
+\includegraphics{generated_pictures/abc_b.pdf}
+\hspace*{1cm}
+\includegraphics{generated_pictures/abc_c.pdf}
+
+\vspace*{1cm}
+
+\hspace*{1cm}\begin{minipage}{0.5\linewidth}
+  \includegraphics{generated_pictures/abc_ab.pdf}
+
+\vspace*{5mm}
+
+\includegraphics{generated_pictures/abc_bc.pdf}
+
+\vspace*{5mm}
+
+\includegraphics{generated_pictures/abc_ca.pdf}
+\end{minipage}
+
+\vspace*{1cm}
+
+\includegraphics{generated_pictures/abc_open_triangle.pdf}
+\includegraphics{generated_pictures/abc_triangle.pdf}
+
+
+    \begin{center}
+      Bio-molecular compounds.
+    \end{center}
+  \end{minipage}
 
 \end{slide}
 
@@ -825,7 +938,7 @@ We convert repeatable patterns into sequences of sites, by taking each other one
 \end{enumerate}
 \end{slide}
 
-\begin{slide}{\frametitle{The graph of the sites}}
+\begin{slide}{\frametitle{The graph of the sites \\\textcolor{blue}{EGF example}} }
 
   \scalebox{1.5}{\begin{minipage}{0.59\linewidth}\label{fig:abc:gs:gs}
   \xymatrix@C=2.cm@R=0.5cm{
@@ -917,21 +1030,67 @@ This is a false alarm and we do not know how to do better with this data-structu
 
 \end{slide}
 
+\begin{slide}{\frametitle{The graph of the sites \\ \textcolor{blue}{Example of the triangle}}}
+
+\vfill
+
+\hspace*{4cm}\scalebox{3}{\begin{minipage}{0.59\linewidth}\label{fig:abc:gs:gs}
+\xymatrix@C=0.cm@R=0.35cm{
+\begin{minipage}{0.6cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/a_b.pdf}}
+\end{minipage}
+\ar@{->}[rr]
+&&
+\begin{minipage}{0.6cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/b_c.pdf}}
+\end{minipage}
+\ar@{->}[ld]
+&&&
+\begin{minipage}{0.6cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/c_b.pdf}}
+\end{minipage}
+\ar@{->}[rd]
+\cr
+&
+\begin{minipage}{0.6cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/c_a.pdf}}
+\end{minipage}
+\ar@{->}[lu]
+&&&
+\begin{minipage}{0.6cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/a_c.pdf}}
+\end{minipage}
+\ar@{->}[ru]
+&&
+\begin{minipage}{0.6cm}
+\scalebox{0.35}{\includegraphics{generated_pictures/b_a.pdf}}
+\end{minipage}
+\ar@{->}[ll]
+}\end{minipage}}
+
+\vfill
+
+The graph contains two cycles, despite that there is a finite number of
+kinds of bio-molecular compounds.
+
+\vfill
+\end{slide}
+
 \begin{slide}{\frametitle{Pros / Cons}}
 
 \vfill
 
 \begin{enumerate}
-\item Pros:
+\item \textcolor{OliveGreen}{Pros}:
   \begin{itemize}
-    \item Can deal with self-bonds;
-    \item Can deal with conflicting sites;
-    \item Avoid combinatorial blow up.
+    \item can deal with self-bonds;
+    \item can deal with conflicting sites;
+    \item avoid combinatorial blow up.
   \end{itemize}
 \vfill
-\item Cons:
+\item \textcolor{red}{Cons}:
   \begin{itemize}
-    \item Cannot deal with structural invariants.
+    \item cannot deal with structural invariants.
   \end{itemize}
 
   \vfill\mbox{}
@@ -991,11 +1150,59 @@ This is a false alarm and we do not know how to do better with this data-structu
   \end{enumerate}
   \end{slide}
 
+
+  \begin{slide}{\frametitle{The graph of the links \\ \textcolor{blue}{Example of the triangle}}}
+
+\vfill
+
+  \hspace*{3cm}\scalebox{2}{\begin{minipage}{0.59\linewidth}\label{fig:abc:gl:gl}
+  \xymatrix@C=0.cm@R=0.35cm{
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b.pdf}}
+  \end{minipage}
+  \ar@{->}^{\scalebox{0.2}{\includegraphics{generated_pictures/link_a_b_c.pdf}}}[rr]
+  &&
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_b_c.pdf}}
+  \end{minipage}
+  \ar@{->}^{\scalebox{0.2}{\includegraphics{generated_pictures/link_b_c_a.pdf}}}[ld]
+  &&&
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_c_b.pdf}}
+  \end{minipage}
+  \ar@{->}^{\scalebox{0.2}{\includegraphics{generated_pictures/link_c_a_b.pdf}}}[rd]
+  \cr
+  &
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_c_a.pdf}}
+  \end{minipage}
+  \ar@{->}^{\scalebox{0.2}{\includegraphics{generated_pictures/link_c_b_a.pdf}}}[lu]
+  &&&
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_a_c.pdf}}
+  \end{minipage}
+  \ar@{->}^{\scalebox{0.2}{\includegraphics{generated_pictures/link_a_c_b.pdf}}}[ru]
+  &&
+  \begin{minipage}{1.2cm}
+  \scalebox{0.35}{\includegraphics{generated_pictures/link_b_a.pdf}}
+  \end{minipage}
+  \ar@{->}^{\scalebox{0.2}{\includegraphics{generated_pictures/link_b_a_c.pdf}}}[ll]
+  }\end{minipage}}
+
+\vfill
+
+  The graph contains two cycles despite that there is a bounded number
+  of different kinds of bio-molecular compounds.
+
+\vfill
+
+  \end{slide}
+
+
 \newcommand{\minipagesize}{1.1cm}
-\newcommand{\factor}{0.15}
+\newcommand{\factor}{0.13}
 
-\begin{slide}{\frametitle{The graph of the links}}
-
+\newcommand{\graphlink}{%
 \scalebox{3.}{%
   {\begin{minipage}{0.59\linewidth}\label{fig:egfr:gl:gl}
   \xymatrix@C=0.cm@R=0.35cm{
@@ -1063,6 +1270,12 @@ This is a false alarm and we do not know how to do better with this data-structu
     }
   \end{minipage}}}
 
+}
+
+\begin{slide}{\frametitle{The graph of the links \\\textcolor{blue}{EGF example}}}
+
+\graphlink
+
 \end{slide}
 
 \begin{slide}{\frametitle{Detection of unbounded polymers}}
@@ -1100,16 +1313,16 @@ This is a false alarm and we do not know how to do better with this data-structu
 \vfill
 
 \begin{enumerate}
-\item Pros:
+\item \textcolor{OliveGreen}{Pros}:
   \begin{itemize}
-    \item Can deal with self-bonds;
-    \item Can deal with conflicting sites;
-    \item Avoid combinatorial blow up.
+    \item can deal with self-bonds;
+    \item can deal with conflicting sites;
+    \item avoid combinatorial blow up.
   \end{itemize}
 \vfill
-\item Cons:
+\item \textcolor{red}{Cons}:
   \begin{itemize}
-    \item Cannot deal with structural invariants.
+    \item cannot deal with structural invariants.
   \end{itemize}
 \end{enumerate}
 
@@ -1118,18 +1331,115 @@ This is a false alarm and we do not know how to do better with this data-structu
 
 {\superplan}
 
-\begin{slide}{\frametitle{Issues}}
+\begin{slide}{\frametitle{The graph of the links \\\textcolor{blue}{EGF example}}}
+
+\graphlink
 
 \end{slide}
 
-\begin{slide}{\frametitle{The graph of the links}}
+\begin{slide}{\frametitle{Labelled edges}}
+
+\vfill
+
+We label each edge with the pattern that is obtained
+by gluing the source and the target graphs.
+
+\vfill
+
+\begin{center}
+\begin{minipage}{6cm}\scalebox{0.7}{\includegraphics{generated_pictures/egfr_egfr_c.pdf}}\end{minipage}
+  ${\xrightarrow{\begin{minipage}{6cm}\scalebox{0.4}{\includegraphics{generated_pictures/egfr_egfr_egfr.pdf}}%
+  \end{minipage}}}$%
+\begin{minipage}{6cm}\scalebox{0.7}{\includegraphics{generated_pictures/egfr_egfr_r.pdf}}\end{minipage}
+\end{center}
+
+\vfill
+
+Then we discard the edges with a label that is unreachable.
+(We use the static analysis described in
+
+and
+ )
 
 \end{slide}
 
-\begin{slide}{\frametitle{Labelled transitions}}
+
+\begin{slide}{\frametitle{The graph of the links (curified) \\ \textcolor{blue}{EGF example}}}
+
+  \scalebox{2.5}{%
+  \begin{minipage}{0.59\linewidth}\label{fig:egfr:gll:gl}
+  \xymatrix@C=0.cm@R=0.35cm{
+  &&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/sos_grb2.pdf}}\end{minipage}
+  \ar@{->}[rr]
+  \ar@{->}[d]&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/grb2_shc.pdf}}\end{minipage}
+    \ar@{->}[d]
+  &&\cr
+  &
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egf_egfr.pdf}}\end{minipage}
+    \ar@{->}[dl]
+    \ar@{->}[drrr]
+    \ar@{->}[ddrrrr]
+    \ar@{->}@/_{0.6cm}/[ddrr]
+    \ar@{->}[dr]
+    &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/grb2_egfr.pdf}}\end{minipage}
+    \ar@{->}[dlll]
+    \ar@{->}[dl]
+    \ar@{->}[dr]
+    \ar@{->}[dd]
+    \ar@{->}@/_{0.6cm}/[ddll]&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/shc_egfr.pdf}}\end{minipage}
+    \ar@{->}[dlllll]
+    \ar@{->}[dlll]
+    \ar@{->}[dl]
+    \ar@{->}[dd]
+    \ar@{->}[ddllll]\cr%
+  \begin{minipage}{\minipagesize}\hspace*{0.2cm}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_egfr_c.pdf}}
+  \end{minipage}
+    %\ar@{->}[rr]
+    \ar@{->}[dr]
+    \ar@{->}[drrr]
+    \ar@{->}[drrrrr]
+    %\ar@{->}@(ul,dl)
+    &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_egfr_r.pdf}}\end{minipage}
+    %\ar@{->}[ll]
+    \ar@{->}[dl]
+    \ar@{->}[dr]
+    \ar@{->}[drrr]
+    %\ar@{->}[rr]
+    &&
+  \begin{minipage}{\minipagesize}
+    \scalebox{\factor}{\includegraphics{generated_pictures/egfr_egfr_n.pdf}}
+  \end{minipage}
+    %\ar@{->}[ll]
+    \ar@{->}[dl]
+    \ar@{->}[dlll]
+    \ar@{->}[dr]
+    %\ar@{->}@(ur,dr)
+    &&\cr
+  &
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_egf.pdf}}\end{minipage}
+  &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_shc.pdf}}\end{minipage}
+  \ar@{->}[d]&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/egfr_grb2.pdf}}\end{minipage}
+  \ar@{->}[d]\cr
+  &&&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/shc_grb2.pdf}}\ar@{->}[rr]\end{minipage}
+  &&
+  \begin{minipage}{\minipagesize}\scalebox{\factor}{\includegraphics{generated_pictures/grb2_sos.pdf}}\end{minipage}
+  &&\cr
+    }
+  \end{minipage}}
+
+\begin{center}
+This graph is \textcolor{red}{acyclic}.
+\end{center}
 
 \end{slide}
-
 \begin{slide}{\frametitle{Refinement}}
 
 \end{slide}
