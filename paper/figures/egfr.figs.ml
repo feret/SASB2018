@@ -288,6 +288,22 @@ add_link_list [sa,sb;sc,sd] g
 
 let () = dump "egfr_egfr_egfr.ladot" g
 
+let [_,[sa,_];
+     _,[sb,_;sc,_];
+     _,[sd,_]],g
+  =
+  add_in_graph
+    [egfr,0.,0.,[],[egfr_c,[Direction e],[]];
+     egfr,2.2,0.,[],[egfr_n,[Direction w],[];
+                     egfr_r,[Direction e],[]];
+     egfr,4.4,0.,[],[egfr_r,[Direction w],[]]
+    ]
+    empty
+let g =
+add_link_list [sa,sb;sc,sd] g
+
+let () = dump "egfr_egfr_egfr_bis.ladot" g
+
 let plot_link (a,b,c,d,name) =
   let [_,[sa,_];_,[sb,_]],er =
     add_in_graph

@@ -133,8 +133,6 @@ Strongly connected components
 \end{keyword}
 \end{frontmatter}
 
-
-
 \section{Introduction}
 
 Rule-based languages, such as Kappa \cite{DBLP:journals/tcs/DanosL04} and BNGL
@@ -826,7 +824,7 @@ Problem \ref{problem} to the one of detecting a repeatable pattern.
 
 Firstly, we define properly a repeatable pattern as a chain of agents which may be iterated to form arbitrarily long patterns.
 
-\begin{defn}[Chain]
+\begin{defn}[chain]
 A pattern is called a chain if and only if it satisfies the following properties:
 \begin{enumerate}
   \item every agent documents at most two sites;
@@ -1282,11 +1280,11 @@ In this section, we explain how to refine the graph of the potential links of a 
 These constraints may come from a static analysis \cite{SASB2016,KaSa} taken as a black box and they may take the form of a set of patterns that shall occur in no reachable bio-molecular compounds.
 These constraints cannot be written in the contact map which can cope only with non relational information about the potential state of sites.
 
-In the case of the model of the early events of the integration of the epidermic growth factor, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules and the initial state, that the following patterns:
+In the case of the model of the early events of the integration of the epidermic growth factor, the analysis that is described in \cite{SASB2016} can infer automatically, from the set of rules and the initial state, that none of the following patterns:
 \begin{equation*}
 \scalebox{0.3}{\includegraphics{generated_pictures/egfr_r_c.pdf}}\hspace*{1cm} \scalebox{0.3}{\includegraphics{generated_pictures/egfr_r_n.pdf}}\hspace*{1cm} \scalebox{0.3}{\includegraphics{generated_pictures/egfr_n_c.pdf}}
 \end{equation*}
-are not reachable. That is to say that a receptor cannot be bound to two different other instances of receptors.
+is reachable. That is to say that a receptor cannot be bound to two different other instances of receptors.
 
 
 The analysis that is described in \cite{afp} generalises this approach to arbitrary cycles of proteins. In the example of the triangle, it infers (providing that it is a consequence of the rules and of the initial state), that no two \agentfont{A}s may occur in a given connected compound, by proving that the following pattern:
@@ -1310,43 +1308,70 @@ the set $\llbracket \graphsymb_{\textit{CM}},\mathcal{P} \rrbracket$ is finite, 
 
 In the following, we propose a graph structure to answer to Problem \ref{problembis}. Our approach is sound but not complete. It can detect and prove that the set of bio-molecular compounds is finite. But when it warns about potential repeatable patterns, it may be a false positive. We do not look for a complete procedure because on the first hand detecting whether or not a pattern is reachable is not decidable in Kappa \cite{kreyBig}, and on the second hand detecting whether a pattern may occur in a set of bio-molecular compounds that do not contain patterns from a given set is not so easy due to potential overlaps between patterns. Thus we rely on a sound but not complete procedure.
 
-The main idea is to refine the graph of the potential successive links by labelling each edge with the pattern that is formed by fusing the source and the target of this edge.
+We perform in two steps.
 
-The label of an edge must be understood as contextual information about the occurrence of two successive links. In order to take into account unreachable patterns, we introduce two operations to update refinements of the graph of the potential successive links. The first operation replace
-an edge by several edges by refining its patterns into longer chains.
-More precisely, given an edge, one shall decide which extremity of its label to refine and which site to insert, the former edge is potentially replaced by several ones, one for each potential partner of this site in the contact map. There may be several possibilities in case of competition on a binding site. The second operation consists in removing edges the label of which contain an occurrence of a forbidden pattern.
+Firstly we label every edge of the graph of the link by a pattern. More precisely, the label of an edge is a chain that is obtained by fusing the second agent of the source node and the first agent of the target node. The chain is oriented. That is to say that two links are identified as respectively the source and the target of the chain of agents.
 
+\begin{exmp}[labelled edge]
+
+We give as follows an example of a labelled edge in the graph of the links for the EGF model:
+
+\begin{center}
+\begin{minipage}{4cm}%
+\begin{center}%
+\scalebox{0.3}{\includegraphics{generated_pictures/egfr_egfr_c.pdf}}%
+\end{center}%
+\end{minipage}%
+${\xrightarrow{\begin{minipage}{3cm}\scalebox{0.2}{\includegraphics{generated_pictures/egfr_egfr_egfr_bis.pdf}}\end{minipage}}}$%
+\begin{minipage}{4cm}%
+\begin{center}%
+\scalebox{0.3}{\includegraphics{generated_pictures/egfr_egfr_r.pdf}}%
+\end{center}%
+\end{minipage}
+\end{center}
+
+The edge is labelled with a chain of three agents. The source of the chain is the link the site \sitefont{c} and the site \sitefont{n} wheareas the target of the chain if the link between the two sites \sitefont{r}.
+
+We notice that in our model this chain is indeed unreachable.
+\end{exmp}
+
+The label of an edge must be understood as an explaination about how the link of the source of this edge and of the target of this edge may be connected in  reachable bio-molecular compounds. When an edge is labelled with a chain that is unreacheable then this edge may be safely discarded.
+
+The longer a chain of agents is, the more constraints it imposes. The second step consists in combining consecutives edges, in order to extend their labels into longer chains. It is worth noticing that given a node in the graph of the links, the target of the label of every incoming edge and the source of the label of every outcoming edge is indeed the pattern that is labelling the node.
+We will keep this property as a structural invariant of the graph. This structural invariant will be preserved when combining the edges of the graph. Given a node in the graph of the links, an incoming edge and an outcoming edge may be composed to form an edge from the source of the incoming edge to the target of the outcoming edge. The label of this new edge is obtained by busing the label of the outcoming edge and the label of the incoming edge by identifying the target of the former with the source of the later one. This way, we form a chain of agents from the source of the label of the incoming edge to the target of the label of the outcoming edge, which ensures that the structural invariant of the graph of the links is preserved.
+
+Now we can define precisely the second step: the second step consists in
+selecting a node and replacing a given incoming edge with the set of the edges that is obtained by combining this edge with every outcoming edge. This transformation preserves the structural invariant and increases the length of the chains of agent that are used as labels of the edges in the graph.
 
 \begin{exmp}[graph refinement (the model of the triangle)]
-  For instance the following edge
-  \begin{equation*}\xymatrix@C=0.5cm@R=0.35cm{
-  \begin{minipage}{1.2cm}
-  \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b.pdf}}
-  \end{minipage}
-  \ar@{->}[rr]
-  &&
-  \begin{minipage}{1.2cm}
-  \scalebox{0.35}{\includegraphics{generated_pictures/link_b_c.pdf}}
-  \end{minipage}}
-  \end{equation*}
-  will be labelled with the following pattern:
-  \begin{equation*}
-    \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b_c.pdf}}.
-  \end{equation*}
+%  For instance the following edge
+%  \begin{equation*}\xymatrix@C=0.5cm@R=0.35cm{
+%  \begin{minipage}{1.2cm}
+%  \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b.pdf}}
+%  \end{minipage}
+%  \ar@{->}[rr]
+%  &&
+%  \begin{minipage}{1.2cm}
+%  \scalebox{0.35}{\includegraphics{generated_pictures/link_b_c.pdf}}
+%  \end{minipage}}
+%  \end{equation*}
+%  will be labelled with the following pattern:
+%  \begin{equation*}
+%    \scalebox{0.35}{\includegraphics{generated_pictures/link_a_b_c.pdf}}.
+%  \end{equation*}
+%
+%  This pattern may then be refined.
+%  We choose to refine the state of the site \sitefont{a} of the protein \agentfont{C}{}. This site has only one bond in the contact map, thus there is only the following possibility:
+%  \begin{equation}
+%      \scalebox{0.35}{\includegraphics{generated_pictures/abc_pattern.pdf}}.
+%  \end{equation}
+%  Yet this chain contains a black-listed pattern, thus the edge may be safely discarded from the graph.
 
-  This pattern may then be refined.
-  We choose to refine the state of the site \sitefont{a} of the protein \agentfont{C}{}. This site has only one bond in the contact map, thus there is only the following possibility:
-  \begin{equation}
-      \scalebox{0.35}{\includegraphics{generated_pictures/abc_pattern.pdf}}.
-  \end{equation}
-  Yet this chain contains a black-listed pattern, thus the edge may be safely discarded from the graph.
-
-  We obtain the graph that is depicted in Fig.~\ref{fig:abc:gll:gl}.
+%  We obtain the graph that is depicted in Fig.~\ref{fig:abc:gll:gl}.
 \end{exmp}
 
 The following theorem states the soundness of our approach.
-%It uses the notion of circular permution of a repeatable pattern.
-%Formally, we say that a repeatable pattern is a circular permutation of another one, if the two cyclic patterns that are obtained by fusing both extremities of the two repeatable patterns are isomorphic. Intuitively, a repeatable pattern is a circular permutation of another one, if the second one may be obtained by circular permutation of the agents of the first one.
+
 
 \begin{theorem}
   \label{th:linkbis}
