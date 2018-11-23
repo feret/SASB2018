@@ -114,7 +114,7 @@ let
       "S",[Width 0.35;Height 0.45;Shape "rectangle"],
       [
         "g",[Direction ne;FillColor "green"],[];
-        "r",[Direction nw;FillColor "blue"],[]
+        "r",[Direction w;FillColor "blue"],[]
       ];
 ]
     init
@@ -137,7 +137,7 @@ let
       g,1.2,0.3,[],
       [g_a,[],[Free_site [Direction nw]]];
       sh,0.8,-.0.3,[],
-      [s_r,[],[Free_site [Direction n]];
+      [s_r,[],[Free_site [Direction nw]];
        s_g,[],[Free_site [Direction e]]]]
     signature
 
@@ -186,7 +186,7 @@ let _, pattern =
       [
         sh,0.6,-.0.3,[],
         [s_r,[],[Free_site [Direction e;]];
-         s_g,[],[Free_site [Direction e;]]]]
+         s_g,[],[Free_site [Direction nw;]]]]
       signature
 
 let _ = dump "conflict_s.ladot" pattern
@@ -352,7 +352,7 @@ let
       r,0.,0.,[],
       [r_g,[],[];
        r_s,[],[]];
-      g,1.2,0.,[],
+      g,1.,0.1,[],
       [g_a,[],[]];
       g,1.4,-.0.3,[],
       [g_a,[],[]];

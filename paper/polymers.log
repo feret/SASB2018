@@ -1,28 +1,28 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_2) (preloaded format=pdflatex 2017.10.12)  8 OCT 2018 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.11)  23 NOV 2018 07:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **polymers
 (./polymers.tex
-LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 47 language(s) loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (./entcs.cls
 Document Class: entcs 2003/9/14, 2e-1.15: Electronic Notes in Theoretical Compu
 ter Science
-(/opt/local/share/texmf-texlive/tex/latex/base/newlfont.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/newlfont.sty
 Package: newlfont 1998/08/17 v2.2m Standard LaTeX package
-LaTeX Info: Redefining \em on input line 57.
+LaTeX Info: Redefining \em on input line 67.
 
-(/opt/local/share/texmf-texlive/tex/latex/base/latexsym.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 ))
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup5
@@ -30,111 +30,112 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
-Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
-Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
-Package: xcolor-patch 2016/05/16 xcolor patch
-Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
-Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/opt/local/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen102
 \Hy@linkcounter=\count79
 \Hy@pagecounter=\count80
 
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count81
 
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `raiselinks' set `false' on input line 4374.
-Package hyperref Info: Option `colorlinks' set `true' on input line 4374.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 4374.
-Package hyperref Info: Hyper figures OFF on input line 4498.
-Package hyperref Info: Link nesting OFF on input line 4503.
-Package hyperref Info: Hyper index ON on input line 4506.
-Package hyperref Info: Plain pages OFF on input line 4513.
-Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Option `raiselinks' set `false' on input line 4319.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4751.
+Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count82
 
-(/opt/local/share/texmf-texlive/tex/latex/url/url.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5104.
+LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen103
 \Fld@menulength=\count83
 \Field@Width=\dimen104
 \Fld@charsize=\dimen105
-Package hyperref Info: Hyper figures OFF on input line 6358.
-Package hyperref Info: Link nesting OFF on input line 6363.
-Package hyperref Info: Hyper index ON on input line 6366.
-Package hyperref Info: backreferencing OFF on input line 6373.
-Package hyperref Info: Link coloring ON on input line 6376.
-Package hyperref Info: Link coloring with OCG OFF on input line 6383.
-Package hyperref Info: PDF/A mode OFF on input line 6388.
-LaTeX Info: Redefining \ref on input line 6428.
-LaTeX Info: Redefining \pageref on input line 6432.
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
 
 
 Package hyperref Warning: Option `pdfpagelabels' is turned off
@@ -146,20 +147,20 @@ Package hyperref Warning: Option `pdfpagelabels' is turned off
 
 Package hyperref Message: Driver: hpdftex.
 
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count86
 \c@bookmark@seq@number=\count87
 
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip41
 )
-(/opt/local/share/texmf-texlive/tex/latex/base/leqno.clo
-File: leqno.clo 2016/12/29 v1.2a Standard LaTeX option (left equation numbers)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/leqno.clo
+File: leqno.clo 1998/08/17 v1.1c Standard LaTeX option (left equation numbers)
 )
 LaTeX Info: Redefining \rm on input line 76.
 LaTeX Info: Redefining \cal on input line 77.
@@ -219,79 +220,79 @@ LaTeX Info: Redefining \sc on input line 83.
 LaTeX Font Info:    Try loading font information for U+lasy on input line 1133.
 
 
-(/opt/local/share/texmf-texlive/tex/latex/base/ulasy.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 1133.
 
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 1133.
 
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \Slashbox=\box30
 )
 (./entcsmacrosasb.sty)
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/opt/local/share/texmf-texlive/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gread@gobject=\count115
 ))
 \Gin@req@height=\dimen117
 \Gin@req@width=\dimen118
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/11/05 v2.16a AMS math features
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
 
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks18
 \ex@=\dimen119
 ))
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen120
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
-LaTeX Info: Redefining \operatorname on input line 43.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+LaTeX Info: Redefining \operatorname on input line 46.
 )
 \inf@bad=\count116
-LaTeX Info: Redefining \frac on input line 213.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count117
 \leftroot@=\count118
-LaTeX Info: Redefining \overline on input line 375.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count119
 \DOTSCASE@=\count120
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box31
 \strutbox@=\box32
 \big@size=\dimen121
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count121
 \c@MaxMatrixCols=\count122
 \dotsspace@=\muskip11
@@ -312,30 +313,28 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \multlinegap=\skip46
 \multlinetaggap=\skip47
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count128
 \calc@Bcount=\count129
 \calc@Adimen=\dimen128
 \calc@Bdimen=\dimen129
 \calc@Askip=\skip48
 \calc@Bskip=\skip49
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
 \calc@Ccount=\count130
 \calc@Cskip=\skip50
 )
-(/opt/local/share/texmf-texlive/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+(/usr/local/texlive/2014/texmf-dist/tex/latex/mh/mathtools.sty
+Package: mathtools 2014/05/21 v1.14 mathematical typesetting tools
 
-(/opt/local/share/texmf-texlive/tex/latex/mathtools/mhsetup.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count131
@@ -353,12 +352,12 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \c@rulenumber=\count133
 \c@kappamode=\count134
 )
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xypic.sty
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xy.sty
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xy.tex Bootstrap'ing:
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xypic.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xy.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing:
 catcodes, docmode,
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xyrecat.tex)
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xyidioms.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyidioms.tex)
 
  Xy-pic version 3.8.9 <2013/10/06>
  Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
@@ -418,18 +417,18 @@ LaTeX Warning: You have requested package `xypic',
                but the package provides `xy'.
 
 Package: xy 2013/10/06 Xy-pic version 3.8.9
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xypdf.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xypdf.tex
  Xy-pic option: PDF driver v.1.7 loaded))
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xyv2.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyv2.tex
  Xy-pic option: Version 2 Compatibility v.3.8
 
 Xy-pic Warning: `\stop' redefined.
 
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xyframe.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyframe.tex
  Xy-pic option: Frame and Bracket extension v.3.14 loaded)
 Xy-pic pdf driver: `frame' extension support
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xypdf-fr.tex
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xycurve.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xypdf-fr.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.12 curve,
 \crv@cnt@=\count139
 \crvpts@=\toks27
@@ -442,8 +441,8 @@ Xy-pic pdf driver: `frame' extension support
 \L@=\dimen169
  loaded)
 Xy-pic pdf driver: `curve' extension support
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xypdf-cu.tex loaded) loaded)
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xymatrix.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
+loaded) (/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xymatrix.tex
  Xy-pic option: Matrix feature v.3.14
 \Row=\count140
 \Col=\count141
@@ -453,9 +452,9 @@ Xy-pic pdf driver: `curve' extension support
 \qcount@@=\count143
 \matrixsize@=\count144
  loaded)
-(/opt/local/share/texmf-texlive/tex/generic/xypic/xyarrow.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xypic/xyarrow.tex
  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded) loaded))
-(/opt/local/share/texmf-texlive/tex/latex/subfigure/subfigure.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip52
 \subfigcapskip=\skip53
@@ -471,11 +470,11 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/opt/local/share/texmf-texlive/tex/latex/subfigure/subfigure.cfg)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip56
 \subfig@bottom=\skip57
 )
-(/opt/local/share/texmf-texlive/tex/latex/stmaryrd/stmaryrd.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
@@ -486,54 +485,54 @@ Package: boolean 2006/10/05 version 0.1 Boolean expressions
 ) (./polymers.aux)
 \openout1 = `polymers.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
 \AtBeginShipoutBox=\box37
 
 
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 147.
+Package color Info: Driver file: pdftex.def on input line 137.
 )
-Package hyperref Info: Link coloring ON on input line 100.
+Package hyperref Info: Link coloring ON on input line 99.
 
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/nameref.sty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count149
 )
-LaTeX Info: Redefining \ref on input line 100.
-LaTeX Info: Redefining \pageref on input line 100.
-LaTeX Info: Redefining \nameref on input line 100.
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+LaTeX Info: Redefining \nameref on input line 99.
 
 (./polymers.out) (./polymers.out)
 \@outlinefile=\write4
 \openout4 = `polymers.out'.
 
 
-(/opt/local/share/texmf-texlive/tex/context/base/mkii/supp-pdf.mkii
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count150
 \scratchdimen=\dimen172
@@ -546,39 +545,36 @@ LaTeX Info: Redefining \nameref on input line 100.
 \MPnumerator=\count154
 \makeMPintoPDFobject=\count155
 \everyMPtoPDFconversion=\toks31
-) (/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+stmry on input line 100.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 99.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Package xypdf Info: Line width: 0.43799pt on input line 99.
 
 
-(/opt/local/share/texmf-texlive/tex/latex/stmaryrd/Ustmry.fd)
-Package xypdf Info: Line width: 0.43799pt on input line 100.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 102.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 104.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 101.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 110.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 103.
+
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 109.
 
 
 (./abstract.tex)
@@ -596,75 +592,79 @@ Overfull \hbox (1.88892pt too wide) has occurred while \output is active
  []
  []
 
-[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}pdfTeX warning (e
-xt4): destination with the same identifier (name{footnote.0}) has been already 
-used, duplicate ignored
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}pdfTeX 
+warning (ext4): destination with the same identifier (name{footnote.0}) has bee
+n already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.140 
-      pdfTeX warning (ext4): destination with the same identifier (name{footnot
-e.0}) has been already used, duplicate ignored
+l.133 \end{frontmatter}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{footnote.0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.140 
-      ]
-<generated_pictures/abc_contact_map.pdf, id=127, 124.465pt x 97.36375pt>
+l.133 \end{frontmatter}
+                       ]
+<generated_pictures/abc_contact_map.pdf, id=125, 124.465pt x 97.36375pt>
 File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
-ine 159.
+ine 156.
 (pdftex.def)             Requested size: 124.46469pt x 97.3635pt.
 
-<generated_pictures/abc_triangle.pdf, id=128, 124.465pt x 96.36pt>
+<generated_pictures/abc_triangle.pdf, id=126, 124.465pt x 96.36pt>
 File: generated_pictures/abc_triangle.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_triangle.pdf>
 Package pdftex.def Info: generated_pictures/abc_triangle.pdf used on input line
- 165.
+ 162.
 (pdftex.def)             Requested size: 124.46469pt x 96.35974pt.
 
-<generated_pictures/abc_pattern.pdf, id=129, 254.9525pt x 31.11626pt>
+<generated_pictures/abc_pattern.pdf, id=127, 254.9525pt x 31.11626pt>
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
-171.
+168.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
+
+Underfull \vbox (badness 1648) has occurred while \output is active []
+
  [2]
-<generated_pictures/self_contact_map.pdf, id=151, 65.24374pt x 31.11626pt>
+[3 <./generated_pictures/abc_contact_map.pdf> <./generated_pictures/abc_triangl
+e.pdf> <./generated_pictures/abc_pattern.pdf>]
+<generated_pictures/self_contact_map.pdf, id=178, 65.24374pt x 31.11626pt>
 File: generated_pictures/self_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/self_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/self_contact_map.pdf used on input 
-line 209.
+line 206.
 (pdftex.def)             Requested size: 65.24358pt x 31.11617pt.
 
-<generated_pictures/self_monomer.pdf, id=152, 53.19875pt x 31.11626pt>
+<generated_pictures/self_monomer.pdf, id=179, 53.19875pt x 31.11626pt>
 File: generated_pictures/self_monomer.pdf Graphic file (type pdf)
 
 <use generated_pictures/self_monomer.pdf>
 Package pdftex.def Info: generated_pictures/self_monomer.pdf used on input line
- 214.
+ 211.
 (pdftex.def)             Requested size: 53.19861pt x 31.11617pt.
 
-<generated_pictures/self_dimer.pdf, id=153, 110.4125pt x 31.11626pt>
+<generated_pictures/self_dimer.pdf, id=180, 110.4125pt x 31.11626pt>
 File: generated_pictures/self_dimer.pdf Graphic file (type pdf)
 
 <use generated_pictures/self_dimer.pdf>
 Package pdftex.def Info: generated_pictures/self_dimer.pdf used on input line 2
-14.
+11.
 (pdftex.def)             Requested size: 110.41222pt x 31.11617pt.
- [3 <./generated_pictures/abc_contact_map.pdf> <./generated_pictures/abc_triang
-le.pdf> <./generated_pictures/abc_pattern.pdf>]
+
 <generated_pictures/twoself_contact_map.pdf, id=183, 92.345pt x 31.11626pt>
 File: generated_pictures/twoself_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/twoself_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/twoself_contact_map.pdf used on inp
-ut line 225.
+ut line 222.
 (pdftex.def)             Requested size: 92.34476pt x 31.11617pt.
 
 <generated_pictures/twoself_pattern.pdf, id=184, 182.6825pt x 31.11626pt>
@@ -672,94 +672,94 @@ File: generated_pictures/twoself_pattern.pdf Graphic file (type pdf)
 
 <use generated_pictures/twoself_pattern.pdf>
 Package pdftex.def Info: generated_pictures/twoself_pattern.pdf used on input l
-ine 230.
+ine 227.
 (pdftex.def)             Requested size: 182.68204pt x 31.11617pt.
 Missing character: There is no Â in font cmr8!
 Missing character: There is no   in font cmr8!
 Missing character: There is no Â in font cmr8!
 Missing character: There is no   in font cmr8!
 
-<generated_pictures/conflict_contact_map.pdf, id=190, 117.43875pt x 76.285pt>
+<generated_pictures/conflict_contact_map.pdf, id=191, 117.43875pt x 76.285pt>
 File: generated_pictures/conflict_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/conflict_contact_map.pdf used on in
-put line 250.
+put line 249.
 (pdftex.def)             Requested size: 117.43845pt x 76.2848pt.
 
-<generated_pictures/conflict_r.pdf, id=191, 42.1575pt x 44.165pt>
+<generated_pictures/conflict_r.pdf, id=192, 42.1575pt x 44.165pt>
 File: generated_pictures/conflict_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_r.pdf>
 Package pdftex.def Info: generated_pictures/conflict_r.pdf used on input line 2
-65.
+64.
 (pdftex.def)             Requested size: 42.15738pt x 44.16487pt.
 
-<generated_pictures/conflict_rg.pdf, id=192, 89.33376pt x 44.165pt>
+<generated_pictures/conflict_rg.pdf, id=193, 89.33376pt x 44.165pt>
 File: generated_pictures/conflict_rg.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_rg.pdf>
 Package pdftex.def Info: generated_pictures/conflict_rg.pdf used on input line 
-265.
+264.
 (pdftex.def)             Requested size: 89.33353pt x 44.16487pt.
 
-<generated_pictures/conflict_grs.pdf, id=193, 117.43875pt x 60.225pt>
+<generated_pictures/conflict_grs.pdf, id=194, 117.43875pt x 60.225pt>
 File: generated_pictures/conflict_grs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_grs.pdf>
 Package pdftex.def Info: generated_pictures/conflict_grs.pdf used on input line
- 265.
+ 264.
 (pdftex.def)             Requested size: 117.43845pt x 60.22484pt.
 
-<generated_pictures/conflict_ggrs.pdf, id=194, 132.495pt x 60.225pt>
+<generated_pictures/conflict_ggrs.pdf, id=195, 132.495pt x 61.22874pt>
 File: generated_pictures/conflict_ggrs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_ggrs.pdf>
 Package pdftex.def Info: generated_pictures/conflict_ggrs.pdf used on input lin
-e 265.
-(pdftex.def)             Requested size: 132.49466pt x 60.22484pt.
+e 264.
+(pdftex.def)             Requested size: 132.49466pt x 61.22858pt.
 
-<generated_pictures/conflict_rs.pdf, id=195, 102.3825pt x 50.1875pt>
+<generated_pictures/conflict_rs.pdf, id=196, 102.3825pt x 50.1875pt>
 File: generated_pictures/conflict_rs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_rs.pdf>
 Package pdftex.def Info: generated_pictures/conflict_rs.pdf used on input line 
-265.
+264.
 (pdftex.def)             Requested size: 102.38225pt x 50.18736pt.
 
-<generated_pictures/conflict_gbisrs.pdf, id=196, 117.43875pt x 73.27374pt>
+<generated_pictures/conflict_gbisrs.pdf, id=197, 117.43875pt x 73.27374pt>
 File: generated_pictures/conflict_gbisrs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_gbisrs.pdf>
 Package pdftex.def Info: generated_pictures/conflict_gbisrs.pdf used on input l
-ine 265.
+ine 264.
 (pdftex.def)             Requested size: 117.43845pt x 73.27354pt.
 
-<generated_pictures/conflict_s.pdf, id=197, 51.19125pt x 39.14626pt>
+<generated_pictures/conflict_s.pdf, id=198, 43.16125pt x 45.16875pt>
 File: generated_pictures/conflict_s.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_s.pdf>
 Package pdftex.def Info: generated_pictures/conflict_s.pdf used on input line 2
-65.
-(pdftex.def)             Requested size: 51.19112pt x 39.14615pt.
+64.
+(pdftex.def)             Requested size: 43.16113pt x 45.16862pt.
 
-<generated_pictures/conflict_gs.pdf, id=198, 108.405pt x 34.1275pt>
+<generated_pictures/conflict_gs.pdf, id=199, 108.405pt x 34.1275pt>
 File: generated_pictures/conflict_gs.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_gs.pdf>
 Package pdftex.def Info: generated_pictures/conflict_gs.pdf used on input line 
-265.
+264.
 (pdftex.def)             Requested size: 108.40472pt x 34.1274pt.
 
-<generated_pictures/conflict_g.pdf, id=199, 45.16875pt x 31.11626pt>
+<generated_pictures/conflict_g.pdf, id=200, 45.16875pt x 31.11626pt>
 File: generated_pictures/conflict_g.pdf Graphic file (type pdf)
 
 <use generated_pictures/conflict_g.pdf>
 Package pdftex.def Info: generated_pictures/conflict_g.pdf used on input line 2
-65.
+64.
 (pdftex.def)             Requested size: 45.16862pt x 31.11617pt.
 
-Overfull \hbox (2.1255pt too wide) in paragraph at lines 250--266
+Overfull \hbox (2.1255pt too wide) in paragraph at lines 249--265
 [][] [][] 
  []
 
@@ -771,7 +771,7 @@ File: generated_pictures/contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/contact_map.pdf>
 Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line 
-291.
+290.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
 
 <generated_pictures/egfr_egfr_egfr.pdf, id=242, 406.51875pt x 74.2775pt>
@@ -779,20 +779,20 @@ File: generated_pictures/egfr_egfr_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_egfr.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_egfr.pdf used on input li
-ne 299.
+ne 298.
 (pdftex.def)             Requested size: 406.51775pt x 74.27731pt.
 
-Overfull \hbox (4.20703pt too wide) in paragraph at lines 299--299
+Overfull \hbox (4.20703pt too wide) in paragraph at lines 298--298
  [] 
  []
 
 
-Overfull \hbox (3.65pt too wide) in paragraph at lines 291--299
+Overfull \hbox (3.65pt too wide) in paragraph at lines 290--298
 [][]
  []
 
 
-Overfull \hbox (3.65pt too wide) in paragraph at lines 291--299
+Overfull \hbox (3.65pt too wide) in paragraph at lines 290--298
 [][] 
  []
 
@@ -800,11 +800,11 @@ Overfull \hbox (3.65pt too wide) in paragraph at lines 291--299
 File: generated_pictures/species.pdf Graphic file (type pdf)
 
 <use generated_pictures/species.pdf>
-Package pdftex.def Info: generated_pictures/species.pdf used on input line 304.
+Package pdftex.def Info: generated_pictures/species.pdf used on input line 303.
 
 (pdftex.def)             Requested size: 478.78758pt x 414.54773pt.
 
-Overfull \hbox (2.11946pt too wide) in paragraph at lines 283--308
+Overfull \hbox (2.11946pt too wide) in paragraph at lines 282--307
 []$[]$ [][] 
  []
 
@@ -821,500 +821,491 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 451.
+(hyperref)                removing `math shift' on input line 429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Sigma' on input line 451.
+(hyperref)                removing `\Sigma' on input line 429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 451.
+(hyperref)                removing `math shift' on input line 429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 451.
+(hyperref)                removing `math shift' on input line 429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Sigma' on input line 451.
+(hyperref)                removing `\Sigma' on input line 429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 451.
-
-<generated_pictures/species_cm.pdf, id=385, 926.46124pt x 414.54875pt>
-File: generated_pictures/species_cm.pdf Graphic file (type pdf)
-
-<use generated_pictures/species_cm.pdf>
-Package pdftex.def Info: generated_pictures/species_cm.pdf used on input line 4
-64.
-(pdftex.def)             Requested size: 926.45897pt x 414.54773pt.
-
-Overfull \hbox (3.65pt too wide) in paragraph at lines 464--465
-[][] 
- []
+(hyperref)                removing `math shift' on input line 429.
 
 [8]
-Underfull \vbox (badness 1205) has occurred while \output is active []
-
- [9 <./generated_pictures/species_cm.pdf>]
-Overfull \hbox (2.09126pt too wide) in paragraph at lines 560--581
+Overfull \hbox (2.09126pt too wide) in paragraph at lines 515--536
 []$\OMS/cmsy/m/n/10.95 L[] [] []$\OT1/cmr/m/it/10.95 . 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [10]
-<generated_pictures/abc_embed.pdf, id=457, 225.84375pt x 118.4425pt>
+<generated_pictures/abc_embed.pdf, id=446, 225.84375pt x 118.4425pt>
 File: generated_pictures/abc_embed.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_embed.pdf>
-Package pdftex.def Info: generated_pictures/abc_embed.pdf used on input line 64
-9.
+Package pdftex.def Info: generated_pictures/abc_embed.pdf used on input line 60
+5.
 (pdftex.def)             Requested size: 225.84319pt x 118.4422pt.
 
-<generated_pictures/egfr_embed.pdf, id=459, 926.46124pt x 414.54875pt>
+<generated_pictures/egfr_embed.pdf, id=448, 926.46124pt x 414.54875pt>
 File: generated_pictures/egfr_embed.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_embed.pdf>
 Package pdftex.def Info: generated_pictures/egfr_embed.pdf used on input line 6
-63.
+19.
 (pdftex.def)             Requested size: 926.45897pt x 414.54773pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [11 <./generated_pictures/abc_embed.pdf> <./generated_pictures/egfr_embed.pdf>
 ] [12]
-<generated_pictures/abc_pattern_a.pdf, id=494, 204.765pt x 35.13126pt>
+<generated_pictures/abc_pattern_a.pdf, id=483, 204.765pt x 35.13126pt>
 File: generated_pictures/abc_pattern_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_pattern_a.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern_a.pdf used on input lin
-e 858.
+e 814.
 (pdftex.def)             Requested size: 204.76448pt x 35.13115pt.
 
-<generated_pictures/abc_pattern_b.pdf, id=495, 190.7125pt x 31.11626pt>
+<generated_pictures/abc_pattern_b.pdf, id=484, 190.7125pt x 31.11626pt>
 File: generated_pictures/abc_pattern_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_pattern_b.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern_b.pdf used on input lin
-e 863.
+e 819.
 (pdftex.def)             Requested size: 190.71202pt x 31.11617pt.
 
-<generated_pictures/egfr_egfr_r.pdf, id=496, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_egfr_r.pdf, id=485, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-869.
+825.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
-874.
+830.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
  [13 <./generated_pictures/abc_pattern_a.pdf> <./generated_pictures/abc_pattern
 _b.pdf> <./generated_pictures/egfr_egfr_r.pdf>]
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
  <use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
-905.
+861.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
  [14]
 File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
-ine 952.
+ine 908.
 (pdftex.def)             Requested size: 124.46469pt x 97.3635pt.
  <xymatrix
-<generated_pictures/a_b.pdf, id=550, 44.165pt x 32.12pt>
+<generated_pictures/a_b.pdf, id=539, 44.165pt x 32.12pt>
 File: generated_pictures/a_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/a_b.pdf>
-Package pdftex.def Info: generated_pictures/a_b.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/a_b.pdf used on input line 942.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 
-<generated_pictures/b_c.pdf, id=551, 46.1725pt x 31.11626pt>
+<generated_pictures/b_c.pdf, id=540, 46.1725pt x 31.11626pt>
 File: generated_pictures/b_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_c.pdf>
-Package pdftex.def Info: generated_pictures/b_c.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/b_c.pdf used on input line 942.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 
-<generated_pictures/c_b.pdf, id=552, 46.1725pt x 31.11626pt>
+<generated_pictures/c_b.pdf, id=541, 46.1725pt x 31.11626pt>
 File: generated_pictures/c_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/c_b.pdf>
-Package pdftex.def Info: generated_pictures/c_b.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/c_b.pdf used on input line 942.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 
-<generated_pictures/c_a.pdf, id=553, 38.1425pt x 37.13875pt>
+<generated_pictures/c_a.pdf, id=542, 38.1425pt x 37.13875pt>
 File: generated_pictures/c_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/c_a.pdf>
-Package pdftex.def Info: generated_pictures/c_a.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/c_a.pdf used on input line 942.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
 
-<generated_pictures/a_c.pdf, id=554, 44.165pt x 32.12pt>
+<generated_pictures/a_c.pdf, id=543, 44.165pt x 32.12pt>
 File: generated_pictures/a_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/a_c.pdf>
-Package pdftex.def Info: generated_pictures/a_c.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/a_c.pdf used on input line 942.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 
-<generated_pictures/b_a.pdf, id=555, 38.1425pt x 37.13875pt>
+<generated_pictures/b_a.pdf, id=544, 38.1425pt x 37.13875pt>
 File: generated_pictures/b_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_a.pdf>
-Package pdftex.def Info: generated_pictures/b_a.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/b_a.pdf used on input line 942.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
  7x2
 File: generated_pictures/a_b.pdf Graphic file (type pdf)
  <use generated_pictures/a_b.pdf>
-Package pdftex.def Info: generated_pictures/a_b.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/a_b.pdf used on input line 942.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 File: generated_pictures/b_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_c.pdf>
-Package pdftex.def Info: generated_pictures/b_c.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/b_c.pdf used on input line 942.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 File: generated_pictures/c_b.pdf Graphic file (type pdf)
  <use generated_pictures/c_b.pdf>
-Package pdftex.def Info: generated_pictures/c_b.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/c_b.pdf used on input line 942.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 File: generated_pictures/c_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/c_a.pdf>
-Package pdftex.def Info: generated_pictures/c_a.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/c_a.pdf used on input line 942.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
 File: generated_pictures/a_c.pdf Graphic file (type pdf)
  <use generated_pictures/a_c.pdf>
-Package pdftex.def Info: generated_pictures/a_c.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/a_c.pdf used on input line 942.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 File: generated_pictures/b_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_a.pdf>
-Package pdftex.def Info: generated_pictures/b_a.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/b_a.pdf used on input line 942.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
 File: generated_pictures/a_b.pdf Graphic file (type pdf)
  <use generated_pictures/a_b.pdf>
-Package pdftex.def Info: generated_pictures/a_b.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/a_b.pdf used on input line 942.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 File: generated_pictures/b_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_c.pdf>
-Package pdftex.def Info: generated_pictures/b_c.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/b_c.pdf used on input line 942.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 File: generated_pictures/c_b.pdf Graphic file (type pdf)
  <use generated_pictures/c_b.pdf>
-Package pdftex.def Info: generated_pictures/c_b.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/c_b.pdf used on input line 942.
 (pdftex.def)             Requested size: 46.17236pt x 31.11617pt.
 File: generated_pictures/c_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/c_a.pdf>
-Package pdftex.def Info: generated_pictures/c_a.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/c_a.pdf used on input line 942.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
 File: generated_pictures/a_c.pdf Graphic file (type pdf)
  <use generated_pictures/a_c.pdf>
-Package pdftex.def Info: generated_pictures/a_c.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/a_c.pdf used on input line 942.
 (pdftex.def)             Requested size: 44.16487pt x 32.1199pt.
 File: generated_pictures/b_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/b_a.pdf>
-Package pdftex.def Info: generated_pictures/b_a.pdf used on input line 986.
+Package pdftex.def Info: generated_pictures/b_a.pdf used on input line 942.
 (pdftex.def)             Requested size: 38.1424pt x 37.13866pt.
  258>
 File: generated_pictures/contact_map.pdf Graphic file (type pdf)
  <use generated_pictures/contact_map.pdf>
 Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line 
-996.
+952.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
 
-<xymatrix <generated_pictures/sos_d.pdf, id=558, 80.3pt x 67.25125pt>
+<xymatrix <generated_pictures/sos_d.pdf, id=547, 80.3pt x 67.25125pt>
 File: generated_pictures/sos_d.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_d.pdf>
-Package pdftex.def Info: generated_pictures/sos_d.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/sos_d.pdf used on input line 1008.
 (pdftex.def)             Requested size: 80.29979pt x 67.25107pt.
 
-<generated_pictures/egf_r.pdf, id=559, 67.25125pt x 81.30376pt>
+<generated_pictures/egf_r.pdf, id=548, 67.25125pt x 81.30376pt>
 File: generated_pictures/egf_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_r.pdf>
-Package pdftex.def Info: generated_pictures/egf_r.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egf_r.pdf used on input line 1008.
 (pdftex.def)             Requested size: 67.25107pt x 81.30354pt.
 
-<generated_pictures/grb2_a.pdf, id=560, 82.3075pt x 59.22125pt>
+<generated_pictures/grb2_a.pdf, id=549, 82.3075pt x 59.22125pt>
 File: generated_pictures/grb2_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_a.pdf>
-Package pdftex.def Info: generated_pictures/grb2_a.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/grb2_a.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
 
-<generated_pictures/shc_pi.pdf, id=561, 80.3pt x 54.2025pt>
+<generated_pictures/shc_pi.pdf, id=550, 80.3pt x 54.2025pt>
 File: generated_pictures/shc_pi.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_pi.pdf>
-Package pdftex.def Info: generated_pictures/shc_pi.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/shc_pi.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 
-<generated_pictures/egfr_c.pdf, id=562, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_c.pdf, id=551, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_r.pdf, id=563, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_r.pdf, id=552, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_n.pdf, id=564, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_n.pdf, id=553, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_l.pdf, id=565, 82.3075pt x 71.26625pt>
+<generated_pictures/egfr_l.pdf, id=554, 82.3075pt x 71.26625pt>
 File: generated_pictures/egfr_l.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_l.pdf>
-Package pdftex.def Info: generated_pictures/egfr_l.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_l.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 
-<generated_pictures/egfr_Y48.pdf, id=566, 94.3525pt x 67.25125pt>
+<generated_pictures/egfr_Y48.pdf, id=555, 94.3525pt x 67.25125pt>
 File: generated_pictures/egfr_Y48.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_Y48.pdf>
-Package pdftex.def Info: generated_pictures/egfr_Y48.pdf used on input line 105
-2.
+Package pdftex.def Info: generated_pictures/egfr_Y48.pdf used on input line 100
+8.
 (pdftex.def)             Requested size: 94.35225pt x 67.25107pt.
 
-Overfull \hbox (4.5711pt too wide) in paragraph at lines 1052--1052
+Overfull \hbox (4.5711pt too wide) in paragraph at lines 1008--1008
 [][] 
  []
 
-<generated_pictures/egfr_Y68.pdf, id=567, 80.3pt x 81.30376pt>
+<generated_pictures/egfr_Y68.pdf, id=556, 80.3pt x 81.30376pt>
 File: generated_pictures/egfr_Y68.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_Y68.pdf>
-Package pdftex.def Info: generated_pictures/egfr_Y68.pdf used on input line 105
-2.
+Package pdftex.def Info: generated_pictures/egfr_Y68.pdf used on input line 100
+8.
 (pdftex.def)             Requested size: 80.29979pt x 81.30354pt.
 
-<generated_pictures/shc_Y7.pdf, id=568, 80.3pt x 54.2025pt>
+<generated_pictures/shc_Y7.pdf, id=557, 80.3pt x 54.2025pt>
 File: generated_pictures/shc_Y7.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_Y7.pdf>
-Package pdftex.def Info: generated_pictures/shc_Y7.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/shc_Y7.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 
-<generated_pictures/grb2_b.pdf, id=569, 82.3075pt x 59.22125pt>
+<generated_pictures/grb2_b.pdf, id=558, 82.3075pt x 59.22125pt>
 File: generated_pictures/grb2_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_b.pdf>
-Package pdftex.def Info: generated_pictures/grb2_b.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/grb2_b.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
  8x5
 File: generated_pictures/sos_d.pdf Graphic file (type pdf)
  <use generated_pictures/sos_d.pdf>
-Package pdftex.def Info: generated_pictures/sos_d.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/sos_d.pdf used on input line 1008.
 (pdftex.def)             Requested size: 80.29979pt x 67.25107pt.
 File: generated_pictures/egf_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_r.pdf>
-Package pdftex.def Info: generated_pictures/egf_r.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egf_r.pdf used on input line 1008.
 (pdftex.def)             Requested size: 67.25107pt x 81.30354pt.
 File: generated_pictures/grb2_a.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_a.pdf>
-Package pdftex.def Info: generated_pictures/grb2_a.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/grb2_a.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
 File: generated_pictures/shc_pi.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_pi.pdf>
-Package pdftex.def Info: generated_pictures/shc_pi.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/shc_pi.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_l.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_l.pdf>
-Package pdftex.def Info: generated_pictures/egfr_l.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_l.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_Y48.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_Y48.pdf>
-Package pdftex.def Info: generated_pictures/egfr_Y48.pdf used on input line 105
-2.
+Package pdftex.def Info: generated_pictures/egfr_Y48.pdf used on input line 100
+8.
 (pdftex.def)             Requested size: 94.35225pt x 67.25107pt.
 
-Overfull \hbox (4.5711pt too wide) in paragraph at lines 1052--1052
+Overfull \hbox (4.5711pt too wide) in paragraph at lines 1008--1008
 [][] 
  []
 
 File: generated_pictures/egfr_Y68.pdf Graphic file (type pdf)
 <use generated_pictures/egfr_Y68.pdf>
-Package pdftex.def Info: generated_pictures/egfr_Y68.pdf used on input line 105
-2.
+Package pdftex.def Info: generated_pictures/egfr_Y68.pdf used on input line 100
+8.
 (pdftex.def)             Requested size: 80.29979pt x 81.30354pt.
 File: generated_pictures/shc_Y7.pdf Graphic file (type pdf)
  <use generated_pictures/shc_Y7.pdf>
-Package pdftex.def Info: generated_pictures/shc_Y7.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/shc_Y7.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 File: generated_pictures/grb2_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_b.pdf>
-Package pdftex.def Info: generated_pictures/grb2_b.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/grb2_b.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
 File: generated_pictures/sos_d.pdf Graphic file (type pdf)
  <use generated_pictures/sos_d.pdf>
-Package pdftex.def Info: generated_pictures/sos_d.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/sos_d.pdf used on input line 1008.
 (pdftex.def)             Requested size: 80.29979pt x 67.25107pt.
 File: generated_pictures/egf_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_r.pdf>
-Package pdftex.def Info: generated_pictures/egf_r.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egf_r.pdf used on input line 1008.
 (pdftex.def)             Requested size: 67.25107pt x 81.30354pt.
 File: generated_pictures/grb2_a.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_a.pdf>
-Package pdftex.def Info: generated_pictures/grb2_a.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/grb2_a.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
 File: generated_pictures/shc_pi.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_pi.pdf>
-Package pdftex.def Info: generated_pictures/shc_pi.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/shc_pi.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_l.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_l.pdf>
-Package pdftex.def Info: generated_pictures/egfr_l.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/egfr_l.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_Y48.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_Y48.pdf>
-Package pdftex.def Info: generated_pictures/egfr_Y48.pdf used on input line 105
-2.
+Package pdftex.def Info: generated_pictures/egfr_Y48.pdf used on input line 100
+8.
 (pdftex.def)             Requested size: 94.35225pt x 67.25107pt.
 
-Overfull \hbox (4.5711pt too wide) in paragraph at lines 1052--1052
+Overfull \hbox (4.5711pt too wide) in paragraph at lines 1008--1008
 [][] 
  []
 
 File: generated_pictures/egfr_Y68.pdf Graphic file (type pdf)
 <use generated_pictures/egfr_Y68.pdf>
-Package pdftex.def Info: generated_pictures/egfr_Y68.pdf used on input line 105
-2.
+Package pdftex.def Info: generated_pictures/egfr_Y68.pdf used on input line 100
+8.
 (pdftex.def)             Requested size: 80.29979pt x 81.30354pt.
 File: generated_pictures/shc_Y7.pdf Graphic file (type pdf)
  <use generated_pictures/shc_Y7.pdf>
-Package pdftex.def Info: generated_pictures/shc_Y7.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/shc_Y7.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 80.29979pt x 54.20236pt.
 File: generated_pictures/grb2_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_b.pdf>
-Package pdftex.def Info: generated_pictures/grb2_b.pdf used on input line 1052.
+Package pdftex.def Info: generated_pictures/grb2_b.pdf used on input line 1008.
 
 (pdftex.def)             Requested size: 82.30728pt x 59.22108pt.
  1390> <xymatrix
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_r.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
  7x1
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_c.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_r.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_r.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_r.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
 File: generated_pictures/egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1075.
+Package pdftex.def Info: generated_pictures/egfr_n.pdf used on input line 1031.
 
 (pdftex.def)             Requested size: 82.30728pt x 71.26605pt.
  278> [15 <./generated_pictures/a_b.pdf> <./generated_pictures/b_c.pdf> <./gene
@@ -1328,386 +1319,386 @@ ctures/shc_Y7.pdf> <./generated_pictures/grb2_b.pdf>]
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
  <use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
-1086.
+1042.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
 File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
 
 <use generated_pictures/abc_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
-ine 1136.
+ine 1092.
 (pdftex.def)             Requested size: 124.46469pt x 97.3635pt.
  <xymatrix
-<generated_pictures/link_a_b.pdf, id=680, 96.36pt x 31.11626pt>
+<generated_pictures/link_a_b.pdf, id=669, 96.36pt x 31.11626pt>
 File: generated_pictures/link_a_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_b.pdf>
-Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_b_c.pdf, id=681, 96.36pt x 31.11626pt>
+<generated_pictures/link_b_c.pdf, id=670, 96.36pt x 31.11626pt>
 File: generated_pictures/link_b_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_b_c.pdf>
-Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_c_b.pdf, id=682, 96.36pt x 31.11626pt>
+<generated_pictures/link_c_b.pdf, id=671, 96.36pt x 31.11626pt>
 File: generated_pictures/link_c_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_c_b.pdf>
-Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_c_a.pdf, id=683, 96.36pt x 31.11626pt>
+<generated_pictures/link_c_a.pdf, id=672, 96.36pt x 31.11626pt>
 File: generated_pictures/link_c_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_c_a.pdf>
-Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_a_c.pdf, id=684, 96.36pt x 31.11626pt>
+<generated_pictures/link_a_c.pdf, id=673, 96.36pt x 31.11626pt>
 File: generated_pictures/link_a_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_c.pdf>
-Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-<generated_pictures/link_b_a.pdf, id=685, 96.36pt x 31.11626pt>
+<generated_pictures/link_b_a.pdf, id=674, 96.36pt x 31.11626pt>
 File: generated_pictures/link_b_a.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_b_a.pdf>
-Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
  7x2
 File: generated_pictures/link_a_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_b.pdf>
-Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_b_c.pdf Graphic file (type pdf)
  <use generated_pictures/link_b_c.pdf>
-Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_c_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_c_b.pdf>
-Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_c_a.pdf Graphic file (type pdf)
  <use generated_pictures/link_c_a.pdf>
-Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_a_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_c.pdf>
-Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_b_a.pdf Graphic file (type pdf)
  <use generated_pictures/link_b_a.pdf>
-Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_a_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_b.pdf>
-Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_b_c.pdf Graphic file (type pdf)
  <use generated_pictures/link_b_c.pdf>
-Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_c_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_c_b.pdf>
-Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_c_a.pdf Graphic file (type pdf)
  <use generated_pictures/link_c_a.pdf>
-Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_a_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_c.pdf>
-Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 File: generated_pictures/link_b_a.pdf Graphic file (type pdf)
  <use generated_pictures/link_b_a.pdf>
-Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 117
-0.
+Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 112
+6.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
 258>
 File: generated_pictures/contact_map.pdf Graphic file (type pdf)
  <use generated_pictures/contact_map.pdf>
 Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line 
-1181.
+1137.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
  <xymatrix
-<generated_pictures/sos_grb2.pdf, id=688, 210.7875pt x 54.2025pt>
+<generated_pictures/sos_grb2.pdf, id=677, 210.7875pt x 54.2025pt>
 File: generated_pictures/sos_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_grb2.pdf>
-Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
-<generated_pictures/grb2_shc.pdf, id=689, 210.7875pt x 54.2025pt>
+<generated_pictures/grb2_shc.pdf, id=678, 210.7875pt x 54.2025pt>
 File: generated_pictures/grb2_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_shc.pdf>
-Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
-<generated_pictures/egf_egfr.pdf, id=690, 203.76125pt x 67.25125pt>
+<generated_pictures/egf_egfr.pdf, id=679, 203.76125pt x 67.25125pt>
 File: generated_pictures/egf_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_egfr.pdf>
-Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 
-<generated_pictures/grb2_egfr.pdf, id=691, 210.7875pt x 67.25125pt>
+<generated_pictures/grb2_egfr.pdf, id=680, 210.7875pt x 67.25125pt>
 File: generated_pictures/grb2_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_egfr.pdf>
 Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 12
-48.
+04.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/shc_egfr.pdf, id=692, 210.7875pt x 67.25125pt>
+<generated_pictures/shc_egfr.pdf, id=681, 210.7875pt x 67.25125pt>
 File: generated_pictures/shc_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_egfr.pdf>
-Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_egfr_c.pdf, id=693, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_egfr_c.pdf, id=682, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_egfr_n.pdf, id=694, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_egfr_n.pdf, id=683, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_egf.pdf, id=695, 203.76125pt x 67.25125pt>
+<generated_pictures/egfr_egf.pdf, id=684, 203.76125pt x 67.25125pt>
 File: generated_pictures/egfr_egf.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egf.pdf>
-Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 
-<generated_pictures/egfr_shc.pdf, id=696, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_shc.pdf, id=685, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_shc.pdf>
-Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_grb2.pdf, id=697, 210.7875pt x 67.25125pt>
+<generated_pictures/egfr_grb2.pdf, id=686, 210.7875pt x 67.25125pt>
 File: generated_pictures/egfr_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_grb2.pdf>
 Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 12
-48.
+04.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/shc_grb2.pdf, id=698, 210.7875pt x 54.2025pt>
+<generated_pictures/shc_grb2.pdf, id=687, 210.7875pt x 54.2025pt>
 File: generated_pictures/shc_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_grb2.pdf>
-Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
-<generated_pictures/grb2_sos.pdf, id=699, 210.7875pt x 54.2025pt>
+<generated_pictures/grb2_sos.pdf, id=688, 210.7875pt x 54.2025pt>
 File: generated_pictures/grb2_sos.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_sos.pdf>
-Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
  8x5
 File: generated_pictures/sos_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_grb2.pdf>
-Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_shc.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_shc.pdf>
-Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/egf_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_egfr.pdf>
-Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/grb2_egfr.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_egfr.pdf>
 Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 12
-48.
+04.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_egfr.pdf>
-Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egf.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egf.pdf>
-Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/egfr_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_shc.pdf>
-Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_grb2.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_grb2.pdf>
 Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 12
-48.
+04.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_grb2.pdf>
-Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_sos.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_sos.pdf>
-Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/sos_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_grb2.pdf>
-Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_shc.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_shc.pdf>
-Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/egf_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_egfr.pdf>
-Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/grb2_egfr.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_egfr.pdf>
 Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 12
-48.
+04.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_egfr.pdf>
-Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1248.
+1204.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egf.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egf.pdf>
-Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/egfr_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_shc.pdf>
-Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_grb2.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_grb2.pdf>
 Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 12
-48.
+04.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_grb2.pdf>
-Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_sos.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_sos.pdf>
-Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 124
-8.
+Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 120
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
 1424>
-Overfull \hbox (16.32947pt too wide) in paragraph at lines 1181--1252
+Overfull \hbox (16.32947pt too wide) in paragraph at lines 1137--1208
 [][][][] 
  []
 
@@ -1715,56 +1706,56 @@ Overfull \hbox (16.32947pt too wide) in paragraph at lines 1181--1252
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
  7x1
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1273.
+1229.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
  278> [17 <./generated_pictures/link_a_b.pdf> <./generated_pictures/link_b_c.pd
 f> <./generated_pictures/link_c_b.pdf> <./generated_pictures/link_c_a.pdf> <./g
@@ -1775,36 +1766,36 @@ c_egfr.pdf> <./generated_pictures/egfr_egfr_c.pdf> <./generated_pictures/egfr_e
 gfr_n.pdf> <./generated_pictures/egfr_egf.pdf> <./generated_pictures/egfr_shc.p
 df> <./generated_pictures/egfr_grb2.pdf> <./generated_pictures/shc_grb2.pdf> <.
 /generated_pictures/grb2_sos.pdf>]
-<generated_pictures/egfr_r_c.pdf, id=821, 340.27126pt x 67.25125pt>
+<generated_pictures/egfr_r_c.pdf, id=810, 340.27126pt x 67.25125pt>
 File: generated_pictures/egfr_r_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r_c.pdf used on input line 128
-5.
+Package pdftex.def Info: generated_pictures/egfr_r_c.pdf used on input line 124
+1.
 (pdftex.def)             Requested size: 340.27042pt x 67.25107pt.
 
-<generated_pictures/egfr_r_n.pdf, id=822, 340.27126pt x 67.25125pt>
+<generated_pictures/egfr_r_n.pdf, id=811, 340.27126pt x 67.25125pt>
 File: generated_pictures/egfr_r_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_r_n.pdf>
-Package pdftex.def Info: generated_pictures/egfr_r_n.pdf used on input line 128
-5.
+Package pdftex.def Info: generated_pictures/egfr_r_n.pdf used on input line 124
+1.
 (pdftex.def)             Requested size: 340.27042pt x 67.25107pt.
 
-<generated_pictures/egfr_n_c.pdf, id=823, 340.27126pt x 67.25125pt>
+<generated_pictures/egfr_n_c.pdf, id=812, 340.27126pt x 67.25125pt>
 File: generated_pictures/egfr_n_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_n_c.pdf>
-Package pdftex.def Info: generated_pictures/egfr_n_c.pdf used on input line 128
-5.
+Package pdftex.def Info: generated_pictures/egfr_n_c.pdf used on input line 124
+1.
 (pdftex.def)             Requested size: 340.27042pt x 67.25107pt.
 File: generated_pictures/abc_pattern.pdf Graphic file (type pdf)
  <use generated_pictures/abc_pattern.pdf>
 Package pdftex.def Info: generated_pictures/abc_pattern.pdf used on input line 
-1292.
+1248.
 (pdftex.def)             Requested size: 254.95186pt x 31.11617pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1301
+Underfull \hbox (badness 10000) in paragraph at lines 1256--1257
 []\OT1/cmr/m/it/10.95 The in-
  []
 
@@ -1813,214 +1804,214 @@ generated_pictures/egfr_n_c.pdf>]
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1322.
+1278.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 
-<generated_pictures/egfr_egfr_egfr_bis.pdf, id=853, 406.51875pt x 74.2775pt>
+<generated_pictures/egfr_egfr_egfr_bis.pdf, id=842, 406.51875pt x 74.2775pt>
 File: generated_pictures/egfr_egfr_egfr_bis.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_egfr_bis.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_egfr_bis.pdf used on inpu
-t line 1325.
+t line 1281.
 (pdftex.def)             Requested size: 406.51775pt x 74.27731pt.
 File: generated_pictures/egfr_egfr_egfr_bis.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_egfr_bis.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_egfr_bis.pdf used on inpu
-t line 1325.
+t line 1281.
 (pdftex.def)             Requested size: 406.51775pt x 74.27731pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1328.
+1284.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
  [19 <./generated_pictures/egfr_egfr_egfr_bis.pdf>]
 File: generated_pictures/abc_contact_map.pdf Graphic file (type pdf)
  <use generated_pictures/abc_contact_map.pdf>
 Package pdftex.def Info: generated_pictures/abc_contact_map.pdf used on input l
-ine 1394.
+ine 1350.
 (pdftex.def)             Requested size: 124.46469pt x 97.3635pt.
  <xymatrix
 File: generated_pictures/link_a_b.pdf Graphic file (type pdf)
 
 <use generated_pictures/link_a_b.pdf>
-Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_b_c.pdf Graphic file (type pdf)
 <use generated_pictures/link_b_c.pdf>
-Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_c_b.pdf Graphic file (type pdf)
 <use generated_pictures/link_c_b.pdf>
-Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_c_a.pdf Graphic file (type pdf)
 <use generated_pictures/link_c_a.pdf>
-Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_a_c.pdf Graphic file (type pdf)
 <use generated_pictures/link_a_c.pdf>
-Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_b_a.pdf Graphic file (type pdf)
 <use generated_pictures/link_b_a.pdf>
-Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 7x2
 File: generated_pictures/link_a_b.pdf Graphic file (type pdf)
  <use generated_pictures/link_a_b.pdf>
-Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_b_c.pdf Graphic file (type pdf)
 <use generated_pictures/link_b_c.pdf>
-Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_c_b.pdf Graphic file (type pdf)
 <use generated_pictures/link_c_b.pdf>
-Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_c_a.pdf Graphic file (type pdf)
 <use generated_pictures/link_c_a.pdf>
-Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_a_c.pdf Graphic file (type pdf)
 <use generated_pictures/link_a_c.pdf>
-Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_b_a.pdf Graphic file (type pdf)
 <use generated_pictures/link_b_a.pdf>
-Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_a_b.pdf Graphic file (type pdf)
 <use generated_pictures/link_a_b.pdf>
-Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_a_b.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_b_c.pdf Graphic file (type pdf)
 <use generated_pictures/link_b_c.pdf>
-Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_b_c.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_c_b.pdf Graphic file (type pdf)
 <use generated_pictures/link_c_b.pdf>
-Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_c_b.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_c_a.pdf Graphic file (type pdf)
 <use generated_pictures/link_c_a.pdf>
-Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_c_a.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_a_c.pdf Graphic file (type pdf)
 <use generated_pictures/link_a_c.pdf>
-Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_a_c.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
 File: generated_pictures/link_b_a.pdf Graphic file (type pdf)
 <use generated_pictures/link_b_a.pdf>
-Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 142
-8.
+Package pdftex.def Info: generated_pictures/link_b_a.pdf used on input line 138
+4.
 (pdftex.def)             Requested size: 96.35974pt x 31.11617pt.
 
-Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
+Overfull \hbox (5.27374pt too wide) in paragraph at lines 1384--1384
 [][] 
  []
 
@@ -2028,240 +2019,240 @@ Overfull \hbox (5.27374pt too wide) in paragraph at lines 1428--1428
 File: generated_pictures/contact_map.pdf Graphic file (type pdf)
  <use generated_pictures/contact_map.pdf>
 Package pdftex.def Info: generated_pictures/contact_map.pdf used on input line 
-1439.
+1395.
 (pdftex.def)             Requested size: 330.23293pt x 273.01933pt.
  <xymatrix
 File: generated_pictures/sos_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_grb2.pdf>
-Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_shc.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_shc.pdf>
-Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/egf_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_egfr.pdf>
-Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/grb2_egfr.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_egfr.pdf>
-Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 15
-08.
+Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 14
+64.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_egfr.pdf>
-Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egf.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egf.pdf>
-Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/egfr_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_shc.pdf>
-Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_grb2.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_grb2.pdf>
-Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 15
-08.
+Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 14
+64.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_grb2.pdf>
-Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_sos.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_sos.pdf>
-Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
 8x5
 File: generated_pictures/sos_grb2.pdf Graphic file (type pdf)
  <use generated_pictures/sos_grb2.pdf>
-Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_shc.pdf>
-Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/egf_egfr.pdf Graphic file (type pdf)
  <use generated_pictures/egf_egfr.pdf>
-Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/grb2_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/grb2_egfr.pdf>
-Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 15
-08.
+Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 14
+64.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_egfr.pdf Graphic file (type pdf)
  <use generated_pictures/shc_egfr.pdf>
-Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egf.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egf.pdf>
-Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/egfr_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_shc.pdf>
-Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_grb2.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_grb2.pdf>
-Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 15
-08.
+Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 14
+64.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_grb2.pdf>
-Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_sos.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_sos.pdf>
-Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/sos_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/sos_grb2.pdf>
-Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/sos_grb2.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_shc.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_shc.pdf>
-Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/grb2_shc.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/egf_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/egf_egfr.pdf>
-Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egf_egfr.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/grb2_egfr.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_egfr.pdf>
-Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 15
-08.
+Package pdftex.def Info: generated_pictures/grb2_egfr.pdf used on input line 14
+64.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_egfr.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_egfr.pdf>
-Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/shc_egfr.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_c.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egfr_c.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_c.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_r.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_r.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_r.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egfr_n.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_egfr_n.pdf>
 Package pdftex.def Info: generated_pictures/egfr_egfr_n.pdf used on input line 
-1508.
+1464.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_egf.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_egf.pdf>
-Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egfr_egf.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 203.76074pt x 67.25107pt.
 File: generated_pictures/egfr_shc.pdf Graphic file (type pdf)
 
 <use generated_pictures/egfr_shc.pdf>
-Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/egfr_shc.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/egfr_grb2.pdf Graphic file (type pdf)
  <use generated_pictures/egfr_grb2.pdf>
-Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 15
-08.
+Package pdftex.def Info: generated_pictures/egfr_grb2.pdf used on input line 14
+64.
 (pdftex.def)             Requested size: 210.78699pt x 67.25107pt.
 File: generated_pictures/shc_grb2.pdf Graphic file (type pdf)
 
 <use generated_pictures/shc_grb2.pdf>
-Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/shc_grb2.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 File: generated_pictures/grb2_sos.pdf Graphic file (type pdf)
  <use generated_pictures/grb2_sos.pdf>
-Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 150
-8.
+Package pdftex.def Info: generated_pictures/grb2_sos.pdf used on input line 146
+4.
 (pdftex.def)             Requested size: 210.78699pt x 54.20236pt.
 
 1176>
-Overfull \hbox (16.32947pt too wide) in paragraph at lines 1439--1511
+Overfull \hbox (16.32947pt too wide) in paragraph at lines 1395--1467
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1516--1518
+Underfull \hbox (badness 10000) in paragraph at lines 1472--1474
 []\OT1/cmr/m/it/10.95 In
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1523--1525
+Underfull \hbox (badness 10000) in paragraph at lines 1479--1481
 []\OT1/cmr/m/it/10.95 In
  []
 
@@ -2270,50 +2261,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
 (./polymers.bbl [21]) [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1546.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1546.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1502.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1502.
  (./polymers.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1546.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1546.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1502.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1502.
 
 Package rerunfilecheck Info: File `polymers.out' has not changed.
 (rerunfilecheck)             Checksum: DF73EA98294B1917117672813149BBFB;1271.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1546.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1502.
  ) 
 Here is how much of TeX's memory you used:
- 10782 strings out of 494104
- 150387 string characters out of 6155479
- 329113 words of memory out of 5000000
- 13746 multiletter control sequences out of 15000+600000
+ 10746 strings out of 493117
+ 150138 string characters out of 6135433
+ 325899 words of memory out of 5000000
+ 13796 multiletter control sequences out of 15000+600000
  20361 words of font info for 84 fonts, out of 8000000 for 9000
- 430 hyphenation exceptions out of 8191
- 35i,23n,35p,1447b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx8.pfb></opt/local/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/local/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/local/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmsl10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.p
-fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></opt/local/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti8.pfb></opt/local/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmtt8.pfb></opt/local/share/texmf-te
-xlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/local/share/texmf-te
-xlive/fonts/type1/public/stmaryrd/stmary10.pfb></opt/local/share/texmf-texlive/
-fonts/type1/public/xypic/xyatip10.pfb></opt/local/share/texmf-texlive/fonts/typ
-e1/public/xypic/xybtip10.pfb>
-Output written on polymers.pdf (22 pages, 491635 bytes).
+ 1141 hyphenation exceptions out of 8191
+ 36i,23n,35p,1447b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/xypic/xyatip10.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/xypic/xybtip10.pfb>
+Output written on polymers.pdf (22 pages, 476954 bytes).
 PDF statistics:
- 1032 PDF objects out of 1200 (max. 8388607)
- 801 compressed objects within 9 object streams
- 192 named destinations out of 1000 (max. 500000)
- 488 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1017 PDF objects out of 1200 (max. 8388607)
+ 791 compressed objects within 8 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 483 words of extra memory for PDF output out of 10000 (max. 10000000)
 
