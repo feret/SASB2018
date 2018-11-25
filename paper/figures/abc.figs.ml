@@ -190,12 +190,58 @@ let pattern =
          pattern
 
 let _ = dump "abc_pattern.ladot" pattern
+let _ = dump "abc_pattern_abca.ladot" pattern
+let _ = dump "abc_pattern_acba.ladot" (vertical_swap pattern)
 
+
+let iteration n =
+  let lnodes =
+    let rec aux k list =
+      if k=0 then list
+      else
+        let delta i = 2.9*.(float_of_int k)+.(float_of_int i) in
+        aux (k-1)
+          ((fun l ->
+             if k=1 then (a,delta 0,0.,[],
+                          [a_b,[Direction e],[]])::l else l)
+          ((b,delta 1,0.,[],
+            [b_a,[Direction w],[];
+             b_c,[Direction e],[]
+            ])::
+           (c,delta 2,0.,[],
+            [c_b,[Direction w],[];
+             c_a,[Direction e],[]
+            ])::
+           (a,delta 3,0.,[],
+            (a_c,[Direction w],[])::
+            (if k=n then [] else
+               [a_b,[Direction e],[]]))::
+           list))
+    in aux n [] in
+  let list, pattern = add_in_graph lnodes signature in
+  let rec build_link l last pattern =
+    match l with
+      (_,[a,_])::tail ->
+      add_link_list [a,last] pattern
+    | (_,[a,_;b,_])::tail ->
+      build_link tail b (add_link_list [a,last] pattern)
+    | _ -> raise Exit
+  in
+  let pattern =
+    match list with
+    | [_] | [] -> pattern
+    | (_,[a,_])::tail -> build_link tail a pattern
+    | _ -> raise Exit
+  in
+  let s = "abc_iteration_"^(string_of_int n)^".ladot" in
+  dump s pattern
+
+let () = List.iter iteration [1;2;3;4]
 
 let
   [p_a,[p_a_b,_];
    p_b, [p_b_a,_;p_b_c,_];
-   p_c, [p_c_a,_;p_c_b,_]], pattern =
+   p_c, [(*p_c_a,_;*)p_c_b,_]], pattern =
    add_in_graph
      [
        a,0.,0.,[],
@@ -204,7 +250,7 @@ let
        [b_a,[Direction w],[];
         b_c,[Direction e],[]];
        c,2.,0.,[],
-       [c_a,[Direction e],[];
+       [(*c_a,[Direction e],[];*)
         c_b,[Direction w],[]]]
      signature
 
@@ -218,6 +264,62 @@ let pattern =
          pattern
 
 let _ = dump "abc_pattern_b.ladot" pattern
+
+let
+  [p_a,[p_a_b,_];
+   p_b, [p_b_a,_;p_b_c,_];
+   p_c, [(*p_c_a,_;*)p_c_b,_]], pattern =
+  add_in_graph
+    [
+      b,0.,0.,[],
+      [b_c,[Direction e],[]];
+      c,1.,0.,[],
+      [c_b,[Direction w],[];
+       c_a,[Direction e],[]];
+      a,2.,0.,[],
+      [(*c_a,[Direction e],[];*)
+        a_c,[Direction w],[]]]
+    signature
+
+
+let pattern =
+  add_link_list
+    [
+      p_a_b,p_b_a;
+      p_b_c,p_c_b;
+    ]
+    pattern
+
+let _ = dump "abc_pattern_bca.ladot" pattern
+let _ = dump "abc_pattern_acb.ladot" (vertical_swap pattern)
+
+let
+  [p_a,[p_a_b,_];
+   p_b, [p_b_a,_;p_b_c,_];
+   p_c, [(*p_c_a,_;*)p_c_b,_]], pattern =
+  add_in_graph
+    [
+      b,0.,0.,[],
+      [b_a,[Direction e],[]];
+      a,1.,0.,[],
+      [a_b,[Direction w],[];
+       a_c,[Direction e],[]];
+      c,2.,0.,[],
+      [(*c_a,[Direction e],[];*)
+        c_a,[Direction w],[]]]
+    signature
+
+
+let pattern =
+  add_link_list
+    [
+      p_a_b,p_b_a;
+      p_b_c,p_c_b;
+    ]
+    pattern
+
+let _ = dump "abc_pattern_bac.ladot" pattern
+
 
 let site, pattern =
   add_site p_a a_c pattern
@@ -308,7 +410,7 @@ let plot_link (a,b,c,d,name) =
   let [_,[sa,_];_,[sb,_]],er =
     add_in_graph
       [a,0.,0.,[],[b,[Direction e],[]];
-       c,0.8,0.,[],[d,[Direction w],[]]]
+       c,1.,0.,[],[d,[Direction w],[]]]
       signature
 
   in

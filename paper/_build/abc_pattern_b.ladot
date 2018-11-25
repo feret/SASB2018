@@ -80,19 +80,6 @@ fontcolor=black]
 
 Site_6_7 [
 fixedsize=true,
-label = "a",
-fontsize=14,
-pos="2.262500,-0.000000!",
-width=0.210000,
-height=0.210000,
-shape="ellipse",
-style="filled",
-fillcolor="#6767f2",
-color=black,
-fontcolor=black]
-
-Site_6_8 [
-fixedsize=true,
 label = "b",
 fontsize=14,
 pos="1.737500,0.000000!",
@@ -105,5 +92,5 @@ color=black,
 fontcolor=black]
 
 Site_3_4 -> Site_1_2 [dir = "none",color="black",penwidth=2,fontcolor="black",label="",style=""];
-Site_6_8 -> Site_3_5 [dir = "none",color="black",penwidth=2,fontcolor="black",label="",style=""];
+Site_6_7 -> Site_3_5 [dir = "none",color="black",penwidth=2,fontcolor="black",label="",style=""];
 }
