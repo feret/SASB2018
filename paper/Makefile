@@ -44,12 +44,13 @@ IMAGES= $(IMAGEPATH) $(PDF) $(TEX) $(PREIMAGES:%=$(IMAGEPATH)%)
 OCAMLOPT=ocamlopt.opt -I $(BUILD) -I $(GKAPPAREP) data_structures.cmx geometry.cmx gkappa.cmx config.cmx
 
 
-all: $(BUILD) $(BIN) $(SIGCMX) $(IMAGEPATH) $(OCAMLBIN) $(DATA) $(PREFIG) $(PDF) $(TEX) $(BIB)
+all:  $(TEX) $(BIB)
 	pdflatex $(NONSTOP) polymers
 	bibtex polymers
 	pdflatex $(NONSTOP) polymers
 	pdflatex $(NONSTOP) polymers
 
+figures: $(BUILD) $(BIN) $(SIGCMX) $(IMAGEPATH) $(OCAMLBIN) $(DATA) $(PREFIG) $(PDF)
 
 short:
 	pdflatex $(NONSTOP) polymers
@@ -58,7 +59,7 @@ short:
 $(BIN)/%: $(BUILD)/%.ml $(COMMONCMX) $(SIGCMX) Makefile
 	$(OCAMLOPT) $(COMMONCMX) $(SIGCMX) $< -o $@
 	cd $(BUILD) ; $(CURDIR)/$@
-	$(MAKE) build_tmp all
+	$(MAKE) build_tmp figures
 	$(shell exit 2)
 
 build_tmp: $(TMPTEX) $(TMPPDF)
@@ -155,13 +156,16 @@ sessions:
 
 
 clean:
-	rm -f *.blg *.out *.toc *.todo *.idx *.bbl *~ \#* *.dvi *.aux *.log  *.bak *.html $(PREIMAGES) $(BBL) $(TEX) $(PDF) $(DATA)
-	rm -fr sessions
+	rm -f *.blg *.out *.toc *.todo *.idx *.bbl *~ \#* *.dvi *.aux *.log  *.bak *.html $(PREIMAGES) $(BBL) $(TEX) $(DATA) 
+	rm -fr sessions $(BIN) $(BUILD)
+
+clean_figure:
 	rm -fr $(IMAGEPATH) $(BUILD) $(BIN)
 
 clean_all:
-	@make clean;
-	rm $(OUTPUT)
+	@make clean
+	@make clean_figure
+	rm -fr $(IMAGEPATH) $(BUILD) $(BIN)
 
 force:
 	rm -f $(OUTPUT)
@@ -169,3 +173,10 @@ force:
 
 nonstop:
 	@make NONSTOP=-halt-on-error
+
+help:
+	@echo make figure -> to generate all the figures (GKappa is required)
+	@echo make        -> to generete the pdf (figures shall be compiled before)
+	@echo make clean  -> remove latex intermediary files
+	@echo make clean_figures -> remove the pdf files for figures
+	@echo make clean_all -> remove everything including the final output
